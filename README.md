@@ -2,7 +2,7 @@
 
 Audit of large language models asked to write French reading texts for primary pupils in French-speaking Switzerland. The grade is named in several ways: the bare HarmoS label ("de 5H"), the P label used in Vaud and Geneva ("de 5P"), the label with the region or with the age, the French grade ("de CE2"), the age only ("de 8 à 9 ans"), no level at all, and the same digit with the French collège suffix ("de 5e"). The question is whether a bare Swiss label gives texts of the same lexical demand as the matching age, and whether those texts follow the grade as the age-only texts do. No human participants.
 
-Status: design v0.4.6, before the pilot and before preregistration. Nothing here is a result.
+Status: design v0.4.7, after the pilot (31.10.2026) and before preregistration. The pilot outputs are in `data/raw/` and `results/pilot_*`; they are excluded from every confirmatory analysis. Nothing here is a result of the study.
 
 ## Files
 

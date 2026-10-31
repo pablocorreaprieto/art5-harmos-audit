@@ -1,6 +1,6 @@
 # History of the design before the pilot
 
-These are the earlier design versions of ART 5, from 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5 and v0.4.6), kept as differences from one version to the next. Why each version changed is in `../CHANGELOG.md`.
+These are the earlier design versions of ART 5, from 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5 to v0.4.7), kept as differences from one version to the next. Why each version changed is in `../CHANGELOG.md`.
 
 **Rebuilding a version.**
 

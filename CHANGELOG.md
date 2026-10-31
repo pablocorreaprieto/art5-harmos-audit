@@ -1,6 +1,6 @@
 # Changelog
 
-Design versions of ART 5 before the pilot, on 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5 and v0.4.6), times in Zurich time (UTC+1). Nothing here is a result.
+Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5 to v0.4.7), times in Zurich time (UTC+1). Nothing here is a result of the study; the pilot of 31.10.2026 is reported in v0.4.7 only for the values the design takes from it.
 
 - A "reading" is an internal reading by a separate AI session. It is not peer review and not an outside review.
 - Readings are numbered 1 to 8 as in the design dossier and the journal. The briefs and full reports of the eight readings, and of one research session on the journal ladder, are kept verbatim in the review record: `claude/art5/records/relectures_ia.md` in the Claude project, and the Drive document "RELECTURES IA" in folder 04.
@@ -8,6 +8,43 @@ Design versions of ART 5 before the pilot, on 25.10.2026 (v0.1 to v0.4.4) and 31
 - Hashes are the first 16 hex digits of SHA-256. `history/hashes.txt` has the full values for every kept version.
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
+
+## v0.4.7 (31.10.2026, about 19:30 to 19:40)
+
+**Why.** The model listing (run 41225923569) and the pilot (run 41229061481, 19:22 to 19:28) gave the values that `PREREG.md` left in braces, as planned.
+
+**Pilot, as recorded in `results/pilot_summary.json` and `logs/run_*.json`.**
+
+- 252 calls launched, 251 answered on the first pass. One Mistral probe used its 4,000 output tokens on reasoning and returned no text; it was asked again in the second pass and answered. Counted spend 2.2554 USD for a plan budget of 3 USD (Anthropic 1.4185, OpenAI 0.5513, Mistral 0.2857), nothing counted as possibly charged.
+- 216 of 216 age-only texts kept, no exclusion, no answer flagged as addressing the user, no line removed, a title in every text. One Mistral text stopped at the token limit (kept and flagged as truncated). Median length 596 words (Claude Sonnet 5.5), 419 (GPT-6.1 Sol), 351 (Mistral Large 4.0).
+- Ruler: residual SD 0.117 (upper 80% bound 0.122), pooled slope -0.0449 Zipf per year (SE 0.0049, one-sided p 2e-20), per model -0.044 (Anthropic), -0.036 (OpenAI), -0.055 (Mistral). The flat-ruler stop rule does not apply.
+- Simulated power of the H2-H level test at 0.04 Zipf (1,000 data sets per option, planning slope -0.04): .835 with 16 topics, .974 with 24, .994 with 32. The rule gives 16 topics, as already set in `design.json`.
+- Probes: 36 of 36 parsed; 31 of 36 state more than one age range, and the rule takes the first. Accuracy not computed before the deposit.
+
+**Changes.**
+
+- `PREREG.md`. Pilot date, 16 topics, 7,680 texts and the six model ids filled in; the pilot values added at the end of question 7; the status line says which fields remain for the deposit (`{REPO}`, `{START_DATE}`, `{END_DATE}`).
+- `design.json`, `README.md`. Version line; README says where the pilot outputs are.
+
+**Checks.** `checks/plan.py`: PASS (the call files are unchanged). `history/check_history.sh`: PASS, v0.4.7 down to v0.2. No code file changed since v0.4.6, so the full run of v0.4.6 (12 of 12) stands for the code.
+
+**Reading.** None. Only fields that the design said the pilot would fill were filled.
+
+**Hashes.**
+
+| File | Hash |
+|---|---|
+| PREREG.md | 411fbce4113b7d20 |
+| README.md | bd7c45ebd5def95f |
+| design.json | 06dc537dc8c6ba9c |
+| generate.py | 10085215000e27f6 (unchanged) |
+| compute.py | 8ad7a56512616c64 (unchanged) |
+| analyze.py | 62324d6d5c6293c2 (unchanged) |
+| pipeline.py | bc409da02b73fa9f (unchanged) |
+| make_prompts.py | 739ea744914f9237 (unchanged) |
+| run.yml | 497409fc94c1df59 (unchanged) |
+
+**Listed for gate G1.** As in v0.4.4, plus: the number of topics (16) and the spending cap set from the pilot; the probe rule when an answer gives several age ranges (31 of 36 in the pilot); Claude Sonnet 5.5 writes texts about 1.5 times longer than the two other models (length is measured and residualised in a sensitivity analysis); Mistral Large 4.0 reasons by default, and 2 of its 85 calls stopped at the 4,000-token limit, one of them (a probe) with all its tokens spent on reasoning and no text.
 
 ## v0.4.6 (31.10.2026, about 18:06 to 18:37)
 
