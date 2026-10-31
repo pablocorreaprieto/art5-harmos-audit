@@ -1,0 +1,13 @@
+{
+ "raw_file": "data/raw/calls_pilot_20261031T182238767726Z.jsonl",
+ "calls_file": "calls_pilot.jsonl",
+ "to_do": 252,
+ "launched": 252,
+ "ok": 251,
+ "failed": 1,
+ "spent_usd": 2.2542,
+ "possibly_charged_usd": 0.0,
+ "cap_usd": 3.0,
+ "stopped": null,
+ "raw_sha256": "83bcc465b8e1c115abe3c9b56b0314ae913e8c10114f0de48287ecbb525bd4fb"
+}

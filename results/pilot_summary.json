@@ -1,0 +1,44 @@
+{
+ "note": "pilot only, excluded from every confirmatory analysis",
+ "ruler": {
+  "n_kept": 216,
+  "n_planned": 216,
+  "sigma": 0.11685841488116806,
+  "sigma_df": 192.0,
+  "sigma_upper80": 0.12228291408794054,
+  "pooled_slope": -0.04491704733087941,
+  "pooled_slope_se": 0.00489442906435856,
+  "pooled_slope_p_one_sided": 2.212679515913571e-20,
+  "per_model_slope": {
+   "anthropic_balanced": -0.04439511832891507,
+   "mistral_balanced": -0.05450831394695896,
+   "openai_balanced": -0.03584770971676399
+  },
+  "one_year_in_zipf_at_pilot_slope": 0.04491704733087941
+ },
+ "stop_flat_ruler": false,
+ "power_level_test_0_04_zipf": {
+  "16": 0.835,
+  "24": 0.974,
+  "32": 0.994
+ },
+ "n_topics_rule": 16,
+ "texts": {
+  "n": 216,
+  "kept": 216,
+  "exclusion_reasons": {},
+  "finish_reasons": {
+   "stop": 143,
+   "end_turn": 72,
+   "length": 1
+  },
+  "truncated": 1
+ },
+ "probes": {
+  "n": 36,
+  "ok": 36,
+  "share_parsed": 1.0,
+  "share_multiple": 0.8611111111111112,
+  "accuracy": "not computed before the deposit"
+ }
+}

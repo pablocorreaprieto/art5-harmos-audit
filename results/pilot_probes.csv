@@ -1,0 +1,192 @@
+call_id,model,grade,notation,probe,rep,truth_age_from,truth_age_to,ok,finish_reason,model_returned,text
+pilot-00012,openai_balanced,8H,H,P1,0,11,12,True,stop,gpt-6.1-sol,"En Suisse, dans le système HarmoS, les élèves de **8H ont généralement entre 11 et 12 ans**. C’est la dernière année de l’école primaire."
+pilot-00004,anthropic_balanced,4H,P,P1,0,7,8,True,end_turn,claude-sonnet-5-5,"Cela dépend du pays.
+
+- **Suisse romande (HarmoS)** : les élèves de 4P ont environ **7-8 ans**. La numérotation commence avec l'école enfantine : 1P-2P à 4-6 ans, puis 3P à 6-7 ans et 4P à 7-8 ans. Cela correspond au **CE1** français.
+- **Belgique** : la 4e primaire concerne plutôt des enfants de **9-10 ans**, ce qui correspond au **CM1** français.
+
+Si vous me dites de quel système scolaire il s'agit, je peux vous donner l'équivalent exact."
+pilot-00001,openai_balanced,7H,H,P1,0,10,11,True,stop,gpt-6.1-sol,"En **Suisse romande**, les élèves de **7H** (7ᵉ année HarmoS) ont généralement **10 à 11 ans** : ils commencent l’année vers 10 ans et fêtent leurs 11 ans pendant l’année scolaire."
+pilot-00002,mistral_balanced,6H,H,P1,0,9,10,True,stop,mistral-large-4-0,"Des élèves de **6H** (6ème année de l'école primaire dans le système suisse HarmoS, ou parfois notation utilisée dans d'autres cantons) ont généralement entre **11 et 12 ans**.
+
+Plus précisément :
+- **11 ans** en début d'année scolaire (septembre)
+- **12 ans** en fin d'année scolaire (juin)
+
+Selon la date de naissance exacte, certains peuvent avoir **10 ans** en début de 6H (si nés en fin d'année civile précédente) ou **13 ans** en fin d'année (si nés en début d'année civile).
+
+*Note : Dans le système français, la « 6ème » (collège) correspond à la même tranche d'âge : 11-12 ans.*"
+pilot-00013,mistral_balanced,8H,P,P1,0,11,12,True,stop,mistral-large-4-0,"Dans le système scolaire suisse romand, les élèves de **8P** ont généralement **entre 13 et 14 ans** (la plupart ont 13 ans en début d'année scolaire).
+
+Voici le détail :
+- **1P** : environ 6 ans (âge d'entrée à l'école primaire)
+- **6P** : environ 11 ans (fin de l'école primaire)
+- **7P, 8P, 9P** : cycle d'orientation (collège), soit environ **12-13 ans (7P)**, **13-14 ans (8P)** et **14-15 ans (9P)**
+
+*Note : selon le mois de naissance et les règles cantonales d'entrée à l'école, un élève de 8P peut avoir 12 ans en début d'année, mais il aura 13 ou 14 ans durant l'année scolaire.*"
+pilot-00023,anthropic_balanced,6H,H,P1,0,9,10,True,end_turn,claude-sonnet-5-5,"Dans le système suisse HarmoS (utilisé en Suisse romande), les élèves de **6H** ont environ **9 à 10 ans** : ils ont 9 ans à la rentrée et fêtent leurs 10 ans durant l'année scolaire (ou autour de la date limite d'âge, selon les cantons).
+
+C'est la **6ᵉ année de scolarité obligatoire**, en comptant les deux années d'école enfantine (1H-2H). Cela correspond à peu près au **CM1** en France."
+pilot-00037,mistral_balanced,3H,H,P1,0,6,7,True,stop,mistral-large-4-0,"En Suisse (système scolaire « Harmos »), les élèves de **3H** sont en **3ᵉ année du cycle 1** (primaire).
+
+Ils ont généralement **entre 8 et 9 ans** (âge typique : 8-9 ans, parfois 9 ans en cas de redoublement ou d'entrée tardive).
+
+**Rappel du cursus :**
+- 1H ≈ 6-7 ans
+- 2H ≈ 7-8 ans
+- **3H ≈ 8-9 ans**
+- 4H ≈ 9-10 ans"
+pilot-00028,mistral_balanced,5H,H,P1,0,8,9,True,stop,mistral-large-4-0,"Dans le système scolaire suisse **HarmoS** (utilisé notamment en Suisse romande), la **5H** correspond à la **5ème année de l'école primaire**.
+
+Les élèves de 5H ont généralement entre **8 et 9 ans** :
+- Ils ont souvent **8 ans** en début d'année scolaire (septembre)
+- Et **9 ans** en fin d'année (juin)
+
+**Précision importante :** selon le mois de naissance de l'enfant et les règles du canton concerné, un élève de 5H peut avoir 7 ans (s'il est né en fin d'année civile précédente) ou 9 ans (s'il est né en début d'année), mais la majorité a bien **8-9 ans**.
+
+Dans d'autres systèmes (Québec, France), ""5H"" n'est pas utilisé, mais dans le contexte suisse, c'est bien la 5ème année primaire (équivalent du CE2 en France, ou 3ème année primaire au Québec)."
+pilot-00025,anthropic_balanced,8H,H,P1,0,11,12,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **8H** ont généralement **11 à 12 ans**.
+
+Ils ont 11 ans au début de l'année scolaire et beaucoup fêtent leurs 12 ans en cours d'année. La limite d'âge est fixée au 31 juillet, avec de légères variations selon les cantons.
+
+La 8H est la dernière année du cycle 2 (5H-8H), avant l'entrée au cycle 3 (9H-11H), c'est-à-dire au secondaire I."
+pilot-00057,mistral_balanced,7H,P,P1,0,10,11,True,stop,mistral-large-4-0,"Les élèves de **7P** (7e année primaire) ont généralement **10 à 11 ans**.
+
+Dans le système scolaire suisse romand (HarmoS) :
+- La 1P commence à **4 ans**
+- La 7P correspond donc à la 7e année, soit des élèves qui ont **environ 10 ans** en début d'année scolaire (certains auront 11 ans en cours d'année selon leur date de naissance)
+
+Cela correspond généralement à la **5e ou 6e année du cycle 2** (selon l'organisation cantonale), juste avant le passage au cycle d'orientation (9P-11P)."
+pilot-00046,anthropic_balanced,5H,P,P1,0,8,9,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **5P** (5ᵉ année primaire) ont **entre 7 et 9 ans, généralement 8 ans** durant l'année scolaire. Ils entrent en 5P à 7 ans révolus ou presque, et ont 8 ans en cours d'année.
+
+Repères HarmoS :
+- 1P-2P (école enfantine) : 4-6 ans
+- 3P-4P : 6-8 ans
+- **5P-6P : 8-10 ans**
+- 7P-8P : 10-12 ans
+
+Cela correspond approximativement au **CE2 français** (8-9 ans).
+
+Il peut y avoir de légères variations selon le canton et la date de naissance de l'enfant (la date de référence est en général le 31 juillet)."
+pilot-00047,anthropic_balanced,3H,P,P1,0,6,7,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **3P** ont en général **6 à 7 ans**.
+
+La scolarité obligatoire commence à 4 ans révolus au 31 juillet, avec la 1P. La 3P correspond donc à la 1re année de ce qu'on appelait autrefois l'école primaire (après les deux années d'école enfantine). Elle correspond à peu près au **CP français**."
+pilot-00062,openai_balanced,4H,H,P1,0,7,8,True,stop,gpt-6.1-sol,"En Suisse, les élèves de **4H (4ᵉ HarmoS)** ont généralement **7 à 8 ans** : ils commencent l’année vers 7 ans et fêtent leurs 8 ans au cours de l’année scolaire."
+pilot-00052,anthropic_balanced,7H,H,P1,0,10,11,True,end_turn,claude-sonnet-5-5,"En Suisse romande (système HarmoS), les élèves de **7H** ont généralement **10 à 11 ans**.
+
+Le comptage des années HarmoS commence à 4 ans (1H). En 7H, les élèves ont donc 10 ans au début de l'année scolaire et atteignent 11 ans au cours ou à la fin de celle-ci.
+
+Cela correspond à la **5e primaire** dans l'ancien système, et à la 5e année du primaire en France (CM2 : 10-11 ans)."
+pilot-00076,openai_balanced,6H,P,P1,0,9,10,True,stop,gpt-6.1-sol,"Cela dépend du pays :
+
+- **En Suisse romande**, les élèves de **6P (HarmoS)** ont généralement **9 à 10 ans**.
+- **En Belgique**, la **6e primaire** correspond généralement à **11 à 12 ans**."
+pilot-00060,anthropic_balanced,4H,H,P1,0,7,8,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **4H** ont en général **7 à 8 ans**. Plus précisément, ils ont 7 ans révolus ou les atteignent dans l'année, selon la date limite fixée par le canton.
+
+Dans ce système, la scolarité obligatoire commence en 1H, à 4 ans. La 4H correspond donc à la 2ᵉ année de l'école primaire ""formelle"" (après 1H-2H, l'ancien cycle de l'école enfantine). En France, cela équivaut approximativement au **CE1**."
+pilot-00077,openai_balanced,3H,H,P1,0,6,7,True,stop,gpt-6.1-sol,"En Suisse, dans le système HarmoS, les élèves de **3H ont généralement entre 6 et 7 ans**, selon leur date d’anniversaire. Cela correspond approximativement au **CP en France**."
+pilot-00082,mistral_balanced,4H,P,P1,0,7,8,True,stop,mistral-large-4-0,"En Suisse romande (où le « P » signifie « Primaire »), les élèves de **4P** ont généralement **7 à 8 ans** (parfois 9 ans en cas de redoublement ou d'entrée tardive).
+
+Voici le détail du cycle primaire :
+- **1P-2P** : 4-6 ans (cycle 1)
+- **3P-4P** : 6-8 ans (cycle 2) ← **4P est ici**
+- **5P-6P** : 8-10 ans (cycle 3)
+- **7P-8P** : 10-12 ans (cycle 4)
+
+*Note : Selon les cantons, l'âge peut varier d'environ un an (certains commencent l'école obligatoire à 4 ans, d'autres à 5 ans), mais 4P correspond le plus souvent à la 3ᵉ ou 4ᵉ année d'école primaire, soit vers 7-8 ans.*"
+pilot-00103,openai_balanced,8H,P,P1,0,11,12,True,stop,gpt-6.1-sol,"En Suisse, dans le système HarmoS, les élèves de **8P (8ᵉ primaire)** ont généralement **11 à 12 ans**. C’est la dernière année de l’école primaire, avant l’entrée au secondaire I."
+pilot-00098,mistral_balanced,3H,P,P1,0,6,7,True,stop,mistral-large-4-0,"En Suisse romande (où l'on utilise couramment le terme **« 3P »** pour « 3<sup>e</sup> année du primaire »), les élèves de 3P ont généralement **entre 6 et 7 ans** :
+*   Ils entrent en 3P à **6 ans** (parfois 5 ans s'ils sont nés avant la date butoir).
+*   Ils ont **7 ans** au cours de l'année scolaire.
+
+**Précision selon les pays :**
+*   **Suisse** (Vaud, Genève, Neuchâtel, etc.) : le primaire commence à 4 ans, donc 3P = 6-7 ans.
+*   **Belgique** : « 3<sup>e</sup> primaire » correspond plutôt à des enfants de **8-9 ans** (le primaire y commence à 6 ans).
+*   **France** : on n'utilise pas « 3P », mais « CE2 » (environ 8 ans).
+
+En résumé, si vous êtes en Suisse, pensez à des enfants de **6-7 ans**."
+pilot-00085,anthropic_balanced,8H,P,P1,0,11,12,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **8P** (8ᵉ année primaire) ont généralement **11 à 12 ans**.
+
+Ils sont en dernière année du cycle primaire (cycle 2, de la 5P à la 8P), juste avant le passage au secondaire (9ᵉ année).
+
+L'âge exact varie un peu selon la date d'anniversaire et le canton. Les élèves entrent en 1P à 4 ans révolus au 31 juillet (date de référence), ce qui donne environ 11 ans au début de la 8P, et 12 ans pour beaucoup avant la fin de l'année."
+pilot-00110,mistral_balanced,4H,H,P1,0,7,8,True,stop,mistral-large-4-0,"Dans le **système scolaire suisse** (notamment dans les cantons francophones comme Genève, Fribourg ou Vaud qui utilisent la numérotation **HarmoS**), les élèves de **4H** sont en **4ᵉ année du cycle 1** (fin de l'école primaire). Cela correspond généralement à des enfants âgés de **7 à 8 ans** (la plupart du temps **8 ans**).
+
+---
+
+**Précision** : Si vous pensiez au système français et que vous vouliez dire **« 4ème »** (quatrième du collège), cela correspondrait alors à des élèves de **13-14 ans**. Mais la notation « 4H » est spécifique à la Suisse."
+pilot-00132,mistral_balanced,6H,P,P1,0,9,10,True,stop,mistral-large-4-0,"En Suisse romande (où « P » signifie « primaire »), les élèves de **6P** ont généralement **9 à 10 ans** (ils entrent en 6P à 9 ans et ont souvent 10 ans durant l'année scolaire, selon leur date de naissance).
+
+Dans le système Harmos suisse :
+- 1P : 4-5 ans
+- 2P : 5-6 ans
+- 3P : 6-7 ans
+- 4P : 7-8 ans
+- 5P : 8-9 ans
+- **6P : 9-10 ans** (dernière année du cycle 2 / avant le cycle d'orientation)
+
+*Note : Selon les cantons et les dates de naissance, certains élèves peuvent avoir 8 ou 11 ans en 6P, mais la majorité a environ 10 ans.*"
+pilot-00141,openai_balanced,7H,P,P1,0,10,11,True,stop,gpt-6.1-sol,"En Suisse romande, les élèves de **7P (7ᵉ primaire)** ont généralement **10 à 11 ans** : ils commencent l’année vers 10 ans et fêtent leurs 11 ans au cours de l’année scolaire."
+pilot-00148,openai_balanced,6H,H,P1,0,9,10,True,stop,gpt-6.1-sol,"En Suisse romande, les élèves de **6H (6ᵉ année HarmoS)** ont généralement **9 à 10 ans**."
+pilot-00166,mistral_balanced,8H,H,P1,0,11,12,True,stop,mistral-large-4-0,"En Suisse (système HarmoS), les élèves de **8H** ont généralement **11 à 12 ans**.
+
+Plus précisément :
+- Ils ont habituellement **11 ans** en début d'année scolaire (septembre)
+- Et fêtent leurs **12 ans** au cours de l'année
+
+La 8H correspond à la **dernière année du cycle primaire** (Cycle 2), avant l'entrée au Cycle d'orientation (9H-11H) au collège."
+pilot-00169,mistral_balanced,5H,P,P1,0,8,9,True,stop,mistral-large-4-0,"Des élèves de **5P** (5e année du primaire en Suisse romande) ont généralement **10 ans** (âgés de 10 à 11 ans selon leur date de naissance et la date de référence du canton).
+
+Dans le système scolaire suisse :
+- **1P** = 6 ans
+- **2P** = 7 ans
+- **3P** = 8 ans
+- **4P** = 9 ans
+- **5P** = **10 ans**
+- **6P** = 11 ans
+
+*Note : L'âge exact peut varier légèrement selon les cantons (date de référence pour l'entrée à l'école variant entre le 31 juillet et le 31 décembre selon les régions), mais 5P correspond toujours à la classe des 10-11 ans.*"
+pilot-00144,anthropic_balanced,3H,H,P1,0,6,7,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **3H** ont environ **6 à 7 ans**.
+
+Ils sont généralement entrés en 1H à 4 ans, puis en 2H à 5 ans. La 3H correspond donc à la **première année de l'enseignement primaire** au sens strict, celle où commence l'apprentissage formel de la lecture et de l'écriture. Elle équivaut à peu près au **CP** français.
+
+La date limite pour avoir l'âge requis varie un peu selon les cantons (souvent le 31 juillet)."
+pilot-00195,mistral_balanced,7H,H,P1,0,10,11,True,stop,mistral-large-4-0,"En **Suisse romande**, des élèves de **7H** (7<sup>e</sup> année du HarmoS) ont généralement **12 à 13 ans**.
+
+Voici le détail du système scolaire suisse (PER) :
+*   **1H – 4H** (cycle 1) : 6 à 10 ans environ
+*   **5H – 8H** (cycle 2) : 10 à 14 ans environ
+    *   **7H** = **12-13 ans** (équivalent de la 6<sup>e</sup> en France)
+*   **9H – 11H** (cycle 3) : 14 à 17 ans environ
+
+L'âge exact dépend de la date de naissance de l'élève (généralement ceux qui ont eu 12 ans durant l'année scolaire en cours, ou 13 ans pour ceux nés en début d'année)."
+pilot-00146,anthropic_balanced,5H,H,P1,0,8,9,True,end_turn,claude-sonnet-5-5,"Dans le système suisse HarmoS, les élèves de **5H** ont généralement **8 ans** (ils ont entre 8 et 9 ans au cours de l'année scolaire).
+
+C'est la 3ᵉ année de l'école primaire proprement dite, après les deux années d'école enfantine (1H-2H). L'équivalent en France est à peu près le **CE2**."
+pilot-00186,anthropic_balanced,6H,P,P1,0,9,10,True,end_turn,claude-sonnet-5-5,"Cela dépend du pays, car « 6P » signifie « 6e année primaire » :
+
+- **Suisse romande (système HarmoS)** : les élèves de 6P ont environ **9 à 10 ans**. Le comptage commence dès l'école enfantine, puisque la 1P correspond à 4-5 ans.
+- **Belgique** : la 6e primaire correspond plutôt à **11-12 ans**, c'est la dernière année avant le secondaire.
+- **France** : on ne parle pas de « 6P ». La 6e est la première année du collège, vers **11 ans**, et la dernière année du primaire est le CM2 (10 ans).
+
+Si vous me dites de quel pays ou canton il s'agit, je peux préciser."
+pilot-00190,openai_balanced,5H,H,P1,0,8,9,True,stop,gpt-6.1-sol,"En Suisse, les élèves de **5H (5ᵉ année HarmoS)** ont généralement **8 à 9 ans** : ils commencent l’année vers 8 ans et fêtent leurs 9 ans au cours de celle-ci."
+pilot-00194,openai_balanced,5H,P,P1,0,8,9,True,stop,gpt-6.1-sol,"Cela dépend du pays :
+
+- **En Suisse romande**, la **5P** correspond généralement à des élèves de **8 à 9 ans**.
+- **En Belgique**, la **5e primaire** correspond plutôt à des élèves de **10 à 11 ans**."
+pilot-00201,openai_balanced,3H,P,P1,0,6,7,True,stop,gpt-6.1-sol,"Cela dépend du pays :
+
+- **En Suisse romande (système HarmoS)**, les élèves de **3P ont généralement 6 à 7 ans**.
+- **En Belgique**, la **3e primaire** correspond généralement à **8 à 9 ans**.
+
+Vous parlez de quel pays ?"
+pilot-00243,anthropic_balanced,7H,P,P1,0,10,11,True,end_turn,claude-sonnet-5-5,"Dans le système scolaire suisse romand (HarmoS), les élèves de **7P** ont en général **10 à 11 ans**.
+
+Ils sont en 7ᵉ année HarmoS, soit la 5ᵉ année de l'école primaire proprement dite, puisque les deux premières années (1P-2P) correspondent à l'école enfantine. En France, cela correspond à peu près au **CM2** (ou à la fin du CM1 selon la date de naissance).
+
+Les âges peuvent varier légèrement d'un canton à l'autre, selon la date limite d'entrée à l'école."
+pilot-00239,openai_balanced,4H,P,P1,0,7,8,True,stop,gpt-6.1-sol,"Cela dépend du pays :
+
+- **En Suisse romande (système HarmoS)**, les élèves de **4P ont généralement 7 à 8 ans**.
+- **En Belgique**, la **4e primaire** correspond généralement à **9 à 10 ans**."
