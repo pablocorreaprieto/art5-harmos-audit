@@ -1,0 +1,23 @@
+apostrophe not normalised              caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'hui', 'peur'] names
+ligature not folded                    caught: FAIL 'Léa dit : « Regarde ! Ma sœur arrive. » ' got ['dire', 'regarder', 'sœur', 'arriver', 'répondre', 'conte
+être and avoir counted                 caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'être', 'beau', 'dire', 'peur'] name
+adverbs counted                        caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', "aujourd'hui", 'pas'
+determiners counted                    caught: FAIL 'Sa maman lui donne deux pommes. Cette fo' got ['sa', 'maman', 'donner', 'deux', 'pomme', 'cette', 'forêt
+most frequent row instead of lemma     caught: FAIL 'Léa dit : « Regarde ! Ma sœur arrive. » ' got ['dire', 'regarder', 'soeur', 'arriver', 'répondre', 'suiv
+form frequency instead of lemma        caught: FAIL: numeric pins 1.4914 4.8561
+sentence-initial names kept            caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['léa', 'regarder', 'ciel', 'beau', 'dire', 'peur'] names
+no initial after quote or colon        caught: FAIL 'Léa dit : « Regarde ! Ma sœur arrive. » ' got ['dire', 'soeur', 'arriver', 'répondre', 'content'] names 
+elided particles not handled           caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'peur'] names 3 expe
+title kept when short                  caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['ciel', 'regarder', 'ciel', 'beau', 'dire', 'peur'] name
+title rule ignores the final period    caught: FAIL 'Le chat dort.\nLe chien joue.\nLa lune bri' got ['chien', 'jouer', 'lune', 'briller'] names 0 expected [
+preface line kept                      caught: FAIL 'Voici une histoire pour des élèves de 8 ' got ['hérisson', 'hérisson', 'dormir', 'feuille'] names 0 expe
+label lines kept                       caught: FAIL 'Titre : La ruche\nHistoire :\nTexte : Les ' got ['histoire', 'abeille', 'vivre', 'ruche', 'coeur', 'batt
+no clitic stripping                    NOT caught
+hyphen split disabled                  caught: FAIL 'Le robot-jardinier arrose les fleurs.' got ['robot-jardinier', 'arroser', 'fleur'] names 0 expected ['ro
+smoothing replaced by a floor          caught: FAIL: numeric pins 2.0 5.1889
+OOV threshold inverted                 caught: FAIL: exclusion rules under 20 words  refusal not French
+refusal finish not detected            caught: FAIL: exclusion rules under 20 words not French  
+clarification not detected             caught: FAIL: a request for clarification is not excluded 
+minimum length 40                      caught: FAIL: exclusion rules under 20 words under 20 words refusal 
+least frequent reading                 caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'pas', 'peur'] names
+21 of 22 caught

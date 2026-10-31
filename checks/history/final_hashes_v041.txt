@@ -1,0 +1,13 @@
+design.json              26b8c5f8b45c1de5
+make_prompts.py          739ea744914f9237
+compute.py               1412a470efc44b92
+analyze.py               62324d6d5c6293c2
+sim_power.py             dd9eb28c54889fde
+sim_power_results.json   11fb624153b742b4
+generate.py              81bc955a4b877bf0
+pipeline.py              bc409da02b73fa9f
+validate_measure.py      7253e08b8dc1cd02
+run.yml                  ad4f416889e61311
+PREREG.md                1229bde13d47e9c2
+README.md                97301c5cc2dca008
+requirements.txt         6a38e3ccee64d2a3

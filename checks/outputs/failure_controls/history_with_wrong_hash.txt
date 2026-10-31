@@ -1,0 +1,8 @@
+v0.4.4: 14 files recorded, all identical
+v0.4.3: 14 files recorded, all identical
+v0.4.2: 14 files recorded, all identical
+v0.4.1: 14 files recorded, all identical
+v0.4: 14 files recorded, all identical
+v0.3: 13 files recorded, differ: compute.py
+v0.2: 11 files recorded, all identical
+FAIL history

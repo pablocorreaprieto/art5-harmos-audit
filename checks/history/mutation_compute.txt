@@ -1,0 +1,15 @@
+typographic apostrophe not normalised  caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'hui', 'peur'] names 3 expecte
+être and avoir counted                 caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'être', 'beau', 'dire', 'peur'] names 2 expect
+adverbs counted as content             caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', "aujourd'hui", 'pas', 'peur'] 
+form frequency instead of lemma        caught: FAIL: tense changes the lemma measure 3.8570143505333534 4.538787928979363
+sentence-initial names kept            caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['léa', 'regarder', 'ciel', 'beau', 'dire', 'peur'] names 1 expecte
+elided particles not handled           caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'peur'] names 3 expected ['reg
+no title removal                       caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['ciel', 'regarder', 'ciel', 'beau', 'dire', 'peur'] names 2 expect
+no clitic stripping                    NOT caught
+hyphen split disabled                  NOT caught
+smoothing removed (floor)              NOT caught
+OOV threshold inverted                 caught: FAIL: exclusion rules under 20 words  refusal not French
+refusal not detected                   caught: FAIL: exclusion rules under 20 words not French  
+minimum length 40                      caught: FAIL: exclusion rules under 20 words under 20 words refusal 
+most frequent reading not chosen       caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'est', 'beau', 'dit', 'a', 'pas', 'peur'] name
+11 of 14 caught

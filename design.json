@@ -1,0 +1,94 @@
+{
+  "study": "ART 5, Swiss grade labels and the lexical demand of LLM-generated French reading texts",
+  "version": "design-v0.4.4 (25.10.2026, after the internal design review, the check of its fixes and five confirmations of those fixes, before pilot and G1)",
+  "prompt_template": "Écris {genre} pour des élèves{label}, sur le thème {topic}. Réponds seulement avec un titre et le texte.",
+  "genres": {
+    "story": "une histoire à lire",
+    "info": "un texte documentaire à lire"
+  },
+  "n_topics": 16,
+  "n_topics_rule": "smallest of 16, 24 or 32 topics with simulated power of at least .80 for a level difference of 0.04 Zipf (one year on the planning ruler of -0.04 Zipf per year), at the pilot's residual SD (upper 80% bound); set before G1 and confirmed at G1",
+  "topics": [
+    "des animaux de la forêt",
+    "de l'eau",
+    "des saisons",
+    "de l'amitié à l'école",
+    "du corps humain",
+    "du métier de boulanger",
+    "des volcans",
+    "d'une fête de famille",
+    "des abeilles",
+    "d'un voyage en train",
+    "du jardin potager",
+    "des dinosaures",
+    "de la lune et des étoiles",
+    "des pompiers",
+    "de la neige en montagne",
+    "des oiseaux migrateurs",
+    "de la ferme",
+    "de la mer",
+    "du cirque",
+    "des insectes",
+    "du chocolat",
+    "des châteaux forts",
+    "du vélo",
+    "de la météo",
+    "du recyclage",
+    "de la musique",
+    "des robots",
+    "des chevaux",
+    "de la rivière",
+    "des fourmis",
+    "du marché du samedi",
+    "d'une cabane dans les bois"
+  ],
+  "grades": {
+    "3H": {"n": 3, "french": "CP", "age_from": 6, "age_to": 7},
+    "4H": {"n": 4, "french": "CE1", "age_from": 7, "age_to": 8},
+    "5H": {"n": 5, "french": "CE2", "age_from": 8, "age_to": 9},
+    "6H": {"n": 6, "french": "CM1", "age_from": 9, "age_to": 10},
+    "7H": {"n": 7, "french": "CM2", "age_from": 10, "age_to": 11},
+    "8H": {"n": 8, "french": "6e", "age_from": 11, "age_to": 12}
+  },
+  "labels": {
+    "L1":  {"text": " de {n}H", "grades": "all", "role": "HarmoS H notation, bare (intercantonal documents, Fribourg)"},
+    "L1P": {"text": " de {n}P", "grades": "all", "role": "P notation, bare (Vaud, Geneva)"},
+    "L2":  {"text": " de {n}H en Suisse romande", "grades": "all", "role": "H notation plus region"},
+    "L3":  {"text": " de {n}H ({age_from} à {age_to} ans)", "grades": "all", "role": "H notation plus age"},
+    "L4":  {"text": " de {french}", "grades": "all", "role": "French grade label"},
+    "L5":  {"text": " de {age_from} à {age_to} ans", "grades": "all", "role": "age only, reference and ruler"},
+    "L0":  {"text": "", "grades": "none", "role": "no audience level, baseline (one text per model, genre and topic)"},
+    "L6":  {"text": " de {n}e", "grades": ["3H", "4H", "5H"], "role": "same digit with the French collège suffix, collision control (not at 6H, where de 6e is the L4 prompt of 8H)"}
+  },
+  "probe_templates": {
+    "P1": "À quel âge correspondent des élèves de {grade} ?",
+    "P2": "En Suisse romande, quel âge ont des élèves de {grade} ?"
+  },
+  "probe_notations": ["H", "P"],
+  "probe_repetitions": 5,
+  "models": {
+    "anthropic_balanced": "Claude Sonnet 5.5 (exact dated id read at pilot)",
+    "anthropic_light": "Claude Haiku 5.5 (exact dated id read at pilot)",
+    "openai_balanced": "GPT-6.1 Sol (exact dated id read at pilot)",
+    "openai_light": "GPT-6 Luna (exact dated id read at pilot)",
+    "mistral_balanced": "Mistral Medium 3.5 (exact dated id read at pilot)",
+    "mistral_light": "Mistral Small 4 (exact dated id read at pilot)"
+  },
+  "sampling": {"temperature": 1.0, "top_p": "provider default", "max_output_tokens": 4000, "fallback": "if a model rejects temperature, it is omitted for that model and recorded"},
+  "texts_per_prompt": 1,
+  "order_seed": 20261025,
+  "pilot": {
+    "ruler": {"models": ["anthropic_balanced", "openai_balanced", "mistral_balanced"], "labels": ["L5"], "grades": "all", "genres": ["story", "info"], "topics": ["des abeilles", "d'un voyage en train", "des volcans", "de l'amitié à l'école", "du jardin potager", "des pompiers"]},
+    "probe": {"models": ["anthropic_balanced", "openai_balanced", "mistral_balanced"], "templates": ["P1"], "notations": ["H", "P"], "repetitions": 1, "note": "parser check only; answers stored, accuracy not computed before the deposit"}
+  },
+  "exclusion": {"min_words": 20, "max_share_out_of_lexicon": 0.5, "retries": 1, "refusal": "finish reason content_filter or refusal, or one of the first two lines of the answer opening with a phrase of compute.REFUSAL_RE, directly or after a polite opener (compute.OPENER_RE); a first line of at most 12 words not ending with a period, an ellipsis, a question or exclamation mark or a colon is not tested when at least 20 words follow it", "flag_meta": "kept, flagged and removed in a sensitivity analysis: an answer addressing the user in its first two or last three lines outside quotation marks and dialogue lines (compute.META_RE), or asking a question that names the grade label or the school system (compute.LABEL_Q_RE)"},
+  "analysis": {
+    "primary": ["H2-H: level of L1 - L5", "H2-P: level of L1P - L5", "H3-H: gradient of L1 - L5", "H3-P: gradient of L1P - L5"],
+    "unit": "topic-level level and gradient of paired differences (pairs matched on model, grade, genre and topic), two-sided one-sample t-tests over topics, Holm over the four tests, alpha .05",
+    "secondary": "L3 against L5 and against L1, level and gradient",
+    "smallest_effect_of_interest_zipf": 0.04,
+    "min_ruler_slope": -0.02,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261025
+  }
+}

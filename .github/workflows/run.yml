@@ -1,0 +1,70 @@
+name: run
+
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "Pipeline step"
+        required: true
+        type: choice
+        options: [list-models, lexicon, validate, pilot, generate, compute, analyze]
+        default: list-models
+      max_cost_usd:
+        description: "Budget of the whole plan (pilot or main study) in USD, earlier runs included"
+        required: true
+        default: "2"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: art5-run
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run pipeline step
+        env:
+          STEP: ${{ inputs.step }}
+          MAX_COST_USD: ${{ inputs.max_cost_usd }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MISTRAL_API_KEY: ${{ secrets.MISTRAL_API_KEY }}
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+        run: python pipeline.py --step "$STEP" --max-cost "$MAX_COST_USD" --max-minutes 320
+
+      - name: Save outputs to the repository
+        if: always()
+        env:
+          STEP: ${{ inputs.step }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/raw results logs calls*.jsonl 2>/dev/null || true
+          if ! git diff --cached --quiet; then
+            git commit -m "run $RUN_ID: $STEP"
+            git pull --rebase
+            git push
+          fi
+
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: run-${{ github.run_id }}
+          path: |
+            logs/
+            results/
+            data/raw/

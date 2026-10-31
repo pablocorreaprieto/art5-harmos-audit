@@ -1,0 +1,15 @@
+45c2d282b0d7e759 design.json
+123e1693dea22dbe make_prompts.py
+3784219d79611dfa compute.py
+6856342ef25b72ad analyze.py
+a437fa94609e2541 sim_power.py
+11fb624153b742b4 sim_power_results.json
+c5fdb28bd5ee8642 generate.py
+230bf9ed977f7a59 pipeline.py
+7253e08b8dc1cd02 validate_measure.py
+0bbc724fba52ea80 run.yml
+d35f613a749ff8c2 PREREG.md
+67ad34eb3d47a14f README.md
+6a38e3ccee64d2a3 requirements.txt
+149a34b0d3ebd578 calls.jsonl
+729522e52638b021 calls_pilot.jsonl

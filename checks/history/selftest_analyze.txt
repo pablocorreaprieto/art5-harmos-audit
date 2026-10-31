@@ -1,0 +1,37 @@
+ok   offset: H level found, -0.0448, p = 0.0047
+ok   offset: P level found, -0.0504
+ok   offset: L1 shift 1.15 years (planted 1), CI [0.48 2.01], isotonic 1.07
+ok   offset: bootstrap interval contains the estimate
+ok   offset: L1 tracking 0.79 (planted 1)
+ok   offset: L3 shift 0.34 years (planted 0)
+ok   offset: the gloss moves the level back toward the age
+ok   offset: L6 shift 5.81 years over 3H to 5H (planted 6)
+ok   offset: L6 collision control found, -0.225
+ok   offset: H1 ruler found in 5 of 6 models
+ok   offset: L0 placed at 10.91 years (planted default age 10.5)
+ok   clustered OLS gives the same point estimates as the topic-level statistics (balanced data)
+ok   cube path and data-frame path agree
+ok   ignored: H gradient found, 0.0261 Zipf per year
+ok   ignored: P gradient found
+ok   ignored: the level alone would miss it (-0.0067)
+ok   ignored: L1 tracking -0.05 (planted 0)
+ok   digit as age: positive level found
+ok   digit as age: the P test does not borrow the H effect
+ok   digit as age: L1 shift -3.02 years (planted -3.5)
+ok   digit as age: L1 tracking 0.89 (planted 1)
+ok   null: no primary test rejected (seed 4)
+ok   exclusions handled, 447 texts excluded
+ok   excluded texts are not used (-0.0552, planted -0.06)
+ok   a topic with most pairs missing is dropped (1 dropped)
+ok   flat rulers excluded from the age equivalent (0 eligible)
+ok   eligibility follows the rule (L5 slope at most -0.02)
+ok   probe parser on 'Les élèves de 5H ont entre 8 et 9 ans.': [(8, 9)]
+ok   probe parser on 'Ils ont huit à neuf ans.': [(8, 9)]
+ok   probe parser on 'En France, la 5e correspond à 12-13 ans, en Suisse à 8-9 ans.': [(12, 13), (8, 9)]
+ok   probe parser on 'Ils ont environ 8 ans.': [(8, 8)]
+ok   probe parser on 'La 5e année, 10 ou 11 ans.': [(10, 11)]
+ok   probe parser on 'Je ne sais pas.': []
+ok   Holm adjusted p and decisions {'a': 0.03, 'c': 0.06, 'b': 0.06} {'a': True, 'c': False, 'b': False}
+ok   t-test arithmetic t = 3.872983, p = 0.030466
+ok   gradient weights give a slope of 1 for the ages and 0 for a constant
+OK

@@ -1,0 +1,87 @@
+B49 S01 plau words=159 meta 0/0 title_ok=True  excl=-             
+B49 S02 plau words=111 meta 0/0 title_ok=True  excl=-             
+B49 S03 plau words= 82 meta 0/0 title_ok=True  excl=-             
+B49 S04 plau words=100 meta 0/0 title_ok=True  excl=-             
+B49 S05 plau words= 71 meta 0/0 title_ok=True  excl=-             
+B49 S06 plau words= 63 meta 0/0 title_ok=True  excl=-             
+B49 S07 plau words= 89 meta 0/0 title_ok=True  excl=-             
+B49 S08 plau words= 90 meta 0/0 title_ok=True  excl=-             
+B49 S09 plau words= 80 meta 2/2 title_ok=True  excl=-        FLAG 
+B49 S10 plau words= 66 meta 2/2 title_ok=True  excl=-        FLAG 
+B49 S11 plau words= 67 meta 0/0 title_ok=True  excl=-             
+B49 S12 plau words= 75 meta 0/0 title_ok=True  excl=-             
+B49 S13 plau words= 62 meta 0/0 title_ok=True  excl=-             
+B49 S14 plau words= 66 meta 0/0 title_ok=True  excl=-             
+B49 S15 plau words= 72 meta 0/0 title_ok=True  excl=-             
+B49 S16 edge words= 62 meta 1/0 title_ok=True  excl=-        FLAG <<< ISSUE
+      genuine lines REMOVED: ['Voulez-vous savoir ce que Clara a fait au bord de la mer ? Alors lisez']
+      genuine text FLAGGED by flag_meta
+B49 D01 plau words= 95 meta 0/0 title_ok=True  excl=-             
+B49 D02 plau words= 98 meta 0/0 title_ok=True  excl=-             
+B49 D03 plau words= 84 meta 0/0 title_ok=True  excl=-             
+B49 D04 plau words= 72 meta 0/0 title_ok=True  excl=-             
+B49 D05 plau words= 65 meta 2/2 title_ok=True  excl=-        FLAG 
+B49 D06 plau words= 77 meta 0/0 title_ok=True  excl=-             
+B49 D07 plau words= 61 meta 0/0 title_ok=True  excl=-             
+B49 D08 plau words= 70 meta 0/0 title_ok=True  excl=-             
+B49 D09 plau words= 65 meta 1/1 title_ok=True  excl=-        FLAG 
+B49 D10 plau words= 60 meta 0/0 title_ok=True  excl=-             
+B49 E01 edge words= 41 meta 1/1 title_ok=True  excl=-             
+B49 E02 edge words= 51 meta 0/1 title_ok=False excl=-             <<< ISSUE
+      meta lines LEFT IN TEXT: ['Voici une histoire sur les volcans.']
+      title found: '' expected: levolcanquitoussait
+B49 E03 edge words= 22 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ['Voici Tom, un élève de CM1 qui rêvait de voler. Chaque matin, il regar']
+B49 E04 edge words= 41 meta 1/1 title_ok=False excl=-             <<< ISSUE
+      title found: '---' expected: lesecretduvolcan
+B49 E05 edge words= 41 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ["Note : le magma s'appelle de la lave seulement quand il est sorti du v"]
+B49 E06 edge words= 26 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ['Voici les trois types de volcans :']
+B49 E07 edge words= 40 meta 1/0 title_ok=True  excl=-        FLAG <<< ISSUE
+      genuine lines REMOVED: ['Si vous voulez en savoir plus sur le corps humain, allez visiter un mu']
+      genuine text FLAGGED by flag_meta
+B49 E08 edge words= 56 meta 0/0 title_ok=True  excl=-        FLAG <<< ISSUE
+      genuine text FLAGGED by flag_meta
+B49 E09 edge words= 58 meta 0/0 title_ok=True  excl=-             
+B49 E10 edge words= 39 meta 0/0 title_ok=True  excl=refusal       <<< ISSUE
+      EXCLUDED as refusal
+B49 E11 edge words= 67 meta 0/0 title_ok=True  excl=refusal       <<< ISSUE
+      EXCLUDED as refusal
+B49 E12 edge words= 51 meta 0/0 title_ok=True  excl=-             
+B49 E13 edge words= 49 meta 0/0 title_ok=True  excl=-             
+B49 E14 edge words= 59 meta 0/2 title_ok=True  excl=-             <<< ISSUE
+      meta lines LEFT IN TEXT: ['N.B. : le vocabulaire a été simplifié pour des élèves de 5H.', '(Environ 80 mots)']
+B49 E15 edge words= 42 meta 0/1 title_ok=True  excl=-        FLAG <<< ISSUE
+      meta lines LEFT IN TEXT: ['Dites-moi si vous souhaitez une autre histoire !']
+B49 P01 plau words= 55 meta 0/0 title_ok=True  excl=-             
+B49 P02 plau words= 68 meta 0/0 title_ok=True  excl=-             
+B49 P03 plau words= 61 meta 0/0 title_ok=True  excl=-             
+B49 P04 plau words= 62 meta 0/0 title_ok=True  excl=-             
+B49 P05 plau words= 54 meta 0/0 title_ok=True  excl=-             
+B49 P06 plau words= 75 meta 0/0 title_ok=True  excl=-             
+B49 P07 plau words= 56 meta 0/0 title_ok=True  excl=-             
+B49 P08 plau words= 59 meta 0/0 title_ok=True  excl=-             
+B10 N01 plau words= 87 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ['**Note :** un volcan éteint peut parfois se réveiller après des millie']
+B10 N02 plau words= 79 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ['**Note :** quand les glaciers fondent, le niveau de la mer monte un pe']
+B10 N03 plau words= 86 meta 0/1 title_ok=True  excl=-             <<< ISSUE
+      meta lines LEFT IN TEXT: ['(Environ 90 mots)']
+B10 N04 edge words= 47 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ['Voici Noah, un garçon qui est en 5H cette année. Il adore les volcans ']
+B10 N05 edge words= 66 meta 0/0 title_ok=True  excl=-             
+B10 N06 plau words= 64 meta 0/1 title_ok=True  excl=-             <<< ISSUE
+      meta lines LEFT IN TEXT: ['(Environ 90 mots)']
+B10 N07 plau words= 86 meta 1/2 title_ok=False excl=-        FLAG <<< ISSUE
+      meta lines LEFT IN TEXT: ['Dites-moi si vous souhaitez une version plus courte ou des questions d']
+      title found: '---' expected: lesabeillespetitestravailleuses
+B10 N08 plau words= 72 meta 0/0 title_ok=True  excl=refusal       <<< ISSUE
+      EXCLUDED as refusal
+B10 N09 plau words= 79 meta 0/0 title_ok=True  excl=-             
+B10 N10 plau words= 63 meta 0/0 title_ok=True  excl=-             
+PLAUSIBLE: n=33 | genuine line removed in 0 | meta left in 0 | title wrong in 0 | excluded 0 | genuine flagged 0
+EDGE: n=16 | genuine line removed in 5 | meta left in 3 | title wrong in 2 | excluded 2 | genuine flagged 3
+SET41: n=10 | genuine line removed in 3 | meta left in 3 | title wrong in 1 | excluded 1 | genuine flagged 0
+{"plausible": {"n": 33, "lost": 0, "leaked": 0, "title": 0, "excluded": 0, "flagged": 0}, "edge": {"n": 16, "lost": 5, "leaked": 3, "title": 2, "excluded": 2, "flagged": 3}, "set41": {"n": 10, "lost": 3, "leaked": 3, "title": 1, "excluded": 1, "flagged": 0}}
+FAIL battery: edge lost=5 > 3; edge leaked=3 > 0; edge title=2 > 0; edge excluded=2 > 0; set41 leaked=3 > 0; set41 title=1 > 0; set41 excluded=1 > 0

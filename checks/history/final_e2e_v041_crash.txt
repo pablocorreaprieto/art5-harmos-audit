@@ -1,0 +1,13 @@
+== 1. pilot plan with budget 0.8 USD, two connections dropped mid-body
+exit 0
+ "possibly_charged_usd": 0.0615,
+{"plan": "pilot-", "cap_usd": 0.8, "spent_usd_total": 0.8269}
+records 24, reported cost 0.7654, possibly charged 0.0615, counted total 0.8269, run logs 1, logged 0.8269
+== 2. same plan again, budget 0.8: the total must stay under 0.8
+exit 0
+budget of 0.8 USD for this plan used, calls_pilot.jsonl not run
+{"plan": "pilot-", "cap_usd": 0.8, "spent_usd_total": 0.8269}
+records 24, reported cost 0.7654, possibly charged 0.0615, counted total 0.8269, run logs 1, logged 0.8269
+== 3. a run killed before writing its log is still counted
+pilot spent counted from raw records: 0.8884 | main plan: 5.0
+workdir /tmp/claude-0/-home-claude/d28672eb-31f4-533e-85fc-00a96d822022/scratchpad/art5/exp/e2e_v041_fK1w

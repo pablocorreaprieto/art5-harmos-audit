@@ -1,0 +1,21 @@
+ok   anthropic none               exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   anthropic list               exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic empty_choices      exit 0 | raw records 12/12, failed 1, possibly charged 0.000, run log 1
+ok   anthropic usage_null         exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+FAIL anthropic tokens_null        exit 1 | raw records 11/12, failed 0, possibly charged 0.000, run log 0 | TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+ok   anthropic content_number     exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+FAIL anthropic surrogate          exit 1 | raw records 11/12, failed 0, possibly charged 0.000, run log 0 | UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 0: surrogates not allowed
+ok   anthropic non_utf8           exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic empty_body         exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic content_parts_bad  exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   openai_ba none               exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   openai_ba list               exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba empty_choices      exit 0 | raw records 12/12, failed 1, possibly charged 0.000, run log 1
+ok   openai_ba usage_null         exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+FAIL openai_ba tokens_null        exit 1 | raw records 11/12, failed 0, possibly charged 0.000, run log 0 | TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+FAIL openai_ba content_number     exit 1 | raw records 11/12, failed 0, possibly charged 0.000, run log 0 | AttributeError: 'int' object has no attribute 'strip'
+FAIL openai_ba surrogate          exit 1 | raw records 11/12, failed 0, possibly charged 0.000, run log 0 | UnicodeEncodeError: 'utf-8' codec can't encode character '\ud800' in position 0: surrogates not allowed
+ok   openai_ba non_utf8           exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba empty_body         exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba content_parts_bad  exit 0 | raw records 12/12, failed 1, possibly charged 0.000, run log 1
+FAIL e2e_malformed (5 of 20 runs)

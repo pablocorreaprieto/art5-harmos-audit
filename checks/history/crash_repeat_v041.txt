@@ -1,0 +1,5 @@
+records 20, reported cost 0.7159, possibly charged 0.0410, counted total 0.7569, run logs 1, logged 0.7569 records 20, reported cost 0.7159, possibly charged 0.0410, counted total 0.7569, run logs 2, logged 0.7569 
+records 21, reported cost 0.7045, possibly charged 0.0615, counted total 0.7660, run logs 1, logged 0.7660 records 21, reported cost 0.7045, possibly charged 0.0615, counted total 0.7660, run logs 2, logged 0.7660 
+records 18, reported cost 0.6893, possibly charged 0.0615, counted total 0.7508, run logs 1, logged 0.7508 records 18, reported cost 0.6893, possibly charged 0.0615, counted total 0.7508, run logs 2, logged 0.7508 
+records 21, reported cost 0.6550, possibly charged 0.0615, counted total 0.7165, run logs 1, logged 0.7165 records 22, reported cost 0.7121, possibly charged 0.0615, counted total 0.7736, run logs 2, logged 0.7736 
+records 19, reported cost 0.6778, possibly charged 0.0410, counted total 0.7188, run logs 1, logged 0.7188 records 20, reported cost 0.7350, possibly charged 0.0410, counted total 0.7760, run logs 2, logged 0.7759 

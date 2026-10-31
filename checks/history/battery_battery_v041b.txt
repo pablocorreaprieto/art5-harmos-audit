@@ -1,0 +1,59 @@
+S01 plau story words=159 meta 0/0 title_ok=True  excl=-             
+S02 plau story words=111 meta 0/0 title_ok=True  excl=-             
+S03 plau story words= 82 meta 0/0 title_ok=True  excl=-             
+S04 plau story words=100 meta 0/0 title_ok=True  excl=-             
+S05 plau story words= 71 meta 0/0 title_ok=True  excl=-             
+S06 plau story words= 63 meta 0/0 title_ok=True  excl=-             
+S07 plau story words= 89 meta 0/0 title_ok=True  excl=-             
+S08 plau story words= 90 meta 0/0 title_ok=True  excl=-             
+S09 plau story words= 80 meta 2/2 title_ok=True  excl=-        FLAG 
+S10 plau story words= 66 meta 2/2 title_ok=True  excl=-        FLAG 
+S11 plau story words= 67 meta 0/0 title_ok=True  excl=-             
+S12 plau story words= 75 meta 0/0 title_ok=True  excl=-             
+S13 plau story words= 62 meta 0/0 title_ok=True  excl=-             
+S14 plau story words= 66 meta 0/0 title_ok=True  excl=-             
+S15 plau story words= 72 meta 0/0 title_ok=True  excl=-             
+S16 edge story words= 62 meta 1/0 title_ok=True  excl=-        FLAG <<< ISSUE
+      genuine lines REMOVED: ['Voulez-vous savoir ce que Clara a fait au bord de la mer ? Alors lisez']
+      genuine text FLAGGED by flag_meta
+D01 plau info  words= 95 meta 0/0 title_ok=True  excl=-             
+D02 plau info  words= 98 meta 0/0 title_ok=True  excl=-             
+D03 plau info  words= 84 meta 0/0 title_ok=True  excl=-             
+D04 plau info  words= 72 meta 0/0 title_ok=True  excl=-             
+D05 plau info  words= 65 meta 2/2 title_ok=True  excl=-        FLAG 
+D06 plau info  words= 77 meta 0/0 title_ok=True  excl=-             
+D07 plau info  words= 61 meta 0/0 title_ok=True  excl=-             
+D08 plau info  words= 70 meta 0/0 title_ok=True  excl=-             
+D09 plau info  words= 65 meta 1/1 title_ok=True  excl=-        FLAG 
+D10 plau info  words= 60 meta 0/0 title_ok=True  excl=-             
+E01 edge story words= 41 meta 1/1 title_ok=True  excl=-             
+E02 edge story words= 41 meta 1/1 title_ok=True  excl=-             
+E03 edge story words= 52 meta 0/0 title_ok=True  excl=-             
+E04 edge story words= 37 meta 1/1 title_ok=True  excl=-             
+E05 edge doc   words= 56 meta 0/0 title_ok=True  excl=-             
+E06 edge doc   words= 26 meta 1/0 title_ok=True  excl=-             <<< ISSUE
+      genuine lines REMOVED: ['Voici les trois types de volcans :']
+E07 edge doc   words= 40 meta 1/0 title_ok=True  excl=-        FLAG <<< ISSUE
+      genuine lines REMOVED: ['Si vous voulez en savoir plus sur le corps humain, allez visiter un mu']
+      genuine text FLAGGED by flag_meta
+E08 edge doc   words= 56 meta 0/0 title_ok=True  excl=-        FLAG <<< ISSUE
+      genuine text FLAGGED by flag_meta
+E09 edge story words= 58 meta 0/0 title_ok=True  excl=-             
+E10 edge story words= 39 meta 0/0 title_ok=True  excl=-             
+E11 edge doc   words= 67 meta 0/0 title_ok=True  excl=-             
+E12 edge story words= 51 meta 0/0 title_ok=True  excl=-             
+E13 edge story words= 49 meta 0/0 title_ok=True  excl=-             
+E14 edge doc   words= 45 meta 2/2 title_ok=True  excl=-             
+E15 edge story words= 35 meta 1/1 title_ok=True  excl=-        FLAG 
+P01 plau story words= 55 meta 0/0 title_ok=True  excl=-             
+P02 plau story words= 68 meta 0/0 title_ok=True  excl=-             
+P03 plau info  words= 61 meta 0/0 title_ok=True  excl=-             
+P04 plau info  words= 62 meta 0/0 title_ok=True  excl=-             
+P05 plau story words= 54 meta 0/0 title_ok=True  excl=-             
+P06 plau story words= 75 meta 0/0 title_ok=True  excl=-             
+P07 plau info  words= 56 meta 0/0 title_ok=True  excl=-             
+P08 plau story words= 59 meta 0/0 title_ok=True  excl=-             
+
+PLAUSIBLE: n=33 | genuine line removed in 0 | meta left in 0 | title wrong in 0 | excluded 0 | genuine flagged 0
+
+EDGE: n=16 | genuine line removed in 3 | meta left in 0 | title wrong in 0 | excluded 0 | genuine flagged 3

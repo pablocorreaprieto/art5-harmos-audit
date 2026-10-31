@@ -1,0 +1,21 @@
+ok   anthropic none               exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   anthropic list               exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic empty_choices      exit 0 | raw records 12/12, failed 1, possibly charged 0.000, run log 1
+ok   anthropic usage_null         exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic tokens_null        exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic content_number     exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic surrogate          exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   anthropic non_utf8           exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic empty_body         exit 0 | raw records 12/12, failed 1, possibly charged 0.061, run log 1
+ok   anthropic content_parts_bad  exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   openai_ba none               exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   openai_ba list               exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba empty_choices      exit 0 | raw records 12/12, failed 1, possibly charged 0.000, run log 1
+ok   openai_ba usage_null         exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba tokens_null        exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba content_number     exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba surrogate          exit 0 | raw records 12/12, failed 0, possibly charged 0.000, run log 1
+ok   openai_ba non_utf8           exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba empty_body         exit 0 | raw records 12/12, failed 1, possibly charged 0.041, run log 1
+ok   openai_ba content_parts_bad  exit 0 | raw records 12/12, failed 1, possibly charged 0.000, run log 1
+PASS e2e_malformed

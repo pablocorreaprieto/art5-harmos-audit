@@ -1,0 +1,14 @@
+== 1. pilot plan with a budget of 0.8 USD, connections dropped in the middle of two bodies
+exit 1
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python3', 'generate.py', 'run', 'calls_pilot.jsonl', 'models.json', '0.8000', '--max-minutes', '9.99999936024348']' returned non-zero exit status 1.
+records 24, reported cost 0.7045, possibly charged 0.0000, counted total 0.7045, run logs 0, logged 0.0000
+== 2. pilot plan with a budget of 0.8 USD, connections dropped in the middle of two bodies
+exit 1
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/usr/local/bin/python3', 'generate.py', 'run', 'calls_pilot.jsonl', 'models.json', '0.8000', '--max-minutes', '9.99999922911326']' returned non-zero exit status 1.
+records 41, reported cost 1.4166, possibly charged 0.0000, counted total 1.4166, run logs 0, logged 0.0000
+FAIL: counted spend above the budget
+== 3. the raw lines of a run killed before writing its log are counted, for their own plan only
+pilot spend before 0.0000, after the planted lines 0.0000 (+0.0615 expected), main plan 0.0000 (5.0 expected)
+FAIL e2e_crash

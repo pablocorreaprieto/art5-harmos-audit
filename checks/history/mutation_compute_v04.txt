@@ -1,0 +1,37 @@
+apostrophe not normalised                caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'hui', 'peur'] names
+ligature not folded                      caught: FAIL 'Léa dit : « Regarde ! Ma sœur arrive. » ' got ['dire', 'regarder', 'sœur', 'arriver', 'répondre', 'conte
+excluded lemmas emptied                  caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'être', 'beau', 'dire', 'peur'] name
+adverbs counted                          caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', "aujourd'hui", 'pas'
+determiners counted                      caught: FAIL 'Sa maman lui donne deux pommes. Cette fo' got ['sa', 'maman', 'donner', 'deux', 'pomme', 'cette', 'forêt
+most frequent row instead of lemma       caught: FAIL 'Léa dit : « Regarde ! Ma sœur arrive. » ' got ['dire', 'regarder', 'soeur', 'arriver', 'répondre', 'suiv
+form frequency instead of lemma          caught: FAIL: numeric pins 1.4914 4.8561 14
+sentence-initial names kept              caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['léa', 'regarder', 'ciel', 'beau', 'dire', 'peur'] names
+no initial after quote or colon          caught: FAIL 'Léa dit : « Regarde ! Ma sœur arrive. » ' got ['dire', 'soeur', 'arriver', 'répondre', 'content'] names 
+elided particles not handled             caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'peur'] names 3 expe
+title kept when short                    caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['ciel', 'regarder', 'ciel', 'beau', 'dire', 'peur'] name
+title rule ignores the final period      caught: FAIL 'Le chat dort.\nLe chien joue.\nLa lune bri' got ['chien', 'jouer', 'lune', 'briller'] names 0 expected [
+preface lines kept                       caught: FAIL 'Voici une histoire pour des élèves de 8 ' got ['hérisson', 'hérisson', 'dormir', 'feuille'] names 0 expe
+label lines kept                         caught: FAIL 'Titre : La ruche\nHistoire :\nTexte : Les ' got ['histoire', 'abeille', 'vivre', 'ruche', 'coeur', 'batt
+no clitic stripping                      caught: FAIL: numeric pins 1.4914 5.189 15
+hyphen split disabled                    caught: FAIL 'Le robot-jardinier arrose les fleurs.' got ['robot-jardinier', 'arroser', 'fleur'] names 0 expected ['ro
+smoothing replaced by a floor            caught: FAIL: numeric pins 2.0 5.1889 14
+OOV threshold inverted                   caught: FAIL: exclusion rules under 20 words  refusal not French
+refusal finish not detected              caught: FAIL: exclusion rules under 20 words not French  
+textual refusal not detected             caught: FAIL: a request for clarification is not excluded 
+minimum length 40                        caught: FAIL: exclusion rules under 20 words under 20 words refusal 
+least frequent reading                   caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'pas', 'peur'] names
+tout, autre and même counted (D4)        caught: FAIL 'Tous les enfants jouent avec une autre b' got ['tout', 'enfant', 'jouer', 'autre', 'balle'] names 0 expe
+lexicon keys not folded (D2)             caught: FAIL: ligatures not found in the lexicon 0.0 {'n_words': 3, 'n_sentences': 1, 'n_content': 2, 'share_oov': 0.3
+every line marked as a title (D3)        caught: FAIL 'Le chat dort.\nLe chien joue.\nLa lune bri' got ['chien', 'jouer', 'lune', 'briller'] names 0 expected [
+spaced hyphen not a dash (R1)            caught: FAIL 'Le soir, Léa cria - Regarde la lune ! - ' got ['soir', 'crier', 'lune', 'briller', 'répondre'] names 3 e
+closing lines kept (R2)                  caught: FAIL 'Voici une histoire pour des élèves de 8 ' got ['hérisson', 'dormir', 'feuille', 'hésiter', 'demander', '
+preface needs a colon (R2)               caught: FAIL 'Voici une histoire pour des élèves de 8 ' got ['histoire', 'élève', 'an', 'hérisson', 'hérisson', 'dormi
+refusal searched anywhere (D1)           caught: FAIL: refusal rule, missed [] wrongly excluded ['Le loup et le lapin\nLe lapin court dans le pré. « ']
+title-like first line tested (D1)        caught: FAIL: refusal rule, missed [] wrongly excluded ['Désolé, je ne peux pas venir\nLe loup regarde la fo']
+title-like line skipped before a short body (D1) caught: FAIL: refusal rule, missed ['Désolé, je ne peux pas écrire ce texte\nMerci de vo'] wrongly excluded []
+polite opener not stripped (D1)          caught: FAIL: refusal rule, missed ["Bien sûr ! Pourriez-vous m'indiquer l'âge des élèv"] wrongly excluded []
+only the first line tested (D1)          caught: FAIL: refusal rule, missed ["**Désolé !**\nJe ne peux pas répondre sans plus d'i", 'Je suis désolé\nJe ne sais
+meta flag ignores quotes                 caught: FAIL: meta lines 2 (True, True, True)
+meta flag never raised                   caught: FAIL: meta lines 2 (False, False, False)
+dialogue lines flagged                   caught: FAIL: meta lines 2 (True, True, True)
+36 of 36 caught; 0 not run

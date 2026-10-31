@@ -1,0 +1,16 @@
+determiners counted as content         caught: FAIL 'Sa maman lui donne deux pommes. Cette fo' got ['sa', 'maman', 'donner', 'deux', 'pomme', 'cette', 'forêt', 'grand'
+typographic apostrophe not normalised  caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'hui', 'peur'] names 3 expecte
+être and avoir counted                 caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'être', 'beau', 'dire', 'peur'] names 2 expect
+adverbs counted as content             caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', "aujourd'hui", 'pas', 'peur'] 
+form frequency instead of lemma        caught: FAIL: numeric pins 1.4914 4.8561
+sentence-initial names kept            caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['léa', 'regarder', 'ciel', 'beau', 'dire', 'peur'] names 1 expecte
+elided particles not handled           caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'beau', 'dire', 'peur'] names 3 expected ['reg
+no title removal                       caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['ciel', 'regarder', 'ciel', 'beau', 'dire', 'peur'] names 2 expect
+no clitic stripping                    NOT caught
+hyphen split disabled                  caught: FAIL 'Le robot-jardinier arrose les fleurs.' got ['robot-jardinier', 'arroser', 'fleur'] names 0 expected ['robot', 'jar
+smoothing removed (floor)              caught: FAIL: numeric pins 2.0 5.1889
+OOV threshold inverted                 caught: FAIL: exclusion rules under 20 words  refusal not French
+refusal not detected                   caught: FAIL: exclusion rules under 20 words not French  
+minimum length 40                      caught: FAIL: exclusion rules under 20 words under 20 words refusal 
+most frequent reading not chosen       caught: FAIL "Le ciel\nLéa regarda le ciel. « C'est bea" got ['regarder', 'ciel', 'est', 'beau', 'dit', 'a', 'pas', 'peur'] name
+14 of 15 caught

@@ -1,0 +1,16 @@
+date (UTC): 2026-10-25T19:12:14Z
+python: Python 3.13.17
+lexicon: /usr/local/lib/python3.13/site-packages/pylexique/Lexique383/Lexique383.txt fe2cb931f774d4c4
+code under test: /tmp/claude-0/-home-claude/d28672eb-31f4-533e-85fc-00a96d822022/scratchpad/v042_work/art5
+design.json              81164e40c216979a
+make_prompts.py          739ea744914f9237
+compute.py               1f5742c8c36b24a8
+analyze.py               62324d6d5c6293c2
+sim_power.py             dd9eb28c54889fde
+sim_power_results.json   11fb624153b742b4
+generate.py              4680bda30be1d520
+pipeline.py              bc409da02b73fa9f
+validate_measure.py      7253e08b8dc1cd02
+PREREG.md                05aa7cc9ba3567ff
+README.md                7fad46d386e0179a
+requirements.txt         6a38e3ccee64d2a3
