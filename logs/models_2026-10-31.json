@@ -2,7 +2,7 @@
  "anthropic": {
   "status": 0,
   "body": {
-   "error": "ValueError(\"Invalid header value b'apikey_01HaeoxC58Xiyki2hZVNPWZh\\\\n\\\\n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\\\\n\\\\nmstrl_xVmpp8pfnKWobkRctoqBu4MndfvPJkmv_3bVztC'\")"
+   "error": "ValueError (invalid header value). The message held the value of the secret ANTHROPIC_API_KEY and was removed on 31.10.2026 by the main session; see CHANGELOG.md v0.4.6."
   }
  },
  "openai": {
