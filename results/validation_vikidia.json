@@ -1,0 +1,521 @@
+{
+ "lexicon_sha256": "637ba37a767a66679c48371d673ece50cbf541b49a4e40e598963d4f3fbce52b",
+ "n_pairs_usable": 29,
+ "vikidia_higher": 28,
+ "sign_test_p_one_sided": 5.587935447692871e-08,
+ "mean_difference_zipf": 0.3411608075856964,
+ "criterion": "at least 21 pairs and 25 usable",
+ "passed": true,
+ "pairs": [
+  {
+   "subject": "Abeille",
+   "vikidia": {
+    "revid": 2561656,
+    "n_words": 317,
+    "mean_zipf_content": 4.518308400942985,
+    "mean_word_length": 4.611650485436893,
+    "words_per_sentence": 24.384615384615383
+   },
+   "wikipedia": {
+    "revid": 240268628,
+    "n_words": 295,
+    "mean_zipf_content": 4.0819031773574554,
+    "mean_word_length": 5.2202166064981945,
+    "words_per_sentence": 17.352941176470587
+   }
+  },
+  {
+   "subject": "Volcan",
+   "vikidia": {
+    "revid": 2578279,
+    "n_words": 310,
+    "mean_zipf_content": 4.352482874292695,
+    "mean_word_length": 4.875420875420875,
+    "words_per_sentence": 31.0
+   },
+   "wikipedia": {
+    "revid": 240478850,
+    "n_words": 307,
+    "mean_zipf_content": 4.259081457239211,
+    "mean_word_length": 4.792763157894737,
+    "words_per_sentence": 20.466666666666665
+   }
+  },
+  {
+   "subject": "Lune",
+   "vikidia": {
+    "revid": 2683738,
+    "n_words": 296,
+    "mean_zipf_content": 4.70595102916603,
+    "mean_word_length": 4.402930402930403,
+    "words_per_sentence": 22.76923076923077
+   },
+   "wikipedia": {
+    "revid": 240787057,
+    "n_words": 300,
+    "mean_zipf_content": 4.447162185517095,
+    "mean_word_length": 4.9784172661870505,
+    "words_per_sentence": 20.0
+   }
+  },
+  {
+   "subject": "Dinosaure",
+   "vikidia": {
+    "revid": 2474732,
+    "n_words": 301,
+    "mean_zipf_content": 4.560540418160354,
+    "mean_word_length": 5.112244897959184,
+    "words_per_sentence": 18.8125
+   },
+   "wikipedia": {
+    "revid": 240145858,
+    "n_words": 299,
+    "mean_zipf_content": 4.099559877914621,
+    "mean_word_length": 5.342960288808665,
+    "words_per_sentence": 23.0
+   }
+  },
+  {
+   "subject": "Pompier",
+   "vikidia": {
+    "revid": 2540925,
+    "n_words": 311,
+    "mean_zipf_content": 4.686505158390628,
+    "mean_word_length": 5.030201342281879,
+    "words_per_sentence": 22.214285714285715
+   },
+   "wikipedia": {
+    "revid": 238483705,
+    "n_words": 306,
+    "mean_zipf_content": 4.4288916681484105,
+    "mean_word_length": 5.062283737024221,
+    "words_per_sentence": 23.53846153846154
+   }
+  },
+  {
+   "subject": "Chat",
+   "vikidia": {
+    "revid": 2699152,
+    "n_words": 283,
+    "mean_zipf_content": 4.665815770391153,
+    "mean_word_length": 4.435714285714286,
+    "words_per_sentence": 18.866666666666667
+   },
+   "wikipedia": {
+    "revid": 240721441,
+    "n_words": 299,
+    "mean_zipf_content": 4.385646385310504,
+    "mean_word_length": 4.8671328671328675,
+    "words_per_sentence": 21.357142857142858
+   }
+  },
+  {
+   "subject": "Chien",
+   "vikidia": {
+    "revid": 2711896,
+    "n_words": 303,
+    "mean_zipf_content": 4.588586732270963,
+    "mean_word_length": 4.60738255033557,
+    "words_per_sentence": 20.2
+   },
+   "wikipedia": {
+    "revid": 239906428,
+    "n_words": 312,
+    "mean_zipf_content": 4.240046725608858,
+    "mean_word_length": 5.017241379310345,
+    "words_per_sentence": 24.0
+   }
+  },
+  {
+   "subject": "Soleil",
+   "vikidia": {
+    "revid": 2516083,
+    "n_words": 287,
+    "mean_zipf_content": 4.42663228049631,
+    "mean_word_length": 4.409774436090226,
+    "words_per_sentence": 22.076923076923077
+   },
+   "wikipedia": {
+    "revid": 240375314,
+    "n_words": 299,
+    "mean_zipf_content": 4.175012760638529,
+    "mean_word_length": 4.7212543554006965,
+    "words_per_sentence": 24.916666666666668
+   }
+  },
+  {
+   "subject": "Eau",
+   "vikidia": {
+    "revid": 2561410,
+    "n_words": 323,
+    "mean_zipf_content": 4.748738260871107,
+    "mean_word_length": 4.166666666666667,
+    "words_per_sentence": 20.1875
+   },
+   "wikipedia": {
+    "revid": 240888638,
+    "n_words": 326,
+    "mean_zipf_content": 4.211533034476772,
+    "mean_word_length": 4.889589905362776,
+    "words_per_sentence": 32.6
+   }
+  },
+  {
+   "subject": "Neige",
+   "vikidia": {
+    "revid": 2532426,
+    "n_words": 220,
+    "mean_zipf_content": 4.468831367651074,
+    "mean_word_length": 4.193548387096774,
+    "words_per_sentence": 15.714285714285714
+   },
+   "wikipedia": {
+    "revid": 240773464,
+    "n_words": 305,
+    "mean_zipf_content": 4.219662710086815,
+    "mean_word_length": 4.88628762541806,
+    "words_per_sentence": 27.727272727272727
+   }
+  },
+  {
+   "subject": "Train",
+   "vikidia": {
+    "revid": 2354361,
+    "n_words": 271,
+    "mean_zipf_content": 4.706754407368816,
+    "mean_word_length": 4.514767932489452,
+    "words_per_sentence": 19.357142857142858
+   },
+   "wikipedia": {
+    "revid": 240022335,
+    "n_words": 307,
+    "mean_zipf_content": 4.46663548663811,
+    "mean_word_length": 5.12,
+    "words_per_sentence": 27.90909090909091
+   }
+  },
+  {
+   "subject": "Pain",
+   "vikidia": {
+    "revid": 2407780,
+    "n_words": 303,
+    "mean_zipf_content": 4.814243520404176,
+    "mean_word_length": 4.046357615894039,
+    "words_per_sentence": 17.823529411764707
+   },
+   "wikipedia": {
+    "revid": 240824437,
+    "n_words": 303,
+    "mean_zipf_content": 4.04916946219304,
+    "mean_word_length": 4.870748299319728,
+    "words_per_sentence": 17.823529411764707
+   }
+  },
+  {
+   "subject": "Cheval",
+   "vikidia": {
+    "revid": 2535300,
+    "n_words": 300,
+    "mean_zipf_content": 4.683999673288558,
+    "mean_word_length": 4.476510067114094,
+    "words_per_sentence": 20.0
+   },
+   "wikipedia": {
+    "revid": 240643662,
+    "n_words": 310,
+    "mean_zipf_content": 4.553808960240771,
+    "mean_word_length": 4.915824915824916,
+    "words_per_sentence": 20.666666666666668
+   }
+  },
+  {
+   "subject": "Lion",
+   "vikidia": {
+    "revid": 2575633,
+    "n_words": 300,
+    "mean_zipf_content": 4.45529556720346,
+    "mean_word_length": 4.230508474576271,
+    "words_per_sentence": 15.789473684210526
+   },
+   "wikipedia": {
+    "revid": 240110220,
+    "n_words": 278,
+    "mean_zipf_content": 4.332177940457868,
+    "mean_word_length": 4.664,
+    "words_per_sentence": 17.375
+   }
+  },
+  {
+   "subject": "Baleine",
+   "vikidia": {
+    "revid": 2443472,
+    "n_words": 290,
+    "mean_zipf_content": 4.541298611118104,
+    "mean_word_length": 4.896551724137931,
+    "words_per_sentence": 16.11111111111111
+   },
+   "wikipedia": {
+    "revid": 239595928,
+    "n_words": 310,
+    "mean_zipf_content": 4.177437571198942,
+    "mean_word_length": 4.859589041095891,
+    "words_per_sentence": 22.142857142857142
+   }
+  },
+  {
+   "subject": "Forêt",
+   "vikidia": {
+    "revid": 2236647,
+    "n_words": 304,
+    "mean_zipf_content": 4.735058544233562,
+    "mean_word_length": 4.693069306930693,
+    "words_per_sentence": 17.88235294117647
+   },
+   "wikipedia": {
+    "revid": 240425801,
+    "n_words": 305,
+    "mean_zipf_content": 4.221537300552369,
+    "mean_word_length": 5.378737541528239,
+    "words_per_sentence": 21.785714285714285
+   }
+  },
+  {
+   "subject": "Montagne",
+   "vikidia": {
+    "revid": 2563354,
+    "n_words": 318,
+    "mean_zipf_content": 4.5035695650050585,
+    "mean_word_length": 4.534591194968553,
+    "words_per_sentence": 15.142857142857142
+   },
+   "wikipedia": {
+    "revid": 236343641,
+    "n_words": 304,
+    "mean_zipf_content": 4.220645873691541,
+    "mean_word_length": 5.1438127090301,
+    "words_per_sentence": 25.333333333333332
+   }
+  },
+  {
+   "subject": "Arbre",
+   "vikidia": {
+    "revid": 2345516,
+    "n_words": 314,
+    "mean_zipf_content": 4.696662413250354,
+    "mean_word_length": 4.555910543130991,
+    "words_per_sentence": 20.933333333333334
+   },
+   "wikipedia": {
+    "revid": 239887267,
+    "n_words": 297,
+    "mean_zipf_content": 4.330306699132022,
+    "mean_word_length": 5.31864406779661,
+    "words_per_sentence": 21.214285714285715
+   }
+  },
+  {
+   "subject": "Fleur",
+   "vikidia": {
+    "revid": 2711695,
+    "n_words": 233,
+    "mean_zipf_content": 4.569520375251006,
+    "mean_word_length": 4.506437768240343,
+    "words_per_sentence": 16.642857142857142
+   },
+   "wikipedia": {
+    "revid": 239749289,
+    "n_words": 304,
+    "mean_zipf_content": 4.086240196130836,
+    "mean_word_length": 5.31023102310231,
+    "words_per_sentence": 19.0
+   }
+  },
+  {
+   "subject": "Papillon",
+   "vikidia": {
+    "revid": 2442947,
+    "n_words": 302,
+    "mean_zipf_content": 4.718474539958939,
+    "mean_word_length": 4.596026490066225,
+    "words_per_sentence": 16.77777777777778
+   },
+   "wikipedia": {
+    "revid": 240423501,
+    "n_words": 294,
+    "mean_zipf_content": 4.27970572659836,
+    "mean_word_length": 5.173144876325089,
+    "words_per_sentence": 21.0
+   }
+  },
+  {
+   "subject": "Grenouille",
+   "vikidia": {
+    "revid": 2562619,
+    "n_words": 309,
+    "mean_zipf_content": 4.55752872737163,
+    "mean_word_length": 4.9537953795379535,
+    "words_per_sentence": 18.176470588235293
+   },
+   "wikipedia": {
+    "revid": 240026083,
+    "n_words": 305,
+    "mean_zipf_content": 4.227045087682808,
+    "mean_word_length": 5.29020979020979,
+    "words_per_sentence": 21.785714285714285
+   }
+  },
+  {
+   "subject": "Château fort",
+   "vikidia": {
+    "revid": 2167370,
+    "n_words": 309,
+    "mean_zipf_content": 4.680187932629839,
+    "mean_word_length": 4.787162162162162,
+    "words_per_sentence": 18.176470588235293
+   },
+   "wikipedia": {
+    "revid": 240474077,
+    "n_words": 308,
+    "mean_zipf_content": 4.259400987080046,
+    "mean_word_length": 5.01360544217687,
+    "words_per_sentence": 23.692307692307693
+   }
+  },
+  {
+   "subject": "Chocolat",
+   "vikidia": {
+    "revid": 2193376,
+    "n_words": 303,
+    "mean_zipf_content": 4.578442796796109,
+    "mean_word_length": 4.6169491525423725,
+    "words_per_sentence": 18.9375
+   },
+   "wikipedia": {
+    "revid": 240848259,
+    "n_words": 289,
+    "mean_zipf_content": 4.1292044116313225,
+    "mean_word_length": 5.06015037593985,
+    "words_per_sentence": 26.272727272727273
+   }
+  },
+  {
+   "subject": "Pomme",
+   "vikidia": {
+    "revid": 2238137,
+    "n_words": 300,
+    "mean_zipf_content": 4.248500948656283,
+    "mean_word_length": 4.7379310344827585,
+    "words_per_sentence": 15.789473684210526
+   },
+   "wikipedia": {
+    "revid": 240800332,
+    "n_words": 304,
+    "mean_zipf_content": 4.278801053208472,
+    "mean_word_length": 4.793814432989691,
+    "words_per_sentence": 20.266666666666666
+   }
+  },
+  {
+   "subject": "Hiver",
+   "vikidia": {
+    "revid": 2494377,
+    "n_words": 240,
+    "mean_zipf_content": 4.405685912740417,
+    "mean_word_length": 4.431034482758621,
+    "words_per_sentence": 21.818181818181817
+   },
+   "wikipedia": {
+    "revid": 237318187,
+    "n_words": 317,
+    "mean_zipf_content": 4.362477047517,
+    "mean_word_length": 4.5230263157894735,
+    "words_per_sentence": 19.8125
+   }
+  },
+  {
+   "subject": "Vélo",
+   "vikidia": {
+    "revid": 2329415,
+    "n_words": 313,
+    "mean_zipf_content": 4.570318800813648,
+    "mean_word_length": 4.632258064516129,
+    "words_per_sentence": 26.083333333333332
+   },
+   "wikipedia": {
+    "revid": 240593758,
+    "n_words": 304,
+    "mean_zipf_content": 4.33427411092925,
+    "mean_word_length": 5.15358361774744,
+    "words_per_sentence": 17.88235294117647
+   }
+  },
+  {
+   "subject": "Ferme",
+   "vikidia": {
+    "revid": 2159725,
+    "n_words": 14,
+    "mean_zipf_content": 4.555860775861357,
+    "mean_word_length": 4.428571428571429,
+    "words_per_sentence": 14.0
+   },
+   "wikipedia": {
+    "revid": 222731135,
+    "n_words": 28,
+    "mean_zipf_content": 4.533104072133233,
+    "mean_word_length": 4.88,
+    "words_per_sentence": 14.0
+   }
+  },
+  {
+   "subject": "Étoile",
+   "vikidia": {
+    "revid": 2510949,
+    "n_words": 305,
+    "mean_zipf_content": 4.748560694252787,
+    "mean_word_length": 4.735785953177258,
+    "words_per_sentence": 16.944444444444443
+   },
+   "wikipedia": {
+    "revid": 238645627,
+    "n_words": 312,
+    "mean_zipf_content": 4.302218127840555,
+    "mean_word_length": 4.741100323624596,
+    "words_per_sentence": 31.2
+   }
+  },
+  {
+   "subject": "Pluie",
+   "vikidia": {
+    "revid": 2260270,
+    "n_words": 137,
+    "mean_zipf_content": 4.9255939280788175,
+    "mean_word_length": 4.188976377952756,
+    "words_per_sentence": 19.571428571428573
+   },
+   "wikipedia": {
+    "revid": 240723007,
+    "n_words": 315,
+    "mean_zipf_content": 4.363555694616893,
+    "mean_word_length": 4.728758169934641,
+    "words_per_sentence": 17.5
+   }
+  },
+  {
+   "subject": "Oiseau",
+   "vikidia": {
+    "revid": 2317382,
+    "n_words": 316,
+    "mean_zipf_content": 4.575871519047505,
+    "mean_word_length": 4.753164556962025,
+    "words_per_sentence": 18.58823529411765
+   },
+   "wikipedia": {
+    "revid": 239969358,
+    "n_words": 300,
+    "mean_zipf_content": 4.021155630478698,
+    "mean_word_length": 5.279569892473118,
+    "words_per_sentence": 25.0
+   }
+  }
+ ]
+}
