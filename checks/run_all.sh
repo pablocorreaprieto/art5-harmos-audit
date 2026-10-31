@@ -41,7 +41,9 @@ run clarifications "PASS clarifications" python3 -B "$HERE/clarifications.py"
 run e2e_pilot "PASS e2e_pilot" bash "$HERE/e2e_pilot.sh"
 run e2e_crash "PASS e2e_crash" bash "$HERE/e2e_crash.sh"
 run e2e_malformed "PASS e2e_malformed" python3 -B "$HERE/e2e_malformed.py"
-if [ -x "$ART5_CODE/history/check_history.sh" ]; then run history "PASS history" bash "$ART5_CODE/history/check_history.sh"; fi
+run e2e_secrets "PASS e2e_secrets" python3 -B "$HERE/e2e_secrets.py"
+# the history check fails when its script is missing (v0.4.6; before, a script without the executable bit was skipped silently)
+run history "PASS history" bash "$ART5_CODE/history/check_history.sh"
 if [ "${1:-}" = "--with-sim" ]; then run sim "PASS sim" bash "$HERE/sim.sh"; fi
 [ $fail -eq 0 ] && echo "ALL CHECKS PASSED" || echo "SOME CHECKS FAILED"
 exit $fail

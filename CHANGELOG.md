@@ -1,6 +1,6 @@
 # Changelog
 
-Design versions of ART 5 before the pilot, on 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5), times in Zurich time (UTC+1). Nothing here is a result.
+Design versions of ART 5 before the pilot, on 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5 and v0.4.6), times in Zurich time (UTC+1). Nothing here is a result.
 
 - A "reading" is an internal reading by a separate AI session. It is not peer review and not an outside review.
 - Readings are numbered 1 to 8 as in the design dossier and the journal. The briefs and full reports of the eight readings, and of one research session on the journal ladder, are kept verbatim in the review record: `claude/art5/records/relectures_ia.md` in the Claude project, and the Drive document "RELECTURES IA" in folder 04.
@@ -8,6 +8,52 @@ Design versions of ART 5 before the pilot, on 25.10.2026 (v0.1 to v0.4.4) and 31
 - Hashes are the first 16 hex digits of SHA-256. `history/hashes.txt` has the full values for every kept version.
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
+
+## v0.4.6 (31.10.2026, about 18:06 to 18:37)
+
+**Why.**
+
+- The second workflow run (step list-models, run 41222817007 on 65e9bb3, committed at 18:05:57) found the secret `ANTHROPIC_API_KEY` holding three values on separate lines: an Anthropic key identifier, the OpenAI key and the Mistral key. Python refused the header before sending it (ValueError, invalid header value), and `generate.py` stored `repr()` of the error, which quotes the header. The workflow committed that text in `logs/models_2026-10-31.json` (commit 9e03e53) and kept it in the run's artifact. Nothing was sent to a provider with that header and nothing was billed. The OpenAI and Mistral lists (status 200) were recorded normally.
+- The same path would have written the keys into every raw line of a pilot run, each call failing the same way and being counted at the worst case of its model.
+
+**Done before this version.**
+
+- Commit 9805078 (18:10) replaced the error text in `logs/models_2026-10-31.json` by the error type and a note. The rest of the file is as the run wrote it. Commit 9e03e53 still holds the text in the history of the private repository, and the run's artifact holds it until deleted.
+- Pablo was asked at 18:09 to revoke the exposed OpenAI and Mistral keys, to put exactly one key in each secret, and to delete the artifact. The session does not delete data.
+
+**Changes.**
+
+- `generate.py`. `key_problem` checks each key secret before any request: empty, line breaks, spaces or tabs, or characters that are not printable ASCII. `list-models` records the problem for that provider, without the value, and asks the others. `run` stops before its first call and before opening a raw file. `scrub` removes every key value, whole or split on white space (parts of 8 characters or more), from error texts, from the model list and from every raw line. Docstring updated.
+- `checks/e2e_secrets.py`, a new check in three parts, with fake keys and local servers only. `checks/run_all.sh` runs it. The history check now always runs and fails when its script is missing, as listed in v0.4.5. `checks/README.md` updated.
+- `design.json`, `PREREG.md`. Version line. `README.md`. Version line, the `generate.py` row, and one key per secret, on one line.
+
+**Checks.**
+
+- `checks/e2e_secrets.py`: PASS on v0.4.6. Failure control: the v0.4.5 code fails all three parts, with the fake keys in the model list, in 6 raw lines and in the 401 records (`checks/outputs/failure_controls/e2e_secrets_on_v0.4.5.txt`).
+- `run_all.sh` on an empty code folder: all 12 checks fail, the history check included (`checks/outputs/failure_controls/run_all_on_empty_code_v0.4.6.txt`).
+- `history/check_history.sh`: PASS, v0.4.6 down to v0.2.
+- Full `checks/run_all.sh` run on v0.4.6, in `checks/outputs/`: 12 checks of 12 passed (ALL CHECKS PASSED), 18:14:51 to 18:34:52 (20 min 1 s), Python 3.13.18, lexicon fe2cb931f774d4c4 (pylexique copy). 59 of 59 mutations of `compute.py` and 22 of 22 of `analyze.py` caught. The battery and clarifications outputs are identical to those of the v0.4.5 run. e2e_crash counted 0.7204 then 0.7775 USD for a budget of 0.8. The v0.4.5 outputs are kept in `checks/history/run_20261031T161744Z/`.
+
+**Reading.** None. The fix answers a failure seen in a run, and the new check has its failure control.
+
+**Hashes.**
+
+| File | Hash |
+|---|---|
+| generate.py | 10085215000e27f6 |
+| design.json | 142c1dca51b5747a |
+| PREREG.md | 710b106df167e4d4 |
+| README.md | 50fbf891d6c9da53 |
+| compute.py | 8ad7a56512616c64 (unchanged) |
+| analyze.py | 62324d6d5c6293c2 (unchanged) |
+| pipeline.py | bc409da02b73fa9f (unchanged) |
+| make_prompts.py | 739ea744914f9237 (unchanged) |
+| sim_power.py | dd9eb28c54889fde (unchanged) |
+| sim_power_results.json | 11fb624153b742b4 (unchanged) |
+| validate_measure.py | 7253e08b8dc1cd02 (unchanged) |
+| run.yml | 497409fc94c1df59 (unchanged) |
+
+**Listed for gate G1.** As in v0.4.4.
 
 ## v0.4.5 (31.10.2026, about 17:17 to 17:40)
 

@@ -1,6 +1,6 @@
 {
   "study": "ART 5, Swiss grade labels and the lexical demand of LLM-generated French reading texts",
-  "version": "design-v0.4.5 (31.10.2026, Mistral Medium 3.5, deprecated by Mistral on 31.10.2026, replaced by Mistral Large 4 as mistral_balanced; otherwise as v0.4.4 of 25.10.2026; before pilot and G1)",
+  "version": "design-v0.4.6 (31.10.2026, generate.py checks each key secret before any request and removes key values from every output, after run 41222817007 wrote the value of a secret; v0.4.5 of the same day replaced Mistral Medium 3.5, deprecated by Mistral, by Mistral Large 4 as mistral_balanced; otherwise as v0.4.4 of 25.10.2026; before pilot and G1)",
   "prompt_template": "Écris {genre} pour des élèves{label}, sur le thème {topic}. Réponds seulement avec un titre et le texte.",
   "genres": {
     "story": "une histoire à lire",

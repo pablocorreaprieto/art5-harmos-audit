@@ -1,0 +1,15 @@
+== run_all.sh v0.4.6 on an empty code folder, 2026-10-31T17:14:44Z
+FAIL selftest_compute (exit 2)
+FAIL selftest_analyze (exit 2)
+FAIL plan (exit 1)
+FAIL mutate_compute (exit 1)
+FAIL mutate_analyze (exit 1)
+FAIL battery (exit 1)
+FAIL clarifications (exit 1)
+FAIL e2e_pilot (exit 1)
+FAIL e2e_crash (exit 1)
+FAIL e2e_malformed (exit 1)
+FAIL e2e_secrets (exit 1)
+FAIL history (exit 127)
+SOME CHECKS FAILED
+exit 1
