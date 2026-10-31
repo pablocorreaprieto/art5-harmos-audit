@@ -1,3 +1,4 @@
+v0.4.5: 14 files recorded, all identical
 v0.4.4: 14 files recorded, all identical
 v0.4.3: 14 files recorded, all identical
 v0.4.2: 14 files recorded, all identical

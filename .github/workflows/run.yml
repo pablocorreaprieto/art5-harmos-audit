@@ -53,7 +53,10 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/raw results logs calls*.jsonl 2>/dev/null || true
+          # add only the output paths that exist: git add stops on a missing path and would stage nothing
+          for p in data/raw results logs calls*.jsonl; do
+            if [ -e "$p" ]; then git add -A -- "$p"; fi
+          done
           if ! git diff --cached --quiet; then
             git commit -m "run $RUN_ID: $STEP"
             git pull --rebase

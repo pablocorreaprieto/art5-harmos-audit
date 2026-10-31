@@ -1,6 +1,6 @@
 # Changelog
 
-Design versions of ART 5 before the pilot, all on 25.10.2026, times in Zurich time (UTC+1). Nothing here is a result.
+Design versions of ART 5 before the pilot, on 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5), times in Zurich time (UTC+1). Nothing here is a result.
 
 - A "reading" is an internal reading by a separate AI session. It is not peer review and not an outside review.
 - Readings are numbered 1 to 8 as in the design dossier and the journal. The briefs and full reports of the eight readings, and of one research session on the journal ladder, are kept verbatim in the review record: `claude/art5/records/relectures_ia.md` in the Claude project, and the Drive document "RELECTURES IA" in folder 04.
@@ -8,6 +8,52 @@ Design versions of ART 5 before the pilot, all on 25.10.2026, times in Zurich ti
 - Hashes are the first 16 hex digits of SHA-256. `history/hashes.txt` has the full values for every kept version.
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
+
+## v0.4.5 (31.10.2026, about 17:17 to 17:40)
+
+**Why.**
+
+- Mistral's model list marks Mistral Medium 3.5 (v26.04) as deprecated on 31.10.2026, with retirement on 30.04.2027, and names Mistral Large 4 as its replacement. The model is still callable, but the study would audit a model retired before the article appears. Pablo decided in the chat of 31.10.2026 to switch to Mistral Large 4 before the pilot. No model had been called.
+- The first workflow run (step lexicon, run 41219166928, 31.10.2026) succeeded but committed nothing. `git add -A data/raw results logs calls*.jsonl` stops on the first path that does not exist, and the error was hidden by `2>/dev/null || true`. So the steps that write only `logs/` (lexicon, list-models, validate) would never have saved their outputs to the repository, only to the run's artifact.
+
+**Changes.**
+
+- `design.json`. `mistral_balanced` is now "Mistral Large 4 (exact dated id read at pilot; replaces Mistral Medium 3.5, deprecated on 31.10.2026)", and the version line says v0.4.5. The model keys, labels, prompts, topics, pilot blocks and analysis are unchanged.
+- `run.yml`. The save step adds each output path only if it exists. Tested in a scratch repository with `logs/` only: the old line stages 0 files, the new one stages the log.
+- `README.md`, `PREREG.md`. Version line.
+- `history/check_history.sh` is executable again (git mode 100755, content unchanged). The repository rebuilt on 31.10.2026 from the project copies had it as 100644, and `run_all.sh` runs the history check only when the script is executable, so it would have been skipped without a message. The outputs of 25.10.2026 include `history.txt`, so the bit was set then (inferred from those outputs). Found and fixed while the v0.4.5 run was at `mutate_compute`, before it reached the history check.
+- `checks/README.md`. History row and gate wording updated to v0.4.5; the skip above added under Limits.
+
+**Checks.**
+
+- `checks/plan.py`: PASS. The call files are byte-identical to the recorded ones, since they name model keys, not models.
+- `history/check_history.sh`: PASS. It rebuilds v0.4.5 down to v0.2 from the current files.
+- `compute.py`, `analyze.py`, `generate.py`, `pipeline.py` and the other code files are unchanged.
+- Full `checks/run_all.sh` run on v0.4.5, in `checks/outputs/`: 11 checks of 11 passed (ALL CHECKS PASSED), 17:17:44 to 17:39:12 (21 min 28 s), Python 3.13.18, lexicon fe2cb931f774d4c4 (pylexique copy). 59 of 59 mutations of `compute.py` and 22 of 22 of `analyze.py` caught. The battery and clarifications outputs are identical to those of 25.10.2026. e2e_crash counted 0.6898 then 0.7470 USD for a budget of 0.8 (0.7203 and 0.7774 on 25.10.2026; where the connections drop depends on timing). The history check rebuilds v0.4.5 down to v0.2 with every file identical. The previous outputs (25.10.2026, 20:07 UTC) are kept in `checks/history/run_20261025T200733Z/`.
+- The checks do not exercise `run.yml`; its fix is tested by the next workflow run.
+
+**Reading.** None. The model change was decided by the author, and the workflow fix answers a failure seen in the first run.
+
+**Hashes.**
+
+| File | Hash |
+|---|---|
+| design.json | 26eb3c7b0f523661 |
+| PREREG.md | 860ea592dfc1ec55 |
+| README.md | 9198a840d0c9bb32 |
+| compute.py | 8ad7a56512616c64 (unchanged) |
+| generate.py | 7ce38baa5b8f397e (unchanged) |
+| analyze.py | 62324d6d5c6293c2 (unchanged) |
+| pipeline.py | bc409da02b73fa9f (unchanged) |
+| make_prompts.py | 739ea744914f9237 (unchanged) |
+| sim_power.py | dd9eb28c54889fde (unchanged) |
+| sim_power_results.json | 11fb624153b742b4 (unchanged) |
+| validate_measure.py | 7253e08b8dc1cd02 (unchanged) |
+| run.yml | 497409fc94c1df59 |
+
+**Listed for gate G1.** As in v0.4.4.
+
+**Listed for the next version.** `run_all.sh` should fail, not skip, when `history/check_history.sh` is missing or not executable. Not changed now because `run_all.sh` was running.
 
 ## v0.4.4 (21:06 to 21:10, reading of the fix 21:07 to 21:09)
 

@@ -1,6 +1,6 @@
 {
   "study": "ART 5, Swiss grade labels and the lexical demand of LLM-generated French reading texts",
-  "version": "design-v0.4.4 (25.10.2026, after the internal design review, the check of its fixes and five confirmations of those fixes, before pilot and G1)",
+  "version": "design-v0.4.5 (31.10.2026, Mistral Medium 3.5, deprecated by Mistral on 31.10.2026, replaced by Mistral Large 4 as mistral_balanced; otherwise as v0.4.4 of 25.10.2026; before pilot and G1)",
   "prompt_template": "Écris {genre} pour des élèves{label}, sur le thème {topic}. Réponds seulement avec un titre et le texte.",
   "genres": {
     "story": "une histoire à lire",
@@ -71,7 +71,7 @@
     "anthropic_light": "Claude Haiku 5.5 (exact dated id read at pilot)",
     "openai_balanced": "GPT-6.1 Sol (exact dated id read at pilot)",
     "openai_light": "GPT-6 Luna (exact dated id read at pilot)",
-    "mistral_balanced": "Mistral Medium 3.5 (exact dated id read at pilot)",
+    "mistral_balanced": "Mistral Large 4 (exact dated id read at pilot; replaces Mistral Medium 3.5, deprecated on 31.10.2026)",
     "mistral_light": "Mistral Small 4 (exact dated id read at pilot)"
   },
   "sampling": {"temperature": 1.0, "top_p": "provider default", "max_output_tokens": 4000, "fallback": "if a model rejects temperature, it is omitted for that model and recorded"},
