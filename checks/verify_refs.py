@@ -8,7 +8,8 @@ arXiv identifier, the arXiv API (export.arxiv.org); a reference with only a URL 
 set) is listed as "url, not checked here" and must be in the G2 exception list or opened by the
 session (Sources tab). For each looked-up reference: title similarity (token Jaccard >= 0.8 after
 normalisation), year (equal, or within one year for a preprint or an online-first date), first author
-surname, and any retraction or withdrawal notice (Crossref update-to / relation, OpenAlex is_retracted).
+surname, volume, issue and pages when the entry gives them (the registry's values are printed for every
+DOI), and any retraction or withdrawal notice (Crossref update-to / relation, OpenAlex is_retracted).
 Prints one line per reference and "PASS verify_refs" when every looked-up reference matches, else
 "FAIL verify_refs". Failure control: --plant adds a reference with an invented DOI and alters the year
 and title of the first DOI reference; the check must fail on both.
@@ -56,7 +57,9 @@ def crossref(doi):
     first = (m.get("author") or [{}])[0].get("family", "")
     notices = [u.get("type", "") for u in m.get("update-to", [])]
     notices += [k for k in (m.get("relation") or {}) if "retract" in k or "withdraw" in k]
-    return {"title": title, "year": year, "first_author": first, "notices": notices, "type": m.get("type")}
+    return {"title": title, "year": year, "first_author": first, "notices": notices, "type": m.get("type"),
+            "journal": (m.get("container-title") or [""])[0], "volume": m.get("volume"), "issue": m.get("issue"),
+            "pages": m.get("page") or m.get("article-number")}
 
 
 def openalex_retracted(doi):
@@ -101,6 +104,10 @@ def check(ref):
         problems.append(f"year {ref['year']} vs registry {got['year']}")
     if norm(ref["first_author"]) - norm(got["first_author"]):
         problems.append(f"first author {ref['first_author']} vs registry {got['first_author']}")
+    for field in ("volume", "issue", "pages"):
+        if ref.get(field) is not None and got.get(field) is not None and \
+                str(ref[field]).replace("\u2013", "-") != str(got[field]).replace("\u2013", "-"):
+            problems.append(f"{field} {ref[field]} vs registry {got[field]}")
     if got["notices"] or got.get("retracted_openalex"):
         problems.append(f"notice: {got['notices']} retracted={got.get('retracted_openalex')}")
     return src, problems, got
@@ -134,7 +141,10 @@ def main():
             continue
         status = "OK  " if not problems else "BAD "
         bad += bool(problems)
-        print(f"{status} {r['key']} ({src}): " + ("; ".join(problems) if problems else "title, year and first author match, no notice"))
+        meta = ""
+        if got and src == "crossref":
+            meta = f" [registry: {got.get('journal')}, vol. {got.get('volume')}, issue {got.get('issue')}, pp. {got.get('pages')}, type {got.get('type')}]"
+        print(f"{status} {r['key']} ({src}): " + ("; ".join(problems) if problems else "title, year and first author match, no notice") + meta)
         time.sleep(1)
     if a.offline:
         print("offline: parsed", len(refs), "references")

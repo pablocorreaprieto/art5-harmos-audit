@@ -9,19 +9,53 @@ typed by hand outside the allowlist it documents. Draft of the main session (cla
 
 # Abstract
 
-ABSTRACT TO WRITE LAST
+Teachers are advised to name their pupils' grade when they ask a language model for a reading text, but grade labels are local. In French-speaking Switzerland, grades are counted from the first year of kindergarten: « 5H » or, in Vaud and Geneva, « 5P » names pupils aged {{age_5H_from}} to {{age_5H_to}}, two years younger than a fifth grade elsewhere. This preregistered audit asked whether {{n_models_word}} large language models from three providers write French reading texts for these labels at the same lexical demand as for the matching age. We generated {{n_texts}} stories and informational texts for grades 3H to 8H on {{n_topics}} topics and measured the mean frequency of their content words. Every model used rarer words as the requested age rose. Pooled over models, the bare HarmoS label gave texts written as for pupils {{ae_L1_shift}} years older than the age (95% CI [{{ae_L1_shift_ci_lo}}, {{ae_L1_shift_ci_hi}}]), below the smallest effect of interest, and the P label showed no difference; neither label changed how texts followed the grade. Two lighter models misread the bare labels, one writing as for pupils about two years older and hardly following the grade, and knowledge probes showed that wrong answers about the labels placed grades mostly two years too old. Adding the age to the label made the models more consistent, while naming the region made texts harder. Teachers and tool developers can keep local labels if they add the age; audits of leveled text generation should report results model by model.
 
 # Practitioner notes
 
-PRACTITIONER NOTES TO WRITE LAST
+**What is already known about this topic**
+
+- Teachers use language models to write reading texts and are advised to state the pupils' grade in the prompt.
+- Studies in English found that outputs often stay above the requested grade or adapt little to the requested age.
+- Grade labels differ between school systems; in French-speaking Switzerland, grades are counted from kindergarten.
+
+**What this paper adds**
+
+- A preregistered audit of {{n_texts}} French reading texts from {{n_models_word}} models shows that, on average, « de 5H » and « de 5P » give texts with nearly the lexical demand of the matching age.
+- Two lighter models misread the bare labels, one by about two years, which a pooled analysis would hide.
+- Adding the age to the label narrowed the differences between models; naming the region made texts harder.
+
+**Implications for practice and/or policy**
+
+- When asking a model for a reading text, state the pupils' age, alone or after the grade label.
+- Tools built for Swiss schools can map grade labels to ages before the prompt reaches the model.
+- Evaluations of AI tools for teachers should report results for each model, not only on average.
 
 # Introduction
 
-INTRODUCTION TO WRITE FROM THE LITERATURE NOTES
+A primary teacher in Lausanne who needs a short text about bees for tomorrow's reading lesson can now ask a chatbot for « une histoire à lire pour des élèves de 5H ». Advice written for teachers recommends exactly this: name the readers' grade in the prompt, and the model will pitch the text accordingly (Imperial & Tayyar Madabushi, 2023, p. 206). The advice assumes that the model knows what the grade means. For a label like « 5H », which belongs to the school system of French-speaking Switzerland, that assumption has not been tested.
+
+Evidence from English-language studies is not reassuring. Asked to answer science questions for readers of different ages, ChatGPT produced answers whose readability barely moved with the requested age (Rooein et al., 2023). Asked for stories for second-grade readers, ChatGPT wrote easier stories when the grade was named, but no model reached the target range under any wording (Imperial & Tayyar Madabushi, 2023), and models asked to rewrite texts to a target Lexile level tended to overshoot it (Huang et al., 2024). These studies used United States grades, CEFR levels or Lexile scores.
+
+School grade labels are local, and some collide. Under the HarmoS agreement, the cantons of Switzerland count school years from the first year of compulsory kindergarten, so that 5H is the third year of primary school, for pupils aged {{age_5H_from}} to {{age_5H_to}} (CITE HarmoS). Vaud and Geneva write the same year as 5P (CITE cantons). In France, these pupils are in CE2, while « 5e » names the second year of lower-secondary school (CITE French system). A model that reads « 5H » as the fifth year of an elementary school starting at six would write for pupils two years older, and a model that confuses it with « 5e » would miss by four years. Nothing in the text it returns would tell the teacher.
+
+This article reports a preregistered audit of how {{n_models_word}} large language models from three providers read Swiss grade labels when they write French reading texts for primary pupils. We compared texts requested with the bare HarmoS and P labels with texts requested with the matching age, on a measure of lexical demand, the mean frequency of the content words, and asked two questions. Do the labels give texts at the same level as the age? Do they follow the grade from 3H to 8H as the age does? Variants of the label, a collision control and knowledge probes then show where the differences come from. Searches of (SEARCH SOURCES) found no earlier study of Swiss or other non-US grade labels in text generation by language models (BOUNDED NOVELTY SENTENCE TO CHECK AGAINST THE SEARCH LOG).
 
 # Background
 
-BACKGROUND TO WRITE FROM THE LITERATURE NOTES
+## Generating texts for a reading level
+
+Studies of leveled text generation by language models agree that naming a level can move the output, but not always far enough. In the study by Imperial and Tayyar Madabushi (2023), naming the second grade lowered the Flesch–Kincaid grade level of ChatGPT's stories but left it above the target range, and describing the level brought the stories closer to it than naming the grading framework did. Rooein et al. (2023) found that the readability of ChatGPT's answers stayed within a narrow band whatever the requested age or education level, a "style" that prompting hardly moved, although another model of the same provider did respond to age. Huang et al. (2024) asked three models to rewrite texts to Lexile levels and found that a minority of outputs landed within the target band, with a skew toward harder texts. Oh et al. (2026) describe prompted grade labels as producing responses above the target grade and propose fine-tuned grade-specific models instead.
+
+This research shares three features that limit what it says about classroom practice outside the English-speaking world. The targets are formal scales (Lexile, CEFR, United States grades) rather than the labels teachers use locally. The readability measures are formulas built for English and for the United States school system, which their own authors note may not transfer to other languages and school systems (Rooein et al., 2023). And the reference is an external target, so a model's failure to reach it cannot be separated from a disagreement about what the target means. In a European assessment context, Ripoll y Schmitz and Sonnleitner (2025) used GPT-4 to write German reading passages for fifth graders in Luxembourg and had reviewers rate them blind against passages written by people, an evaluation by human judgement rather than by a text measure.
+
+## Measuring the lexical demand of a text
+
+Word frequency accounts for a large share of the differences in how quickly words are recognised (Brysbaert et al., 2018), and the readers used in the first years of primary school draw on more frequent words than those of the later years (Lété et al., 2004). On the Zipf scale, frequencies are expressed as the base-10 logarithm of occurrences per billion words, so that values from {{src_zipf_low_from}} to {{src_zipf_low_to}} mark rare words and values from {{src_zipf_high_from}} to {{src_zipf_high_to}} common ones (Brysbaert et al., 2018). For French, the Lexique database gives lemma frequencies from film subtitles and from novels (New & Pallier, n.d.; New et al., 2004), and Manulex gives frequencies by grade from the readers used in French primary schools (Lété et al., 2004). Frequency is not the only source of difficulty: sentence length matters too, and for beginning readers so do decodability and information load (Huang et al., 2024; Peereman et al., 2007).
+
+## Swiss grade labels
+
+(SWISS SYSTEM PARAGRAPH TO WRITE FROM THE READING NOTES: HarmoS agreement, numbering 1H to 11H, school entry, P notation in Vaud and Geneva, French equivalents CP to 6e and 5e.)
 
 # Method
 
@@ -47,7 +81,7 @@ To separate what a model can state about the labels from how it writes, each mod
 
 ## Measure
 
-The dependent variable is the mean Zipf frequency of the content lemmas of a text, a measure of lexical demand: texts for younger readers use more frequent words, which score higher. Each word form was read as its most frequent lemma in Lexique {{lexique_version}} (CITE New et al., 2004), and content words were the forms read as nouns, qualifying adjectives or verbs, without the lemmas *être* and *avoir*, the indefinites *tout*, *autre* and *même*, and proper names. A lemma's frequency is the mean of its frequencies per million words in the film-subtitle and book corpora of Lexique (CITE New et al., 2007), on the Zipf scale (CITE van Heuven et al., 2014) computed as log10(f + {{zipf_smoothing}}) + 3, so that a lemma absent from Lexique counts as frequency zero. Titles, markdown marks and lines addressed to the user rather than to the pupils (prefaces such as « Voici une histoire… » and closings such as « N'hésitez pas… ») were removed before measurement; no such line was found in the confirmatory texts ({{n_meta_lines_removed}} lines removed). The exact rules, with the test texts that pin them, are in the repository.
+The dependent variable is the mean Zipf frequency of the content lemmas of a text, a measure of lexical demand: texts for younger readers use more frequent words, which score higher. Each word form was read as its most frequent lemma in Lexique {{lexique_version}}, a lexical database of contemporary French (New et al., 2004), and content words were the forms read as nouns, qualifying adjectives or verbs, without the lemmas *être* and *avoir*, the indefinites *tout*, *autre* and *même*, and proper names. A lemma's frequency is the mean of its frequencies per million words in the two corpora of Lexique, film subtitles and novels published from {{src_lexique_books_from}} to {{src_lexique_books_to}} (New & Pallier, n.d.), expressed on the Zipf scale, the base-10 logarithm of the frequency per billion words (van Heuven et al., 2014, as cited in Brysbaert et al., 2018). We computed it as log10(f + {{zipf_smoothing}}) + 3, so that a lemma absent from Lexique counts as frequency zero. Titles, markdown marks and lines addressed to the user rather than to the pupils (prefaces such as « Voici une histoire… » and closings such as « N'hésitez pas… ») were removed before measurement; no such line was found in the confirmatory texts ({{n_meta_lines_removed}} lines removed). The exact rules, with the test texts that pin them, are in the repository.
 
 The measure passed two checks of validity. Before the pilot, it was run on the articles of the French Wikipedia and of Vikidia, an encyclopedia written for children, on the same {{vik_subjects}} subjects; the preregistered criterion was met, with Vikidia scoring higher in {{vik_higher}} of the {{vik_usable}} usable pairs (sign test, one-sided *p* {{vik_p}}; mean difference {{vik_mean_diff}} Zipf). In the confirmatory data, the age-only texts of every model served as a manipulation check (H1, below). Eight secondary measures were preregistered: the median Zipf frequency of content lemmas, the shares of content lemmas below Zipf 3 and below Zipf 4, mean word length, words per sentence, number of words, the Kandel–Moles readability formula for French (CITE) and the mean Zipf frequency of word forms in films.
 
@@ -131,7 +165,7 @@ For teachers, the practical rule is simple: state the age, alone or after the la
 
 ## Limitations
 
-The measure covers one dimension of text difficulty. Word frequency is a strong index of lexical demand, but syntax, cohesion, text length and background knowledge also matter, and for beginning readers decodability matters as well (Huang et al., 2024). The frequencies come from Lexique, whose corpora are films and books for adults; norms from children's books would rank some words differently (CITE Manulex if read). The reference is each model's own idea of an age, so the study shows equivalence between wordings, not appropriateness for pupils, and no teacher or pupil judged the texts (compare Ripoll y Schmitz & Sonnleitner, 2025). Each condition was sampled once per topic and genre, in French, with one prompt template and a temperature of {{temperature}}; other wordings, conversation histories or settings could behave differently. The models were those available on {{collection_day}}, and providers update them; the code and prompts are public so that the audit can be repeated. The study was powered for the pooled tests, and the per-model estimates are exploratory, with wide intervals for some models. Finally, the study was designed, run and written with an AI assistant made by one of the audited providers; the analyses were preregistered, the code that produced every number is public and the checks were scripted, which limits but does not remove the risk this poses.
+The measure covers one dimension of text difficulty: sentence length matters too, and for beginning readers so do decodability and information load (Huang et al., 2024). The frequencies come from Lexique, whose corpora are films and novels for adults; grade-level norms from French school readers exist (Lété et al., 2004), and adult-based norms are a weaker guide to what children have met in print (Peereman et al., 2007). The reference is each model's own idea of an age, so the study shows equivalence between wordings, not appropriateness for pupils, and no teacher or pupil judged the texts (compare Ripoll y Schmitz & Sonnleitner, 2025). Each condition was sampled once per topic and genre, in French, with one prompt template and a temperature of {{temperature}}; other wordings, conversation histories or settings could behave differently. The models were those available on {{collection_day}}, and providers update them; the code and prompts are public so that the audit can be repeated. The study was powered for the pooled tests, and the per-model estimates are exploratory, with wide intervals for some models. Finally, the study was designed, run and written with an AI assistant made by one of the audited providers; the analyses were preregistered, the code that produced every number is public and the checks were scripted, which limits but does not remove the risk this poses.
 
 # Conclusion
 
@@ -153,4 +187,4 @@ Swiss teachers can name a grade the way they do in class, « de 5H » or « de 5
 
 # References
 
-REFERENCES TO WRITE (only sources read in full text)
+{{references}}

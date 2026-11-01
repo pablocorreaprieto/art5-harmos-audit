@@ -28,6 +28,11 @@ def load(root=ROOT):
     for k, v in facts.items():
         if not k.startswith("_"):
             nums["proc_" + k] = {"value": v["text"], "text": v["text"]}
+    src = os.path.join(root, "manuscript/source_facts.json")
+    if os.path.exists(src):
+        for k, v in json.load(open(src)).items():
+            if not k.startswith("_"):
+                nums["src_" + k] = {"value": v["text"], "text": v["text"], "ref": v["ref"], "where": v["where"]}
     design = json.load(open(os.path.join(root, "design.json")))
     return nums, design
 
@@ -225,7 +230,21 @@ FIGURES = {
 }
 
 
-def render_text(src, nums, design, fig_dir):
+def citation_forms(ref):
+    """Parenthetical and narrative forms of a reference's in-text citation (APA 7)."""
+    par = ref["cite"]
+    name, year = par.rsplit(", ", 1)
+    return par, f"{name.replace(' & ', ' and ')} ({year})"
+
+
+def reference_list(text, root=ROOT):
+    """APA entries of the references cited in text, in alphabetical order."""
+    refs = json.load(open(os.path.join(root, "manuscript/references.json")))
+    cited = [r for r in refs if any(f in text for f in citation_forms(r))]
+    return "\n\n".join(r["apa"] for r in sorted(cited, key=lambda r: r["apa"].lower()))
+
+
+def render_text(src, nums, design, fig_dir, root=ROOT):
     def table(m):
         name = m.group(1)
         if name not in TABLES:
@@ -243,7 +262,9 @@ def render_text(src, nums, design, fig_dir):
     src = re.sub(r"<!--.*?-->\n?", "", src, flags=re.S)  # comments may name placeholders
     out = re.sub(r"\{\{table:([a-z0-9_]+)\}\}", table, src)
     out = re.sub(r"\{\{figure:([a-z0-9_]+)\}\}", figure, out)
-    out = re.sub(r"\{\{([A-Za-z0-9_]+)\}\}", lambda m: T(nums, m.group(1)), out)
+    out = re.sub(r"\{\{(?!references\}\})([A-Za-z0-9_]+)\}\}", lambda m: T(nums, m.group(1)), out)
+    if "{{references}}" in out:
+        out = out.replace("{{references}}", reference_list(out.split("{{references}}")[0], root))
     left = re.findall(r"\{\{[^}]*\}\}", out)
     if left:
         raise SystemExit(f"unresolved placeholders: {left[:5]}")

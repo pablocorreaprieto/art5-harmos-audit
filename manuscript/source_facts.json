@@ -1,0 +1,33 @@
+{
+ "_about": "Numbers the manuscript takes from cited sources (not from the study's runs), each with the reference key of manuscript/references.json and the page of the passage read in full text. Read by manuscript/render.py as {{src_<name>}} placeholders; checks/check_numbers.py fails on a fact whose key is not in references.json.",
+ "lexique_books_from": {
+  "text": "1950",
+  "ref": "newpallier_manual",
+  "where": "p. 6, section 2.1 (novels published 1950-2000, Frantext)"
+ },
+ "lexique_books_to": {
+  "text": "2000",
+  "ref": "newpallier_manual",
+  "where": "p. 6, section 2.1"
+ },
+ "zipf_low_from": {
+  "text": "1",
+  "ref": "brysbaert2018",
+  "where": "accepted manuscript p. 6 (1-3 low-frequency, 4-6 high-frequency words)"
+ },
+ "zipf_low_to": {
+  "text": "3",
+  "ref": "brysbaert2018",
+  "where": "accepted manuscript p. 6 (1-3 low-frequency, 4-6 high-frequency words)"
+ },
+ "zipf_high_from": {
+  "text": "4",
+  "ref": "brysbaert2018",
+  "where": "accepted manuscript p. 6 (1-3 low-frequency, 4-6 high-frequency words)"
+ },
+ "zipf_high_to": {
+  "text": "6",
+  "ref": "brysbaert2018",
+  "where": "accepted manuscript p. 6 (1-3 low-frequency, 4-6 high-frequency words)"
+ }
+}

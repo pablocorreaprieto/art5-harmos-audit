@@ -49,6 +49,9 @@ ALLOW = [
      "anchors of the definition of tracking (1 = follows the grade like the age, 0 = ignores it)"),
     (r"\b[3-6]e\b", "French lower-secondary grades (6e, 5e, 4e, 3e); wordings in quotes are checked against the prompts"),
     (r"\bSHA-256\b", "name of the hash function"),
+    (r"\bbase-10\b", "base of the logarithm in the definition of the Zipf scale"),
+    (r", pp?\. \d+(?:[\u2013-]\d+)?(?=[);])", "page locator of a citation (checked with the sentence-citation pairs, Sources tab)"),
+    (r"\bGPT-4\b", "name of the model used in a cited study (Ripoll y Schmitz & Sonnleitner, 2025), not one of ours"),
 ]
 CITATION_YEAR = re.compile(r"(?:\(|; |, |et al\.,? |& [A-Z][\w'-]+,? |[A-Z][\w'-]+,? )(?:19|20)\d{2}[a-z]?(?=[);,]| \()")
 
@@ -63,10 +66,9 @@ def strip(md):
 
 
 def source_problems(md, name):
-    text = strip(md)
+    text = CITATION_YEAR.sub(" ", strip(md))
     for pat, _ in ALLOW:
         text = re.sub(pat, " ", text)
-    text = CITATION_YEAR.sub(" ", text)
     text = re.sub(r"«[^»]*»", " ", text)  # French wordings: checked by quote_problems
     bad = []
     for m in re.finditer(r"\d", text):
@@ -129,13 +131,18 @@ def run(root, docx_path=None):
     # 2 and 3. sources
     all_prompts = prompts(REPO)
     nums, design = render.load(root)
+    refs_path = os.path.join(root, "manuscript/references.json")
+    keys = {r["key"] for r in json.load(open(refs_path))} if os.path.exists(refs_path) else set()
+    for k, v in nums.items():
+        if k.startswith("src_") and v.get("ref") not in keys:
+            bad.append(f"source fact {k} cites {v.get('ref')}, which is not in manuscript/references.json")
     for stem in ("manuscript", "supplement"):
         src = open(os.path.join(root, f"manuscript/{stem}.md")).read()
         bad += source_problems(src, stem + ".md")
         bad += quote_problems(src, stem + ".md", all_prompts)
         # 4. rendered copy
         built = os.path.join(root, f"manuscript/build/{stem}.md")
-        expected = render.render_text(src, nums, design, "../../results/figures")
+        expected = render.render_text(src, nums, design, "../../results/figures", root)
         if not os.path.exists(built) or open(built).read() != expected:
             bad.append(f"manuscript/build/{stem}.md differs from the render of manuscript/{stem}.md")
         if stem == "manuscript" and docx_path:
@@ -152,6 +159,7 @@ def planted_copy(kind, tmp, docx_path):
     for d in ("manuscript/build", "results"):
         os.makedirs(os.path.join(tmp, d), exist_ok=True)
     for f in ("manuscript/manuscript.md", "manuscript/supplement.md", "manuscript/process_facts.json",
+              "manuscript/source_facts.json", "manuscript/references.json",
               "manuscript/build/manuscript.md", "manuscript/build/supplement.md", "results/manuscript_numbers.json",
               "design.json"):
         shutil.copy(os.path.join(REPO, f), os.path.join(tmp, f))
