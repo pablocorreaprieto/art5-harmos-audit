@@ -1,0 +1,13 @@
+{
+ "raw_file": "data/raw/calls_20261101T075547530698Z.jsonl",
+ "calls_file": "calls.jsonl",
+ "to_do": 8400,
+ "launched": 8400,
+ "ok": 8396,
+ "failed": 4,
+ "spent_usd": 41.0981,
+ "possibly_charged_usd": 0.0,
+ "cap_usd": 50.0,
+ "stopped": null,
+ "raw_sha256": "9209cc7d641c253e817746563e71d4a05d90479bf8be12472619bcd4e1223471"
+}
