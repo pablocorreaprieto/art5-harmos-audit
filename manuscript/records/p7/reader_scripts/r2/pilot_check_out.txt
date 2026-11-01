@@ -1,0 +1,7 @@
+pilot sigma 0.11686 df 192 upper80 0.12228
+stored 0.11685841488116806 192.0 0.12228291408794054
+pooled slope -0.04492 HC3 se 0.00489 z p(one-sided, normal) 2.21e-20
+topic-clustered (6 clusters): se 0.00202 t -22.25 one-sided p (t5) 1.70e-06
+   anthropic_balanced slope -0.0444 t -7.73 p(t5) 2.9e-04
+   mistral_balanced slope -0.0545 t -7.67 p(t5) 3.0e-04
+   openai_balanced slope -0.0358 t -6.16 p(t5) 8.2e-04

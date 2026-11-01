@@ -53,8 +53,9 @@
   "title": "Lexique 2: A new French lexical database",
   "doi": "10.3758/BF03195598",
   "apa": "New, B., Pallier, C., Brysbaert, M., & Ferrand, L. (2004). Lexique 2: A new French lexical database. *Behavior Research Methods, Instruments, & Computers, 36*(3), 516–524. https://doi.org/10.3758/BF03195598",
-  "access": "not accessible in full text; cited only as the reference of the database that its manual asks users to cite (G2 exception)",
-  "litnote": "part_B1, new2004_lexique2"
+  "access": "read-directly (pp. 516-524, by the session that verified the citations, P6.2, 1.11.2026; Springer PDF through alphaXiv)",
+  "litnote": "part_B1, new2004_lexique2",
+  "note": "Describes Lexique 2 (frequencies from Frantext texts after 1950 and from Web pages, no subtitles); cited with New & Pallier (n.d.) for the database, as its manual asks"
  },
  {
   "key": "newpallier_manual",
@@ -231,5 +232,51 @@
   "apa": "Avry, S. (2023, July 18). *ChatGPT is shaking up the world of education: What do teachers say?* EPFL News. https://actu.epfl.ch/news/chatgpt-is-shaking-up-the-world-of-education-wha-2",
   "access": "read-directly (whole news page; survey reports not opened)",
   "litnote": "part_B2_D1, epfl2023_vaud_teachers"
+ },
+ {
+  "key": "javourey2022",
+  "first_author": "Javourey-Drevet",
+  "year": 2022,
+  "cite": "Javourey-Drevet et al., 2022",
+  "title": "Simplification of literary and scientific texts to improve reading fluency and comprehension in beginning readers of French",
+  "doi": "10.1017/S014271642100062X",
+  "apa": "Javourey-Drevet, L., Dufau, S., François, T., Gala, N., Ginestié, J., & Ziegler, J. C. (2022). Simplification of literary and scientific texts to improve reading fluency and comprehension in beginning readers of French. *Applied Psycholinguistics, 43*, 485–512. https://doi.org/10.1017/S014271642100062X",
+  "access": "read-directly (open-access PDF, PDF pages 1, 2, 5, 7-11, 18, 24, 25, 28 of 28, journal pp. 485-512)",
+  "litnote": "literature, javourey2022"
+ },
+ {
+  "key": "sclar2024",
+  "first_author": "Sclar",
+  "year": 2024,
+  "cite": "Sclar et al., 2024",
+  "title": "Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting",
+  "arxiv": "2310.11324",
+  "apa": "Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). *Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting* (arXiv:2310.11324v2). arXiv. https://doi.org/10.48550/arXiv.2310.11324",
+  "access": "read-directly (arXiv v2: Abstract, Sections 1, 4.1, 4.2, 6, Appendix C)",
+  "litnote": "literature, sclar2024"
+ },
+ {
+  "key": "yan2024",
+  "first_author": "Yan",
+  "year": 2024,
+  "cite": "Yan et al., 2024",
+  "title": "Practical and ethical challenges of large language models in education: A systematic scoping review",
+  "doi": "10.1111/bjet.13370",
+  "online_first": true,
+  "apa": "Yan, L., Sha, L., Zhao, L., Li, Y., Martinez-Maldonado, R., Chen, G., Li, X., Jin, Y., & Gašević, D. (2024). Practical and ethical challenges of large language models in education: A systematic scoping review. *British Journal of Educational Technology, 55*(1), 90–112. https://doi.org/10.1111/bjet.13370",
+  "access": "read-directly (arXiv v2 of 22 July 2023, pp. 1, 4, 8, 9, 12, 14-16; the published open-access PDF could not be opened, Wiley blocked)",
+  "litnote": "main session, Recherches tab row 39",
+  "note": "Published online 6 August 2023 (OpenAlex), issue 55(1) of 2024"
+ },
+ {
+  "key": "vd_leo2012",
+  "first_author": "État de Vaud",
+  "year": 2012,
+  "cite": "État de Vaud, 2012",
+  "title": "Mise en oeuvre de la loi du 7 juin 2011 sur l'enseignement obligatoire (LEO)",
+  "url": "https://www.vd.ch/actualites/communiques-de-presse-de-letat-de-vaud/detail/communique/mise-en-oeuvre-de-la-loi-du-7-juin-2011-sur-lenseignement-obligatoire-leo-1333557608",
+  "apa": "État de Vaud. (2012, April 4). *Mise en oeuvre de la loi du 7 juin 2011 sur l'enseignement obligatoire (LEO)* [Press release]. https://www.vd.ch/actualites/communiques-de-presse-de-letat-de-vaud/detail/communique/mise-en-oeuvre-de-la-loi-du-7-juin-2011-sur-lenseignement-obligatoire-leo-1333557608",
+  "access": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)",
+  "litnote": "main session, Recherches tab rows 40-41"
  }
 ]

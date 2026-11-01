@@ -1,0 +1,6 @@
+anthropic_balanced   topic-level Hotelling T2 =   9.62, F(4,12) = 1.923, p = 0.171; sign-flip permutation p = 0.161
+anthropic_light      topic-level Hotelling T2 =   3.87, F(4,12) = 0.773, p = 0.563; sign-flip permutation p = 0.563
+mistral_balanced     topic-level Hotelling T2 =   4.50, F(4,12) = 0.900, p = 0.494; sign-flip permutation p = 0.487
+mistral_light        topic-level Hotelling T2 =   5.01, F(4,12) = 1.002, p = 0.444; sign-flip permutation p = 0.447
+openai_balanced      topic-level Hotelling T2 =  14.52, F(4,12) = 2.904, p = 0.068; sign-flip permutation p = 0.073
+openai_light         topic-level Hotelling T2 =   8.44, F(4,12) = 1.688, p = 0.217; sign-flip permutation p = 0.216

@@ -45,13 +45,15 @@ ALLOW = [
     (r"\bupper 80% confidence bound", "pilot SD bound named by the preregistration (question 7)"),
     (r"\bZipf [34]\b", "thresholds of two secondary measures (compute.py, share_rare_content and share_below4_content)"),
     (r"log10\(f \+\s*\) \+ 3", "Zipf formula of the preregistration (question 3); the smoothing is a placeholder"),
-    (r"tracking is 1 plus|\(1 means that|\b0 that they ignore|\b1 = follows|\b0 = ignores|just below 1\b",
+    (r"tracking is 1 plus|\(1 means that|\b0 that they ignore|\b1 = follows|\b0 = ignores",
      "anchors of the definition of tracking (1 = follows the grade like the age, 0 = ignores it)"),
     (r"\b[3-6]e\b", "French lower-secondary grades (6e, 5e, 4e, 3e); wordings in quotes are checked against the prompts"),
     (r"\bSHA-256\b", "name of the hash function"),
     (r"\bbase-10\b", "base of the logarithm in the definition of the Zipf scale"),
     (r", pp?\. \d+(?:[\u2013-]\d+)?(?=[);])", "page locator of a citation (checked with the sentence-citation pairs, Sources tab)"),
     (r"\bGPT-4\b", "name of the model used in a cited study (Ripoll y Schmitz & Sonnleitner, 2025), not one of ours"),
+    (r"\bexploratory_p7\.py\b", "file name of the post hoc script (added after the readings of the draft, P7)"),
+    (r"tracking intervals lie below 1\b", "the tracking anchor 1 (texts follow the grade like the age-only texts)"),
 ]
 CITATION_YEAR = re.compile(r"(?:\(|; |, |et al\.,? |& [A-Z][\w'-]+,? |[A-Z][\w'-]+,? )(?:19|20)\d{2}[a-z]?(?=[);,]| \()")
 

@@ -1,0 +1,6 @@
+anthropic_balanced   L0 age 10.53  95% boot [9.91, 11.12]  beyond the oldest ruler point (11.5): False
+anthropic_light      L0 age 11.33  95% boot [10.84, 11.89]  beyond the oldest ruler point (11.5): False
+mistral_balanced     L0 age 11.18  95% boot [10.32, 12.39]  beyond the oldest ruler point (11.5): False
+mistral_light        L0 age 11.66  95% boot [10.36, 13.24]  beyond the oldest ruler point (11.5): True
+openai_balanced      L0 age 10.53  95% boot [10.06, 11.00]  beyond the oldest ruler point (11.5): False
+openai_light         L0 age 9.40  95% boot [8.47, 10.66]  beyond the oldest ruler point (11.5): False

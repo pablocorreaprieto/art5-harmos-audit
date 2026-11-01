@@ -1,0 +1,54 @@
+models ['anthropic_balanced', 'anthropic_light', 'mistral_balanced', 'mistral_light', 'openai_balanced', 'openai_light']
+== primary, all six
+H2-H {'est': np.float64(-0.01175), 'se': np.float64(0.00316), 't': np.float64(-3.7186), 'p': np.float64(0.00206), 'lo': np.float64(-0.01848), 'hi': np.float64(-0.00501), 'T': 16}
+H2-P {'est': np.float64(-0.00076), 'se': np.float64(0.00439), 't': np.float64(-0.17328), 'p': np.float64(0.86475), 'lo': np.float64(-0.01013), 'hi': np.float64(0.00861), 'T': 16}
+H3-H {'est': np.float64(0.00269), 'se': np.float64(0.00232), 't': np.float64(1.15946), 'p': np.float64(0.26439), 'lo': np.float64(-0.00225), 'hi': np.float64(0.00762), 'T': 16}
+H3-P {'est': np.float64(0.00402), 'se': np.float64(0.00204), 't': np.float64(1.96913), 'p': np.float64(0.0677), 'lo': np.float64(-0.00033), 'hi': np.float64(0.00838), 'T': 16}
+== leave one model out (two-sided p, uncorrected)
+H2-H without Sonnet  est -0.01636 p 0.0002
+H2-H without Haiku   est +0.00411 p 0.2969
+H2-H without MLarge  est -0.00759 p 0.0216
+H2-H without MSmall  est -0.01740 p 0.0001
+H2-H without Sol     est -0.01538 p 0.0021
+H2-H without Luna    est -0.01787 p 0.0000
+H2-P without Sonnet  est -0.00174 p 0.7110
+H2-P without Haiku   est +0.00316 p 0.5252
+H2-P without MLarge  est -0.00215 p 0.6243
+H2-P without MSmall  est -0.00221 p 0.6271
+H2-P without Sol     est +0.00060 p 0.9120
+H2-P without Luna    est -0.00223 p 0.6232
+H3-H without Sonnet  est +0.00476 p 0.0954
+H3-H without Haiku   est -0.00380 p 0.0903
+H3-H without MLarge  est +0.00513 p 0.0823
+H3-H without MSmall  est -0.00046 p 0.8384
+H3-H without Sol     est +0.00518 p 0.0575
+H3-H without Luna    est +0.00531 p 0.0606
+H3-P without Sonnet  est +0.00445 p 0.1049
+H3-P without Haiku   est +0.00175 p 0.4600
+H3-P without MLarge  est +0.00707 p 0.0065
+H3-P without MSmall  est -0.00083 p 0.6718
+H3-P without Sol     est +0.00478 p 0.0293
+H3-P without Luna    est +0.00693 p 0.0092
+== per-model levels/gradients (topic t-tests) and SD across six
+H2-H {'Sonnet': np.float64(0.0113), 'Haiku': np.float64(-0.091), 'MLarge': np.float64(-0.0326), 'MSmall': np.float64(0.0165), 'Sol': np.float64(0.0064), 'Luna': np.float64(0.0189)} SD 0.0432 models-as-sample t(5): -0.0117 [np.float64(-0.057), np.float64(0.0336)] p 0.534
+H2-P {'Sonnet': np.float64(0.0042), 'Haiku': np.float64(-0.0204), 'MLarge': np.float64(0.0062), 'MSmall': np.float64(0.0065), 'Sol': np.float64(-0.0076), 'Luna': np.float64(0.0066)} SD 0.011 models-as-sample t(5): -0.0008 [np.float64(-0.0123), np.float64(0.0108)] p 0.872
+H3-H {'Sonnet': np.float64(-0.0077), 'Haiku': np.float64(0.0351), 'MLarge': np.float64(-0.0095), 'MSmall': np.float64(0.0184), 'Sol': np.float64(-0.0098), 'Luna': np.float64(-0.0104)} SD 0.0194 models-as-sample t(5): 0.0027 [np.float64(-0.0177), np.float64(0.0231)] p 0.748
+H3-P {'Sonnet': np.float64(0.0019), 'Haiku': np.float64(0.0154), 'MLarge': np.float64(-0.0112), 'MSmall': np.float64(0.0283), 'Sol': np.float64(0.0003), 'Luna': np.float64(-0.0105)} SD 0.0154 models-as-sample t(5): 0.004 [np.float64(-0.0121), np.float64(0.0202)] p 0.549
+/tmp/refute_r2r3/core.py:68: RuntimeWarning: Mean of empty slice
+  out[lab] = np.nanmean(A, axis=(2, 3))
+== shifts and tracking per model, pooled vs mean vs median
+L1 pooled 0.298 0.932 | mean 0.212 0.944 | median -0.193 1.186 | SD shift 1.074 SD track 0.5 | range shift -0.77 2.12 range track 0.18 1.42
+    shifts {'Sonnet': np.float64(-0.25), 'Haiku': np.float64(2.12), 'MLarge': np.float64(0.79), 'MSmall': np.float64(-0.49), 'Sol': np.float64(-0.13), 'Luna': np.float64(-0.77)}
+    tracks {'Sonnet': np.float64(1.17), 'Haiku': np.float64(0.18), 'MLarge': np.float64(1.23), 'MSmall': np.float64(0.46), 'Sol': np.float64(1.2), 'Luna': np.float64(1.42)}
+L1P pooled 0.019 0.898 | mean -0.012 0.909 | median -0.121 0.976 | SD shift 0.279 SD track 0.455 | range shift -0.27 0.48 range track 0.16 1.43
+    shifts {'Sonnet': np.float64(-0.09), 'Haiku': np.float64(0.48), 'MLarge': np.float64(-0.15), 'MSmall': np.float64(-0.19), 'Sol': np.float64(0.15), 'Luna': np.float64(-0.27)}
+    tracks {'Sonnet': np.float64(0.96), 'Haiku': np.float64(0.64), 'MLarge': np.float64(1.27), 'MSmall': np.float64(0.16), 'Sol': np.float64(0.99), 'Luna': np.float64(1.43)}
+L2 pooled 0.868 0.975 | mean 0.821 0.972 | median 0.702 1.073 | SD shift 0.871 SD track 0.225 | range shift -0.11 2.04 range track 0.68 1.17
+    shifts {'Sonnet': np.float64(0.64), 'Haiku': np.float64(2.04), 'MLarge': np.float64(1.64), 'MSmall': np.float64(0.76), 'Sol': np.float64(-0.04), 'Luna': np.float64(-0.11)}
+    tracks {'Sonnet': np.float64(1.03), 'Haiku': np.float64(0.7), 'MLarge': np.float64(1.12), 'MSmall': np.float64(0.68), 'Sol': np.float64(1.17), 'Luna': np.float64(1.14)}
+L3 pooled -0.461 1.058 | mean -0.492 1.072 | median -0.468 1.126 | SD shift 0.284 SD track 0.214 | range shift -0.96 -0.11 range track 0.75 1.3
+    shifts {'Sonnet': np.float64(-0.48), 'Haiku': np.float64(-0.11), 'MLarge': np.float64(-0.46), 'MSmall': np.float64(-0.96), 'Sol': np.float64(-0.34), 'Luna': np.float64(-0.61)}
+    tracks {'Sonnet': np.float64(0.88), 'Haiku': np.float64(0.75), 'MLarge': np.float64(1.3), 'MSmall': np.float64(1.07), 'Sol': np.float64(1.18), 'Luna': np.float64(1.24)}
+L4 pooled -0.256 1.319 | mean -0.291 1.322 | median -0.228 1.397 | SD shift 0.421 SD track 0.261 | range shift -0.94 0.3 range track 0.88 1.59
+    shifts {'Sonnet': np.float64(-0.31), 'Haiku': np.float64(0.3), 'MLarge': np.float64(-0.15), 'MSmall': np.float64(-0.11), 'Sol': np.float64(-0.54), 'Luna': np.float64(-0.94)}
+    tracks {'Sonnet': np.float64(1.35), 'Haiku': np.float64(0.88), 'MLarge': np.float64(1.45), 'MSmall': np.float64(1.17), 'Sol': np.float64(1.59), 'Luna': np.float64(1.5)}

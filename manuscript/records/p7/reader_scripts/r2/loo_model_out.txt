@@ -1,0 +1,13 @@
+leave-one-model-out, uncorrected two-sided p (5 models, 16 topics)
+drop None                 H2-H -0.0117 (p=0.002) | H2-P -0.0008 (p=0.865) | H3-H +0.0027 (p=0.264) | H3-P +0.0040 (p=0.068)
+drop anthropic_balanced   H2-H -0.0164 (p=0.000) | H2-P -0.0017 (p=0.711) | H3-H +0.0048 (p=0.095) | H3-P +0.0045 (p=0.105)
+drop anthropic_light      H2-H +0.0041 (p=0.297) | H2-P +0.0032 (p=0.525) | H3-H -0.0038 (p=0.090) | H3-P +0.0018 (p=0.460)
+drop mistral_balanced     H2-H -0.0076 (p=0.022) | H2-P -0.0021 (p=0.624) | H3-H +0.0051 (p=0.082) | H3-P +0.0071 (p=0.007)
+drop mistral_light        H2-H -0.0174 (p=0.000) | H2-P -0.0022 (p=0.627) | H3-H -0.0005 (p=0.838) | H3-P -0.0008 (p=0.672)
+drop openai_balanced      H2-H -0.0154 (p=0.002) | H2-P +0.0006 (p=0.912) | H3-H +0.0052 (p=0.058) | H3-P +0.0048 (p=0.029)
+drop openai_light         H2-H -0.0179 (p=0.000) | H2-P -0.0022 (p=0.623) | H3-H +0.0053 (p=0.061) | H3-P +0.0069 (p=0.009)
+models as random effects, H2-H: mean -0.0117, SD across models 0.0432, 95% CI [-0.0570, +0.0336] (t5), p = 0.534
+models as random effects, H2-P: mean -0.0008, SD across models 0.0110, 95% CI [-0.0123, +0.0108] (t5), p = 0.872
+models as random effects, H3-H: mean +0.0027, SD across models 0.0194, 95% CI [-0.0177, +0.0231] (t5), p = 0.748
+models as random effects, H3-P: mean +0.0040, SD across models 0.0154, 95% CI [-0.0121, +0.0202] (t5), p = 0.549
+per-model L1 shifts: mean 0.21, SD 1.07, t5 95% CI [-0.92, 1.34]; median -0.19

@@ -1,0 +1,5 @@
+H2-H: full p=0.0021; leave-one-topic-out p range [0.0002 (drop 'd'un voyage en train'), 0.0047 (drop 'de la lune et des étoiles')]; topic values range -0.0279..+0.0164; SD 0.0126
+H2-P: full p=0.8647; leave-one-topic-out p range [0.3074 (drop 'd'un voyage en train'), 0.9927 (drop 'de l'amitié à l'école')]; topic values range -0.0204..+0.0433; SD 0.0176
+H3-H: full p=0.2644; leave-one-topic-out p range [0.1330 (drop 'd'une fête de famille'), 0.5133 (drop 'des abeilles')]; topic values range -0.0113..+0.0225; SD 0.0093
+H3-P: full p=0.0677; leave-one-topic-out p range [0.0080 (drop 'des saisons'), 0.1240 (drop 'des abeilles')]; topic values range -0.0150..+0.0132; SD 0.0082
+   values by topic: {'des saisons': -0.015, "d'une fête de famille": -0.009, 'du jardin potager': -0.0034, 'des animaux de la forêt': -0.0015, 'de la lune et des étoiles': 0.002, 'du corps humain': 0.0028, 'de la neige en montagne': 0.0029, 'des pompiers': 0.0034, "d'un voyage en train": 0.0052, 'des oiseaux migrateurs': 0.0077, 'du métier de boulanger': 0.0085, 'des dinosaures': 0.0093, "de l'amitié à l'école": 0.0126, 'des volcans': 0.0128, "de l'eau": 0.013, 'des abeilles': 0.0132}

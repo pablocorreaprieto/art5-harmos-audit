@@ -29,7 +29,8 @@ run() {  # name, exact success line, command...
   echo "code under test: $ART5_CODE"
   (cd "$ART5_CODE" && for f in design.json make_prompts.py compute.py analyze.py sim_power.py sim_power_results.json \
      generate.py pipeline.py validate_measure.py PREREG.md README.md requirements.txt \
-     manuscript_numbers.py results/numbers.json results/manuscript_numbers.json manuscript/manuscript.md; do
+     manuscript_numbers.py exploratory.py exploratory_p7.py results/numbers.json results/exploratory.json \
+     results/exploratory_p7.json results/manuscript_numbers.json manuscript/manuscript.md manuscript/supplement.md; do
      [ -f "$f" ] && printf "%-24s %s\n" "$f" "$(sha256sum "$f" | cut -c1-16)"; done)
 } > "$OUT/tested_versions.txt"
 run selftest_compute "OK" python3 -B "$ART5_CODE/compute.py" --self-test "$LEXIQUE"
@@ -50,6 +51,10 @@ run history "PASS history" bash "$ART5_CODE/history/check_history.sh"
 REPO=$(dirname "$HERE")
 run recompute_primary "PASS recompute_primary" bash -c "cd '$REPO' && python3 -B checks/recompute_primary.py"
 run check_numbers "PASS check_numbers" bash -c "cd '$REPO' && python3 -B checks/check_numbers.py"
+# added after the internal readings of the draft (P7, 1.11.2026): quantities written in words, and citations
+run check_claims "PASS check_claims" bash -c "cd '$REPO' && python3 -B checks/check_claims.py"
+run check_claims_planted "FAIL check_claims" bash -c "cd '$REPO' && python3 -B checks/check_claims.py --plant; test \$? -eq 1"
+run check_citations "PASS check_citations" bash -c "cd '$REPO' && python3 -B checks/check_citations.py"
 if [ "${1:-}" = "--with-sim" ]; then run sim "PASS sim" bash "$HERE/sim.sh"; fi
 [ $fail -eq 0 ] && echo "ALL CHECKS PASSED" || echo "SOME CHECKS FAILED"
 exit $fail

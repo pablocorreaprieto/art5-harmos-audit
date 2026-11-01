@@ -1,0 +1,354 @@
+[
+ {
+  "n": 1,
+  "sentence": "Teachers have begun to work this way: in a survey of upper-secondary and private-school teachers in Vaud, about half had used ChatGPT, and a quarter of these had used it in their teaching, mainly to prepare lessons (Avry, 2023).",
+  "key": "avry2023",
+  "cite": "Avry, 2023",
+  "where": "https://actu.epfl.ch/news/chatgpt-is-shaking-up-the-world-of-education-wha-2",
+  "access_recorded": "read-directly (whole news page; survey reports not opened)"
+ },
+ {
+  "n": 2,
+  "sentence": "Advice written for teachers recommends naming the readers' grade in the prompt so that the model pitches the text accordingly (Imperial & Tayyar Madabushi, 2023, p. 206).",
+  "key": "imperial2023",
+  "cite": "Imperial & Tayyar Madabushi, 2023",
+  "where": "https://aclanthology.org/2023.gem-1.18/",
+  "access_recorded": "read-directly (pp. 205-206, 208-212, 218-220)"
+ },
+ {
+  "n": 3,
+  "sentence": "Asked to answer science questions for readers of different ages, ChatGPT produced answers whose readability barely moved with the requested age (Rooein et al., 2023).",
+  "key": "rooein2023",
+  "cite": "Rooein et al., 2023",
+  "where": "https://arxiv.org/abs/2312.02065",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 4,
+  "sentence": "Asked for stories for second-grade readers, ChatGPT wrote easier stories when the grade was named, but no model reached the target range under any wording (Imperial & Tayyar Madabushi, 2023), and models asked to rewrite texts to a target Lexile level tended to overshoot it (Huang et al., 2024).",
+  "key": "huang2024",
+  "cite": "Huang et al., 2024",
+  "where": "https://arxiv.org/abs/2406.12787",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 5,
+  "sentence": "Asked for stories for second-grade readers, ChatGPT wrote easier stories when the grade was named, but no model reached the target range under any wording (Imperial & Tayyar Madabushi, 2023), and models asked to rewrite texts to a target Lexile level tended to overshoot it (Huang et al., 2024).",
+  "key": "imperial2023",
+  "cite": "Imperial & Tayyar Madabushi, 2023",
+  "where": "https://aclanthology.org/2023.gem-1.18/",
+  "access_recorded": "read-directly (pp. 205-206, 208-212, 218-220)"
+ },
+ {
+  "n": 6,
+  "sentence": "Under the intercantonal HarmoS agreement, children in Switzerland start school once they are four years old on 31 July, and the primary degree lasts eight years, kindergarten included (CDIP, 2007).",
+  "key": "harmos2007",
+  "cite": "CDIP, 2007",
+  "where": "https://fr.lexwork.naz.ch/fr/dta/416.2.pdf",
+  "access_recorded": "read-directly (all 7 pages; Art. 5 and 6, p. 3)"
+ },
+ {
+  "n": 7,
+  "sentence": "Counting from the first year of kindergarten, Fribourg numbers the school years 1H to 11H (Canton de Fribourg, 2025), while Vaud and Geneva write the primary years 1P to 8P (État de Vaud, n.d.; République et canton de Genève, 2026), and all three cantons place 5H or 5P at the start of a cycle for pupils aged 8 to 12.",
+  "key": "fr_cycle2",
+  "cite": "Canton de Fribourg, 2025",
+  "where": "https://www.fr.ch/formation-et-ecoles/scolarite-obligatoire/ecole-obligatoire-organisation-et-deroulement-cycle-2",
+  "access_recorded": "read-directly (whole page)"
+ },
+ {
+  "n": 8,
+  "sentence": "Counting from the first year of kindergarten, Fribourg numbers the school years 1H to 11H (Canton de Fribourg, 2025), while Vaud and Geneva write the primary years 1P to 8P (État de Vaud, n.d.; République et canton de Genève, 2026), and all three cantons place 5H or 5P at the start of a cycle for pupils aged 8 to 12.",
+  "key": "vd_deroulement",
+  "cite": "État de Vaud, n.d.",
+  "where": "https://www.vd.ch/formation/enseignement-obligatoire-et-pedagogie-specialisee/deroulement-de-lecole-obligatoire-dans-le-canton-de-vaud/",
+  "access_recorded": "read-directly (whole page)"
+ },
+ {
+  "n": 9,
+  "sentence": "Counting from the first year of kindergarten, Fribourg numbers the school years 1H to 11H (Canton de Fribourg, 2025), while Vaud and Geneva write the primary years 1P to 8P (État de Vaud, n.d.; République et canton de Genève, 2026), and all three cantons place 5H or 5P at the start of a cycle for pupils aged 8 to 12.",
+  "key": "ge_primaire",
+  "cite": "République et canton de Genève, 2026",
+  "where": "https://www.ge.ch/node/11636",
+  "access_recorded": "read-directly (whole page)"
+ },
+ {
+  "n": 10,
+  "sentence": "A pupil who has neither repeated nor skipped a year is thus 8 or 9 years old in 5H, a grade that France calls CE2 (Ministère de l'Éducation nationale, 2024a), while « 5e » names the second year of French lower-secondary school (Ministère de l'Éducation nationale, 2024b).",
+  "key": "men_elementaire",
+  "cite": "Ministère de l'Éducation nationale, 2024a",
+  "where": "https://www.education.gouv.fr/l-ecole-elementaire-9668",
+  "access_recorded": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)"
+ },
+ {
+  "n": 11,
+  "sentence": "A pupil who has neither repeated nor skipped a year is thus 8 or 9 years old in 5H, a grade that France calls CE2 (Ministère de l'Éducation nationale, 2024a), while « 5e » names the second year of French lower-secondary school (Ministère de l'Éducation nationale, 2024b).",
+  "key": "men_college",
+  "cite": "Ministère de l'Éducation nationale, 2024b",
+  "where": "https://www.education.gouv.fr/le-college-4940",
+  "access_recorded": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)"
+ },
+ {
+  "n": 12,
+  "sentence": "In the study by Imperial and Tayyar Madabushi (2023), naming the second grade lowered the Flesch–Kincaid grade level of ChatGPT's stories but left it above the target range, and describing the level brought the stories closer to it than naming the grading framework did.",
+  "key": "imperial2023",
+  "cite": "Imperial & Tayyar Madabushi, 2023",
+  "where": "https://aclanthology.org/2023.gem-1.18/",
+  "access_recorded": "read-directly (pp. 205-206, 208-212, 218-220)"
+ },
+ {
+  "n": 13,
+  "sentence": "Rooein et al. (2023) found that the readability of ChatGPT's answers stayed within a narrow band whatever the requested age or education level, a \"style\" that prompting hardly moved, although another model of the same provider did respond to age.",
+  "key": "rooein2023",
+  "cite": "Rooein et al., 2023",
+  "where": "https://arxiv.org/abs/2312.02065",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 14,
+  "sentence": "Huang et al. (2024) asked three models to rewrite texts to Lexile levels and found that a minority of outputs landed within the target band, with a skew toward harder texts.",
+  "key": "huang2024",
+  "cite": "Huang et al., 2024",
+  "where": "https://arxiv.org/abs/2406.12787",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 15,
+  "sentence": "Oh et al. (2026) describe prompted grade labels as producing responses above the target grade and propose fine-tuned grade-specific models instead.",
+  "key": "oh2026",
+  "cite": "Oh et al., 2026",
+  "where": "https://doi.org/10.1038/s44387-026-00081-7",
+  "access_recorded": "read-directly (arXiv v2, the accepted version)"
+ },
+ {
+  "n": 16,
+  "sentence": "When models rewrite a given text, prompting moves readability in the requested direction, but the output's readability stays correlated with that of the source (Farajidizaji et al., 2023; Trott & Rivière, 2024).",
+  "key": "trott2024",
+  "cite": "Trott & Rivière, 2024",
+  "where": "https://arxiv.org/abs/2410.14028",
+  "access_recorded": "read-directly (arXiv v1, all pages)"
+ },
+ {
+  "n": 17,
+  "sentence": "When models rewrite a given text, prompting moves readability in the requested direction, but the output's readability stays correlated with that of the source (Farajidizaji et al., 2023; Trott & Rivière, 2024).",
+  "key": "farajidizaji2023",
+  "cite": "Farajidizaji et al., 2023",
+  "where": "https://arxiv.org/abs/2309.12551",
+  "access_recorded": "read-directly (arXiv v2, all pages)"
+ },
+ {
+  "n": 18,
+  "sentence": "The readability measures are formulas built for English and for the United States school system, which their own authors note may not transfer to other languages and school systems (Rooein et al., 2023).",
+  "key": "rooein2023",
+  "cite": "Rooein et al., 2023",
+  "where": "https://arxiv.org/abs/2312.02065",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 19,
+  "sentence": "In a European assessment context, Ripoll y Schmitz and Sonnleitner (2025) used GPT-4 to write German reading passages for fifth graders in Luxembourg and had reviewers rate them blind against passages written by people, an evaluation by human judgement rather than by a text measure.",
+  "key": "ripoll2025",
+  "cite": "Ripoll y Schmitz & Sonnleitner, 2025",
+  "where": "https://doi.org/10.1186/s40536-025-00255-w",
+  "access_recorded": "read-directly (pp. 1, 6, 13-14, 16-19, 21-24)"
+ },
+ {
+  "n": 20,
+  "sentence": "Word frequency accounts for a large share of the differences in how quickly words are recognised (Brysbaert et al., 2018); in English, mean word frequency, concreteness and age of acquisition together explained about a third of the variance in readers' judgements of text readability (Trott & Rivière, 2024).",
+  "key": "brysbaert2018",
+  "cite": "Brysbaert et al., 2018",
+  "where": "https://doi.org/10.1177/0963721417727521",
+  "access_recorded": "read-directly (accepted manuscript)"
+ },
+ {
+  "n": 21,
+  "sentence": "Word frequency accounts for a large share of the differences in how quickly words are recognised (Brysbaert et al., 2018); in English, mean word frequency, concreteness and age of acquisition together explained about a third of the variance in readers' judgements of text readability (Trott & Rivière, 2024).",
+  "key": "trott2024",
+  "cite": "Trott & Rivière, 2024",
+  "where": "https://arxiv.org/abs/2410.14028",
+  "access_recorded": "read-directly (arXiv v1, all pages)"
+ },
+ {
+  "n": 22,
+  "sentence": "In French, the readers used in the first years of primary school draw on more frequent words than those of the later years (Lété et al., 2004).",
+  "key": "manulex2004",
+  "cite": "Lété et al., 2004",
+  "where": "https://doi.org/10.3758/BF03195560",
+  "access_recorded": "read-directly (pp. 156-162, 165)"
+ },
+ {
+  "n": 23,
+  "sentence": "On the Zipf scale, frequencies are expressed as the base-10 logarithm of occurrences per billion words, so that values from 1 to 3 mark rare words and values from 4 to 6 common ones (Brysbaert et al., 2018).",
+  "key": "brysbaert2018",
+  "cite": "Brysbaert et al., 2018",
+  "where": "https://doi.org/10.1177/0963721417727521",
+  "access_recorded": "read-directly (accepted manuscript)"
+ },
+ {
+  "n": 24,
+  "sentence": "For French, the Lexique database gives lemma frequencies from film subtitles and from novels (New & Pallier, n.d.; New et al., 2004), and Manulex gives frequencies by grade from the readers used in French primary schools (Lété et al., 2004).",
+  "key": "manulex2004",
+  "cite": "Lété et al., 2004",
+  "where": "https://doi.org/10.3758/BF03195560",
+  "access_recorded": "read-directly (pp. 156-162, 165)"
+ },
+ {
+  "n": 25,
+  "sentence": "For French, the Lexique database gives lemma frequencies from film subtitles and from novels (New & Pallier, n.d.; New et al., 2004), and Manulex gives frequencies by grade from the readers used in French primary schools (Lété et al., 2004).",
+  "key": "new2004",
+  "cite": "New et al., 2004",
+  "where": "https://doi.org/10.3758/BF03195598",
+  "access_recorded": "not accessible in full text; cited only as the reference of the database that its manual asks users to cite (G2 exception)"
+ },
+ {
+  "n": 26,
+  "sentence": "For French, the Lexique database gives lemma frequencies from film subtitles and from novels (New & Pallier, n.d.; New et al., 2004), and Manulex gives frequencies by grade from the readers used in French primary schools (Lété et al., 2004).",
+  "key": "newpallier_manual",
+  "cite": "New & Pallier, n.d.",
+  "where": "https://lexique.org/_documentation/Manuel_Lexique.3.2.pdf",
+  "access_recorded": "read-directly (pp. 1-15, 17, 21-23)"
+ },
+ {
+  "n": 27,
+  "sentence": "Frequency is not the only source of difficulty: sentence length matters too, and for beginning readers so do decodability and information load (Huang et al., 2024; Peereman et al., 2007).",
+  "key": "huang2024",
+  "cite": "Huang et al., 2024",
+  "where": "https://arxiv.org/abs/2406.12787",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 28,
+  "sentence": "Frequency is not the only source of difficulty: sentence length matters too, and for beginning readers so do decodability and information load (Huang et al., 2024; Peereman et al., 2007).",
+  "key": "peereman2007",
+  "cite": "Peereman et al., 2007",
+  "where": "https://doi.org/10.3758/BF03193029",
+  "access_recorded": "read-directly (pp. 579-583, 588)"
+ },
+ {
+  "n": 29,
+  "sentence": "L6 is a collision control: the same digit with the suffix of the French lower-secondary grades (« de 5e »), which in France names the second year of lower-secondary school (Ministère de l'Éducation nationale, 2024b); it was run at 3H to 5H only, because « de 6e » is the L4 prompt of 8H.",
+  "key": "men_college",
+  "cite": "Ministère de l'Éducation nationale, 2024b",
+  "where": "https://www.education.gouv.fr/le-college-4940",
+  "access_recorded": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)"
+ },
+ {
+  "n": 30,
+  "sentence": "Each word form was read as its most frequent lemma in the French lexical database Lexique 3.83 (New & Pallier, n.d.; New et al., 2004), and content words were the forms read as nouns, qualifying adjectives or verbs, without the lemmas *être* and *avoir*, the indefinites *tout*, *autre* and *même*, and proper names.",
+  "key": "new2004",
+  "cite": "New et al., 2004",
+  "where": "https://doi.org/10.3758/BF03195598",
+  "access_recorded": "not accessible in full text; cited only as the reference of the database that its manual asks users to cite (G2 exception)"
+ },
+ {
+  "n": 31,
+  "sentence": "Each word form was read as its most frequent lemma in the French lexical database Lexique 3.83 (New & Pallier, n.d.; New et al., 2004), and content words were the forms read as nouns, qualifying adjectives or verbs, without the lemmas *être* and *avoir*, the indefinites *tout*, *autre* and *même*, and proper names.",
+  "key": "newpallier_manual",
+  "cite": "New & Pallier, n.d.",
+  "where": "https://lexique.org/_documentation/Manuel_Lexique.3.2.pdf",
+  "access_recorded": "read-directly (pp. 1-15, 17, 21-23)"
+ },
+ {
+  "n": 32,
+  "sentence": "A lemma's frequency is the mean of its frequencies per million words in the two corpora of Lexique, film subtitles and novels published from 1950 to 2000 (New & Pallier, n.d.), expressed on the Zipf scale, the base-10 logarithm of the frequency per billion words (van Heuven et al., 2014, as cited in Brysbaert et al., 2018).",
+  "key": "brysbaert2018",
+  "cite": "Brysbaert et al., 2018",
+  "where": "https://doi.org/10.1177/0963721417727521",
+  "access_recorded": "read-directly (accepted manuscript)"
+ },
+ {
+  "n": 33,
+  "sentence": "A lemma's frequency is the mean of its frequencies per million words in the two corpora of Lexique, film subtitles and novels published from 1950 to 2000 (New & Pallier, n.d.), expressed on the Zipf scale, the base-10 logarithm of the frequency per billion words (van Heuven et al., 2014, as cited in Brysbaert et al., 2018).",
+  "key": "newpallier_manual",
+  "cite": "New & Pallier, n.d.",
+  "where": "https://lexique.org/_documentation/Manuel_Lexique.3.2.pdf",
+  "access_recorded": "read-directly (pp. 1-15, 17, 21-23)"
+ },
+ {
+  "n": 34,
+  "sentence": "A lemma's frequency is the mean of its frequencies per million words in the two corpora of Lexique, film subtitles and novels published from 1950 to 2000 (New & Pallier, n.d.), expressed on the Zipf scale, the base-10 logarithm of the frequency per billion words (van Heuven et al., 2014, as cited in Brysbaert et al., 2018).",
+  "key": "secondary:van Heuven et al., 2014",
+  "cite": "van Heuven et al., 2014 (as cited in the secondary source of the same sentence)",
+  "where": "the secondary source's passage that attributes this",
+  "access_recorded": "primary not read; cited through the secondary source"
+ },
+ {
+  "n": 35,
+  "sentence": "Before the pilot, it was run on the articles of the French Wikipedia and of Vikidia, an online encyclopedia for readers aged 8 to 13 (Vikidia, n.d.), on the same 30 subjects; the preregistered criterion was met, with Vikidia scoring higher in 28 of the 29 usable pairs (sign test, one-sided *p* < .001; mean difference 0.34 Zipf).",
+  "key": "vikidia_about",
+  "cite": "Vikidia, n.d.",
+  "where": "https://fr.vikidia.org/wiki/Vikidia:%C3%80_propos",
+  "access_recorded": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)"
+ },
+ {
+  "n": 36,
+  "sentence": "Eight secondary measures were preregistered: the median Zipf frequency of content lemmas, the shares of content lemmas below Zipf 3 and below Zipf 4, mean word length, words per sentence, number of words, the Kandel–Moles adaptation of the Flesch readability formula to French (Kandel & Moles, 1958, as cited in Primpied et al., 2022) and the mean Zipf frequency of word forms in films.",
+  "key": "primpied2022",
+  "cite": "Primpied et al., 2022",
+  "where": "https://arxiv.org/abs/2208.12924",
+  "access_recorded": "read-directly (arXiv v1, all 13 pages)"
+ },
+ {
+  "n": 37,
+  "sentence": "Eight secondary measures were preregistered: the median Zipf frequency of content lemmas, the shares of content lemmas below Zipf 3 and below Zipf 4, mean word length, words per sentence, number of words, the Kandel–Moles adaptation of the Flesch readability formula to French (Kandel & Moles, 1958, as cited in Primpied et al., 2022) and the mean Zipf frequency of word forms in films.",
+  "key": "secondary:Kandel & Moles, 1958",
+  "cite": "Kandel & Moles, 1958 (as cited in the secondary source of the same sentence)",
+  "where": "the secondary source's passage that attributes this",
+  "access_recorded": "primary not read; cited through the secondary source"
+ },
+ {
+  "n": 38,
+  "sentence": "This contrasts with earlier audits in English, where prompting for an age or a grade changed the readability of the outputs little or left it above the target (Imperial & Tayyar Madabushi, 2023; Rooein et al., 2023).",
+  "key": "imperial2023",
+  "cite": "Imperial & Tayyar Madabushi, 2023",
+  "where": "https://aclanthology.org/2023.gem-1.18/",
+  "access_recorded": "read-directly (pp. 205-206, 208-212, 218-220)"
+ },
+ {
+  "n": 39,
+  "sentence": "This contrasts with earlier audits in English, where prompting for an age or a grade changed the readability of the outputs little or left it above the target (Imperial & Tayyar Madabushi, 2023; Rooein et al., 2023).",
+  "key": "rooein2023",
+  "cite": "Rooein et al., 2023",
+  "where": "https://arxiv.org/abs/2312.02065",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 40,
+  "sentence": "That is the error of reading the digit as the year of a primary school that starts the year pupils turn six: the fifth year of the French école élémentaire is CM2 (Ministère de l'Éducation nationale, 2024a), the grade of pupils aged 10 to 11, two years above 5H.",
+  "key": "men_elementaire",
+  "cite": "Ministère de l'Éducation nationale, 2024a",
+  "where": "https://www.education.gouv.fr/l-ecole-elementaire-9668",
+  "access_recorded": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)"
+ },
+ {
+  "n": 41,
+  "sentence": "The measure covers one dimension of text difficulty: sentence length matters too, and for beginning readers so do decodability and information load (Huang et al., 2024).",
+  "key": "huang2024",
+  "cite": "Huang et al., 2024",
+  "where": "https://arxiv.org/abs/2406.12787",
+  "access_recorded": "read-directly"
+ },
+ {
+  "n": 42,
+  "sentence": "The frequencies come from Lexique, whose corpora are films and novels for adults; grade-level norms from French school readers exist (Lété et al., 2004), and adult-based norms are a weaker guide to what children have met in print (Peereman et al., 2007).",
+  "key": "manulex2004",
+  "cite": "Lété et al., 2004",
+  "where": "https://doi.org/10.3758/BF03195560",
+  "access_recorded": "read-directly (pp. 156-162, 165)"
+ },
+ {
+  "n": 43,
+  "sentence": "The frequencies come from Lexique, whose corpora are films and novels for adults; grade-level norms from French school readers exist (Lété et al., 2004), and adult-based norms are a weaker guide to what children have met in print (Peereman et al., 2007).",
+  "key": "peereman2007",
+  "cite": "Peereman et al., 2007",
+  "where": "https://doi.org/10.3758/BF03193029",
+  "access_recorded": "read-directly (pp. 579-583, 588)"
+ },
+ {
+  "n": 44,
+  "sentence": "The reference is each model's own idea of an age, so the study shows equivalence between wordings, not appropriateness for pupils, and no teacher or pupil judged the texts (compare Ripoll y Schmitz & Sonnleitner, 2025).",
+  "key": "ripoll2025",
+  "cite": "Ripoll y Schmitz & Sonnleitner, 2025",
+  "where": "https://doi.org/10.1186/s40536-025-00255-w",
+  "access_recorded": "read-directly (pp. 1, 6, 13-14, 16-19, 21-24)"
+ }
+]

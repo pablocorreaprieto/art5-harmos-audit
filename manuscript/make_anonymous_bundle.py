@@ -24,15 +24,25 @@ REPLACEMENTS = [
     (r"pablocorreaprieto", "ANONYMISED"),
     (r"AsPredicted #\d+", "AsPredicted #[anonymised]"),
     (r"\"321415\"", "\"[anonymised]\""),
+    (r"\b321415\b", "[anonymised]"),
+    (r"\bPablo Correa Prieto\b", "the author"),
+    (r"\bCorrea Prieto\b", "[author]"),
+    (r"\bCorrea\b", "[author]"),
     (r"\bPablo's\b", "the author's"),
     (r"\bPablo\b", "the author"),
+    (r"0009-0009-1844-7453", "[ORCID removed]"),
+    (r"Universidad Internacional de La Rioja", "[university]"),
+    (r"\bUNIR\b", "[university]"),
+    (r"[\w.+-]+@(?:gmail\.com|hotmail\.\w+|edu-vd\.ch|eduvaud\.ch)", "[e-mail removed]"),
+    (r"https://(?:docs|drive)\.google\.com/\S*?(?=[)\s\]>\"']|$)", "[link to a private document removed for review]"),
 ]
 FORBIDDEN = re.compile(r"(?i:pablo|correa|pabcorpri|edu-vd|\b321415\b|jouxtens|0009-0009-1844-7453|"
                        r"Universidad Internacional de La Rioja|gmail\.com|hotmail)|\bUNIR\b")  # UNIR in capitals only: "unir" is a French verb
 # files that name the author by design and are not part of what reviewers need (added after reading R3, 1.11.2026):
 # the submission letters and title page, the G2 exception list, and this script (its patterns name the author)
-EXCLUDE_PREFIXES = ("manuscript/submission/", "manuscript/verification_report.md", "manuscript/make_anonymous_bundle.py",
-                    "manuscript/records/")
+EXCLUDE_PREFIXES = ("manuscript/submission/", "manuscript/verification_report.md", "manuscript/make_anonymous_bundle.py")
+# manuscript/records/ (protocol, review briefs and reports) is kept, with the replacements above, because the
+# manuscript's AI statement points reviewers to it (decided after the readings R1 and R3, 1.11.2026)
 
 
 def main():

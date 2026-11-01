@@ -54,5 +54,35 @@
   "text": "13",
   "ref": "vikidia_about",
   "where": "same sentence"
+ },
+ "men_age_from": {
+  "text": "6",
+  "ref": "men_elementaire",
+  "where": "'L'école élémentaire accueille les enfants scolarisés de 6 à 11 ans.' (page L'école élémentaire, July 2024)"
+ },
+ "men_age_to": {
+  "text": "11",
+  "ref": "men_elementaire",
+  "where": "same sentence"
+ },
+ "vd_renumber_year": {
+  "text": "2013",
+  "ref": "vd_leo2012",
+  "where": "'A l'entrée en vigueur de la loi sur l'enseignement obligatoire (LEO), en août 2013, la numérotation des années de l'école obligatoire sera adaptée à HarmoS.'"
+ },
+ "avry_used_pct": {
+  "text": "52",
+  "ref": "avry2023",
+  "where": "EPFL news page (18.07.2023), results paragraph: 52% had used ChatGPT (read by the citation verifier, P6.2, pair n1)"
+ },
+ "avry_teaching_pct": {
+  "text": "24",
+  "ref": "avry2023",
+  "where": "same paragraph: '24% have done so as part of their teaching, primarily for lesson preparation'"
+ },
+ "trott_r2": {
+  "text": "0.36",
+  "ref": "trott2024",
+  "where": "section 3.4 Results: 'explained approximately 36% of the variance in human readability judgments (R2 = 0.36)'"
  }
 }

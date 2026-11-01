@@ -73,11 +73,11 @@ def fig1(m, nm):
             ax.plot(xs, ys, color=color, linewidth=2, marker=marker, markersize=4, label=nm[key])
         ax.set_title(title, fontsize=9, color=INK, loc="left")
         ax.set_xticks([AGE_MID[g] for g in GRADES])
-        ax.set_xticklabels(GRADES, fontsize=7.5)
+        ax.set_xticklabels([f"{int(AGE_MID[g] - 0.5)}–{int(AGE_MID[g] + 0.5)}" for g in GRADES], fontsize=7.5)
         style(ax)
         ax.legend(fontsize=7, frameon=False, loc="lower left")
     axes[0].set_ylabel("Mean Zipf of content lemmas\n(age-only texts)", fontsize=8, color=INK)
-    fig.supxlabel("Grade of the requested age (3H = 6 to 7 years, 8H = 11 to 12 years)", fontsize=8, color=INK, y=-0.07)
+    fig.supxlabel("Age requested (years), the ages of grades 3H to 8H", fontsize=8, color=INK, y=-0.07)
     save(fig, "fig1_rulers")
 
 

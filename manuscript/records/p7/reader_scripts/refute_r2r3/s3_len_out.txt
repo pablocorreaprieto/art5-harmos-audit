@@ -1,0 +1,7 @@
+(a) per-model slopes on log words, registered model, all labels:
+{'anthropic_balanced': -0.0615, 'anthropic_light': -0.083, 'mistral_balanced': -0.1719, 'mistral_light': -0.0665, 'openai_balanced': -0.0631, 'openai_light': -0.0155}
+(b) L1, L1P, L5 within model x grade x genre x topic: slope -0.0322 naive SE 0.0066 topic-clustered SE 0.0102 (n=3456)
+(c) L5 only within model x grade x genre: slope -0.0413 naive SE 0.0216 topic-clustered SE 0.0460 (n=1152)
+(c) L5 only within model x grade x topic: slope +0.2502 naive SE 0.0144 topic-clustered SE 0.0534 (n=1152)
+(c) L5 only within model x genre x topic: slope -0.1637 naive SE 0.0087 topic-clustered SE 0.0157 (n=1152)
+(c) L5 only within model x grade: slope +0.1565 naive SE 0.0194 topic-clustered SE 0.0523 (n=1152)

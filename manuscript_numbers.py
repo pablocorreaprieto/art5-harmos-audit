@@ -2,7 +2,9 @@
 
 Reads only archived outputs and the frozen design: results/numbers.json, results/measures.csv,
 results/probes.csv, results/pilot_summary.json, results/validation_vikidia.json, logs/run_*.json,
-data/raw/calls_*.jsonl (main study: dates and cost by provider) and design.json.
+data/raw/calls_*.jsonl (main study: dates and cost by provider), design.json, the exploratory outputs
+results/exploratory.json and results/exploratory_p7.json (post hoc, prefix ph_) and
+sim_power_results.json (prefix pow_).
 Writes results/manuscript_numbers.json: {name: {"value": raw value, "text": text as printed}}.
 The manuscript source (manuscript/manuscript.md) refers to these names as {{name}};
 manuscript/render.py replaces them and fails on an unknown name, and checks/check_numbers.py
@@ -16,7 +18,7 @@ Usage: python manuscript_numbers.py [--out PATH]   (default results/manuscript_n
 import argparse
 import glob
 import json
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 
@@ -100,6 +102,7 @@ def main(out_path):
     # design constants (from design.json)
     put("n_models", len(n["models"]), str(len(n["models"])))
     put("n_topics", n["n_topics"], str(n["n_topics"]))
+    put("n_topics_listed", len(design["topics"]), str(len(design["topics"])))
     put("n_grades", len(design["grades"]), str(len(design["grades"])))
     put("n_genres", len(design["genres"]), str(len(design["genres"])))
     put("temperature", design["sampling"]["temperature"], num(design["sampling"]["temperature"], 1))
@@ -222,6 +225,11 @@ def main(out_path):
         p_apa(min(v["linearity_p"] for v in n["h1"].values())))
     for m, v in n["h1"].items():
         put(f"h1_slope_{m}", v["slope"], num(v["slope"], 3))
+    # the smallest effect of interest in model-internal years: SESOI / |ruler slope| of each model
+    sesoi = design["analysis"]["smallest_effect_of_interest_zipf"]
+    yrs = [sesoi / abs(b) for b in slopes.values()]
+    put("sesoi_years_min", min(yrs), num(min(yrs), 1))
+    put("sesoi_years_max", max(yrs), num(max(yrs), 1))
     m_flat, m_steep = max(slopes, key=slopes.get), min(slopes, key=slopes.get)
     put("h1_slope_max_model", m_flat, design["models"][m_flat].split(" (")[0])
     put("h1_slope_min_model", m_steep, design["models"][m_steep].split(" (")[0])
@@ -348,6 +356,136 @@ def main(out_path):
     for lab, v in ex["mentions"]["by_label"].items():
         put(f"mention_age_{lab}", v["share_age"], num(100 * v["share_age"], 0))
         put(f"mention_grade_{lab}", v["share_grade"], num(100 * v["share_grade"], 0))
+
+    # post hoc analyses of exploratory_p7.py (added after the internal readings of the draft, labelled post hoc)
+    ph = json.load(open("results/exploratory_p7.json"))
+    sp = ph["spread"]
+    put("ph_spread_between_min", sp["between_model_range_min"], num(sp["between_model_range_min"], 2))
+    put("ph_spread_between_max", sp["between_model_range_max"], num(sp["between_model_range_max"], 2))
+    put("ph_spread_within_min", sp["within_model_change_min"], num(sp["within_model_change_min"], 2))
+    put("ph_spread_within_max", sp["within_model_change_max"], num(sp["within_model_change_max"], 2))
+    for lab, v in sp["between_model_sd_of_level"].items():
+        put(f"ph_sd_level_{lab}", v, num(v, 3))
+    put("ph_sd_diff", sp["sd_L3_minus_L1"], num(sp["sd_L3_minus_L1"], 3))
+    ci("ph_sd_diff_ci", sp["sd_L3_minus_L1_ci95"][0], sp["sd_L3_minus_L1_ci95"][1], 3)
+    eq = ph["equivalence"]
+    for k, s in (("h2_level_H", "h2H"), ("h2_level_P", "h2P")):
+        ci(f"ph_eq_{s}_ci90", eq[k]["ci90"][0], eq[k]["ci90"][1], 3)
+    pmax = max(eq[k]["p_tost"] for k in eq)
+    put("ph_eq_p_max", pmax, p_apa(pmax))
+    het = ph["heterogeneity"]
+    put("ph_het_df1", het["L1_level"]["df1"], num(het["L1_level"]["df1"], 0))
+    put("ph_het_df2", het["L1_level"]["df2"], num(het["L1_level"]["df2"], 0))
+    for k, v in het.items():
+        put(f"ph_het_{k}_F", v["F"], num(v["F"], 2))
+        put(f"ph_het_{k}_p", v["p"], p_apa(v["p"]))
+    sig = [v["p"] for k, v in het.items() if k != "L1P_level"]
+    put("ph_het_p_max_sig", max(sig), p_apa(max(sig)))
+    rt = ph["reasoning_tokens"]["share_positive"]
+    for key, v in rt.items():
+        m, lab = [x.strip() for x in key.split("|")]
+        put(f"ph_rt_share_{m}_{lab}", v, num(100 * v, 0))
+    swiss = [rt[f"anthropic_light | {lab}"] for lab in ("L1", "L1P", "L2", "L3")]
+    other = [rt[f"anthropic_light | {lab}"] for lab in ("L0", "L4", "L5", "L6")]
+    put("ph_rt_haiku_swiss_min", min(swiss), num(100 * min(swiss), 0))
+    put("ph_rt_haiku_swiss_max", max(swiss), num(100 * max(swiss), 0))
+    put("ph_rt_haiku_other_max", max(other), num(100 * max(other), 0))
+    pp = ph["probes_parse"]
+    put("ph_probe_n_correct", pp["n_correct_first"], num(pp["n_correct_first"], 0))
+    put("ph_probe_wrong_correct_later", pp["n_wrong_first_with_a_correct_range_later"],
+        str(pp["n_wrong_first_with_a_correct_range_later"]))
+    put("ph_probe_tolerance_only", pp["n_correct_only_through_tolerance"], str(pp["n_correct_only_through_tolerance"]))
+    for key, v in ph["offsets"].items():
+        m, lab, g = [x.strip() for x in key.split("|")]
+        put(f"ph_off_{m}_{lab}_{g}", v["offset_years"], num(v["offset_years"], 1))
+        put(f"ph_off_{m}_{lab}_{g}_abs", abs(v["offset_years"]), num(abs(v["offset_years"]), 1))
+        ci(f"ph_off_{m}_{lab}_{g}_ci", v["ci95"][0], v["ci95"][1], 1)
+    mr = ph["mistral_reasoning"]
+    for lab, v in mr["by_label"].items():
+        put(f"ph_mr_state_{lab}", v["share_stating_an_age"], num(100 * v["share_stating_an_age"], 0))
+        put(f"ph_mr_wrong_{lab}", v["share_wrong_among_stated"], num(100 * v["share_wrong_among_stated"], 0))
+        put(f"ph_mr_two_{lab}", v["share_two_years_too_old_among_stated"],
+            num(100 * v["share_two_years_too_old_among_stated"], 0))
+        put(f"ph_mr_err_{lab}", v["mean_signed_error_years"], num(v["mean_signed_error_years"], 2))
+    for lab, v in mr["paired_difference_by_stated_age"].items():
+        put(f"ph_mr_diff_{lab}", v["difference"], num(v["difference"], 3))
+        put(f"ph_mr_se_{lab}", v["se"], num(v["se"], 3))
+        put(f"ph_mr_p_{lab}", v["p"], p_apa(v["p"]))
+        put(f"ph_mr_n_correct_{lab}", v["n_correct"], str(v["n_correct"]))
+        put(f"ph_mr_n_two_{lab}", v["n_two_years_old"], str(v["n_two_years_old"]))
+    put("ph_mr_window_lo", mr["plausible_window_years"][0], str(mr["plausible_window_years"][0]))
+    put("ph_mr_window_hi", mr["plausible_window_years"][1], str(mr["plausible_window_years"][1]))
+    put("ph_mr_two_lo", mr["two_years_window"][0], num(mr["two_years_window"][0], 1))
+    put("ph_mr_two_hi", mr["two_years_window"][1], num(mr["two_years_window"][1], 1))
+    put("ph_mr_sample_n", mr["validation_sample_n"], str(mr["validation_sample_n"]))
+    for lab, v in mr["paired_difference_by_stated_age"].items():
+        put(f"ph_mr_share_{lab}", v["share_of_expected"], num(100 * v["share_of_expected"], 0))
+        put(f"ph_mr_slope_{lab}", v["slope_per_year_of_stated_error"], num(v["slope_per_year_of_stated_error"], 3))
+        put(f"ph_mr_slope_se_{lab}", v["slope_se"], num(v["slope_se"], 3))
+    sw = ph["swiss_words"]
+    for lab, v in sw.items():
+        for w in v["occurrences"]:
+            put(f"ph_sw_{w}_{lab}_texts", v["texts_containing"][w], num(v["texts_containing"][w], 0))
+            put(f"ph_sw_{w}_{lab}_occ", v["occurrences"][w], num(v["occurrences"][w], 0))
+        put(f"ph_sw_n_{lab}", v["n_texts"], num(v["n_texts"], 0))
+    exp2 = mr["paired_difference_by_stated_age"]["L1"]["expected_on_own_ruler_for_two_years"]
+    put("ph_mr_expected", exp2, num(exp2, 3))
+    for m, block in ph["leave_one_model_out"].items():
+        for k, s in SHORT.items():
+            d = 4
+            put(f"ph_loo_{m}_{s}_est", block[k]["estimate"], num(block[k]["estimate"], d))
+            put(f"ph_loo_{m}_{s}_p", block[k]["p_two_sided"], p_apa(block[k]["p_two_sided"]))
+    lc = ph["label_contrasts"]
+    for k in ("L2_minus_L1", "L3_minus_L1"):
+        v = lc[k]
+        s = k.replace("_minus_", "m")
+        test(f"ph_{s}_level", v["level"], 4)
+        put(f"ph_{s}_shift", v["shift_diff_years"], num(v["shift_diff_years"], 2))
+        ci(f"ph_{s}_shift_ci", v["shift_diff_ci95"][0], v["shift_diff_ci95"][1], 2)
+        put(f"ph_{s}_track", v["tracking_diff"], num(v["tracking_diff"], 2))
+        ci(f"ph_{s}_track_ci", v["tracking_diff_ci95"][0], v["tracking_diff_ci95"][1], 2)
+        for m, x in v["level_by_model"].items():
+            put(f"ph_{s}_level_{m}", x, num(x, 3))
+    for lab, v in lc["dispersion_across_models"].items():
+        put(f"ph_disp_{lab}_shift", v["sd_shift"], num(v["sd_shift"], 2))
+        put(f"ph_disp_{lab}_track", v["sd_tracking"], num(v["sd_tracking"], 2))
+        for kk in ("shift", "tracking"):
+            key = f"sd_{kk}_L1_minus_this_ci95"
+            if key in v:
+                ci(f"ph_disp_L1_minus_{lab}_{kk}_ci", v[key][0], v[key][1], 2)
+    for lab, v in lc["linear_reading_unweighted_mean"].items():
+        put(f"ph_unweighted_{lab}_shift", v["mean_shift"], num(v["mean_shift"], 2))
+        put(f"ph_unweighted_{lab}_track", v["mean_tracking"], num(v["mean_tracking"], 2))
+    tp = ph["tracking_precision"]["L1P"]
+    put("ph_tp_resamples", tp["resamples"], num(tp["resamples"], 0))
+    ci("ph_tp_ci", tp["ci95"][0], tp["ci95"][1], 2)
+    for m, v in ph["l0_intervals"].items():
+        ci(f"ph_l0_{m}_ci", v["ci95"][0], v["ci95"][1], 1)
+    for key, v in ph["by_tier"].items():
+        lab, tier = [x.strip() for x in key.split("|")]
+        put(f"ph_tier_{lab}_{tier}_abs_shift", v["mean_abs_shift"], num(v["mean_abs_shift"], 2))
+        put(f"ph_tier_{lab}_{tier}_abs_track", v["mean_abs_tracking_minus_1"], num(v["mean_abs_tracking_minus_1"], 2))
+
+    # power of the gradient tests in the preregistered simulation grid (sim_power_results.json): halving of the
+    # age gradient, 16 topics, planning slope -0.04, the smallest residual SD of the grid at or above the pilot's bound
+    grid = json.load(open("sim_power_results.json"))["grid"]
+    sig_bound = pilot["ruler"]["sigma_upper80"]
+    sigmas = sorted({g["sigma"] for g in grid if g["sigma"] >= sig_bound})
+    cell = [g for g in grid if g["T"] == n["n_topics"] and g["slope"] == -0.04 and g["sigma"] == sigmas[0]][0]
+    put("pow_sigma", cell["sigma"], num(cell["sigma"], 2))
+    put("pow_h3_half", cell["half_tracking"]["h3_gradient_H"], num(cell["half_tracking"]["h3_gradient_H"], 2).lstrip("0"))
+    put("pow_h3_ignored", cell["ignored"]["h3_gradient_H"], num(cell["ignored"]["h3_gradient_H"], 2).lstrip("0"))
+    # assumptions of the simulation (sim_power.py, recorded in sim_power_results.json)
+    a = json.load(open("sim_power_results.json"))["assumptions"]
+    put("pow_tau_label_topic", a["tau_lt"], num(a["tau_lt"], 2))
+    put("pow_tau_prompt", a["tau_ps"], num(a["tau_ps"], 2))
+    put("pow_missing_pct", a["missing"], num(100 * a["missing"], 0))
+    # texts per topic and per model, and per model in all
+    put("texts_per_topic_model", n["n_texts"] // n["n_topics"] // len(n["models"]),
+        str(n["n_texts"] // n["n_topics"] // len(n["models"])))
+    put("texts_per_model", n["n_texts"] // len(n["models"]), num(n["n_texts"] // len(n["models"]), 0))
+    put("collection_start_zurich", min(r["utc_start"] for r in raw),
+        (datetime.fromisoformat(min(r["utc_start"] for r in raw)).astimezone(timezone(timedelta(hours=1)))).strftime("%H:%M"))
 
     json.dump(OUT, open(out_path, "w"), indent=1, ensure_ascii=False)
     print(f"wrote {out_path} with {len(OUT)} named numbers")

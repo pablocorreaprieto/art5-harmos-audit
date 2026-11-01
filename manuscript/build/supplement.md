@@ -3,9 +3,21 @@ title: "Supporting Information"
 ---
 
 
-# S1. Where each preregistered analysis is reported
+# S1. Registration, departures and where each analysis is reported
 
-The preregistration (AsPredicted, link anonymised for review) listed four primary tests, a manipulation check, secondary analyses, sensitivity analyses, controls and exploratory analyses. All were run as registered, on all 7,680 texts, since none was excluded. The table below gives where each is reported. The two exploratory analyses that the preregistered code did not compute (the direction of the probe errors and the mention of an age or a grade in the texts) were computed after the deposit by a separate script (exploratory.py in the repository) and are labelled as such.
+**Registration and timing.** The preregistration was approved on AsPredicted on 1 November 2026 at about 08:52 (Zurich time); the deposited text is PREREG.md at the repository tag prereg (commit 6a0a061), whose status line, written before the deposit, still reads as it did then. The main data collection was run by the repository's workflow (run 41286684728) on the same commit, and its first call started at 08:55 (Zurich time), after the approval. The lexicon was the Lexique 3.83 file of lexique.org whose SHA-256 begins 637ba37a767a6667; a copy of the same version distributed in a Python package gives other values for the texts that contain *vrai* or *faux*, which it lists only in capitals.
+
+**Secondary measures.** The eight preregistered secondary measures were the median Zipf frequency of content lemmas, the shares of content lemmas below Zipf 3 and below Zipf 4, mean word length, words per sentence, number of words, the Kandel–Moles adaptation of the Flesch readability formula to French (Kandel & Moles, 1958, as cited in Primpied et al., 2022) and the mean Zipf frequency of word forms in films (Table S2).
+
+**Power simulation.** Besides the residual standard deviation and the age slope, the simulation that fixed the number of topics assumed a label-by-topic variation with a standard deviation of 0.02 Zipf, a prompt effect shared by the six models with a standard deviation of 0.05, heavy-tailed residuals and 2% missing texts (sim_power.py at tag prereg). The pilot held only age-only texts, so the first two values could not be estimated from it.
+
+**Intervals.** All bootstrap intervals are 95% percentile intervals over topics with 2,000 resamples, as registered; with only 16 topics they may be somewhat narrow, and their limits move slightly with the resampling (for the tracking of the P label, see Results).
+
+**Topics.** The 16 topics were the first 16 of a list of 32 fixed before the pilot; the preregistration treats them as random in the analysis, but they were not drawn at random.
+
+**Departures from the registration.** The preregistered analyses were run as registered, with two departures. First, the exploratory analysis by provider and model size listed in the registration was not reported in the first draft; it is now reported descriptively in Table S11 (one model per provider and tier, so no test). Second, the contrast of the P and H labels (Table S5) was computed by the registered analysis code but is not in the list of the registration text. The direction of the probe errors, the window of 1.5 to 2.5 years for errors of about two years, and the mention of an age or a grade in the texts were computed after the deposit by a separate script (exploratory.py).
+
+**Post hoc analyses.** After internal readings of a draft, the following analyses were added and are labelled post hoc in the text (computed by the script exploratory_p7.py): the distance between the models' age-only texts at the same grade; the equivalence reading of the two level differences; the tests of differences between models; the reasoning reported by each model (Table S9); the primary contrasts without each model (Table S10); the spread of the six models' readings of each label (Table S11); the contrasts of the region and age wordings with the bare label (Table S5); the observed age offsets per grade; the precision of the P label's tracking interval; intervals for the default reader age (Table 3); counts of two Swiss words; checks of the probe rule; and the ages stated in the reasoning of Mistral Large 4 (Table S12).
 
 | Preregistered analysis | Where |
 |---|---|
@@ -17,7 +29,8 @@ The preregistration (AsPredicted, link anonymised for review) listed four primar
 | Primary contrasts on eight secondary measures | Table S2 |
 | Sensitivity: length residualised, truncated, duplicated and flagged texts removed, isotonic reading | Table S1 |
 | Controls: L6 against L5 at 3H to 5H, L0 on each ruler | Results, Table 3, Table S5 |
-| Exploratory: per-model and per-grade contrasts, L2, L4, H against P | Tables S3 to S6 |
+| Exploratory: per-model and per-grade contrasts, L2, L4 | Tables S3 to S6 |
+| Exploratory: provider and model size | Table S11 |
 | Exploratory: knowledge probes | Results, Table 3, Table S7 |
 | Exploratory: refusals, clarification requests, flagged answers and removed lines by label | Below |
 | Exploratory: explicit mention of an age or a grade in the texts | Table S8 |
@@ -26,19 +39,18 @@ No text was refused or asked for clarification, so the refusal and clarification
 
 # S2. Sensitivity analyses and secondary measures
 
-Table S1. Primary contrasts under the preregistered sensitivity analyses (levels in Zipf, gradients in Zipf per year). Age equivalents read on an isotonic fit of each ruler: shift 0.19 years and tracking 0.94 for « de 5H », shift −0.05 and tracking 0.87 for « de 5P » (135 cells read inside the ruler, 59 extrapolated, 4 capped at 3 years beyond its ends).
+Table S1. Primary contrasts under the preregistered sensitivity analyses (levels in Zipf, gradients in Zipf per year). No text was an exact duplicate, so the duplicate rule removed nothing. Age equivalents read on an isotonic fit of each ruler, averaged over the six models: shift 0.19 years and tracking 0.94 for « de 5H », shift −0.05 and tracking 0.87 for « de 5P »; the linear readings averaged the same way give 0.21 and 0.94, and −0.01 and 0.91 (the main text pools the models as sums of levels over sums of slopes). Over all labels, grades and models, 135 cells were read inside the isotonic ruler, 59 extrapolated and 4 capped at 3 years beyond its ends; no intervals were computed for this reading.
 
 | Analysis | H2-H level | H2-P level | H3-H gradient | H3-P gradient |
 |---|---|---|---|---|
 | Primary, topic-level *t*-tests | −0.012 (*p* = .002) | −0.001 (*p* = .865) | 0.0027 (*p* = .264) | 0.0040 (*p* = .068) |
 | OLS, model × grade cells, errors clustered by topic | −0.012 (*p* = .002) | −0.001 (*p* = .866) | 0.0027 (*p* = .269) | 0.0040 (*p* = .070) |
 | Truncated texts removed | −0.012 (*p* = .002) | −0.001 (*p* = .891) | 0.0027 (*p* = .264) | 0.0041 (*p* = .065) |
-| Exact duplicates removed | −0.012 (*p* = .002) | −0.001 (*p* = .865) | 0.0027 (*p* = .264) | 0.0040 (*p* = .068) |
 | Texts addressing the user removed | −0.012 (*p* = .002) | −0.001 (*p* = .866) | 0.0025 (*p* = .297) | 0.0040 (*p* = .073) |
 | Length residualised within model | −0.017 (*p* < .001) | −0.008 (*p* = .077) | 0.0012 (*p* = .629) | 0.0040 (*p* = .077) |
 
 
-Table S2. The primary contrasts on the eight preregistered secondary measures (label minus age only; gradients per year of age). Higher Kandel–Moles scores mean easier texts.
+Table S2. The primary contrasts on the eight preregistered secondary measures (label minus age only; gradients per year of age; one-sample *t*-tests over topics, no correction for multiplicity). Higher Kandel–Moles scores mean easier texts.
 
 | Measure | H2-H level | H2-P level | H3-H gradient | H3-P gradient |
 |---|---|---|---|---|
@@ -54,7 +66,7 @@ Table S2. The primary contrasts on the eight preregistered secondary measures (l
 
 # S3. Age equivalents and contrasts by model
 
-Table S3. Model-internal age equivalents by label, pooled and model by model (exploratory for single models), with 95% percentile intervals from 2,000 bootstrap resamples of topics.
+Table S3. Model-internal age equivalents by label, pooled and model by model (exploratory for single models), with 95% percentile intervals from 2,000 bootstrap resamples of topics. Models are listed by provider, the mid-priced model first; Table S11 summarises them by price tier. Readings of « de 5e » lie beyond the ages of the rulers and are linear extrapolations.
 
 | Label | Model | Shift, years [95% CI] | Tracking [95% CI] |
 |---|---|---|---|
@@ -114,9 +126,9 @@ Table S4. The primary contrasts model by model (exploratory), with 95% confidenc
 | Mistral Small 4 | 0.017 [−0.003, 0.036] | 0.006 [−0.015, 0.027] | 0.0184 [0.0078, 0.0290] | 0.0283 [0.0197, 0.0369] |
 
 
-# S4. Secondary and exploratory contrasts
+# S4. Secondary, exploratory and post hoc contrasts
 
-Table S5. Secondary (L3) and exploratory contrasts, one-sample *t*-tests over topics, levels in Zipf and gradients in Zipf per year; no correction for multiplicity.
+Table S5. Secondary (L3), exploratory and post hoc contrasts, one-sample *t*-tests over topics, levels in Zipf and gradients in Zipf per year; no correction for multiplicity. The contrast of the P and H labels was computed by the preregistered analysis code but is not in the list of the registration text.
 
 | Contrast | Estimate [95% CI] | *p* |
 |---|---|---|
@@ -126,10 +138,11 @@ Table S5. Secondary (L3) and exploratory contrasts, one-sample *t*-tests over to
 | « de 5H (8 à 9 ans) » − « de 5H », gradient | −0.0050 [−0.0088, −0.0011] | .015 |
 | « de 5H en Suisse romande » − age only, level | −0.034 [−0.047, −0.021] | < .001 |
 | « de 5H en Suisse romande » − age only, gradient | 0.0010 [−0.0028, 0.0048] | .587 |
+| « de 5H en Suisse romande » − « de 5H », level (post hoc) | −0.0224 [−0.0309, −0.0139] | < .001 |
 | « de CE2 » − age only, level | 0.010 [0.002, 0.018] | .020 |
 | « de CE2 » − age only, gradient | −0.0126 [−0.0169, −0.0083] | < .001 |
-| « de 5P » − « de 5H », level | 0.011 [0.004, 0.018] | .003 |
-| « de 5P » − « de 5H », gradient | 0.0013 [−0.0028, 0.0054] | .498 |
+| « de 5P » − « de 5H », level (not in the registered list) | 0.011 [0.004, 0.018] | .003 |
+| « de 5P » − « de 5H », gradient (not in the registered list) | 0.0013 [−0.0028, 0.0054] | .498 |
 | « de 5e » − age only, level at 3H to 5H | −0.221 [−0.252, −0.191] | < .001 |
 
 
@@ -145,7 +158,31 @@ Table S6. Level differences grade by grade (exploratory; in the second column th
 | 8H | −0.011 [−0.027, 0.005] | 0.015 [−0.003, 0.033] | 0.012 [−0.004, 0.028] |
 
 
-# S5. Knowledge probes and mentions
+Table S10. The four primary contrasts without each model in turn (post hoc; topic-level *t*-tests as in the primary analysis, uncorrected *p*-values; levels in Zipf, gradients in Zipf per year).
+
+| Model left out | H2-H level | H2-P level | H3-H gradient | H3-P gradient |
+|---|---|---|---|---|
+| None (primary) | −0.012 (*p* = .002) | −0.001 (*p* = .865) | 0.0027 (*p* = .264) | 0.0040 (*p* = .068) |
+| Claude Sonnet 5.5 | −0.0164 (*p* < .001) | −0.0017 (*p* = .711) | 0.0048 (*p* = .095) | 0.0045 (*p* = .105) |
+| Claude Haiku 5.5 | 0.0041 (*p* = .297) | 0.0032 (*p* = .525) | −0.0038 (*p* = .090) | 0.0018 (*p* = .460) |
+| GPT-6.1 Sol | −0.0154 (*p* = .002) | 0.0006 (*p* = .912) | 0.0052 (*p* = .058) | 0.0048 (*p* = .029) |
+| GPT-6 Luna | −0.0179 (*p* < .001) | −0.0022 (*p* = .623) | 0.0053 (*p* = .061) | 0.0069 (*p* = .009) |
+| Mistral Large 4 | −0.0076 (*p* = .022) | −0.0021 (*p* = .624) | 0.0051 (*p* = .082) | 0.0071 (*p* = .007) |
+| Mistral Small 4 | −0.0174 (*p* < .001) | −0.0022 (*p* = .627) | −0.0005 (*p* = .838) | −0.0008 (*p* = .672) |
+
+
+Table S11. How far the six models' readings of each label spread (standard deviation across models of the per-model shift and tracking of Table S3), and, for the bare labels, the mean absolute departure of the three mid-priced and the three lighter models (the preregistered exploratory analysis by provider and model size; one model per cell, so descriptive only). Post hoc except the tier summary.
+
+| Label | SD of the six shifts (years) | SD of the six trackings | Mean absolute shift, mid-priced / lighter (years) | Mean absolute tracking − 1, mid-priced / lighter |
+|---|---|---|---|---|
+| L1 « de 5H » | 1.07 | 0.50 | 0.39 / 1.13 | 0.20 / 0.60 |
+| L1P « de 5P » | 0.28 | 0.45 | 0.13 / 0.31 | 0.11 / 0.54 |
+| L2 « de 5H en Suisse romande » | 0.87 | 0.22 |  |  |
+| L3 « de 5H (8 à 9 ans) » | 0.28 | 0.21 |  |  |
+| L4 « de CE2 » | 0.42 | 0.26 |  |  |
+
+
+# S5. Knowledge probes, mentions and reasoning
 
 Table S7. Knowledge probes (60 per model and notation; 99.9% of answers stated an age range, 77% more than one). Too old or too young: midpoint of the first range outside the true range widened by half a year.
 
@@ -177,4 +214,28 @@ Table S8. Texts whose body (title excluded) names an age (« huit ans », « 8 a
 | L4 | 12 | 4 |
 | L5 | 18 | 2 |
 | L6 | 24 | 4 |
+
+
+Table S9. Share of texts (%) for which the model reported reasoning or thinking tokens, by model and label, from the usage fields of the providers' answers, with reasoning left at each provider's default (post hoc).
+
+| Model | L0 | L1 | L1P | L2 | L3 | L4 | L5 | L6 |
+|---|---|---|---|---|---|---|---|---|
+| Claude Sonnet 5.5 | 38 | 100 | 100 | 100 | 99 | 73 | 85 | 79 |
+| Claude Haiku 5.5 | 0 | 65 | 57 | 92 | 62 | 1 | 1 | 2 |
+| GPT-6.1 Sol | 94 | 100 | 100 | 100 | 99 | 95 | 87 | 100 |
+| GPT-6 Luna | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Mistral Large 4 | 100 | 100 | 100 | 100 | 100 | 100 | 100 | 100 |
+| Mistral Small 4 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
+
+
+Table S12. Age stated for the pupils in the visible reasoning of Mistral Large 4 before writing each text, by label (post hoc). First age range in the trace with a midpoint between 4 and 16 years; wrong by the preregistered probe rule; two years too old: midpoint 1.5 to 2.5 years above the true one. A random sample of 25 traces with the extracted age is in the repository.
+
+| Label | Traces stating an age (%) | Age wrong (%) | Two years too old (%) | Mean error (years) |
+|---|---|---|---|---|
+| L1 « de 5H » | 100 | 51 | 38 | 1.30 |
+| L1P « de 5P » | 100 | 42 | 40 | 0.95 |
+| L2 « de 5H en Suisse romande » | 100 | 21 | 17 | 0.57 |
+| L3 « de 5H (8 à 9 ans) » | 100 | 0 | 0 | 0.00 |
+| L4 « de CE2 » | 100 | 0 | 0 | 0.00 |
+| L5 age only | 100 | 0 | 0 | 0.00 |
 

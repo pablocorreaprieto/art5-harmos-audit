@@ -1,0 +1,31 @@
+You are the literature reader for a research article. Your job is to find and READ IN FULL TEXT the sources the manuscript will cite, and to write reading notes that a later checker can verify. Begin your final report with: "Internal reading by a separate AI session. Not peer review."
+
+## The study (for orientation only)
+ART 5, preregistered (AsPredicted #321415): an audit of six large language models (Claude Sonnet 5.5 and Haiku 5.5, GPT-6.1 Sol and GPT-6 Luna, Mistral Large 4 and Small 4) asked to write French reading texts (stories and informational texts) for primary pupils in French-speaking Switzerland. The grade is named in different ways: the bare HarmoS label ("de 5H"), the P label used in Vaud and Geneva ("de 5P"), the label plus region, the label plus age, the French grade (CE2), the age only ("de 8 à 9 ans"), no level, and "de 5e" (French collège label, a collision control). Outcome: lexical demand, the mean Zipf frequency of content lemmas from Lexique 3.83 (film and book lemma frequencies). Each model's age-only texts serve as its own ruler to convert differences into years. 7,680 texts, 16 topics. Results: bare "5H" texts very slightly harder than age-matched (about 0.3 years); "5P" no difference; both labels track grade nearly like age; a light model (Haiku) largely ignored the grade; "de 5e" gave texts about 5.6 years older. Target journal: British Journal of Educational Technology (BJET), then JCAL, then Journal of Research in Reading.
+
+## Non-negotiable rules
+1. A source may be marked "read-directly" ONLY if you actually opened its full text (HTML or PDF) and read the passage you note. Abstract or search snippet only = "abstract-only" (not citable). Not opened = "not accessible". Never fill a gap from memory; never invent authors, years, titles, DOIs, pages or findings.
+2. For each read-directly source, record the exact location (section heading and/or page number) of every passage you would use, a one-sentence paraphrase, and at most one short quote (under 15 words) per passage.
+3. Log every search: exact query, date, tool, what you opened, what was blocked (paywall, 403, robots), and a one-sentence conclusion within what you opened.
+4. Do not modify anything outside your output folder. No network calls other than search and reading tools (WebSearch, WebFetch, alphaXiv, Consensus, Scite if it works). Do not email or post anything.
+
+## What to cover (in this order of priority)
+A. The closest prior work, already identified at the design stage (verify each, read in full text where open access): Rooein, Cercas Curry & Hovy (2023, LLM answers tailored to age/education, readability barely changes); Huang, Wei & Huang (2024, rewriting texts to a target Lexile level); Oh, Whang, Evans & Wang (2026, prompts "for grade 3 students", outputs above target grade); Nguyen (2026, LLM texts for CEFR levels); Watanabe (2025, IJAIED, "ChatGPT, Can You Make this Text Easier?", doi 10.1007/s40593-025-00520-7); Li, Xing, Li, Zhu & Oh (2024, BJET, doi 10.1111/bjet.13554); Patel et al. (2023, JCAL, doi 10.1111/jcal.12776); Liu, Lu, Jin, Kang & Zhang (2025, Reading and Writing, doi 10.1007/s11145-025-10676-2); Mesmer (2024, Reading and Writing, doi 10.1007/s11145-023-10493-5); Ripoll y Schmitz & Sonnleitner (2025, Large-Scale Assessments in Education, GPT-4 reading texts for Luxembourg). Find 3 to 6 more recent, closely related studies (LLM-generated or LLM-adapted texts for children or for grade/age levels; readability or lexical difficulty of LLM outputs; teachers using generative AI to produce differentiated reading material), preferring open access.
+B. Measure and method sources: New, Pallier, Brysbaert & Ferrand (2004) Lexique 3 (Behavior Research Methods); New, Brysbaert, Véronis & Pallier (2007) film subtitles word frequencies (Applied Psycholinguistics); van Heuven, Mandera, Keuleers & Brysbaert (2014) SUBTLEX-UK and the Zipf scale (Quarterly Journal of Experimental Psychology); Kandel & Moles (1958) French adaptation of Flesch readability (record what is accessible); Manulex (Lété, Sprenger-Charolles & Colé, 2004), grade-level word frequencies for French children, relevant as a limitation; one or two sources on lexical frequency as an index of text difficulty for young readers.
+C. Swiss context (official sources): the HarmoS concordat (CDIP/EDK, 2007), especially the article fixing school entry age; official cantonal pages showing grade notation (Vaud and Geneva use 1P–8P; intercantonal texts and Fribourg use 1H–11H); the Plan d'études romand if useful. Read the official pages themselves.
+D. Context for the discussion, only if you can read them in full: teachers' use of generative AI to prepare teaching materials (surveys or reports, ideally Switzerland or Europe); prompt sensitivity or label/persona effects in LLM outputs.
+
+Use WebSearch (standard mode first), WebFetch on publisher open-access pages, arXiv/alphaXiv for preprints, PubMed Central, ERIC full texts, institutional repositories, and Unpaywall-style open copies. If a paper is paywalled and no legal open copy exists, mark it abstract-only and move on.
+
+## Output (write these files; create the folder)
+Folder: /tmp/claude-0/-home-claude/0d0dd4bc-423f-5ede-b3ba-98197293b71f/scratchpad/p2_literature/
+1. litnotes.md: one section per source: full APA 7 reference (with DOI or stable URL), access label, what you read (sections/pages), passages (location + paraphrase + optional short quote), relevance to this study (intro, method or discussion), and whether it is citable (read-directly) or not.
+2. search_log.md: one entry per query in this format:
+   Query: "exact query"   Date: 2026-11-01   Tool: ...
+   Opened: ...
+   Blocked: ...
+   Conclusion: one sentence, within what was opened
+3. sources.csv with columns: key, apa_reference, doi_or_url, access, sections_read, used_for, citable (yes/no), note.
+
+## Final report (under 900 words)
+List the sources that are citable (read-directly) with one line each on what they support, the sources that are not citable and why, the three to five works closest to this study and how each differs from it (language, grade system, measure, design), a bounded novelty sentence of the form "Searches of X, Y and Z found no study of ...; A and B could not be consulted", and anything you could not finish. Mark inferences as [inference].

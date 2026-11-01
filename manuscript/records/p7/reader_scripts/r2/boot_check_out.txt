@@ -1,0 +1,31 @@
+=== L1: shift 0.2985 tracking 0.9318
+  shift: percentile [0.134,0.457] (width 0.324) | BCa [0.103,0.438] | jackknife-SE 0.0869 t15-interval [0.113,0.484] (width 0.370) | boot-SE 0.0833 z-interval width 0.326
+  tracking: percentile [0.822,1.041] (width 0.218) | BCa [0.809,1.030] | jackknife-SE 0.0568 t15-interval [0.811,1.053] (width 0.242) | boot-SE 0.0555 z-interval width 0.217
+   anthropic_balanced: shift -0.254 [-0.47,-0.03] tracking 1.172 [0.97,1.41]  ruler slope -0.0446
+   anthropic_light: shift 2.124 [1.75,2.56] tracking 0.180 [-0.01,0.41]  ruler slope -0.0429
+   mistral_balanced: shift 0.786 [0.33,1.44] tracking 1.230 [0.98,1.65]  ruler slope -0.0414
+   mistral_light: shift -0.487 [-0.92,0.05] tracking 0.457 [0.21,0.70]  ruler slope -0.0339
+   openai_balanced: shift -0.131 [-0.39,0.13] tracking 1.200 [1.02,1.40]  ruler slope -0.0489
+   openai_light: shift -0.768 [-1.52,-0.28] tracking 1.424 [1.09,2.04]  ruler slope -0.0246
+=== L1P: shift 0.0193 tracking 0.8978
+  shift: percentile [-0.211,0.214] (width 0.426) | BCa [-0.247,0.192] | jackknife-SE 0.1114 t15-interval [-0.218,0.257] (width 0.475) | boot-SE 0.1088 z-interval width 0.426
+  tracking: percentile [0.814,1.002] (width 0.188) | BCa [0.822,1.014] | jackknife-SE 0.0478 t15-interval [0.796,1.000] (width 0.204) | boot-SE 0.0480 z-interval width 0.188
+   anthropic_balanced: shift -0.093 [-0.44,0.29] tracking 0.958 [0.80,1.14]  ruler slope -0.0446
+   anthropic_light: shift 0.475 [0.08,0.85] tracking 0.641 [0.48,0.82]  ruler slope -0.0429
+   mistral_balanced: shift -0.149 [-0.66,0.31] tracking 1.271 [0.95,1.80]  ruler slope -0.0414
+   mistral_light: shift -0.191 [-0.77,0.38] tracking 0.164 [-0.05,0.34]  ruler slope -0.0339
+   openai_balanced: shift 0.155 [-0.05,0.38] tracking 0.995 [0.81,1.18]  ruler slope -0.0489
+   openai_light: shift -0.268 [-1.21,0.41] tracking 1.427 [1.11,2.13]  ruler slope -0.0246
+=== L2: shift 0.8676 tracking 0.9748
+  shift: percentile [0.543,1.248] (width 0.705) | BCa [0.539,1.241] | jackknife-SE 0.1854 t15-interval [0.472,1.263] (width 0.790) | boot-SE 0.1802 z-interval width 0.706
+  tracking: percentile [0.896,1.067] (width 0.171) | BCa [0.897,1.068] | jackknife-SE 0.0444 t15-interval [0.880,1.069] (width 0.189) | boot-SE 0.0437 z-interval width 0.171
+=== L3: shift -0.4611 tracking 1.0585
+  shift: percentile [-0.615,-0.325] (width 0.289) | BCa [-0.643,-0.341] | jackknife-SE 0.0754 t15-interval [-0.622,-0.300] (width 0.321) | boot-SE 0.0741 z-interval width 0.290
+  tracking: percentile [0.980,1.156] (width 0.177) | BCa [0.982,1.160] | jackknife-SE 0.0451 t15-interval [0.962,1.155] (width 0.192) | boot-SE 0.0447 z-interval width 0.175
+=== L4: shift -0.2555 tracking 1.3195
+  shift: percentile [-0.442,-0.070] (width 0.372) | BCa [-0.437,-0.063] | jackknife-SE 0.1002 t15-interval [-0.469,-0.042] (width 0.427) | boot-SE 0.0956 z-interval width 0.375
+  tracking: percentile [1.211,1.447] (width 0.236) | BCa [1.213,1.449] | jackknife-SE 0.0607 t15-interval [1.190,1.449] (width 0.259) | boot-SE 0.0604 z-interval width 0.237
+=== L6: shift 5.6198 tracking -0.9163
+  shift: percentile [5.293,5.988] (width 0.694) | BCa [5.293,5.987] | jackknife-SE 0.1748 t15-interval [5.247,5.992] (width 0.745) | boot-SE 0.1759 z-interval width 0.689
+  tracking: percentile [-1.284,-0.612] (width 0.671) | BCa [-1.280,-0.608] | jackknife-SE 0.1765 t15-interval [-1.292,-0.540] (width 0.752) | boot-SE 0.1714 z-interval width 0.672
+sum of slopes -0.23620312496258242 mean slope -0.039367187493763736

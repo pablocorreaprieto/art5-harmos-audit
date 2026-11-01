@@ -1,0 +1,29 @@
+== S2(iii) leave-one-topic-out for H3-P; sign count
+positive gradients: 12 of 16
+min (np.float64(0.00797649734834255), 'des saisons') max (np.float64(0.12396671067233526), 'des abeilles')
+== S2(ii) gradient CI limits x 5-year span; 90% CIs (TOST view)
+H2-H 95% -0.0185 -0.005 | 90% -0.0173 -0.0062 
+H2-P 95% -0.0101 0.0086 | 90% -0.0085 0.0069 
+H3-H 95% -0.0113 0.0381 | 90% -0.0069 0.0337 (gradient x 5 years)
+H3-P 95% -0.0017 0.0419 | 90% 0.0022 0.038 (gradient x 5 years)
+== S2(i) Table S6 3H row for L1
+3H L1-L5 -0.03 -0.0518 -0.0083
+== S7: L2 - L1 level and gradient (topic t-tests), per model
+L2-L1 level -0.0224 [np.float64(-0.0309), np.float64(-0.0139)] t -5.62 p 4.901910280221574e-05
+L2-L1 gradient -0.0017 [np.float64(-0.0062), np.float64(0.0028)] t -0.81 p 0.4308832847810665
+    Sonnet -0.04 [np.float64(-0.0573), np.float64(-0.0227)]
+    Haiku 0.0036 [np.float64(-0.0144), np.float64(0.0216)]
+    MLarge -0.0352 [np.float64(-0.0568), np.float64(-0.0135)]
+    MSmall -0.0423 [np.float64(-0.0644), np.float64(-0.0202)]
+    Sol -0.0044 [np.float64(-0.0146), np.float64(0.0058)]
+    Luna -0.0161 [np.float64(-0.0323), np.float64(0.0001)]
+== S3: length
+  slope of mean Zipf on log words (all graded labels pooled, raw) Sonnet -0.0541
+  slope of mean Zipf on log words (all graded labels pooled, raw) Haiku -0.0717
+  slope of mean Zipf on log words (all graded labels pooled, raw) MLarge -0.1585
+  slope of mean Zipf on log words (all graded labels pooled, raw) MSmall -0.0452
+  slope of mean Zipf on log words (all graded labels pooled, raw) Sol -0.0668
+  slope of mean Zipf on log words (all graded labels pooled, raw) Luna -0.0155
+within model x grade x genre x topic cells over L1, L1P, L5: slope -0.0322
+L5 only, within model x grade x genre cells (across topics): slope -0.0413
+L5 texts per model x grade x genre x topic cell: 1

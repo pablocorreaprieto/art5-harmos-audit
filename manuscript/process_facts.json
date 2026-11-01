@@ -1,8 +1,55 @@
 {
  "_about": "Facts about how the study was run that the manuscript quotes and that no data file holds. Each value is copied from the record named in 'source'. Read by manuscript/render.py as {{proc_<name>}} placeholders, so that checks/check_numbers.py can trace every number of the text.",
- "assistant_name": {"text": "Claude Opus 5.5", "source": "model of the main session, system information of the session; journal, Historique tab"},
- "assistant_id": {"text": "claude-opus-5-5", "source": "same"},
- "aspredicted_number": {"text": "321415", "source": "CHANGELOG.md, section Deposit; AsPredicted confirmation of 1.11.2026"},
- "deposit_day": {"text": "1 November 2026", "source": "CHANGELOG.md, section Deposit (about 08:52 CET)"},
- "pilot_day": {"text": "31 October 2026", "source": "logs/run_20261031T182238767726Z.json (run of 31.10.2026, 18:22 UTC)"}
+ "assistant_name": {
+  "text": "Claude Opus 5.5",
+  "source": "model of the main session, system information of the session; journal, Historique tab"
+ },
+ "assistant_id": {
+  "text": "claude-opus-5-5",
+  "source": "same"
+ },
+ "aspredicted_number": {
+  "text": "321415",
+  "source": "CHANGELOG.md, section Deposit; AsPredicted confirmation of 1.11.2026"
+ },
+ "deposit_day": {
+  "text": "1 November 2026",
+  "source": "CHANGELOG.md, section Deposit (about 08:52 CET)"
+ },
+ "pilot_day": {
+  "text": "31 October 2026",
+  "source": "logs/run_20261031T182238767726Z.json (run of 31.10.2026, 18:22 UTC)"
+ },
+ "reader_id_sonnet": {
+  "text": "claude-sonnet-5-5",
+  "source": "CHANGELOG.md (readings 2 and 4 to 9) and the P7 records (R2, verification of citations, P2 reading session)"
+ },
+ "reader_id_fable": {
+  "text": "claude-fable-5-1",
+  "source": "CHANGELOG.md (readings 1 and 3) and the P7 records (R3, refutation of R1)"
+ },
+ "credit_anthropic_before": {
+  "text": "206.87",
+  "source": "CHANGELOG.md, section Deposit: provider credit before the run, read in the Anthropic console on 1.11.2026"
+ },
+ "credit_anthropic_promotional": {
+  "text": "201.87",
+  "source": "same line: 5.00 purchased, 201.87 promotional"
+ },
+ "credit_anthropic_purchased": {
+  "text": "5.00",
+  "source": "same line"
+ },
+ "deposit_time": {
+  "text": "about 08:52",
+  "source": "CHANGELOG.md, section Deposit: AsPredicted approval at about 08:52 Zurich time (UTC+1)"
+ },
+ "run_id": {
+  "text": "41286684728",
+  "source": "CHANGELOG.md, section Deposit: workflow step generate, run 41286684728 on commit 6a0a061"
+ },
+ "prereg_commit": {
+  "text": "6a0a061",
+  "source": "CHANGELOG.md, section Deposit: tag prereg on commit 6a0a061"
+ }
 }

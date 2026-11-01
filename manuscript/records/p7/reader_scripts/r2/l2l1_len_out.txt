@@ -1,0 +1,15 @@
+L2 - L1 level: -0.0224 [-0.0309, -0.0139] t(15)=-5.62 p=0.0000
+L2 - L1 gradient: -0.0017 [-0.0062, +0.0028] t(15)=-0.81 p=0.4309
+pooled shift L2 - L1: +0.57 years, 95% percentile [+0.37, +0.81]
+pooled shift L3 - L1: -0.76 years, 95% percentile [-0.89, -0.64]
+pooled shift L3 - L2: -1.33 years, 95% percentile [-1.64, -1.06]
+point shifts: {'L1': np.float64(0.298), 'L2': np.float64(0.868), 'L3': np.float64(-0.461)}
+  anthropic_balanced   L2-L1 level -0.0400 (SD over topics 0.0325)
+  anthropic_light      L2-L1 level +0.0036 (SD over topics 0.0337)
+  mistral_balanced     L2-L1 level -0.0352 (SD over topics 0.0406)
+  mistral_light        L2-L1 level -0.0423 (SD over topics 0.0415)
+  openai_balanced      L2-L1 level -0.0044 (SD over topics 0.0192)
+  openai_light         L2-L1 level -0.0161 (SD over topics 0.0304)
+n_words: mean 404.9 median 369.0
+{'anthropic_balanced': 594.0, 'anthropic_light': 355.0, 'mistral_balanced': 350.0, 'mistral_light': 356.0, 'openai_balanced': 445.0, 'openai_light': 330.0}
+truncated 5 flag_meta 11 dup 0

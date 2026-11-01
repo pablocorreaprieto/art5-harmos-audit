@@ -9,6 +9,19 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Manuscript revision after the internal readings (P7, 1.11.2026, 12:32 to about 14:00)
+
+**Readings.** Three separate sessions read the rendered draft (R1 substance, claude-opus-5-5; R2 methods and statistics, claude-sonnet-5-5; R3 editor's reading for BJET, claude-fable-5-1), a fourth checked 44 sentence-citation pairs against the full texts (claude-sonnet-5-5), and two more tried to refute the findings (R1 by claude-fable-5-1; R2 and R3 by claude-opus-5-5). Briefs and full reports: `manuscript/records/p7/`. No confirmatory number changed.
+
+**Main changes.** Claims reframed as lexical equivalence with each model's own age-only texts, in model-internal years; heterogeneity between models reported where pooled results are stated (H2-H rests on Claude Haiku 5.5); the region and age wordings compared with the bare label; post hoc analyses added and labelled (`exploratory_p7.py`: spread between models, equivalence reading, tests of differences between models, reasoning tokens, leave-one-model-out, observed offsets per grade, ages stated in the reasoning of Mistral Large 4, precision of the P tracking interval, intervals of the default reader age, counts of two Swiss words); recommendations limited to what was shown; the "480 texts per topic" error corrected; the two departures from the registration stated; statements completed (Anthropic promotional credit, every model used in the research process, protocol and records in the repository, CRediT); title and keywords; four references added after reading them (Javourey-Drevet et al., 2022; Sclar et al., 2024; Yan et al., 2024; État de Vaud, 2012); `checks/check_claims.py` added; the explanation of the lexicon-copy difference corrected (*vrai* and *faux* in capitals, not « œ »).
+
+**Documentation version v0.4.10.** `README.md` only: status after the deposit and the data freeze, new files. `PREREG.md` is unchanged, as deposited. `history/v0.4.9_to_v0.4.10.diff`, hashes added, `history/check_history.sh`: PASS.
+
+| File | Hash |
+|---|---|
+| README.md | 75650296b6d57bb0 |
+| other files | as in v0.4.9 |
+
 ## Deposit (1.11.2026, 08:50 to 08:55)
 
 - **AsPredicted #321415**, approved by its only author on 1.11.2026 at about 08:52 (Zurich time), private until made public. The deposited text is `PREREG.md` at tag `prereg` (commit 6a0a061, design v0.4.9), entered field by field; the SHA-256 of each of the ten text fields, read back from the form before the preview, matched the file.

@@ -89,16 +89,17 @@ def table_primary(nums, design):
 
 
 def table_models(nums, design):
-    rows = ["| Model | Ruler slope (Zipf per year) | Default age, no level (years) | Probes correct, H (%) | "
+    rows = ["| Model | Ruler slope (Zipf per year) | Default age, no level (years) [95% CI] | Probes correct, H (%) | "
             "Probes correct, P (%) | Mean probe error, H (years) | Mean probe error, P (years) |",
             "|---|---|---|---|---|---|---|"]
     for m in MODELS:
-        rows.append(f"| {T(nums, 'name_' + m)} | {T(nums, 'h1_slope_' + m)} | {T(nums, 'l0_age_' + m)} | "
+        rows.append(f"| {T(nums, 'name_' + m)} | {T(nums, 'h1_slope_' + m)} | {T(nums, 'l0_age_' + m)} {ci(nums, f'ph_l0_{m}_ci')} | "
                     f"{T(nums, f'probe_{m}_H')} | {T(nums, f'probe_{m}_P')} | {T(nums, f'perr_{m}_H')} | "
                     f"{T(nums, f'perr_{m}_P')} |")
-    cap = ("Table 3. Model by model: slope of the age-only ruler (H1), age written for without a level (L0) and "
-           f"knowledge probes ({T(nums, 'probes_per_model_notation')} per notation; error = age stated minus true age, "
-           "positive when too old). Exploratory except the slopes.")
+    cap = ("Table 3. Model by model: slope of the age-only ruler (H1), age written for without a level (L0, a "
+           "preregistered control, placed on the model's own ruler; intervals from the topic bootstrap, post hoc) and "
+           f"knowledge probes ({T(nums, 'probes_per_model_notation')} per notation; first age range stated, Table S7 gives "
+           "any range; error = age stated minus true age, positive when too old). The probes are exploratory.")
     return cap, "\n".join(rows)
 
 
@@ -109,16 +110,20 @@ def table_s1(nums, design):
     shorts = ["h2H", "h2P", "h3H", "h3P"]
     rows.append("| Primary, topic-level *t*-tests | " + " | ".join(cell("", s) for s in shorts) + " |")
     rows.append("| OLS, model × grade cells, errors clustered by topic | " + " | ".join(cell("ols_", s) for s in shorts) + " |")
-    for key, name in [("without_truncated", "Truncated texts removed"), ("without_duplicate_text", "Exact duplicates removed"),
+    for key, name in [("without_truncated", "Truncated texts removed"),
                       ("without_flag_meta", "Texts addressing the user removed"),
                       ("length_residualised", "Length residualised within model")]:
         rows.append(f"| {name} | " + " | ".join(cell(f"sens_{key}_", s) for s in shorts) + " |")
     cap = ("Table S1. Primary contrasts under the preregistered sensitivity analyses (levels in Zipf, gradients in "
-           f"Zipf per year). Age equivalents read on an isotonic fit of each ruler: shift {T(nums, 'ae_L1_iso_shift')} "
+           "Zipf per year). No text was an exact duplicate, so the duplicate rule removed nothing. Age equivalents read "
+           f"on an isotonic fit of each ruler, averaged over the six models: shift {T(nums, 'ae_L1_iso_shift')} "
            f"years and tracking {T(nums, 'ae_L1_iso_track')} for « de 5H », shift {T(nums, 'ae_L1P_iso_shift')} and "
-           f"tracking {T(nums, 'ae_L1P_iso_track')} for « de 5P » ({T(nums, 'iso_cells_inside')} cells read inside the "
-           f"ruler, {T(nums, 'iso_cells_extrapolated')} extrapolated, {T(nums, 'iso_cells_capped')} capped at "
-           f"{T(nums, 'max_extrapolation_years')} years beyond its ends).")
+           f"tracking {T(nums, 'ae_L1P_iso_track')} for « de 5P »; the linear readings averaged the same way give "
+           f"{T(nums, 'ph_unweighted_L1_shift')} and {T(nums, 'ph_unweighted_L1_track')}, and {T(nums, 'ph_unweighted_L1P_shift')} "
+           f"and {T(nums, 'ph_unweighted_L1P_track')} (the main text pools the models as sums of levels over sums of slopes). "
+           f"Over all labels, grades and models, {T(nums, 'iso_cells_inside')} cells were read inside the isotonic "
+           f"ruler, {T(nums, 'iso_cells_extrapolated')} extrapolated and {T(nums, 'iso_cells_capped')} capped at "
+           f"{T(nums, 'max_extrapolation_years')} years beyond its ends; no intervals were computed for this reading.")
     return cap, "\n".join(rows)
 
 
@@ -132,7 +137,8 @@ def table_s2(nums, design):
         rows.append(f"| {name} | " + " | ".join(f"{T(nums, f'sec_{key}_{s}_est')} (*p* {T(nums, f'sec_{key}_{s}_p')})"
                                                for s in ["h2H", "h2P", "h3H", "h3P"]) + " |")
     cap = ("Table S2. The primary contrasts on the eight preregistered secondary measures (label minus age only; "
-           "gradients per year of age). Higher Kandel–Moles scores mean easier texts.")
+           "gradients per year of age; one-sample *t*-tests over topics, no correction for multiplicity). Higher "
+           "Kandel–Moles scores mean easier texts.")
     return cap, "\n".join(rows)
 
 
@@ -147,7 +153,9 @@ def table_s3(nums, design):
             rows.append(f"| | {T(nums, 'name_' + m)} | {T(nums, f'ae_{lab}_{m}_shift')} {ci(nums, f'ae_{lab}_{m}_shift_ci')} | "
                         f"{T(nums, f'ae_{lab}_{m}_track')} {ci(nums, f'ae_{lab}_{m}_track_ci')} |")
     cap = ("Table S3. Model-internal age equivalents by label, pooled and model by model (exploratory for single "
-           f"models), with 95% percentile intervals from {T(nums, 'bootstrap_resamples')} bootstrap resamples of topics.")
+           f"models), with 95% percentile intervals from {T(nums, 'bootstrap_resamples')} bootstrap resamples of topics. "
+           "Models are listed by provider, the mid-priced model first; Table S11 summarises them by price tier. "
+           "Readings of « de 5e » lie beyond the ages of the rulers and are linear extrapolations.")
     return cap, "\n".join(rows)
 
 
@@ -169,13 +177,16 @@ def table_s5(nums, design):
             ("« de 5H (8 à 9 ans) » − « de 5H », gradient", "gloss_gradient_vs_bare"),
             ("« de 5H en Suisse romande » − age only, level", "x_L2_level"),
             ("« de 5H en Suisse romande » − age only, gradient", "x_L2_gradient"),
+            ("« de 5H en Suisse romande » − « de 5H », level (post hoc)", "ph_L2mL1_level"),
             ("« de CE2 » − age only, level", "x_L4_level"), ("« de CE2 » − age only, gradient", "x_L4_gradient"),
-            ("« de 5P » − « de 5H », level", "x_P_vs_H_level"), ("« de 5P » − « de 5H », gradient", "x_P_vs_H_gradient"),
+            ("« de 5P » − « de 5H », level (not in the registered list)", "x_P_vs_H_level"),
+            ("« de 5P » − « de 5H », gradient (not in the registered list)", "x_P_vs_H_gradient"),
             ("« de 5e » − age only, level at 3H to 5H", "l6_level")]
     for name, s in spec:
         rows.append(f"| {name} | {T(nums, s + '_est')} {ci(nums, s + '_ci')} | {T(nums, s + '_p').replace('= ', '')} |")
-    cap = ("Table S5. Secondary (L3) and exploratory contrasts, one-sample *t*-tests over topics, levels in Zipf and "
-           "gradients in Zipf per year; no correction for multiplicity.")
+    cap = ("Table S5. Secondary (L3), exploratory and post hoc contrasts, one-sample *t*-tests over topics, levels in "
+           "Zipf and gradients in Zipf per year; no correction for multiplicity. The contrast of the P and H labels was "
+           "computed by the preregistered analysis code but is not in the list of the registration text.")
     return cap, "\n".join(rows)
 
 
@@ -211,13 +222,71 @@ def table_s8(nums, design):
     return cap, "\n".join(rows)
 
 
+def table_s9(nums, design):
+    labs = ["L0", "L1", "L1P", "L2", "L3", "L4", "L5", "L6"]
+    rows = ["| Model | " + " | ".join(labs) + " |", "|---|" + "---|" * len(labs)]
+    for m in MODELS:
+        rows.append(f"| {T(nums, 'name_' + m)} | " + " | ".join(T(nums, f"ph_rt_share_{m}_{lab}") for lab in labs) + " |")
+    cap = ("Table S9. Share of texts (%) for which the model reported reasoning or thinking tokens, by model and label, "
+           "from the usage fields of the providers' answers, with reasoning left at each provider's default (post hoc).")
+    return cap, "\n".join(rows)
+
+
+def table_s10(nums, design):
+    rows = ["| Model left out | H2-H level | H2-P level | H3-H gradient | H3-P gradient |", "|---|---|---|---|---|"]
+    rows.append("| None (primary) | " + " | ".join(f"{T(nums, s + '_est')} (*p* {T(nums, s + '_p')})"
+                                                 for s in ["h2H", "h2P", "h3H", "h3P"]) + " |")
+    for m in MODELS:
+        rows.append(f"| {T(nums, 'name_' + m)} | " + " | ".join(
+            f"{T(nums, f'ph_loo_{m}_{s}_est')} (*p* {T(nums, f'ph_loo_{m}_{s}_p')})" for s in ["h2H", "h2P", "h3H", "h3P"]) + " |")
+    cap = ("Table S10. The four primary contrasts without each model in turn (post hoc; topic-level *t*-tests as in the "
+           "primary analysis, uncorrected *p*-values; levels in Zipf, gradients in Zipf per year).")
+    return cap, "\n".join(rows)
+
+
+def table_s11(nums, design):
+    names = {"L1": "« de 5H »", "L1P": "« de 5P »", "L2": "« de 5H en Suisse romande »", "L3": "« de 5H (8 à 9 ans) »",
+             "L4": "« de CE2 »"}
+    rows = ["| Label | SD of the six shifts (years) | SD of the six trackings | Mean absolute shift, mid-priced / lighter (years) | "
+            "Mean absolute tracking − 1, mid-priced / lighter |", "|---|---|---|---|---|"]
+    for lab, w in names.items():
+        tier = (f"{T(nums, f'ph_tier_{lab}_balanced_abs_shift')} / {T(nums, f'ph_tier_{lab}_light_abs_shift')}"
+                if f"ph_tier_{lab}_balanced_abs_shift" in nums else "")
+        tr = (f"{T(nums, f'ph_tier_{lab}_balanced_abs_track')} / {T(nums, f'ph_tier_{lab}_light_abs_track')}"
+              if f"ph_tier_{lab}_balanced_abs_track" in nums else "")
+        rows.append(f"| {lab} {w} | {T(nums, f'ph_disp_{lab}_shift')} | {T(nums, f'ph_disp_{lab}_track')} | {tier} | {tr} |")
+    cap = ("Table S11. How far the six models' readings of each label spread (standard deviation across models of the "
+           "per-model shift and tracking of Table S3), and, for the bare labels, the mean absolute departure of the "
+           "three mid-priced and the three lighter models (the preregistered exploratory analysis by provider and model "
+           "size; one model per cell, so descriptive only). Post hoc except the tier summary.")
+    return cap, "\n".join(rows)
+
+
+def table_s12(nums, design):
+    names = {"L1": "« de 5H »", "L1P": "« de 5P »", "L2": "« de 5H en Suisse romande »", "L3": "« de 5H (8 à 9 ans) »",
+             "L4": "« de CE2 »", "L5": "age only"}
+    rows = ["| Label | Traces stating an age (%) | Age wrong (%) | Two years too old (%) | Mean error (years) |",
+            "|---|---|---|---|---|"]
+    for lab, w in names.items():
+        rows.append(f"| {lab} {w} | {T(nums, f'ph_mr_state_{lab}')} | {T(nums, f'ph_mr_wrong_{lab}')} | "
+                    f"{T(nums, f'ph_mr_two_{lab}')} | {T(nums, f'ph_mr_err_{lab}')} |")
+    cap = ("Table S12. Age stated for the pupils in the visible reasoning of " + T(nums, "name_mistral_balanced") +
+           " before writing each text, by label (post hoc). First age range in the trace with a midpoint between "
+           f"{T(nums, 'ph_mr_window_lo')} and {T(nums, 'ph_mr_window_hi')} years; wrong by the preregistered probe rule; "
+           f"two years too old: midpoint {T(nums, 'ph_mr_two_lo')} to {T(nums, 'ph_mr_two_hi')} years above the true one. "
+           f"A random sample of {T(nums, 'ph_mr_sample_n')} traces with the extracted age is in the repository.")
+    return cap, "\n".join(rows)
+
+
 TABLES = {"labels": table_labels, "primary": table_primary, "models": table_models, "s1": table_s1, "s2": table_s2,
-          "s3": table_s3, "s4": table_s4, "s5": table_s5, "s6": table_s6, "s7": table_s7, "s8": table_s8}
+          "s3": table_s3, "s4": table_s4, "s5": table_s5, "s6": table_s6, "s7": table_s7, "s8": table_s8,
+          "s9": table_s9, "s10": table_s10, "s11": table_s11, "s12": table_s12}
 
 FIGURES = {
     "fig1": ("fig1_rulers.png", "Figure 1. Age-only rulers. Mean Zipf frequency of the content lemmas of the texts "
-             "requested with the age only, by grade of the age requested, for the larger (circles) and smaller (squares) "
-             "model of each provider. Bands are 95% confidence intervals over {n_topics} topics. Higher values mean more "
+             "requested with the age only, by age requested, for the mid-priced (circles) and lighter (squares) model of "
+             "each provider. Bands are 95% confidence intervals of each mean over {n_topics} topics, so they include the "
+             "differences between topics, whereas the slopes are estimated within topics. Higher values mean more "
              "frequent words."),
     "fig2": ("fig2_labels.png", "Figure 2. Age equivalents of the label wordings, pooled over the six models: shift "
              "(years older than the age requested) and tracking (1 = follows the grade like the age-only texts, 0 = "
@@ -299,6 +368,22 @@ def main():
             print("main text words (Introduction to Conclusion, no tables or captions):", main_text_words(md))
             ab = re.search(r"^# Abstract\s*$(.*?)^# ", md, flags=re.S | re.M)
             print("abstract words:", len(ab.group(1).split()) if ab else 0)
+            # counts for the title page, from the rendered manuscript
+            nums["wc_main"] = {"value": main_text_words(md), "text": f"{main_text_words(md):,}"}
+            nums["wc_abstract"] = {"value": len(ab.group(1).split()) if ab else 0,
+                                   "text": str(len(ab.group(1).split()) if ab else 0)}
+            m = re.search(r"^title:\s*\"(.*)\"\s*$", open(path).read(), flags=re.M)
+            nums["ms_title"] = {"value": m.group(1) if m else "", "text": m.group(1) if m else ""}
+    # submission documents (cover letter, title page): same placeholders, written to manuscript/build/
+    for stem in ("cover_letter", "title_page"):
+        path = os.path.join(ROOT, f"manuscript/submission/{stem}.md")
+        if not os.path.exists(path):
+            continue
+        md = render_text(open(path).read(), nums, design, "../../results/figures")
+        out = os.path.join(ROOT, f"manuscript/build/{stem}.md")
+        open(out, "w").write(md)
+        subprocess.run(["pandoc", out, "-o", out[:-3] + ".docx"], check=True)
+        print("wrote", out)
 
 
 if __name__ == "__main__":

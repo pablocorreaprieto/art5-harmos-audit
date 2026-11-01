@@ -1,0 +1,13 @@
+parsed share (mine) 0.9986 ; multiple-range share 0.771
+anthropic_balanced   H: first-correct mine 1.000 theirs 1.000 | any mine 1.000 theirs 1.000 | mean err mine -0.14 theirs -0.14
+anthropic_balanced   P: first-correct mine 0.983 theirs 0.983 | any mine 1.000 theirs 1.000 | mean err mine -0.13 theirs -0.13   <-- differs
+anthropic_light      H: first-correct mine 0.650 theirs 0.650 | any mine 0.667 theirs 0.667 | mean err mine 1.62 theirs 1.62   <-- differs
+anthropic_light      P: first-correct mine 0.583 theirs 0.583 | any mine 0.633 theirs 0.633 | mean err mine 1.04 theirs 1.04   <-- differs
+mistral_balanced     H: first-correct mine 0.617 theirs 0.617 | any mine 0.767 theirs 0.767 | mean err mine 0.79 theirs 0.79   <-- differs
+mistral_balanced     P: first-correct mine 0.550 theirs 0.550 | any mine 0.850 theirs 0.850 | mean err mine 0.68 theirs 0.68
+mistral_light        H: first-correct mine 0.367 theirs 0.367 | any mine 0.667 theirs 0.667 | mean err mine 0.97 theirs 0.97   <-- differs
+mistral_light        P: first-correct mine 0.333 theirs 0.333 | any mine 0.733 theirs 0.733 | mean err mine 1.21 theirs 1.21   <-- differs
+openai_balanced      H: first-correct mine 1.000 theirs 1.000 | any mine 1.000 theirs 1.000 | mean err mine 0.00 theirs 0.00
+openai_balanced      P: first-correct mine 1.000 theirs 1.000 | any mine 1.000 theirs 1.000 | mean err mine 0.00 theirs 0.00
+openai_light         H: first-correct mine 1.000 theirs 1.000 | any mine 1.000 theirs 1.000 | mean err mine 0.00 theirs 0.00
+openai_light         P: first-correct mine 0.950 theirs 0.950 | any mine 0.950 theirs 0.950 | mean err mine 0.10 theirs 0.10

@@ -1,0 +1,16 @@
+between-model SD of per-model estimates (point; 95% boot):
+  L1   shift     SD 1.07  [0.88, 1.36]
+  L1   tracking  SD 0.50  [0.39, 0.69]
+  L1P  shift     SD 0.28  [0.17, 0.64]
+  L1P  tracking  SD 0.45  [0.38, 0.68]
+  L2   shift     SD 0.87  [0.68, 1.28]
+  L2   tracking  SD 0.22  [0.16, 0.40]
+  L3   shift     SD 0.28  [0.15, 0.64]
+  L3   tracking  SD 0.21  [0.12, 0.45]
+  L4   shift     SD 0.42  [0.27, 0.77]
+  L4   tracking  SD 0.26  [0.18, 0.51]
+SD(L1)-SD(L3) shift: point 0.79, 95% boot [0.49,0.98], share of resamples with SD(L3) < SD(L1): 1.000; ratio SD(L3)/SD(L1) point 0.26 [0.14,0.54]
+SD(L1)-SD(L3) tracking: point 0.29, 95% boot [0.14,0.38], share of resamples with SD(L3) < SD(L1): 1.000; ratio SD(L3)/SD(L1) point 0.43 [0.25,0.73]
+excluding Claude Haiku 5.5: SD(L1 shift) 0.59 vs SD(L3 shift) 0.24 ; SD(L1 tracking) 0.37 vs SD(L3 tracking) 0.16
+L1 shifts [-0.25  2.12  0.79 -0.49 -0.13 -0.77] L3 shifts [-0.48 -0.11 -0.46 -0.96 -0.34 -0.61]
+L1 tracking [1.17 0.18 1.23 0.46 1.2  1.42] L3 tracking [0.88 0.75 1.3  1.07 1.18 1.24]

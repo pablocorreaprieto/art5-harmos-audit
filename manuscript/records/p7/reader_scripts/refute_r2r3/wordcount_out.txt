@@ -1,0 +1,13 @@
+Abstract               all   244  tables    0  captions    0  prose   244
+Practitioner notes     all   198  tables    0  captions    0  prose   198
+Introduction           all   561  tables    0  captions    0  prose   561
+Background             all   525  tables    0  captions    0  prose   525
+Method                 all  1742  tables  158  captions   29  prose  1555
+Results                all  1554  tables  264  captions  344  prose   946
+Discussion             all  1038  tables    0  captions    0  prose  1038
+Conclusion             all    86  tables    0  captions    0  prose    86
+Statements             all   300  tables    0  captions    0  prose   300
+References             all   516  tables    0  captions    0  prose   516
+all except references: with tables+captions 6248 | without tables 5826
+Intro..Conclusion: with tables 5506 | captions, no tables 5084 | neither 4711
+abstract words 244
