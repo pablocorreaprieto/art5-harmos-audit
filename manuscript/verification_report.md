@@ -48,7 +48,9 @@ output kept in the repository. The readings, their refutations and the correctio
 
 - `checks/run_all.sh` in GitHub Actions (workflow `checks`, task run-all, run 41300583934 on 8573ef5, outputs at
   b710cd3): 14 of 14 PASS. The suite now also runs `check_claims` (with its planted fault) and
-  `check_citations`; RERUN PENDING on the revised commit.
+  `check_citations`. Rerun on the revised commit 2029f0f (run 41317370806, outputs at d5585dd,
+  `checks/outputs/run_all_stdout.txt`): 17 of 17 PASS, ALL CHECKS PASSED, on the official lexicon (SHA-256
+  637ba37a767a6667).
 
 ## 3b. Anonymised copy for review (P8)
 
@@ -63,7 +65,9 @@ output kept in the repository. The readings, their refutations and the correctio
   domains, place of residence, AsPredicted number, links to private documents). The second confirmation reading ran it
   on 34545cc (exit 0), scanned the 331 text files, both .docx, the PDFs and the PNGs itself and found nothing
   identifying, and checked that a name planted in a .docx or a binary file stops the script. Its own scan script is
-  left out like the others (pattern widened to `scan_bundle*.py`). RERUN PENDING on the merged commit.
+  left out like the others (pattern widened to `scan_bundle*.py`). Run on the merged and pushed commit f5c82c2
+  (the commit after it changes only this report, which the copy leaves out, and the changelog): exit 0, 396 files,
+  nothing left by the script's own list or by the broader list.
 
 ## 4. References (P6.1, P6.2)
 
@@ -72,8 +76,11 @@ output kept in the repository. The readings, their refutations and the correctio
   parenthetical citation, orphan narrative citation and abstract-only reference: each FAIL.
 - `checks/verify_refs.py` in GitHub Actions (Crossref, OpenAlex, arXiv), run 41302064405 on 46b2152: the
   references with a DOI or an arXiv id matched, except the year of Brysbaert et al. (online 2017, issue 2018), now
-  marked online first. RERUN PENDING with the four references added after P7 (Javourey-Drevet et al., 2022;
-  Sclar et al., 2024; Yan et al., 2024; État de Vaud, 2012).
+  marked online first. Rerun with the references added after P7 (run 41317380753, outputs at f5c82c2,
+  `checks/outputs/verify_refs.txt`): PASS, the 14 references with a DOI or an arXiv id match their registry
+  (title, year, first author, no notice; Crossref gives Applied Psycholinguistics 43(2), 485-512 for
+  Javourey-Drevet et al. and BJET 55(1), 90-112 for Yan et al.), and the 11 web pages are marked as opened by the
+  session.
 - Sentence-citation pairs: 44 pairs (21 references and 2 secondary citations) checked against the full texts by a
   separate session (claude-sonnet-5-5): 37 support, 7 support in part, 0 do not support, none rests on an abstract.
   The seven partial pairs were reworded (ages of CE2 and CM2 derived, not stated by the ministry page; New et al.,
