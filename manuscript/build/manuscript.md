@@ -9,26 +9,6 @@ Teachers are advised to name their pupils' grade when they ask a language model 
 
 **Keywords:** generative AI, large language models, reading texts, lexical frequency, grade labels, primary education
 
-# Practitioner notes
-
-**What is already known about this topic**
-
-- Teachers are advised to state the readers' grade when they ask a language model for a reading text.
-- Studies in English found that outputs often stay above the requested grade or change little with the requested age.
-- Grade labels differ between school systems. In French-speaking Switzerland, grades are counted from kindergarten.
-
-**What this paper adds**
-
-- In a preregistered audit of 7,680 French reading texts from six models, « de 5H » and « de 5P » gave, on average, texts with nearly the lexical demand of the matching age.
-- Behind the average, models departed from their own age-only texts in both directions, the lighter model of one provider by about two years (exploratory).
-- Which model wrote a text mattered more for its vocabulary than how the grade was named (exploratory).
-
-**Implications for practice and/or policy**
-
-- When asking a model for a reading text, state the pupils' age, alone or after the grade label, and read the text before using it.
-- Tools built for Swiss schools can map grade labels to ages before the prompt reaches the model.
-- Evaluations of AI tools for teachers should report results for each model, not only on average.
-
 # Introduction
 
 A primary teacher in Lausanne who needs a short text about bees for tomorrow's reading lesson can now ask a chatbot for « une histoire à lire pour des élèves de 5H ». Teachers in the region have begun to use such tools: in a survey of teachers of Vaud's public upper-secondary schools and private schools, about half had used ChatGPT, and a quarter of these had used it in their teaching, mainly to prepare lessons (Avry, 2023). Guidance for teachers, as described by Imperial and Tayyar Madabushi (2023, p. 206), recommends naming the readers' grade in the prompt, which assumes that the model knows what the grade means.
@@ -56,6 +36,8 @@ Vocabulary is one of the levers of text difficulty. When narrative and scientifi
 ## Design and preregistration
 
 The study is an audit experiment in which the data are texts written by language models under controlled prompts, and no person took part. The hypotheses, the measure, the exclusion rules, the sample size and the analyses were preregistered on AsPredicted before the confirmatory data were collected (link anonymised for review; times in Supporting Information S1). A pilot of 252 calls to three of the models, run the day before, requested 216 texts with the pupils' age only and 36 knowledge probes, to estimate the variance and the age slope of the measure and to check the probe parser. None of its outputs enters any confirmatory analysis. The prompts, the code, the raw outputs and the results are archived in a repository whose states at registration and at data freeze are tagged (link anonymised for review).
+
+The study was run under a written protocol for AI-assisted research designed by the author. Within it, an AI assistant (Claude Opus 5.5, claude-opus-5-5) designed the study in detail, wrote the preregistration text and the code for data collection and analysis, ran the analyses through the repository's automated workflows and drafted the manuscript. Separate sessions of Claude models reviewed the design, the code and the text. The author approved the design before data collection and the manuscript before submission. Every number in the text is filled in by script from the archived results, and the statement on the use of generative AI at the end of the article gives the full account.
 
 ## Prompts and conditions
 
@@ -202,7 +184,7 @@ The measure covers one dimension of text difficulty, and its frequencies come fr
 
 Swiss teachers who name a grade the way they do in class, « de 5H » or « de 5P », will on average get a text at about the lexical level of the matching age from the models audited here, with the prompt and settings tested. Not every model does: in exploratory analyses, two lighter models departed from their age-only texts with the bare labels, one by about two years on average and by 4.3 years at 3H. The model mattered more than the label, and with the age stated every model's point estimate stayed within a year of its own age-only texts (both exploratory). The safest practice is to state the age and to read the text before giving it to pupils.
 
-# Statements
+# Statements and Declarations
 
 **Data availability.** The prompts, call plans, raw model outputs with their SHA-256 hashes, analysis code, results, the records of the internal reviews and the scripts that check every number of this article are available in the study repository (link anonymised for review; it will be archived with a DOI on acceptance).
 
@@ -210,7 +192,7 @@ Swiss teachers who name a grade the way they do in class, « de 5H » or « de 5
 
 **Ethics.** The study involved no human participants and no personal data: its data are texts generated by language models through their public APIs. No ethical approval was required.
 
-**Conflicts of interest.** The author has no employment, consulting, shareholding or other financial relationship with Anthropic, OpenAI or Mistral AI. The Anthropic calls were paid from the author's API credit balance with Anthropic, most of which consisted of API credits included in the author's paid Claude Max subscription (see Funding). Anthropic made two of the audited models and the AI assistant used to carry out the study (see Use of generative AI) but had no other role in the study.
+**Competing interests.** The author has no employment, consulting, shareholding or other financial relationship with Anthropic, OpenAI or Mistral AI. The Anthropic calls were paid from the author's API credit balance with Anthropic, most of which consisted of API credits included in the author's paid Claude Max subscription (see Funding). Anthropic made two of the audited models and the AI assistant used to carry out the study (see Use of generative AI) but had no other role in the study.
 
 **Funding.** This research received no specific grant from any funding agency. The API calls cost 41.12 USD for the main study and 2.26 USD for the pilot. The Anthropic calls (25.44 USD in the main study) were paid from the author's API credit with Anthropic, which before the main run stood at 206.87 USD, of which 201.87 USD were promotional credits, the API credits that Anthropic includes in the author's paid Claude Max subscription. The OpenAI and Mistral calls were paid by the author.
 

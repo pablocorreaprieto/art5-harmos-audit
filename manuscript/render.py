@@ -347,7 +347,7 @@ def render_text(src, nums, design, fig_dir, root=ROOT):
     return out
 
 
-def words(md, start="Introduction", end="Statements", tables=False):
+def words(md, start="Introduction", end="Statements and Declarations", tables=False):
     """Words as a word processor counts them (runs of non-space characters), from the heading `start` to the
     heading `end`, headings included without their # marks. Table rows, figure lines and table captions are
     left out unless tables=True, in which case the cells and captions count and the separator rows do not.
@@ -393,7 +393,7 @@ def main():
                   "all": words(md, "Abstract", "References", tables=True)}
             print("main text words (Introduction to Conclusion, no tables or captions):", wc["main"])
             print("main text words with tables and captions:", wc["main_tables"])
-            print("words from the Abstract through the Statements, tables included (all but the references):", wc["all"])
+            print("words from the Abstract through the Statements and Declarations, tables included (all but the references):", wc["all"])
             ab = re.search(r"^# Abstract\s*$(.*?)^# ", md, flags=re.S | re.M)
             # the abstract paragraph only, without the Keywords line (third confirmation reading, 1.11.2026)
             ab_text = re.sub(r"^\*\*Keywords:\*\*.*$", "", ab.group(1), flags=re.M) if ab else ""

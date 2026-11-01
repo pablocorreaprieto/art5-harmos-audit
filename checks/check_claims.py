@@ -70,8 +70,6 @@ CLAIMS = [
     # results
     (r"one lighter model by about two years",
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "Claude Haiku 5.5, shift with the bare H label"),
-    (r"the lighter model of one provider by about two years",
-     lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same (practitioner notes)"),
     (r"one by about two years on average",
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
     (r"the bare H label left one model two years off",
