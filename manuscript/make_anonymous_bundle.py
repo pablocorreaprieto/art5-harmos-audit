@@ -44,7 +44,9 @@ FORBIDDEN = re.compile(r"(?i:pablo|correa|prieto|pabcorpri|edu-vd|\b321415\b|jou
 # the submission letters and title page, the G2 exception list, and this script (its patterns name the author)
 EXCLUDE_PREFIXES = ("manuscript/submission/", "manuscript/verification_report.md", "manuscript/make_anonymous_bundle.py",
                     # the rendered title page and cover letter (added after the confirmation reading, 1.11.2026)
-                    "manuscript/build/title_page.", "manuscript/build/cover_letter.")
+                    "manuscript/build/title_page.", "manuscript/build/cover_letter.",
+                    # the G2 research and check-reading records, whose briefs describe the author (1.11.2026, evening)
+                    "manuscript/records/g2/")
 # scripts of the reading sessions that search for the author's identifying strings (their patterns name the author)
 EXCLUDE_PATTERNS = (re.compile(r"^manuscript/records/.*/(?:bundle_sim|scan_bundle)[^/]*\.py$"),)
 

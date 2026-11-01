@@ -26,7 +26,7 @@ Rendered by manuscript/render.py into manuscript/build/title_page.md. -->
 
 **Ethics.** No human participants and no personal data; no ethical approval was required.
 
-**Competing interests and funding.** As in the manuscript (section Statements and Declarations): no financial relationship with the providers, the Anthropic calls paid mostly with the API credits included in the author's paid Claude Max subscription, and no specific grant.
+**Competing interests and funding.** As in the manuscript (section Statements and Declarations): no employment, consulting, shareholding or other financial relationship with the providers, the Anthropic calls paid with promotional credits that Anthropic granted to the author's API account, and no specific grant.
 
 **Use of generative AI.** As in the manuscript (section Statements and Declarations), with the protocol, the briefs and the full reports of the AI review sessions in the repository (manuscript/records/).
 

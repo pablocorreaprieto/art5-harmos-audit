@@ -53,11 +53,11 @@
   "source": "CHANGELOG.md, section Deposit: tag prereg on commit 6a0a061"
  },
  "credit_anthropic_origin": {
-  "text": "the API credits that Anthropic includes in the author's paid Claude Max subscription",
-  "source": "Anthropic e-mail of 17.10.2026 to the author, subject \"$200 USD in API credits was added\" (\"Pablo's Individual Org, the API organization linked to your Max plan, received $200 USD in API credits\"), and the author's answer at gate G2 (1.11.2026, about 19:05) that the promotional credit came from the author's Max plan"
+  "text": "promotional credits granted by Anthropic to the author's API account",
+  "source": "Anthropic console, Billing page, read on 1.11.2026 at about 21:00 Zurich time: purchased balance 5.00 USD; promotional grants of 100.00 USD (granted 28.10.2026, expires 1.12.2026, 73.14 USD left) and 103.29 USD (granted 29.10.2026, expires 2.12.2026, untouched); the 26.86 USD drawn from the first equals the pilot (1.42 USD) plus the main run (25.44 USD). The 200 USD grant of 17.10.2026 for the organisation linked to the author's Claude Max plan (Anthropic e-mail) expired on 31.10.2026 and is not among them. The console does not say where the two grants of 28 and 29.10.2026 come from. At G2 the author first answered that the credit came from the Max plan, to a question that quoted the e-mail of 17.10.2026 as the source; the console reading corrected it."
  },
  "author_roles": {
-  "text": "conceived the study (topic), designed the protocol, set up the infrastructure, took design decisions (three providers kept, Mistral Medium 3.5 replaced by Mistral Large 4 before the pilot, spending limits), approved design and preregistration (G1), deposited the preregistration, read the final manuscript and decided the open questions (G2)",
+  "text": "chose the topic, set the main rules of the protocol (two gates, a log of every action, journals without fees, keys never in the chat), set up the infrastructure, took design decisions (three providers kept, Mistral Medium 3.5 replaced by Mistral Large 4 before the pilot, spending limits), approved design, preregistration and its deposit (G1), read the final manuscript and decided the open questions (G2)",
   "source": "the author's answers at gate G2 (1.11.2026, about 19:10, multiple-choice round 3: topic, protocol, infrastructure, design decisions all ticked); CHANGELOG.md (switch to Mistral Large 4 decided on 31.10.2026; G1 on 1.11.2026 at 06:48; deposit about 08:52)"
  }
 }

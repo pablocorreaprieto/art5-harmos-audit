@@ -164,13 +164,20 @@ questions. Item by item:
 
 1. Title and keywords kept.
 2. Conflicts of interest confirmed as written.
-3. Funding: the promotional credit is the API credit included in the author's paid Claude Max subscription
-   (Anthropic e-mail of 17.10.2026, "$200 USD in API credits was added"); Competing interests, Funding and
-   Limitations now say so, with the source in `manuscript/process_facts.json`.
-4. Use of generative AI: disclosed in full. The statement now also states the author's part, as he gave it
-   (topic, protocol, infrastructure, design decisions, deposit, final read), and how the assistant's work was
-   checked; every fact of the earlier statement is kept. CRediT: methodology and resources added, writing –
-   review and editing kept (critical read of the final manuscript).
+3. Funding: the author first answered that the promotional credit came from his Claude Max plan, to a question
+   of the main session that quoted an Anthropic e-mail of 17.10.2026 (a 200 USD grant for the organisation linked
+   to the Max plan). The check reading of the evening found that this grant expired on 31.10.2026, before the
+   main run. The console (Billing, read at about 21:00) shows two promotional grants, 100 USD of 28.10.2026 and
+   103.29 USD of 29.10.2026, and the 26.86 USD drawn from the first equals the pilot plus the main run; it does
+   not say where these grants come from. Competing interests, Funding and Limitations therefore say "promotional
+   credits that Anthropic granted to the author's API account", with the source in
+   `manuscript/process_facts.json`; the author is asked whether he knows the origin of the two grants.
+4. Use of generative AI: disclosed in full. The statement now also states the author's part, as he gave it and
+   as the records show (topic, the main rules of the protocol, infrastructure, design decisions, approval of the
+   design, the preregistration and its deposit, final read), says that the assistant did most of the research
+   work, and how its work was checked. CRediT: methodology and resources added, writing – review and editing
+   kept (critical read of the final manuscript), and a sentence gives the other roles to the assistant. The
+   author reads the passages changed after his read before submitting.
 5. Title page: "Independent researcher, canton of Vaud, Switzerland"; pabcorpri@gmail.com.
 6. Repository: made public at submission by the main session, on the author's go given at G2.
 7. AsPredicted: made public by the author at submission; its link goes on the title page for the editor.
@@ -184,8 +191,14 @@ questions. Item by item:
 Journal. BJET and JCAL were judged too selective for the author's goal (a first publication, fast). L1-ESLL was
 set aside after its own page showed a 95% rejection rate in 2025, and the Swiss Journal of Educational Research is
 kept for another article. Three separate research sessions (claude-sonnet-5-5) and the main session then built a
-ladder of five journals, submitted one at a time: Education and Information Technologies (Springer), Education in
+ladder of five journals, submitted one at a time (records in `manuscript/records/g2/`): Education and Information Technologies (Springer), Education in
 the Knowledge Society, Computers in the Schools, Reading Psychology, Research in Learning Technology (Drive
 document "📮 Échelle de revues ART 5"). The manuscript is formatted for the first (commit f710101): practitioner
 notes removed, the AI use also documented in the Methods, heading "Statements and Declarations", abstract 237 words
 (limit 150 to 250), six keywords (limit 4 to 6). No preprint. Submission planned on 2.11.2026.
+
+Check reading of the G2 changes (claude-sonnet-5-5, about 20:40 to 21:00, report in
+`manuscript/records/g2/g2_check_reading.md`): two blocking findings (the AsPredicted link, which the author
+gives at submission, and the credit, corrected as in item 3), five to fix and five minor, all applied except
+the AsPredicted link. Checks after the fixes: render.py, check_numbers, check_claims (plant FAIL),
+check_citations, recompute_primary and history/check_history.sh PASS.
