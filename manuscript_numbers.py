@@ -38,10 +38,18 @@ def num(x, d):
     return s.replace("-", MINUS)
 
 
+WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve",
+         "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen", "twenty"]
+
+
 def put(name, value, text):
     if name in OUT:
         raise SystemExit(f"duplicate name {name}")
     OUT[name] = {"value": value, "text": text}
+    # small counts also get a word form for prose (APA: words below 10), lower case and capitalised
+    if isinstance(value, int) and not isinstance(value, bool) and 0 <= value <= 20 and text == str(value):
+        OUT[name + "_word"] = {"value": value, "text": WORDS[value]}
+        OUT[name + "_Word"] = {"value": value, "text": WORDS[value].capitalize()}
 
 
 def p_apa(p):
@@ -106,6 +114,29 @@ def main(out_path):
     put("probe_repetitions", design["probe_repetitions"], str(design["probe_repetitions"]))
     put("n_probe_templates", len(design["probe_templates"]), str(len(design["probe_templates"])))
     put("l6_grades", len(design["labels"]["L6"]["grades"]), str(len(design["labels"]["L6"]["grades"])))
+    for g, v in design["grades"].items():  # ages of each grade (design.json, from the HarmoS agreement)
+        put(f"age_{g}_from", v["age_from"], str(v["age_from"]))
+        put(f"age_{g}_to", v["age_to"], str(v["age_to"]))
+    put("max_share_oov_pct", design["exclusion"]["max_share_out_of_lexicon"],
+        num(100 * design["exclusion"]["max_share_out_of_lexicon"], 0))
+    put("bootstrap_seed", design["analysis"]["bootstrap_seed"], str(design["analysis"]["bootstrap_seed"]))
+    for m in MODELS:  # display names of the models, as in design.json
+        put(f"name_{m}", design["models"][m].split(" (")[0], design["models"][m].split(" (")[0])
+    lex = json.load(open("logs/lexicon.json"))
+    version = lex["url"].rsplit("/", 1)[-1].replace("Lexique", "").split(".")[0]  # Lexique383.tsv -> 383
+    put("lexique_version", version, version[0] + "." + version[1:])
+    put("lexique_sha16", lex["sha256"], lex["sha256"][:16])
+    # alpha and constants of the measure, from the preregistered code
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("analyze_consts", "analyze.py")
+    an = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(an)
+    put("alpha", an.ALPHA, num(an.ALPHA, 2).lstrip("0"))
+    put("max_extrapolation_years", an.MAX_EXTRAPOLATION, num(an.MAX_EXTRAPOLATION, 0))
+    spec = importlib.util.spec_from_file_location("compute_consts", "compute.py")
+    co = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(co)
+    put("zipf_smoothing", co.SMOOTH, num(co.SMOOTH, 3))
 
     # data collection
     put("n_texts", n["n_texts"], num(n["n_texts"], 0))
@@ -119,6 +150,8 @@ def main(out_path):
     put("n_flag_meta", flag_count(meas, "flag_meta"), str(flag_count(meas, "flag_meta")))
     put("n_duplicates", flag_count(meas, "duplicate_text"), str(flag_count(meas, "duplicate_text")))
     put("n_meta_lines_removed", int(meas["n_meta_lines"].astype(int).sum()), str(int(meas["n_meta_lines"].astype(int).sum())))
+    for lab, v in n["meta_by_label"].items():
+        put(f"n_flag_{lab}", int(v["flag_meta"]), str(int(v["flag_meta"])))
     texts_per_topic = n["n_texts"] // n["n_topics"]
     put("texts_per_topic", texts_per_topic, str(texts_per_topic))
     spent = sum(r["spent_usd"] for r in main_runs)
@@ -189,6 +222,9 @@ def main(out_path):
         p_apa(min(v["linearity_p"] for v in n["h1"].values())))
     for m, v in n["h1"].items():
         put(f"h1_slope_{m}", v["slope"], num(v["slope"], 3))
+    m_flat, m_steep = max(slopes, key=slopes.get), min(slopes, key=slopes.get)
+    put("h1_slope_max_model", m_flat, design["models"][m_flat].split(" (")[0])
+    put("h1_slope_min_model", m_steep, design["models"][m_steep].split(" (")[0])
     put("n_eligible_ae", len(n["age_equivalent"]["eligible_models"]), str(len(n["age_equivalent"]["eligible_models"])))
 
     # age equivalents (model-internal, years)
@@ -236,12 +272,27 @@ def main(out_path):
                 d = 3 if s.startswith("h2") else 4
                 put(f"sens_{sname}_{s}_est", block[k]["estimate"], num(block[k]["estimate"], d))
                 put(f"sens_{sname}_{s}_p", block[k]["p_two_sided"], p_apa(block[k]["p_two_sided"]))
+    for d_kind, keys in (("level", ["h2_level_H", "h2_level_P"]), ("gradient", ["h3_gradient_H", "h3_gradient_P"])):
+        diffs = [abs(n["sensitivity"][s][k]["estimate"] - n["primary"][k]["estimate"])
+                 for s in ("without_truncated", "without_duplicate_text", "without_flag_meta") for k in keys]
+        put(f"sens_max_abs_diff_{d_kind}", max(diffs), num(max(diffs), 4))
+    pdiff = max(abs(n["secondary_ols_clustered"][k]["p_two_sided"] - n["primary"][k]["p_two_sided"]) for k in SHORT)
+    put("ols_p_max_abs_diff", pdiff, num(pdiff, 3).lstrip("0"))
+    for lab in ("L1", "L1P"):
+        tr = {m: v["tracking"] for m, v in n["age_equivalent"]["by_label"][lab]["by_model"].items()}
+        good = [v for v in tr.values() if v >= 1]
+        put(f"ae_{lab}_n_track_ge1", len(good), str(len(good)))
+        if good:
+            put(f"ae_{lab}_track_ge1_min", min(good), num(min(good), 2))
+            put(f"ae_{lab}_track_ge1_max", max(good), num(max(good), 2))
     for mname, block in n["secondary_measures"].items():
         d, scale = SECONDARY[mname]
         for k, s in SHORT.items():
             dd = d if s.startswith("h2") else d + 1
             put(f"sec_{mname}_{s}_est", block[k]["estimate"], num(scale * block[k]["estimate"], dd))
             put(f"sec_{mname}_{s}_p", block[k]["p_two_sided"], p_apa(block[k]["p_two_sided"]))
+            if mname == "n_words":
+                put(f"sec_{mname}_{s}_abs", abs(block[k]["estimate"]), num(abs(block[k]["estimate"]), 0))
 
     # knowledge probes, in percent: first stated range correct, any stated range correct
     pr = n["probes"]
@@ -256,6 +307,17 @@ def main(out_path):
         put(f"probe_any_all_{notation}", v["correct_any"], num(100 * v["correct_any"], 0))
     per_cell = pr["accuracy_by_model_notation"]
     put("probes_per_model_notation", int(len(probes) / len(per_cell)), str(int(len(probes) / len(per_cell))))
+
+    # exploratory analyses of exploratory.py (preregistered as exploratory, computed after the deposit)
+    ex = json.load(open("results/exploratory.json"))
+    for key, v in ex["probe_errors"].items():
+        m, notation = [x.strip() for x in key.split("|")]
+        put(f"perr_{m}_{notation}", v["mean_signed_error_years"], num(v["mean_signed_error_years"], 2))
+        put(f"pold_{m}_{notation}", v["share_too_old"], num(100 * v["share_too_old"], 0))
+        put(f"pyoung_{m}_{notation}", v["share_too_young"], num(100 * v["share_too_young"], 0))
+    for lab, v in ex["mentions"]["by_label"].items():
+        put(f"mention_age_{lab}", v["share_age"], num(100 * v["share_age"], 0))
+        put(f"mention_grade_{lab}", v["share_grade"], num(100 * v["share_grade"], 0))
 
     json.dump(OUT, open(out_path, "w"), indent=1, ensure_ascii=False)
     print(f"wrote {out_path} with {len(OUT)} named numbers")

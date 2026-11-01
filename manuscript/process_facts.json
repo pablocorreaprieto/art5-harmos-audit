@@ -1,0 +1,8 @@
+{
+ "_about": "Facts about how the study was run that the manuscript quotes and that no data file holds. Each value is copied from the record named in 'source'. Read by manuscript/render.py as {{proc_<name>}} placeholders, so that checks/check_numbers.py can trace every number of the text.",
+ "assistant_name": {"text": "Claude Opus 5.5", "source": "model of the main session, system information of the session; journal, Historique tab"},
+ "assistant_id": {"text": "claude-opus-5-5", "source": "same"},
+ "aspredicted_number": {"text": "321415", "source": "CHANGELOG.md, section Deposit; AsPredicted confirmation of 1.11.2026"},
+ "deposit_day": {"text": "1 November 2026", "source": "CHANGELOG.md, section Deposit (about 08:52 CET)"},
+ "pilot_day": {"text": "31 October 2026", "source": "logs/run_20261031T182238767726Z.json (run of 31.10.2026, 18:22 UTC)"}
+}

@@ -1,0 +1,308 @@
+{
+ "note": "exploratory analyses of the preregistration (question 8), computed after the deposit",
+ "probe_errors": {
+  "anthropic_balanced | H": {
+   "n_parsed": 60,
+   "mean_signed_error_years": -0.14166666666666666,
+   "share_too_old": 0.0,
+   "share_too_young": 0.0
+  },
+  "anthropic_balanced | P": {
+   "n_parsed": 60,
+   "mean_signed_error_years": -0.13333333333333333,
+   "share_too_old": 0.0,
+   "share_too_young": 0.016666666666666666
+  },
+  "anthropic_light | H": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 1.625,
+   "share_too_old": 0.31666666666666665,
+   "share_too_young": 0.03333333333333333
+  },
+  "anthropic_light | P": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 1.0416666666666667,
+   "share_too_old": 0.4166666666666667,
+   "share_too_young": 0.0
+  },
+  "mistral_balanced | H": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 0.7916666666666666,
+   "share_too_old": 0.38333333333333336,
+   "share_too_young": 0.0
+  },
+  "mistral_balanced | P": {
+   "n_parsed": 59,
+   "mean_signed_error_years": 0.6779661016949152,
+   "share_too_old": 0.423728813559322,
+   "share_too_young": 0.01694915254237288
+  },
+  "mistral_light | H": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 0.9666666666666667,
+   "share_too_old": 0.5666666666666667,
+   "share_too_young": 0.06666666666666667
+  },
+  "mistral_light | P": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 1.2083333333333333,
+   "share_too_old": 0.6333333333333333,
+   "share_too_young": 0.03333333333333333
+  },
+  "openai_balanced | H": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 0.0,
+   "share_too_old": 0.0,
+   "share_too_young": 0.0
+  },
+  "openai_balanced | P": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 0.0,
+   "share_too_old": 0.0,
+   "share_too_young": 0.0
+  },
+  "openai_light | H": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 0.0,
+   "share_too_old": 0.0,
+   "share_too_young": 0.0
+  },
+  "openai_light | P": {
+   "n_parsed": 60,
+   "mean_signed_error_years": 0.1,
+   "share_too_old": 0.05,
+   "share_too_young": 0.0
+  }
+ },
+ "mentions": {
+  "n_texts": 7680,
+  "by_label": {
+   "L0": {
+    "share_age": 0.14583333333333334,
+    "share_grade": 0.010416666666666666
+   },
+   "L1": {
+    "share_age": 0.12413194444444445,
+    "share_grade": 0.033854166666666664
+   },
+   "L1P": {
+    "share_age": 0.13368055555555555,
+    "share_grade": 0.043402777777777776
+   },
+   "L2": {
+    "share_age": 0.1423611111111111,
+    "share_grade": 0.10850694444444445
+   },
+   "L3": {
+    "share_age": 0.13975694444444445,
+    "share_grade": 0.030381944444444444
+   },
+   "L4": {
+    "share_age": 0.125,
+    "share_grade": 0.041666666666666664
+   },
+   "L5": {
+    "share_age": 0.1779513888888889,
+    "share_grade": 0.019097222222222224
+   },
+   "L6": {
+    "share_age": 0.24131944444444445,
+    "share_grade": 0.03819444444444445
+   }
+  },
+  "by_label_model": {
+   "L0 | anthropic_balanced": {
+    "share_age": 0.375,
+    "share_grade": 0.0
+   },
+   "L0 | anthropic_light": {
+    "share_age": 0.1875,
+    "share_grade": 0.0
+   },
+   "L0 | mistral_balanced": {
+    "share_age": 0.125,
+    "share_grade": 0.03125
+   },
+   "L0 | mistral_light": {
+    "share_age": 0.09375,
+    "share_grade": 0.03125
+   },
+   "L0 | openai_balanced": {
+    "share_age": 0.0625,
+    "share_grade": 0.0
+   },
+   "L0 | openai_light": {
+    "share_age": 0.03125,
+    "share_grade": 0.0
+   },
+   "L1 | anthropic_balanced": {
+    "share_age": 0.19270833333333334,
+    "share_grade": 0.041666666666666664
+   },
+   "L1 | anthropic_light": {
+    "share_age": 0.22395833333333334,
+    "share_grade": 0.015625
+   },
+   "L1 | mistral_balanced": {
+    "share_age": 0.15104166666666666,
+    "share_grade": 0.015625
+   },
+   "L1 | mistral_light": {
+    "share_age": 0.10416666666666667,
+    "share_grade": 0.041666666666666664
+   },
+   "L1 | openai_balanced": {
+    "share_age": 0.041666666666666664,
+    "share_grade": 0.026041666666666668
+   },
+   "L1 | openai_light": {
+    "share_age": 0.03125,
+    "share_grade": 0.0625
+   },
+   "L1P | anthropic_balanced": {
+    "share_age": 0.24479166666666666,
+    "share_grade": 0.0625
+   },
+   "L1P | anthropic_light": {
+    "share_age": 0.13541666666666666,
+    "share_grade": 0.010416666666666666
+   },
+   "L1P | mistral_balanced": {
+    "share_age": 0.171875,
+    "share_grade": 0.015625
+   },
+   "L1P | mistral_light": {
+    "share_age": 0.16145833333333334,
+    "share_grade": 0.057291666666666664
+   },
+   "L1P | openai_balanced": {
+    "share_age": 0.057291666666666664,
+    "share_grade": 0.08333333333333333
+   },
+   "L1P | openai_light": {
+    "share_age": 0.03125,
+    "share_grade": 0.03125
+   },
+   "L2 | anthropic_balanced": {
+    "share_age": 0.22916666666666666,
+    "share_grade": 0.11458333333333333
+   },
+   "L2 | anthropic_light": {
+    "share_age": 0.25,
+    "share_grade": 0.052083333333333336
+   },
+   "L2 | mistral_balanced": {
+    "share_age": 0.203125,
+    "share_grade": 0.13020833333333334
+   },
+   "L2 | mistral_light": {
+    "share_age": 0.11458333333333333,
+    "share_grade": 0.08854166666666667
+   },
+   "L2 | openai_balanced": {
+    "share_age": 0.03125,
+    "share_grade": 0.14583333333333334
+   },
+   "L2 | openai_light": {
+    "share_age": 0.026041666666666668,
+    "share_grade": 0.11979166666666667
+   },
+   "L3 | anthropic_balanced": {
+    "share_age": 0.203125,
+    "share_grade": 0.0625
+   },
+   "L3 | anthropic_light": {
+    "share_age": 0.14583333333333334,
+    "share_grade": 0.005208333333333333
+   },
+   "L3 | mistral_balanced": {
+    "share_age": 0.21354166666666666,
+    "share_grade": 0.020833333333333332
+   },
+   "L3 | mistral_light": {
+    "share_age": 0.171875,
+    "share_grade": 0.036458333333333336
+   },
+   "L3 | openai_balanced": {
+    "share_age": 0.07291666666666667,
+    "share_grade": 0.03125
+   },
+   "L3 | openai_light": {
+    "share_age": 0.03125,
+    "share_grade": 0.026041666666666668
+   },
+   "L4 | anthropic_balanced": {
+    "share_age": 0.20833333333333334,
+    "share_grade": 0.041666666666666664
+   },
+   "L4 | anthropic_light": {
+    "share_age": 0.14583333333333334,
+    "share_grade": 0.026041666666666668
+   },
+   "L4 | mistral_balanced": {
+    "share_age": 0.17708333333333334,
+    "share_grade": 0.03125
+   },
+   "L4 | mistral_light": {
+    "share_age": 0.16145833333333334,
+    "share_grade": 0.0625
+   },
+   "L4 | openai_balanced": {
+    "share_age": 0.036458333333333336,
+    "share_grade": 0.052083333333333336
+   },
+   "L4 | openai_light": {
+    "share_age": 0.020833333333333332,
+    "share_grade": 0.036458333333333336
+   },
+   "L5 | anthropic_balanced": {
+    "share_age": 0.2760416666666667,
+    "share_grade": 0.036458333333333336
+   },
+   "L5 | anthropic_light": {
+    "share_age": 0.18229166666666666,
+    "share_grade": 0.015625
+   },
+   "L5 | mistral_balanced": {
+    "share_age": 0.25,
+    "share_grade": 0.015625
+   },
+   "L5 | mistral_light": {
+    "share_age": 0.21354166666666666,
+    "share_grade": 0.03125
+   },
+   "L5 | openai_balanced": {
+    "share_age": 0.09895833333333333,
+    "share_grade": 0.010416666666666666
+   },
+   "L5 | openai_light": {
+    "share_age": 0.046875,
+    "share_grade": 0.005208333333333333
+   },
+   "L6 | anthropic_balanced": {
+    "share_age": 0.46875,
+    "share_grade": 0.10416666666666667
+   },
+   "L6 | anthropic_light": {
+    "share_age": 0.21875,
+    "share_grade": 0.020833333333333332
+   },
+   "L6 | mistral_balanced": {
+    "share_age": 0.3229166666666667,
+    "share_grade": 0.020833333333333332
+   },
+   "L6 | mistral_light": {
+    "share_age": 0.20833333333333334,
+    "share_grade": 0.0625
+   },
+   "L6 | openai_balanced": {
+    "share_age": 0.17708333333333334,
+    "share_grade": 0.010416666666666666
+   },
+   "L6 | openai_light": {
+    "share_age": 0.052083333333333336,
+    "share_grade": 0.010416666666666666
+   }
+  }
+ }
+}
