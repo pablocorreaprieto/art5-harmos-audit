@@ -19,5 +19,9 @@ OK   trott2024 (arxiv): title, year and first author match, no notice
 OK   farajidizaji2023 (arxiv): title, year and first author match, no notice
 OK   primpied2022 (arxiv): title, year and first author match, no notice
 URL   avry2023: url, not checked here (opened by the session, see the Sources tab)
+OK   javourey2022 (crossref): title, year and first author match, no notice [registry: Applied Psycholinguistics, vol. 43, issue 2, pp. 485-512, type journal-article]
+OK   sclar2024 (arxiv): title, year and first author match, no notice
+OK   yan2024 (crossref): title, year and first author match, no notice [registry: British Journal of Educational Technology, vol. 55, issue 1, pp. 90-112, type journal-article]
+URL   vd_leo2012: url, not checked here (opened by the session, see the Sources tab)
 BAD  planted (error): lookup failed: HTTPError: HTTP Error 404: Not Found
 FAIL verify_refs

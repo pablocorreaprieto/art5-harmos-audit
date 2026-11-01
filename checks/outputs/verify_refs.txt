@@ -1,4 +1,4 @@
-BAD  brysbaert2018 (crossref): year 2018 vs registry 2017 [registry: Current Directions in Psychological Science, vol. 27, issue 1, pp. 45-50, type journal-article]
+OK   brysbaert2018 (crossref): title, year and first author match, no notice [registry: Current Directions in Psychological Science, vol. 27, issue 1, pp. 45-50, type journal-article]
 OK   huang2024 (arxiv): title, year and first author match, no notice
 URL   imperial2023: url, not checked here (opened by the session, see the Sources tab)
 OK   manulex2004 (crossref): title, year and first author match, no notice [registry: Behavior Research Methods, Instruments, &amp; Computers, vol. 36, issue 1, pp. 156-166, type journal-article]
@@ -19,4 +19,8 @@ OK   trott2024 (arxiv): title, year and first author match, no notice
 OK   farajidizaji2023 (arxiv): title, year and first author match, no notice
 OK   primpied2022 (arxiv): title, year and first author match, no notice
 URL   avry2023: url, not checked here (opened by the session, see the Sources tab)
-FAIL verify_refs
+OK   javourey2022 (crossref): title, year and first author match, no notice [registry: Applied Psycholinguistics, vol. 43, issue 2, pp. 485-512, type journal-article]
+OK   sclar2024 (arxiv): title, year and first author match, no notice
+OK   yan2024 (crossref): title, year and first author match, no notice [registry: British Journal of Educational Technology, vol. 55, issue 1, pp. 90-112, type journal-article]
+URL   vd_leo2012: url, not checked here (opened by the session, see the Sources tab)
+PASS verify_refs
