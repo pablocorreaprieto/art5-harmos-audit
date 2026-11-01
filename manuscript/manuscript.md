@@ -109,15 +109,47 @@ The primary results did not depend on the analytic choices preregistered as sens
 
 # Discussion
 
-DISCUSSION TO WRITE
+## A local label is mostly understood, on average
+
+The question was whether naming the grade with a Swiss label gives reading texts of the same lexical demand as giving the pupils' age. Averaged over {{n_models_word}} current models, the answer is close to yes. The bare HarmoS label produced slightly rarer words than the age, a shift of about a third of a year that lies below the difference we had set in advance as the smallest worth detecting, and the bare P label of Vaud and Geneva produced no detectable difference. Neither label weakened how the texts followed the grade from 3H to 8H. The labels are not a large source of mis-levelled texts when results are pooled over models.
+
+This contrasts with earlier audits in English, where prompting for an age or a grade changed the readability of the outputs little or left it above the target (Imperial & Tayyar Madabushi, 2023; Rooein et al., 2023). Here every model lowered word frequency as the requested age rose. The difference may come from newer models, from the genre (reading texts rather than answers to questions), from the measure (lemma frequency rather than surface formulas) or from the language, and our design cannot separate these. Our reference also differs: we compared each label with the text the same model writes for the matching age, so we can say whether a label is read as its age, not whether either text is right for real pupils of that age.
+
+## The average hides models that misread the label
+
+A teacher does not meet an average; each tool runs on one model. Two of the six models, both the lighter model of their provider, did not follow the bare labels. {{name_anthropic_light}} wrote « de 5H » texts as for pupils about two years older and barely varied them with the grade; {{name_mistral_light}} varied its labelled texts across grades much less than its age-only texts. For a 3H class, texts of this kind are harder than the age would give, and for an 8H class they are easier.
+
+The knowledge probes suggest where such errors come from. Of the {{probe_n_wrong}} wrong answers, {{probe_wrong_two_years_pct}}% placed the grade {{probe_window_lo}} to {{probe_window_hi}} years too old. That is the error of reading the digit as the year of a primary school that starts the year pupils turn six: the fifth year of the French école élémentaire is CM2, the grade of pupils aged {{age_7H_from}} to {{age_7H_to}}, two years above 5H (CITE French system). This reading fits {{name_anthropic_light}} and {{name_mistral_balanced}}, whose texts and probe answers erred in the same direction, but not {{name_mistral_light}}, whose probe answers were too old while its labelled texts were, on average, slightly younger. A quick question to a model about the age of a grade is therefore a weak screen: in this sample, the models that stated the right ages also wrote texts that matched the age, but a wrong answer did not predict how the texts would go wrong.
+
+## The words around the label matter as much as the label
+
+Wordings that a teacher might use to be helpful moved the texts more than the bare labels did. Naming the region made texts harder by almost a year, an effect we did not predict and cannot explain from these data. Adding the age to the label made texts slightly easier than the age alone and, in exploratory per-model estimates, brought the models closer together: with the gloss, per-model shifts ranged from {{ae_L3_shift_min}} to {{ae_L3_shift_max}} years and tracking from {{ae_L3_track_min}} to {{ae_L3_track_max}}, against {{ae_L1_shift_min}} to {{ae_L1_shift_max}} years and {{ae_L1_track_min}} to {{ae_L1_track_max}} with the bare H label. The French grade names kept the average level but stretched the span between CP and 6e, as if they carried stronger associations with the first year of reading and with secondary school than the matching ages do. The collision control shows how far a label can mislead when its digit is read in another system: « de 5e » moved texts by more than five years.
+
+## Implications
+
+For teachers, the practical rule is simple: state the age, alone or after the label (« pour des élèves de 5H (8 à 9 ans) »), which gave the most consistent texts across models. The bare labels are acceptable with the larger models audited here, but a teacher cannot always tell which model a tool runs on. For the developers of tools for Swiss schools, the same rule can be applied before the prompt reaches the model, by mapping the label to its ages. For research on generative AI in education, the results show that audits of leveled text generation should report results by model, because pooled estimates can hide models that fail, and that model-internal age equivalents give a scale on which label wordings, models and languages can be compared.
+
+## Limitations
+
+The measure covers one dimension of text difficulty. Word frequency is a strong index of lexical demand, but syntax, cohesion, text length and background knowledge also matter, and for beginning readers decodability matters as well (Huang et al., 2024). The frequencies come from Lexique, whose corpora are films and books for adults; norms from children's books would rank some words differently (CITE Manulex if read). The reference is each model's own idea of an age, so the study shows equivalence between wordings, not appropriateness for pupils, and no teacher or pupil judged the texts (compare Ripoll y Schmitz & Sonnleitner, 2025). Each condition was sampled once per topic and genre, in French, with one prompt template and a temperature of {{temperature}}; other wordings, conversation histories or settings could behave differently. The models were those available on {{collection_day}}, and providers update them; the code and prompts are public so that the audit can be repeated. The study was powered for the pooled tests, and the per-model estimates are exploratory, with wide intervals for some models. Finally, the study was designed, run and written with an AI assistant made by one of the audited providers; the analyses were preregistered, the code that produced every number is public and the checks were scripted, which limits but does not remove the risk this poses.
 
 # Conclusion
 
-CONCLUSION TO WRITE
+Swiss teachers can name a grade the way they do in class, « de 5H » or « de 5P », and most current large models will write a reading text at about the lexical level of the matching age. Not every model does: two lighter models misread the bare labels, one by about two years. Adding the age to the label narrowed the differences between models, which makes it the wording to recommend in teacher education and to build into classroom tools.
 
 # Statements
 
-STATEMENTS TO WRITE (data availability, preregistration, ethics, conflicts of interest, funding, generative AI)
+**Data availability.** The prompts, call plans, raw model outputs with their SHA-256 hashes, analysis code, results and the scripts that check every number of this article are available in the study repository (link anonymised for review; it will be archived with a DOI on acceptance).
+
+**Preregistration.** The hypotheses, measure, exclusion rules, sample size and analyses were preregistered on AsPredicted on {{proc_deposit_day}}, before the confirmatory data were collected (link anonymised for review). The Supporting Information (S1) lists where each preregistered analysis is reported; there were no deviations.
+
+**Ethics.** The study involved no human participants and no personal data: its data are texts generated by language models through their public APIs. No ethical approval was required.
+
+**Conflicts of interest.** AUTHOR INPUT: the author declares no conflict of interest (to confirm).
+
+**Funding.** AUTHOR INPUT: no specific funding (to confirm). The API calls cost {{spend_total_usd}} USD for the main study and {{pilot_spend_usd}} USD for the pilot. The OpenAI and Mistral calls were paid by the author; the Anthropic calls were paid from API credits attached to the author's account (wording to confirm).
+
+**Use of generative AI.** This study was conceived and designed with the assistance of {{proc_assistant_name}} ({{proc_assistant_id}}, Anthropic), which also searched and summarised the literature, wrote the code for data collection and analysis, drafted the manuscript and ran internal error checks. Anthropic is one of the three providers whose models were audited. The outputs of the six audited models were generated as the research data of this study; the prompts, parameters and outputs are archived in the repository. Reference and number checks were performed by scripted tools and by separate AI sessions, whose reports the author reviewed. The author approved the study design before data collection, reviewed and edited the full manuscript, and takes full responsibility for its content.
 
 # References
 

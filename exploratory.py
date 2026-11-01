@@ -4,7 +4,8 @@
    the first age range stated (midpoint minus the true midpoint, in years), with the probe parser of
    analyze.py (analyze.parse_probe), and the share of parsed answers whose first range has its
    midpoint above (too old) or below (too young) the true range widened by half a year, the
-   preregistered rule for a correct answer.
+   preregistered rule for a correct answer; and, over all wrong first answers, the share placed 1.5 to
+   2.5 years too old.
 2. Explicit mention of an age or a grade in the outputs: share of kept texts, by label, whose
    measured text (compute.clean, title excluded) names an age ("8 ans", "huit ans") or a school grade
    ("5H", "5P", "5e", "CE2", "CM1", "6e année"...).
@@ -26,6 +27,24 @@ import compute
 NUM_WORDS = "un|une|deux|trois|quatre|cinq|six|sept|huit|neuf|dix|onze|douze|treize|quatorze|quinze"
 AGE_MENTION = re.compile(rf"\b(\d{{1,2}}|{NUM_WORDS})\s*(?:ans|an)\b", re.IGNORECASE)
 GRADE_MENTION = re.compile(r"\b(\d{1,2}\s?[HP]|\d{1,2}\s?(?:e|ème|eme|ᵉ)(?:\s+année)?|CP|CE1|CE2|CM1|CM2)\b")
+
+
+def wrong_by_size(p):
+    """Wrong first answers (outside the true range widened by half a year) whose midpoint is 1.5 to 2.5
+    years too old: the error of reading the digit as the year of a primary school that starts at six."""
+    wrong = two = 0
+    for r in p.itertuples():
+        ranges = analyze.parse_probe(r.text)
+        if not ranges:
+            continue
+        mid = sum(ranges[0]) / 2
+        if r.truth_age_from - 0.5 <= mid <= r.truth_age_to + 0.5:
+            continue
+        wrong += 1
+        err = mid - (r.truth_age_from + r.truth_age_to) / 2
+        two += 1.5 <= err <= 2.5
+    return {"n_wrong": wrong, "n_wrong_1_5_to_2_5_years_old": two, "share": two / wrong if wrong else float("nan"),
+            "window_years": [1.5, 2.5]}
 
 
 def probe_errors(p):
@@ -74,7 +93,7 @@ def main():
     p = pd.read_csv("results/probes.csv", keep_default_na=False)
     meas = pd.read_csv("results/measures.csv", keep_default_na=False)
     out = {"note": "exploratory analyses of the preregistration (question 8), computed after the deposit",
-           "probe_errors": probe_errors(p), "mentions": mentions(meas)}
+           "probe_errors": probe_errors(p), "probe_wrong_by_size": wrong_by_size(p), "mentions": mentions(meas)}
     json.dump(out, open("results/exploratory.json", "w"), indent=1)
     print(json.dumps(out["probe_errors"], indent=1))
     print(json.dumps(out["mentions"]["by_label"], indent=1))

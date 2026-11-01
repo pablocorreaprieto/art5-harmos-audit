@@ -1,0 +1,77 @@
+name: checks
+
+# Checks of phase P6 that need the network or the official lexicon, which the session's sandbox
+# cannot reach: the reference lookups (Crossref, OpenAlex, arXiv) and the full check suite on the
+# official Lexique 3.83 file. No model is called and no secret is used. Outputs are committed to
+# checks/outputs/ (run_all.sh first keeps the previous run in checks/history/).
+# Added by the main session (claude-opus-5-5) on 1.11.2026, after the deposit; run.yml is unchanged.
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "Check to run"
+        required: true
+        type: choice
+        options: [verify-refs, run-all]
+        default: verify-refs
+
+permissions:
+  contents: write
+
+concurrency:
+  group: art5-checks
+  cancel-in-progress: false
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Reference lookups, then the same with planted faults (must fail)
+        if: ${{ inputs.task == 'verify-refs' }}
+        env:
+          CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
+        run: |
+          mkdir -p checks/outputs/failure_controls
+          set +e
+          python -B checks/verify_refs.py > checks/outputs/verify_refs.txt 2>&1; ok=$?
+          python -B checks/verify_refs.py --plant > checks/outputs/failure_controls/verify_refs_planted.txt 2>&1; planted=$?
+          set -e
+          cat checks/outputs/verify_refs.txt
+          tail -5 checks/outputs/failure_controls/verify_refs_planted.txt
+          echo "verify_refs exit $ok, planted exit $planted"
+
+      - name: All checks on the official lexicon
+        if: ${{ inputs.task == 'run-all' }}
+        run: |
+          python pipeline.py --step lexicon
+          set +e
+          bash checks/run_all.sh > checks/outputs/run_all_stdout.txt 2>&1; code=$?
+          set -e
+          cat checks/outputs/run_all_stdout.txt
+          echo "run_all exit $code"
+
+      - name: Save outputs to the repository
+        if: always()
+        env:
+          TASK: ${{ inputs.task }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- checks/outputs checks/history
+          if ! git diff --cached --quiet; then
+            git commit -m "checks $RUN_ID: $TASK"
+            git pull --rebase
+            git push
+          fi

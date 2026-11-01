@@ -74,6 +74,15 @@
    "share_too_young": 0.0
   }
  },
+ "probe_wrong_by_size": {
+  "n_wrong": 177,
+  "n_wrong_1_5_to_2_5_years_old": 152,
+  "share": 0.8587570621468926,
+  "window_years": [
+   1.5,
+   2.5
+  ]
+ },
  "mentions": {
   "n_texts": 7680,
   "by_label": {

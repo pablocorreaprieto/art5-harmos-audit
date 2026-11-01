@@ -3347,6 +3347,102 @@
   "value": 0.005032970799024539,
   "text": ".005"
  },
+ "ae_L1_shift_min": {
+  "value": -0.7678033733695392,
+  "text": "−0.77"
+ },
+ "ae_L1_shift_max": {
+  "value": 2.1238349058690593,
+  "text": "2.12"
+ },
+ "ae_L1_track_min": {
+  "value": 0.18018402270353062,
+  "text": "0.18"
+ },
+ "ae_L1_track_max": {
+  "value": 1.4242505804162382,
+  "text": "1.42"
+ },
+ "ae_L1P_shift_min": {
+  "value": -0.26798227704071764,
+  "text": "−0.27"
+ },
+ "ae_L1P_shift_max": {
+  "value": 0.47533968998752435,
+  "text": "0.48"
+ },
+ "ae_L1P_track_min": {
+  "value": 0.164157780653157,
+  "text": "0.16"
+ },
+ "ae_L1P_track_max": {
+  "value": 1.426546535691698,
+  "text": "1.43"
+ },
+ "ae_L2_shift_min": {
+  "value": -0.11138688207768092,
+  "text": "−0.11"
+ },
+ "ae_L2_shift_max": {
+  "value": 2.0395283677380265,
+  "text": "2.04"
+ },
+ "ae_L2_track_min": {
+  "value": 0.6803730099991949,
+  "text": "0.68"
+ },
+ "ae_L2_track_max": {
+  "value": 1.1669116481595974,
+  "text": "1.17"
+ },
+ "ae_L3_shift_min": {
+  "value": -0.9572829820568918,
+  "text": "−0.96"
+ },
+ "ae_L3_shift_max": {
+  "value": -0.10857409259698593,
+  "text": "−0.11"
+ },
+ "ae_L3_track_min": {
+  "value": 0.7524295722951381,
+  "text": "0.75"
+ },
+ "ae_L3_track_max": {
+  "value": 1.2961756462539522,
+  "text": "1.30"
+ },
+ "ae_L4_shift_min": {
+  "value": -0.9406847889514323,
+  "text": "−0.94"
+ },
+ "ae_L4_shift_max": {
+  "value": 0.2965278488601208,
+  "text": "0.30"
+ },
+ "ae_L4_track_min": {
+  "value": 0.8760936670306899,
+  "text": "0.88"
+ },
+ "ae_L4_track_max": {
+  "value": 1.5851712984764146,
+  "text": "1.59"
+ },
+ "ae_L6_shift_min": {
+  "value": 4.560339660685387,
+  "text": "4.56"
+ },
+ "ae_L6_shift_max": {
+  "value": 7.842303220503794,
+  "text": "7.84"
+ },
+ "ae_L6_track_min": {
+  "value": -1.6349485593611912,
+  "text": "−1.63"
+ },
+ "ae_L6_track_max": {
+  "value": -0.267043137364964,
+  "text": "−0.27"
+ },
  "ae_L1_n_track_ge1": {
   "value": 4,
   "text": "4"
@@ -3926,6 +4022,22 @@
  "pyoung_openai_light_P": {
   "value": 0.0,
   "text": "0"
+ },
+ "probe_n_wrong": {
+  "value": 177,
+  "text": "177"
+ },
+ "probe_wrong_two_years_pct": {
+  "value": 0.8587570621468926,
+  "text": "86"
+ },
+ "probe_window_lo": {
+  "value": 1.5,
+  "text": "1.5"
+ },
+ "probe_window_hi": {
+  "value": 2.5,
+  "text": "2.5"
  },
  "mention_age_L0": {
   "value": 0.14583333333333334,

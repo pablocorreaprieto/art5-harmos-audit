@@ -2,7 +2,7 @@
 # Runs every check of ART 5 on the code in ART5_CODE (default: the repository root) and writes each
 # output to checks/outputs/ (or CHECKS_OUT). A check passes only when it exits 0 and prints its exact
 # success line. Exits 1 if any check fails. With --with-sim, also reruns the power simulation.
-# Written by the main session (claude-opus-5-5), 25.10.2026.
+# Written by the main session (claude-opus-5-5), 25.10.2026; results and manuscript checks added 1.11.2026.
 set -u
 HERE=$(cd "$(dirname "$0")" && pwd)
 export ART5_CODE=${ART5_CODE:-$(dirname "$HERE")}
@@ -28,7 +28,8 @@ run() {  # name, exact success line, command...
   echo "lexicon: $LEXIQUE $(sha256sum "$LEXIQUE" | cut -c1-16)"
   echo "code under test: $ART5_CODE"
   (cd "$ART5_CODE" && for f in design.json make_prompts.py compute.py analyze.py sim_power.py sim_power_results.json \
-     generate.py pipeline.py validate_measure.py PREREG.md README.md requirements.txt; do
+     generate.py pipeline.py validate_measure.py PREREG.md README.md requirements.txt \
+     manuscript_numbers.py results/numbers.json results/manuscript_numbers.json manuscript/manuscript.md; do
      [ -f "$f" ] && printf "%-24s %s\n" "$f" "$(sha256sum "$f" | cut -c1-16)"; done)
 } > "$OUT/tested_versions.txt"
 run selftest_compute "OK" python3 -B "$ART5_CODE/compute.py" --self-test "$LEXIQUE"
@@ -44,6 +45,11 @@ run e2e_malformed "PASS e2e_malformed" python3 -B "$HERE/e2e_malformed.py"
 run e2e_secrets "PASS e2e_secrets" python3 -B "$HERE/e2e_secrets.py"
 # the history check fails when its script is missing (v0.4.6; before, a script without the executable bit was skipped silently)
 run history "PASS history" bash "$ART5_CODE/history/check_history.sh"
+# results and manuscript (added 1.11.2026, after the deposit): always on the repository's own results/,
+# whatever ART5_CODE is
+REPO=$(dirname "$HERE")
+run recompute_primary "PASS recompute_primary" bash -c "cd '$REPO' && python3 -B checks/recompute_primary.py"
+run check_numbers "PASS check_numbers" bash -c "cd '$REPO' && python3 -B checks/check_numbers.py"
 if [ "${1:-}" = "--with-sim" ]; then run sim "PASS sim" bash "$HERE/sim.sh"; fi
 [ $fail -eq 0 ] && echo "ALL CHECKS PASSED" || echo "SOME CHECKS FAILED"
 exit $fail

@@ -278,6 +278,13 @@ def main(out_path):
         put(f"sens_max_abs_diff_{d_kind}", max(diffs), num(max(diffs), 4))
     pdiff = max(abs(n["secondary_ols_clustered"][k]["p_two_sided"] - n["primary"][k]["p_two_sided"]) for k in SHORT)
     put("ols_p_max_abs_diff", pdiff, num(pdiff, 3).lstrip("0"))
+    for lab, v in n["age_equivalent"]["by_label"].items():  # spread of the six models, per label
+        sh = [w["shift_years"] for w in v["by_model"].values()]
+        tk = [w["tracking"] for w in v["by_model"].values()]
+        put(f"ae_{lab}_shift_min", min(sh), num(min(sh), 2))
+        put(f"ae_{lab}_shift_max", max(sh), num(max(sh), 2))
+        put(f"ae_{lab}_track_min", min(tk), num(min(tk), 2))
+        put(f"ae_{lab}_track_max", max(tk), num(max(tk), 2))
     for lab in ("L1", "L1P"):
         tr = {m: v["tracking"] for m, v in n["age_equivalent"]["by_label"][lab]["by_model"].items()}
         good = [v for v in tr.values() if v >= 1]
@@ -315,6 +322,11 @@ def main(out_path):
         put(f"perr_{m}_{notation}", v["mean_signed_error_years"], num(v["mean_signed_error_years"], 2))
         put(f"pold_{m}_{notation}", v["share_too_old"], num(100 * v["share_too_old"], 0))
         put(f"pyoung_{m}_{notation}", v["share_too_young"], num(100 * v["share_too_young"], 0))
+    w = ex["probe_wrong_by_size"]
+    put("probe_n_wrong", w["n_wrong"], str(w["n_wrong"]))
+    put("probe_wrong_two_years_pct", w["share"], num(100 * w["share"], 0))
+    put("probe_window_lo", w["window_years"][0], num(w["window_years"][0], 1))
+    put("probe_window_hi", w["window_years"][1], num(w["window_years"][1], 1))
     for lab, v in ex["mentions"]["by_label"].items():
         put(f"mention_age_{lab}", v["share_age"], num(100 * v["share_age"], 0))
         put(f"mention_grade_{lab}", v["share_grade"], num(100 * v["share_grade"], 0))
