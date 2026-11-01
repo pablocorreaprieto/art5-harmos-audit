@@ -51,5 +51,13 @@
  "prereg_commit": {
   "text": "6a0a061",
   "source": "CHANGELOG.md, section Deposit: tag prereg on commit 6a0a061"
+ },
+ "credit_anthropic_origin": {
+  "text": "the API credits that Anthropic includes in the author's paid Claude Max subscription",
+  "source": "Anthropic e-mail of 17.10.2026 to the author, subject \"$200 USD in API credits was added\" (\"Pablo's Individual Org, the API organization linked to your Max plan, received $200 USD in API credits\"), and the author's answer at gate G2 (1.11.2026, about 19:05) that the promotional credit came from the author's Max plan"
+ },
+ "author_roles": {
+  "text": "conceived the study (topic), designed the protocol, set up the infrastructure, took design decisions (three providers kept, Mistral Medium 3.5 replaced by Mistral Large 4 before the pilot, spending limits), approved design and preregistration (G1), deposited the preregistration, read the final manuscript and decided the open questions (G2)",
+  "source": "the author's answers at gate G2 (1.11.2026, about 19:10, multiple-choice round 3: topic, protocol, infrastructure, design decisions all ticked); CHANGELOG.md (switch to Mistral Large 4 decided on 31.10.2026; G1 on 1.11.2026 at 06:48; deposit about 08:52)"
  }
 }

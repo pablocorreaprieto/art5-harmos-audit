@@ -16,10 +16,11 @@ Teachers are advised to name their pupils' grade when they ask a language model 
 
 The study follows the recommendation of a review of language models in education published in this journal (Yan et al., 2024), that studies report the exact models, prompts and temperature they used: every prompt, parameter and raw output is archived, and the results are reported for each model as well as pooled. It involved no human participants, and its data are texts generated through the providers' APIs. The hypotheses, measure, exclusion rules, sample size and analyses were preregistered before data collection. The deposited preregistration contains the address of the study repository, which names me. For that reason I give the link to the preregistration on the title page for the editor only, and reviewers receive an anonymised copy of the repository that includes the preregistration text.
 
-The study was carried out with an AI assistant under a written protocol, and the manuscript declares in full what the assistant did, which separate AI sessions reviewed the work, and how the Anthropic API calls were paid (mostly with promotional credits from Anthropic, which also made two of the audited models and the assistant). The manuscript is not under consideration elsewhere and has not been published.
+I conceived the study and designed the protocol for AI-assisted research under which an AI assistant carried it out. The manuscript declares in full what the assistant did, how its work was checked, which separate AI sessions reviewed it, and how the Anthropic API calls were paid, mostly with the API credits included in my paid Claude Max subscription. Anthropic also made two of the audited models and the assistant. The manuscript is not under consideration elsewhere and has not been published.
 
 Yours sincerely,
 
 Pablo Correa Prieto\
-AUTHOR INPUT: affiliation\
+Independent researcher, canton of Vaud, Switzerland\
+pabcorpri@gmail.com\
 ORCID 0009-0009-1844-7453
