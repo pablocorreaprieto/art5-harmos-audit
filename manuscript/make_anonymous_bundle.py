@@ -46,7 +46,7 @@ EXCLUDE_PREFIXES = ("manuscript/submission/", "manuscript/verification_report.md
                     # the rendered title page and cover letter (added after the confirmation reading, 1.11.2026)
                     "manuscript/build/title_page.", "manuscript/build/cover_letter.")
 # scripts of the reading sessions that search for the author's identifying strings (their patterns name the author)
-EXCLUDE_PATTERNS = (re.compile(r"^manuscript/records/.*/bundle_sim[^/]*\.py$"),)
+EXCLUDE_PATTERNS = (re.compile(r"^manuscript/records/.*/(?:bundle_sim|scan_bundle)[^/]*\.py$"),)
 
 
 def excluded(name):

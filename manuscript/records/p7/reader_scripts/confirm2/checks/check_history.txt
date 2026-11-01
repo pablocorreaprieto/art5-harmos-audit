@@ -1,0 +1,18 @@
+v0.4.10: 14 files recorded, all identical
+v0.4.9: 14 files recorded, all identical
+v0.4.8: 14 files recorded, all identical
+v0.4.7: 14 files recorded, all identical
+v0.4.6: 14 files recorded, all identical
+v0.4.5: 14 files recorded, all identical
+v0.4.4: 14 files recorded, all identical
+v0.4.3: 14 files recorded, all identical
+v0.4.2: 14 files recorded, all identical
+v0.4.1: 14 files recorded, all identical
+v0.4: 14 files recorded, all identical
+v0.3: 13 files recorded, all identical
+v0.2: 11 files recorded, all identical
+PASS history
+
+real	0m0.518s
+user	0m0.334s
+sys	0m0.131s

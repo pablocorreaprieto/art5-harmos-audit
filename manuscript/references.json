@@ -252,10 +252,10 @@
   "cite": "Sclar et al., 2024",
   "title": "Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting",
   "arxiv": "2310.11324",
-  "apa": "Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). *Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting* [Conference paper]. The Twelfth International Conference on Learning Representations (ICLR 2024). https://doi.org/10.48550/arXiv.2310.11324",
+  "apa": "Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). *Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting* [Paper presentation]. Twelfth International Conference on Learning Representations (ICLR 2024). https://doi.org/10.48550/arXiv.2310.11324",
   "access": "read-directly (arXiv v2: Abstract, Sections 1, 4.1, 4.2, 6, Appendix C)",
   "litnote": "literature, sclar2024",
-  "note": "Published as a conference paper at ICLR 2024 (header of arXiv v2, the version read); listed as a conference paper after the confirmation reading of 1.11.2026"
+  "note": "Published as a conference paper at ICLR 2024 (header of arXiv v2, the version read); listed as a conference paper after the confirmation reading of 1.11.2026; APA 7 descriptor [Paper presentation] after the second confirmation reading"
  },
  {
   "key": "yan2024",

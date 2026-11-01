@@ -1,7 +1,7 @@
 # ART 5, verification report (phase P6) and exception list for gate G2
 
 Main session (claude-opus-5-5), 1 November 2026, updated after the internal readings of the draft (phase P7) and
-after the reading that confirmed their corrections (claude-fable-5-1, 13:46 to 14:16).
+after the readings that confirmed their corrections (claude-fable-5-1, 13:46 to 14:16; claude-sonnet-5-5, 14:37 to 15:11).
 Every check below can fail and was seen to fail on a planted fault; each line names the program and the
 output kept in the repository. The readings, their refutations and the corrections are recorded in
 `manuscript/records/p7/` and in the "Relectures IA" tab of the project journal.
@@ -22,7 +22,9 @@ output kept in the repository. The readings, their refutations and the correctio
   listed claim no longer in the text fails. PASS; planted fault (Claude Haiku 5.5's shift set to 3.1 years): FAIL.
   On its first run the check caught a quantity left uncovered after a rewording of the practitioner notes. After the
   confirmation reading, entries were added for the wordings it corrected ("every model's point estimate", "the two
-  whose texts followed the grade least", the effect of the region by model, "as low as with the bare P label").
+  whose texts followed the grade least", the effect of the region by model, "as low as with the bare P label"); after
+  the second confirmation reading, the region's effect is tied to the pooled value over the six models, with the two
+  models near zero named.
 - `checks/recompute_primary.py`: the four primary tests recomputed without `analyze.py` from `results/measures.csv`,
   20 values within 1e-9 of `numbers.json`. PASS; planted +0.05 Zipf on one text: FAIL.
 - `exploratory_p7.py` (post hoc analyses) stops if its vectorised readings, its leave-one-model-out function at
@@ -57,7 +59,10 @@ output kept in the repository. The readings, their refutations and the correctio
   replacements ignore case, and binary files (inside .docx containers, else as raw bytes) are scanned too. The earlier
   dry run that found the copy clean had been made before these files were committed. Run on the corrected tree:
   exit 0, 338 files, nothing left by the script's own list or by a broader list (names, ORCID, university, e-mail
-  domains, place of residence, AsPredicted number, links to private documents); RERUN PENDING on the merged commit.
+  domains, place of residence, AsPredicted number, links to private documents). The second confirmation reading ran it
+  on 34545cc (exit 0), scanned the 331 text files, both .docx, the PDFs and the PNGs itself and found nothing
+  identifying, and checked that a name planted in a .docx or a binary file stops the script. Its own scan script is
+  left out like the others (pattern widened to `scan_bundle*.py`). RERUN PENDING on the merged commit.
 
 ## 4. References (P6.1, P6.2)
 
@@ -119,13 +124,16 @@ output kept in the repository. The readings, their refutations and the correctio
 9. Mesmer (2024), the closest study of mean word frequency in primary reading texts, was read as an abstract only and
    is not cited.
 10. BJET's own author guidelines could not be opened (Wiley pages blocked); the word limit (6,000 words excluding
-    references), double-anonymous review and practitioner notes come from secondary copies. After the confirmation
-    reading (words separated by spaces, as a word processor counts): main text from the Introduction to the
-    Conclusion 5,233 words, 5,835 with tables and captions; abstract 250; practitioner notes 209; statements 506;
-    everything except the references 6,800. Check the counting rule on the portal. If it counts everything except
-    the references, about 800 words must go; the candidates, in order, are the sensitivity paragraph and Table 3
-    (to the Supporting Information, about 290 words), the background section on lexical demand (about 100 words
-    can go) and the detail of the per-model departures in the Results (about 150 words).
+    references), double-anonymous review and practitioner notes come from secondary copies. Counts by one rule, the
+    one `manuscript/render.py` prints and the title page uses (runs of non-space characters, as a word processor
+    counts, headings included): main text from the Introduction to the Conclusion 5,241 words, 5,825 with tables and
+    captions; abstract 250; everything from the Abstract to the Statements, the references excluded, 6,798. Check the
+    counting rule on the portal. If it counts everything except the references, about 800 words must go: move the
+    sensitivity paragraph and Table 3 to the Supporting Information (274 words), shorten the background on lexical
+    demand by half (about 115 of 230), keep only the key sentences of the per-model paragraph of the Results (about
+    120 of 237), merge the per-model paragraph of the Discussion into the next one (about 80 of 133), shorten the
+    paragraph on lexical equivalence (about 60 of 120) and move part of the AI statement to the records README
+    (about 150). That is about 800 words; I can do it in one pass if you choose it.
 11. Lexique 4 appeared in 2026; the study uses Lexique 3.83, fixed in the preregistration. A reviewer may ask.
 12. Analyses added after the readings are labelled post hoc in the text and listed in Supporting Information S1;
     none changes a preregistered result.
@@ -135,3 +143,7 @@ output kept in the repository. The readings, their refutations and the correctio
     those keys after the run, and both consoles showed them as revoked or removed (CHANGELOG, Deposit), so the
     history holds only dead values; for information before the repository is made public. Rewriting the history
     would change commits cited in the preregistration and the records, so I recommend leaving it.
+14. Yan et al. (2024) was read in its arXiv version 2 of 22 July 2023, because the published PDF in BJET could not be
+    opened (Wiley blocked); the manuscript and the cover letter cite the published article. If you can open it,
+    check that the recommendation cited (p. 16 of the preprint: report at least the exact models, prompts and
+    temperature) is in the published version.

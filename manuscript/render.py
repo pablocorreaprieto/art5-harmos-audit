@@ -15,6 +15,7 @@ import os
 import re
 import subprocess
 import sys
+import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODELS = ["anthropic_balanced", "anthropic_light", "openai_balanced", "openai_light",
@@ -308,7 +309,10 @@ def reference_list(text, root=ROOT):
     """APA entries of the references cited in text, in alphabetical order."""
     refs = json.load(open(os.path.join(root, "manuscript/references.json")))
     cited = [r for r in refs if any(f in text for f in citation_forms(r))]
-    return "\n\n".join(r["apa"] for r in sorted(cited, key=lambda r: r["apa"].lower()))
+    # APA order ignores diacritics (État sorts as Etat; fixed after the second confirmation reading, 1.11.2026)
+    def key(r):
+        return unicodedata.normalize("NFKD", r["apa"]).encode("ascii", "ignore").decode().lower()
+    return "\n\n".join(r["apa"] for r in sorted(cited, key=key))
 
 
 def render_text(src, nums, design, fig_dir, root=ROOT):
@@ -338,17 +342,32 @@ def render_text(src, nums, design, fig_dir, root=ROOT):
     return out
 
 
-def main_text_words(md):
-    """Words from Introduction to Conclusion, without tables, figure lines and table captions."""
-    m = re.search(r"^# Introduction\s*$(.*?)^# Statements\s*$", md, flags=re.S | re.M)
-    body = m.group(1) if m else ""
-    keep = []
+def words(md, start="Introduction", end="Statements", tables=False):
+    """Words as a word processor counts them (runs of non-space characters), from the heading `start` to the
+    heading `end`, headings included without their # marks. Table rows, figure lines and table captions are
+    left out unless tables=True, in which case the cells and captions count and the separator rows do not.
+    One rule for the title page and the verification report (after the second confirmation reading, 1.11.2026,
+    which found three different counts)."""
+    m = re.search(rf"^# {start}\s*$(.*?)^# {end}\s*$", md, flags=re.S | re.M)
+    body = (f"# {start}\n" + m.group(1)) if m else ""
+    n = 0
     for line in body.splitlines():
         s = line.strip()
-        if s.startswith("|") or s.startswith("![") or re.match(r"^Table S?\d+\.", s) or s.startswith("#"):
+        if not s or re.fullmatch(r"\|[-|: ]+\|", s):
             continue
-        keep.append(s)
-    return len(re.findall(r"[A-Za-zÀ-ÿ0-9−][\w'’−.,\-–]*", " ".join(keep)))
+        is_table = s.startswith("|") or s.startswith("![") or re.match(r"^Table S?\d+\.", s)
+        if is_table and not tables:
+            continue
+        if s.startswith("!["):
+            s = re.sub(r"^!\[(.*)\]\(.*\)$", r"\1", s)
+        s = re.sub(r"^#+\s*", "", s).replace("|", " ")
+        n += len(s.split())
+    return n
+
+
+def main_text_words(md):
+    """Words from Introduction to Conclusion, without tables, figure lines and table captions."""
+    return words(md)
 
 
 def main():
@@ -365,11 +384,17 @@ def main():
         subprocess.run(["pandoc", out, "-o", docx, "--resource-path", os.path.dirname(out)], check=True)
         print("wrote", out, "and", docx)
         if stem == "manuscript":
-            print("main text words (Introduction to Conclusion, no tables or captions):", main_text_words(md))
+            wc = {"main": words(md), "main_tables": words(md, tables=True),
+                  "all": words(md, "Abstract", "References", tables=True)}
+            print("main text words (Introduction to Conclusion, no tables or captions):", wc["main"])
+            print("main text words with tables and captions:", wc["main_tables"])
+            print("words from the Abstract to the Statements, tables included (all but the references):", wc["all"])
             ab = re.search(r"^# Abstract\s*$(.*?)^# ", md, flags=re.S | re.M)
             print("abstract words:", len(ab.group(1).split()) if ab else 0)
             # counts for the title page, from the rendered manuscript
-            nums["wc_main"] = {"value": main_text_words(md), "text": f"{main_text_words(md):,}"}
+            nums["wc_main"] = {"value": wc["main"], "text": f"{wc['main']:,}"}
+            nums["wc_main_tables"] = {"value": wc["main_tables"], "text": f"{wc['main_tables']:,}"}
+            nums["wc_all"] = {"value": wc["all"], "text": f"{wc['all']:,}"}
             nums["wc_abstract"] = {"value": len(ab.group(1).split()) if ab else 0,
                                    "text": str(len(ab.group(1).split()) if ab else 0)}
             m = re.search(r"^title:\s*\"(.*)\"\s*$", open(path).read(), flags=re.M)

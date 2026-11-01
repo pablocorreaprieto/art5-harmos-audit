@@ -13,7 +13,7 @@ title: "Title page"
 
 **Corresponding author.** Pablo Correa Prieto, AUTHOR INPUT: e-mail address for the journal.
 
-**Word count.** Main text (Introduction to Conclusion, without tables and captions): 5,051 words; abstract: 250 words; references excluded.
+**Word count.** Main text (Introduction to Conclusion): 5,241 words without tables and figure captions, 5,825 with them; abstract: 250 words; whole manuscript without the references: 6,798 words.
 
 **Keywords.** generative AI, large language models, reading texts, lexical frequency, grade labels, primary education
 

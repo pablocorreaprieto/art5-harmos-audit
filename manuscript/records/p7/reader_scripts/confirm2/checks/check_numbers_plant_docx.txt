@@ -1,0 +1,2 @@
+planted.docx: numbers differ from the rendered manuscript at number 8 (0.31 vs 0.30); 596 vs 596 numbers
+FAIL check_numbers

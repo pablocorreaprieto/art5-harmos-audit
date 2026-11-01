@@ -16,7 +16,7 @@ Rendered by manuscript/render.py into manuscript/build/title_page.md. -->
 
 **Corresponding author.** Pablo Correa Prieto, AUTHOR INPUT: e-mail address for the journal.
 
-**Word count.** Main text (Introduction to Conclusion, without tables and captions): {{wc_main}} words; abstract: {{wc_abstract}} words; references excluded.
+**Word count.** Main text (Introduction to Conclusion): {{wc_main}} words without tables and figure captions, {{wc_main_tables}} with them; abstract: {{wc_abstract}} words; whole manuscript without the references: {{wc_all}} words.
 
 **Keywords.** generative AI, large language models, reading texts, lexical frequency, grade labels, primary education
 

@@ -1155,3 +1155,67 @@ No machine-sounding wording stood out; the nine "post hoc" tags in Results read 
 check_numbers PASS; check_claims PASS and --plant FAIL as required; check_citations PASS (24 cited, farajidizaji2023 uncited); recompute_primary PASS (20 values); check_history PASS (v0.2 to v0.4.10); make_anonymous_bundle FAIL (error 1). exploratory_p7.py rerun in a copy outside the worktree reproduces results/exploratory_p7.json and the Mistral sample byte for byte, assertions pass; code read, no error found (the English age pattern and the 4–16 plausibility window are documented; 25 sampled traces extract correctly [read]). My independent recomputation without importing it matches every quoted post hoc number: LOO table, spread 0.144–0.227 and 0.123–0.244 Zipf, L2−L1 and L3−L1 shifts with CIs (exact with seed 20261101), SD of levels and its CI, offsets, F 29.42/15.17/9.47/1.60, TOST, tracking precision, L0 CIs, probes 542/177/74/49/77%, reasoning shares, trace shares 51/42/38/40%, −0.0428 (SE 0.0201) and −0.0116 (SE 0.0234), 52% of −0.083, Swiss words. Anthropic thinking blocks carry no text (0 of 1,877), so "only model whose reasoning is returned as text" holds; pylexique lists VRAI/FAUX in capitals only; figure and manuscript/supplement docx metadata clean. Not verifiable here: tag data-v1 (absent from this worktree), the AsPredicted record [inference: as R2 noted].
 
 (Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Scripts et sorties gardés dans records/reader_scripts/confirm/ ; bundle_sim_confirm.py, qui contient les chaînes à chercher, est exclu de la copie anonymisée.)
+
+## Deuxième lecture de confirmation, des corrections faites après la première (claude-sonnet-5-5), consigne
+
+(Consigne donnée telle quelle, lancée à 14:37 sur le commit 34545cc par la session principale, qui n'a pas pris part à la lecture.)
+
+You are a separate reader confirming a small set of corrections to a research manuscript. You did not make them and must not assume they work. Begin your report with exactly: "Internal reading by a separate AI session. Not peer review."
+
+Context. ART 5 is a preregistered audit: six language models wrote 7,680 French reading texts for Swiss primary grades 3H to 8H, with the grade named in eight ways; the measure is the mean Zipf frequency of content lemmas. A first confirmation reading (claude-fable-5-1) checked the revision made after three internal readings and listed ten new findings (C1 to C10) plus partial fixes. The main session then made commit 34545cc. Your task is narrow: confirm, finding by finding, that these last corrections are real and correct, and find any new error they introduced.
+
+Files (read only; do not edit, create or delete anything in the repository; write scripts and temporary files only under /tmp/confirm2_p7/):
+- Repository (git worktree): /tmp/claude-0/-home-claude/0d0dd4bc-423f-5ede-b3ba-98197293b71f/scratchpad/p7/wt at commit 34545cc (branch p7-revision). The commit before the corrections is 49e8ae4: `git -C <worktree> diff 49e8ae4 34545cc` shows every change (ignore the binary .docx files in manuscript/build/).
+- The first confirmation report, with C1 to C10 and the partial verdicts, is the last section of manuscript/records/p7/p7_records.md ("Lecture de confirmation, rapport complet").
+- Rendered text: manuscript/build/manuscript.md and supplement.md; sources with placeholders: manuscript/manuscript.md and supplement.md; numbers: results/manuscript_numbers.json (built by manuscript_numbers.py from results/exploratory_p7.json and other outputs).
+- Checks: checks/check_numbers.py, checks/check_claims.py (and --plant, which must FAIL), checks/check_citations.py, checks/recompute_primary.py, history/check_history.sh, and the anonymisation script manuscript/make_anonymous_bundle.py.
+- Do not call any model provider API. Do not re-measure texts (the official lexicon is not on this machine). No web access is needed.
+
+What to do:
+1. For each of C1 to C10 of the first confirmation report, and for the two partial findings R2 S5 (tie of the gloss with the bare P label) and R2 S7 (effect of the region by model), say "confirmed", "partly" or "not fixed", with the location of the fix and evidence. For C3 (length), report your own word counts of the rendered manuscript (main text Introduction to Conclusion with and without tables and captions, and everything except the references) and say whether the new verification report (manuscript/verification_report.md, section 6, item 10) states them correctly; the counting rule of the journal is unknown and is a decision for the author.
+2. Check that every new or changed number placeholder names the quantity its sentence says (for example the per-model differences of the region wording, the count of contrasts in which the models differed, the tie of 0.28), from results/exploratory_p7.json and results/manuscript_numbers.json.
+3. Check manuscript/make_anonymous_bundle.py as changed: run `python3 manuscript/make_anonymous_bundle.py /tmp/confirm2_p7/bundle.zip --ref 34545cc` from the worktree, then scan the zip yourself (text files and the members of any .docx) for the author's name in any case, the ORCID, the university, e-mail domains, the AsPredicted number and links to private documents. Report the exclusions and whether anything identifying is left. Do not print identifying strings in your report: name the file and the kind of string only.
+4. Check manuscript/records/findings_log.csv against what manuscript/records/README.md and the manuscript's "Use of generative AI" statement say about it (rows, columns, coverage), without judging the findings themselves.
+5. Look for new errors in the diff: contradictions between sections, claims stronger than the numbers, labels missing (exploratory, post hoc), wording that reads as written by a machine, references that do not match their sources as described in references.json.
+6. Run the checks listed above on 34545cc and report the results.
+
+Report under 700 words: first the verdict list (one line per item), then new errors ranked by severity with a concrete fix each, then the check results. Tag what you ran [run], what you read [read], and inferences [inference].
+
+## Deuxième lecture de confirmation, rapport complet (lancée à 14:37, reçu à 15:11, 123 appels d'outils, claude-sonnet-5-5), texte intégral
+
+Internal reading by a separate AI session. Not peer review.
+
+Reader: claude-sonnet-5-5. Worktree unchanged [run]. No memory used.
+
+VERDICTS (34545cc)
+- C1 confirmed [run]: script exits 0; in a clone, a name planted in a .docx or binary stops it, lowercase names are replaced, a new bundle_sim*.py is excluded.
+- C2 confirmed [read]: findings_log.csv added; the three statements true only after G2 are on the G2 list (report §6.4).
+- C3 partly [run]: cuts (-87/-87/-119 words) are real. My counts (space-separated tokens, headings in): Introduction to Conclusion 5,219 without tables and captions, 5,803 with; all but references 6,772. Report §6.10 says 5,233 / 5,835 / 6,800: +14/+32/+28, the same offsets at 49e8ae4, so a counting-rule difference [inference]. The rule is the author's decision.
+- C4 confirmed [read]: "more than any wording of the intended grade moved them".
+- C5 partly [read]: "in exploratory analyses" (Conclusion) and "(exploratory)" (two notes) added; see error 3.
+- C6 confirmed [read]: "meant for beginning readers".
+- C7 confirmed [run]: bare-H tracking is lowest for Haiku (0.18) and Mistral Small (0.46), others 1.17 or more; now checked.
+- C8 partly [read]: Sclar as ICLR 2024 paper, Javourey-Drevet 43(2), cover letter reworded; see error 4.
+- C9 confirmed [run]: "point estimate" in four sentences; largest |L3 shift| 0.96; check_claims entry.
+- C10 partly [run]: "post hoc" in Results 12 to 9, one umbrella clause.
+- R2 S5 confirmed [run]: SDs 0.284 and 0.279 recomputed from measures.csv; "as low as" holds.
+- R2 S7 partly [run]: Results sentence right; Discussion sentence wrong (error 1).
+
+NEW ERRORS (by severity)
+1. Discussion: "Naming the region made the texts of four models harder ... by about half a model-internal year on average." Half a year (0.57) is the six-model figure; the four models' own is about 0.9 [run]. check_claims ties the sentence to the pooled placeholder, so it misses this. Luna's interval [-0.032, 0.000] touches zero (p = .051). Fix: "about half a year across six models, about nine-tenths for the four that moved"; add a four-model placeholder; give per-model differences with intervals in an SI table.
+2. Length: three counts disagree (title page 5,051; report 5,233; mine 5,219) and the §6.10 cut candidates total about 540 words, not 800. Fix: one rule in render.py and the report; recompute the cut list.
+3. Unlabelled exploratory claims: Conclusion sentence 3 ("The model mattered more than the label"), the Implications point-estimate sentence, the cover letter's matching claim. Fix: "(exploratory)" or "in this sample".
+4. Yan et al. was read only as arXiv v2, yet the cover letter says "published in this journal". Fix: G2 list, or "reported in a review".
+5. References: render.py's sort keeps accents, so "État de Vaud" follows Yan; "[Conference paper]" is not an APA 7 descriptor [inference].
+6. Machine-sounding [inference]: "A teacher does not meet an average; each tool runs on one model"; 55 semicolons in 5,374 words of main text.
+
+CHECK RESULTS
+Placeholders [run]: all new ones name their quantity (three of four heterogeneity contrasts; per-model L2-L1 levels, four models -0.016 to -0.042, Haiku +0.004, Sol -0.004; 0.28 = SD of shifts, bare P label).
+
+Bundle [run]: 348 files, 339 members; 10 excluded (title pages, cover letters, verification_report.md, the script, two bundle_sim scripts). My scan of 331 text members, both .docx, 3 PDF and 3 PNG found no author name in any case, ORCID number, university, e-mail domain, AsPredicted number or private-document link; only the word "ORCID", generic aspredicted.org help links and three paths with a generic account name remain. Nothing identifying left.
+
+Findings log [read, run]: 160 rows, 9 columns, matches the README; the correction column is full. README says each row has its refutation, but 44 do not (design-stage readings); 2 rows are not reader findings; C1 to C10 still read "to confirm". Log this reading and update the README count.
+
+Scripts [run]: check_numbers PASS (also --docx on manuscript.docx; its 5 planted faults FAIL); check_claims PASS (--plant FAIL; my ten planted faults caught); check_citations PASS (24 cited; 3 plants FAIL); recompute_primary PASS (20 values; plant FAIL); check_history PASS; anonymisation exit 0; pandoc rebuild identical. Not run: GitHub Actions run_all, verify_refs.
+
+(Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Scripts et sorties gardés dans records/reader_scripts/confirm2/ ; scan_bundle.py, qui contient les chaînes à chercher, est exclu de la copie anonymisée. Corrections faites ensuite par la session principale : voir CHANGELOG.md et findings_log.csv, lignes E1 à E6.)

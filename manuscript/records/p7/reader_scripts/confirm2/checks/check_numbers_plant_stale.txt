@@ -1,0 +1,4 @@
+stale results/manuscript_numbers.json, differs on 1 names, e.g. ['ae_L1_shift']
+manuscript/build/manuscript.md differs from the render of manuscript/manuscript.md
+manuscript/build/supplement.md differs from the render of manuscript/supplement.md
+FAIL check_numbers

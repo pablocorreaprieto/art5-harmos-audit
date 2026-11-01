@@ -1,0 +1,2 @@
+manuscript/build/manuscript.md differs from the render of manuscript/manuscript.md
+FAIL check_numbers
