@@ -1,0 +1,3 @@
+no problem found
+PASS check_numbers
+exit=0

@@ -1,0 +1,10 @@
+L2 - L1 level by model (mine | manuscript_numbers.json)
+  Claude Sonnet 5.5  -0.0400 | -0.0400   ruler slope -0.0446
+  Claude Haiku 5.5   +0.0036 | +0.0036   ruler slope -0.0429
+  GPT-6.1 Sol        -0.0044 | -0.0044   ruler slope -0.0489
+  GPT-6 Luna         -0.0161 | -0.0161   ruler slope -0.0246
+  Mistral Large 4    -0.0352 | -0.0352   ruler slope -0.0414
+  Mistral Small 4    -0.0423 | -0.0423   ruler slope -0.0339
+pooled shift difference L2 - L1, six models : 0.569 (json 0.569)
+same over the four models that moved       : 0.925
+others_min / others_max in json: -0.0423 / -0.0161; mine over the four: -0.0423 / -0.0161

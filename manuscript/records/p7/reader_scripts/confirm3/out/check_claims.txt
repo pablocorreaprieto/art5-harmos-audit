@@ -1,0 +1,2 @@
+PASS check_claims
+exit=0

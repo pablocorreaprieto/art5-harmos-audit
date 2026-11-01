@@ -1,7 +1,8 @@
 # ART 5, verification report (phase P6) and exception list for gate G2
 
 Main session (claude-opus-5-5), 1 November 2026, updated after the internal readings of the draft (phase P7) and
-after the readings that confirmed their corrections (claude-fable-5-1, 13:46 to 14:16; claude-sonnet-5-5, 14:37 to 15:11).
+after the readings that confirmed their corrections (claude-fable-5-1, 13:46 to 14:16; claude-sonnet-5-5, 14:37 to 15:11
+and 15:19 to 15:38).
 Every check below can fail and was seen to fail on a planted fault; each line names the program and the
 output kept in the repository. The readings, their refutations and the corrections are recorded in
 `manuscript/records/p7/` and in the "Relectures IA" tab of the project journal.
@@ -126,8 +127,9 @@ output kept in the repository. The readings, their refutations and the correctio
 10. BJET's own author guidelines could not be opened (Wiley pages blocked); the word limit (6,000 words excluding
     references), double-anonymous review and practitioner notes come from secondary copies. Counts by one rule, the
     one `manuscript/render.py` prints and the title page uses (runs of non-space characters, as a word processor
-    counts, headings included): main text from the Introduction to the Conclusion 5,241 words, 5,825 with tables and
-    captions; abstract 250; everything from the Abstract to the Statements, the references excluded, 6,798. Check the
+    counts, headings included): main text from the Introduction to the Conclusion 5,242 words, 5,826 with tables and
+    captions; abstract 237 (the paragraph, without the keywords); everything from the Abstract through the Statements,
+    the references excluded, 6,800. Check the
     counting rule on the portal. If it counts everything except the references, about 800 words must go: move the
     sensitivity paragraph and Table 3 to the Supporting Information (274 words), shorten the background on lexical
     demand by half (about 115 of 230), keep only the key sentences of the per-model paragraph of the Results (about

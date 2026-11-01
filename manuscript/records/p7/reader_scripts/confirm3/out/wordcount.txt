@@ -1,0 +1,19 @@
+ 5,241  main, Introduction to Conclusion, no tables or captions
+ 5,825  main, with tables and captions
+ 6,798  Abstract to end of Statements (before References), tables counted
+ 6,214  Abstract to end of Statements, tables not counted
+ 6,287  Abstract to the heading Statements (Statements left out), tables counted
+   236  abstract paragraph alone
+   250  abstract paragraph plus the Keywords line (14 tokens)
+
+paragraphs named by the cut list (words by whitespace)
+  115  sensitivity paragraph
+  230  background on lexical demand
+  237  results per-model paragraph (Behind the averages)
+  133  discussion per-model paragraph
+  120  discussion equivalence paragraph 1
+  103  discussion equivalence paragraph 2
+  212  AI statement
+  159  Table 3 caption plus table cells (by the rule)
+  274  sensitivity paragraph plus Table 3
+  277  ... plus the two-word heading 'Sensitivity analyses' (+2) ... (shown with +3 for reference)

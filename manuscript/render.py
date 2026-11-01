@@ -309,9 +309,14 @@ def reference_list(text, root=ROOT):
     """APA entries of the references cited in text, in alphabetical order."""
     refs = json.load(open(os.path.join(root, "manuscript/references.json")))
     cited = [r for r in refs if any(f in text for f in citation_forms(r))]
-    # APA order ignores diacritics (État sorts as Etat; fixed after the second confirmation reading, 1.11.2026)
+    # APA order: letter by letter on the author element, diacritics ignored, "nothing precedes something" (État de
+    # Vaud before État de Vaud, Direction ...), then the rest of the entry (year, a/b); after the second and third
+    # confirmation readings, 1.11.2026
+    def fold(s):
+        return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode().lower()
     def key(r):
-        return unicodedata.normalize("NFKD", r["apa"]).encode("ascii", "ignore").decode().lower()
+        author = r["apa"].split(" (", 1)[0]
+        return (re.sub(r"[^a-z]", "", fold(author)), fold(r["apa"]))
     return "\n\n".join(r["apa"] for r in sorted(cited, key=key))
 
 
@@ -388,15 +393,16 @@ def main():
                   "all": words(md, "Abstract", "References", tables=True)}
             print("main text words (Introduction to Conclusion, no tables or captions):", wc["main"])
             print("main text words with tables and captions:", wc["main_tables"])
-            print("words from the Abstract to the Statements, tables included (all but the references):", wc["all"])
+            print("words from the Abstract through the Statements, tables included (all but the references):", wc["all"])
             ab = re.search(r"^# Abstract\s*$(.*?)^# ", md, flags=re.S | re.M)
-            print("abstract words:", len(ab.group(1).split()) if ab else 0)
+            # the abstract paragraph only, without the Keywords line (third confirmation reading, 1.11.2026)
+            ab_text = re.sub(r"^\*\*Keywords:\*\*.*$", "", ab.group(1), flags=re.M) if ab else ""
+            print("abstract words:", len(ab_text.split()))
             # counts for the title page, from the rendered manuscript
             nums["wc_main"] = {"value": wc["main"], "text": f"{wc['main']:,}"}
             nums["wc_main_tables"] = {"value": wc["main_tables"], "text": f"{wc['main_tables']:,}"}
             nums["wc_all"] = {"value": wc["all"], "text": f"{wc['all']:,}"}
-            nums["wc_abstract"] = {"value": len(ab.group(1).split()) if ab else 0,
-                                   "text": str(len(ab.group(1).split()) if ab else 0)}
+            nums["wc_abstract"] = {"value": len(ab_text.split()), "text": str(len(ab_text.split()))}
             m = re.search(r"^title:\s*\"(.*)\"\s*$", open(path).read(), flags=re.M)
             nums["ms_title"] = {"value": m.group(1) if m else "", "text": m.group(1) if m else ""}
     # submission documents (cover letter, title page): same placeholders, written to manuscript/build/

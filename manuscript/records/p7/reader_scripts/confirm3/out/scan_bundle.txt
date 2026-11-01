@@ -1,0 +1,4 @@
+members scanned: 361
+by extension: csv=6, diff=12, docx=2, gitignore=1, json=24, jsonl=8, md=27, pdf=3, png=3, py=87, sh=8, txt=178, yml=2
+no identifying string of any kind found
+exit=0

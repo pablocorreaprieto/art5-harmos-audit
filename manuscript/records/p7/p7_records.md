@@ -1219,3 +1219,52 @@ Findings log [read, run]: 160 rows, 9 columns, matches the README; the correctio
 Scripts [run]: check_numbers PASS (also --docx on manuscript.docx; its 5 planted faults FAIL); check_claims PASS (--plant FAIL; my ten planted faults caught); check_citations PASS (24 cited; 3 plants FAIL); recompute_primary PASS (20 values; plant FAIL); check_history PASS; anonymisation exit 0; pandoc rebuild identical. Not run: GitHub Actions run_all, verify_refs.
 
 (Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Scripts et sorties gardés dans records/reader_scripts/confirm2/ ; scan_bundle.py, qui contient les chaînes à chercher, est exclu de la copie anonymisée. Corrections faites ensuite par la session principale : voir CHANGELOG.md et findings_log.csv, lignes E1 à E6.)
+
+## Troisième lecture de confirmation, étroite (claude-sonnet-5-5), consigne
+
+(Consigne donnée telle quelle, lancée à 15:19 sur le commit 1ba5083 par la session principale, qui n'a pas pris part à la lecture.)
+
+You are a separate reader confirming a last, small set of corrections to a research manuscript. You did not make them and must not assume they work. Begin your report with exactly: "Internal reading by a separate AI session. Not peer review."
+
+Context. ART 5 is a preregistered audit of French reading texts written by six language models for Swiss grade labels. A second confirmation reading (claude-sonnet-5-5, report at the very end of manuscript/records/p7/p7_records.md, findings 1 to 6, logged as E1 to E6 in manuscript/records/findings_log.csv) found six points in commit 34545cc. The main session then made commit 1ba5083. Your task is narrow: confirm that these corrections are real and correct, and find any error they introduced. Do not re-review the whole study.
+
+Files (read only; do not edit, create or delete anything in the repository; write any script or temporary file only under /tmp/confirm3_p7/):
+- Repository (git worktree): /tmp/claude-0/-home-claude/0d0dd4bc-423f-5ede-b3ba-98197293b71f/scratchpad/p7/wt at commit 1ba5083. `git -C <worktree> diff 34545cc 1ba5083 -- manuscript/manuscript.md manuscript/submission manuscript/render.py manuscript/references.json manuscript/make_anonymous_bundle.py checks/check_claims.py manuscript/verification_report.md manuscript/records/README.md` shows the changes that matter (ignore build/*.docx).
+- Rendered text: manuscript/build/manuscript.md, cover_letter.md, title_page.md; numbers: results/manuscript_numbers.json.
+- Do not call any model provider API and do not use the web.
+
+What to do:
+1. For each of the six findings, say "confirmed", "partly" or "not fixed", with the location and evidence. For finding 2, run the word counts yourself by the rule now written in manuscript/render.py (function words) and check that the title page and section 6, item 10 of manuscript/verification_report.md state them, and that the sizes given there for the cut list match the paragraphs they name.
+2. Read every sentence whose semicolon was replaced (the diff shows them) and say whether any change of punctuation altered the meaning, broke the grammar or split a sentence badly. List only the problems.
+3. Check that the reference list in manuscript/build/manuscript.md is in APA order (diacritics ignored) and that the Sclar et al. entry is well formed.
+4. Run checks/check_numbers.py, checks/check_claims.py and its --plant option (which must FAIL), checks/check_citations.py, checks/recompute_primary.py and history/check_history.sh; run `python3 manuscript/make_anonymous_bundle.py /tmp/confirm3_p7/bundle.zip --ref 1ba5083` from the worktree and check that no file of the copy names the author (any case), the ORCID, the university or the AsPredicted number; do not print identifying strings, name the file and the kind of string only.
+
+Report under 500 words: the verdict list, then any new error with a concrete fix, then the check results. Tag what you ran [run], what you read [read], and inferences [inference].
+
+## Troisième lecture de confirmation, rapport complet (lancée à 15:19, reçu à 15:38, 79 appels d'outils, claude-sonnet-5-5), texte intégral
+
+Internal reading by a separate AI session. Not peer review.
+
+Reader claude-sonnet-5-5, commit 1ba5083. Worktree files hash-identical before and after [run]. No memory, web or provider API.
+
+VERDICTS
+1. E1 confirmed [run]. Discussion now says "about half a model-internal year across the six models though hardly for two of them". From results/measures.csv: pooled L2−L1 shift 0.569 (0.925 for the four that moved); Haiku +0.004, Sol −0.004, others −0.016 to −0.042. check_claims ties both facts.
+2. E2 confirmed [run]. My implementation of the render.py rule gives 5,241 / 5,825 / 6,798, as on the title page and in §6.10 (docx: 5,827 / 6,791). Cut-list sizes match: sensitivity paragraph 115 + Table 3 159 = 274; background 230; Results paragraph 237; Discussion paragraph 133; equivalence paragraph 120; AI statement 212 (150 is 70%); total 799.
+3. E3 confirmed [read]: "(both exploratory)" in Conclusion and Implications; letter "Exploratory analyses showed".
+4. E4 confirmed [read]: G2 item 14 added; "published in this journal" now qualifies the review.
+5. E5 confirmed [run]: 24 entries alphabetical, diacritics folded, État after Conférence. "[Paper presentation]" is an APA 7 descriptor [inference]. Sclar entry is well formed but has no conference date or city.
+6. E6 confirmed [run]: phrase rewritten; semicolons outside brackets 38 to 2 (Table 2 caption); 23 remain in citation brackets. Log and CHANGELOG say 37 replaced; I count 36 (+2 in the letter).
+
+SEMICOLON SENTENCES [read, run]. Grammar intact (regex scan clean). One meaning problem, Abstract: "(all exploratory)" now closes only the "At the same requested age…" sentence, so "Behind these averages, models departed… two years." lost its label. Fix: add "(exploratory)" after "about two years" and write "(also exploratory)" at the end of the next sentence.
+
+NEW ERRORS (minor)
+- Implications: "because the model that wrote it changes its vocabulary more than the wording does" is unlabelled. Add "(exploratory)".
+- "abstract: 250 words" counts the Keywords line (paragraph: 236); "from the Abstract to the Statements" (report, render.py) runs through the Statements; CHANGELOG's earlier paragraph still quotes 5,233/5,835/6,800. Count the paragraph; say "through".
+- Letter says "settings"; the manuscript and §6.14 say temperature [read]. Write "prompts and temperature".
+- Letter-by-letter, "État de Vaud" (2012) should precede "État de Vaud, Direction générale…" (n.d.) [inference]; render.py's whole-string key puts "," before ".". Key on the author element's letters.
+
+CHECKS [run]
+check_numbers PASS (also --docx); check_claims PASS, --plant FAIL (four claims); check_citations PASS (24 cited); recompute_primary PASS (20 values); check_history PASS (v0.2 to v0.4.10); pandoc rebuild of three docx identical.
+Bundle: exit 0, 360 files plus ANONYMISATION.md, 11 excluded (title pages, letters, verification report, the script, three reader scan scripts). My scanner (text, docx members, PDF streams, PNG chunks, paths; author name any case, ORCID, university and acronym, AsPredicted number, e-mail domains, residence, private links) found nothing; one number-pattern hit in results/measures.csv sits inside a longer decimal. It catches planted strings in text, docx, PNG and PDF. Files: /tmp/confirm3_p7/.
+
+(Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Scripts et sorties gardés dans records/reader_scripts/confirm3/, sans les deux copies .docx de la page de titre et de la lettre que la session avait faites (elles nomment l'auteur) ; ses scripts scan_bundle_confirm3*.py sont exclus de la copie anonymisée. Les dernières corrections (F1 à F6 du journal des constats) ont été vérifiées par les contrôles scriptés et par la session principale, pas par une nouvelle lecture séparée.)

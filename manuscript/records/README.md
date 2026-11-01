@@ -24,10 +24,10 @@ the code or the manuscript. These sessions are internal readings by AI sessions,
 Every finding of these readings is one row of the "Relectures IA" tab of the project journal, with its
 refutation where one was made (the design readings of 25.10.2026 sent only their blocking findings to a
 refutation), whether it was applied, and who confirmed the correction. The journal is kept by the author
-outside the repository; `findings_log.csv` is a copy of that tab, in French: 166 rows, from the design
-readings of 25.10.2026 to the second confirmation reading of 1.11.2026, of which one row is a finding of the
+outside the repository; `findings_log.csv` is a copy of that tab, in French: 172 rows, from the design
+readings of 25.10.2026 to the third confirmation reading of 1.11.2026, of which one row is a finding of the
 main session and one a note of checks that found nothing. It was exported by the main session on 1.11.2026
-after the first confirmation reading noted that the manuscript's AI statement refers to it. The two
-confirmation readings of the P7 corrections (claude-fable-5-1, then claude-sonnet-5-5) are at the end of
-`p7/p7_records.md`, with their scripts in `p7/reader_scripts/confirm/` and `confirm2/`. The main session that
+after the first confirmation reading noted that the manuscript's AI statement refers to it. The three
+confirmation readings of the P7 corrections (claude-fable-5-1, then claude-sonnet-5-5 twice) are at the end of
+`p7/p7_records.md`, with their scripts in `p7/reader_scripts/confirm/`, `confirm2/` and `confirm3/`. The main session that
 ran the study is claude-opus-5-5.

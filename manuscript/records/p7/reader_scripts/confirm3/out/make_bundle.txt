@@ -1,0 +1,2 @@
+wrote /tmp/confirm3_p7/bundle.zip; 10 files anonymised: CHANGELOG.md, PREREG.md, history/v0.4.7_to_v0.4.8.diff, manuscript/process_facts.json, manuscript/records/design_readings/reading_9.md, manuscript/records/findings_log.csv, manuscript/records/p7/briefs/p2_literature_brief.md, manuscript/records/p7/p7_records.md, manuscript/records/p7/reader_scripts/refute_r1/report.md, manuscript/records/protocol_v1.1.md
+exit=0
