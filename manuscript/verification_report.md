@@ -201,4 +201,5 @@ Check reading of the G2 changes (claude-sonnet-5-5, about 20:40 to 21:00, report
 `manuscript/records/g2/g2_check_reading.md`): two blocking findings (the AsPredicted link, which the author
 gives at submission, and the credit, corrected as in item 3), five to fix and five minor, all applied except
 the AsPredicted link. Checks after the fixes: render.py, check_numbers, check_claims (plant FAIL),
-check_citations, recompute_primary and history/check_history.sh PASS.
+check_citations, recompute_primary and history/check_history.sh PASS; GitHub Actions run-all 41344501275 on 14a3165
+(outputs 31fe104): ALL CHECKS PASSED. Anonymised copy at a28fb5d: 416 files, nothing identifying.
