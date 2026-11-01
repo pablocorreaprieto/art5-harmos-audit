@@ -44,5 +44,15 @@
   "text": "12",
   "ref": "vd_deroulement",
   "where": "same passage"
+ },
+ "vikidia_age_from": {
+  "text": "8",
+  "ref": "vikidia_about",
+  "where": "'une encyclopédie en ligne, libre et participative, pour les 8-13 ans'"
+ },
+ "vikidia_age_to": {
+  "text": "13",
+  "ref": "vikidia_about",
+  "where": "same sentence"
  }
 }

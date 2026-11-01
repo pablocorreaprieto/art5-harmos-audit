@@ -174,5 +174,60 @@
   "apa": "Ministère de l'Éducation nationale. (2024b). *Le collège* [Web page, updated May 2024]. Retrieved November 1, 2026, from https://www.education.gouv.fr/le-college-4940",
   "access": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)",
   "litnote": "main session, Sources tab"
+ },
+ {
+  "key": "vikidia_about",
+  "first_author": "Vikidia",
+  "year": "n.d.",
+  "cite": "Vikidia, n.d.",
+  "title": "Vikidia:À propos",
+  "url": "https://fr.vikidia.org/wiki/Vikidia:%C3%80_propos",
+  "apa": "Vikidia. (n.d.). *Vikidia:À propos* [Web page]. Retrieved November 1, 2026, from https://fr.vikidia.org/wiki/Vikidia:%C3%80_propos",
+  "access": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)",
+  "litnote": "main session, Sources tab"
+ },
+ {
+  "key": "trott2024",
+  "first_author": "Trott",
+  "year": 2024,
+  "cite": "Trott & Rivière, 2024",
+  "title": "Measuring and modifying the readability of English texts with GPT-4",
+  "arxiv": "2410.14028",
+  "apa": "Trott, S., & Rivière, P. D. (2024). *Measuring and modifying the readability of English texts with GPT-4* (arXiv:2410.14028). arXiv. https://doi.org/10.48550/arXiv.2410.14028",
+  "access": "read-directly (arXiv v1, all pages)",
+  "litnote": "part_A2, trott2024"
+ },
+ {
+  "key": "farajidizaji2023",
+  "first_author": "Farajidizaji",
+  "year": 2023,
+  "cite": "Farajidizaji et al., 2023",
+  "title": "Is it possible to modify text to a target readability level? An initial investigation using zero-shot large language models",
+  "arxiv": "2309.12551",
+  "apa": "Farajidizaji, A., Raina, V., & Gales, M. (2023). *Is it possible to modify text to a target readability level? An initial investigation using zero-shot large language models* (arXiv:2309.12551). arXiv. https://doi.org/10.48550/arXiv.2309.12551",
+  "access": "read-directly (arXiv v2, all pages)",
+  "litnote": "part_A2, farajidizaji2023"
+ },
+ {
+  "key": "primpied2022",
+  "first_author": "Primpied",
+  "year": 2022,
+  "cite": "Primpied et al., 2022",
+  "title": "Quantifying French document complexity",
+  "arxiv": "2208.12924",
+  "apa": "Primpied, V., Beauchemin, D., & Khoury, R. (2022). *Quantifying French document complexity* (arXiv:2208.12924). arXiv. https://doi.org/10.48550/arXiv.2208.12924",
+  "access": "read-directly (arXiv v1, all 13 pages)",
+  "litnote": "part_B2_D1, primpied2022"
+ },
+ {
+  "key": "avry2023",
+  "first_author": "Avry",
+  "year": 2023,
+  "cite": "Avry, 2023",
+  "title": "ChatGPT is shaking up the world of education: What do teachers say?",
+  "url": "https://actu.epfl.ch/news/chatgpt-is-shaking-up-the-world-of-education-wha-2",
+  "apa": "Avry, S. (2023, July 18). *ChatGPT is shaking up the world of education: What do teachers say?* EPFL News. https://actu.epfl.ch/news/chatgpt-is-shaking-up-the-world-of-education-wha-2",
+  "access": "read-directly (whole news page; survey reports not opened)",
+  "litnote": "part_B2_D1, epfl2023_vaud_teachers"
  }
 ]
