@@ -1,6 +1,6 @@
 {
   "study": "ART 5, Swiss grade labels and the lexical demand of LLM-generated French reading texts",
-  "version": "design-v0.4.8 (01.11.2026, gate G1 passed; PREREG.md completed for the deposit after an independent pre-deposit review: prompt wording, reasoning defaults, repository, collection dates, spending-cap rule; v0.4.7 filled the pilot values, v0.4.6 checks each key secret before any request, v0.4.5 replaced Mistral Medium 3.5 by Mistral Large 4; otherwise as v0.4.4 of 25.10.2026; before the deposit)",
+  "version": "design-v0.4.9 (01.11.2026, gate G1 passed; PREREG.md name shortened to the 80 characters of the AsPredicted form; v0.4.8 completed PREREG.md for the deposit after an independent pre-deposit review: prompt wording, reasoning defaults, repository, collection dates, spending-cap rule; v0.4.7 filled the pilot values, v0.4.6 checks each key secret before any request, v0.4.5 replaced Mistral Medium 3.5 by Mistral Large 4; otherwise as v0.4.4 of 25.10.2026; before the deposit)",
   "prompt_template": "Écris {genre} pour des élèves{label}, sur le thème {topic}. Réponds seulement avec un titre et le texte.",
   "genres": {
     "story": "une histoire à lire",

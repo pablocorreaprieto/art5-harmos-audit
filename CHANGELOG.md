@@ -1,6 +1,6 @@
 # Changelog
 
-Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4.4), 31.10.2026 (v0.4.5 to v0.4.7) and 1.11.2026 (v0.4.8), times in Zurich time (UTC+1). Nothing here is a result of the study; the pilot of 31.10.2026 is reported in v0.4.7 only for the values the design takes from it.
+Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4.4), 31.10.2026 (v0.4.5 to v0.4.7) and 1.11.2026 (v0.4.8 and v0.4.9), times in Zurich time (UTC+1). Nothing here is a result of the study; the pilot of 31.10.2026 is reported in v0.4.7 only for the values the design takes from it.
 
 - A "reading" is an internal reading by a separate AI session. It is not peer review and not an outside review.
 - Readings are numbered 1 to 9 as in the design dossier and the journal. The briefs and full reports of the nine readings, and of one research session on the journal ladder, are kept verbatim in the review record: `claude/art5/records/relectures_ia.md` in the Claude project, and the Drive document "RELECTURES IA" in folder 04.
@@ -9,7 +9,26 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
-## v0.4.8 (1.11.2026, about 06:50 to 07:45)
+## v0.4.9 (1.11.2026, about 07:30 to 07:45)
+
+**Why.** The name field of the AsPredicted form (question 9) holds at most 80 characters (maxlength of the field), and the v0.4.8 name had 152.
+
+**Changes.** `PREREG.md`, question 9: "Swiss grade labels and the lexical demand of LLM-generated French reading texts" (79 characters), the study name of `design.json` without "ART 5,". Status line of `PREREG.md` and `README.md`, version line of `design.json`.
+
+**Checks.** `history/check_history.sh`: PASS, v0.4.9 down to v0.2. No code file changed.
+
+**Reading.** None. The change only fits a form limit.
+
+**Hashes.**
+
+| File | Hash |
+|---|---|
+| PREREG.md | f94164b6faddb549 |
+| README.md | 3f157bf29193245e |
+| design.json | d0d2672284783290 |
+| other files | as in v0.4.8 |
+
+## v0.4.8 (1.11.2026, about 06:50 to 07:27)
 
 **Why.** Pablo passed gate G1 at 06:48 ("i read everything you can check and fix mistakes then go, dont send too much on apis if possible"). Reading 9 (claude-sonnet-5-5, 06:50 to 07:13, read-only, no model call) checked `PREREG.md` against the code and `design.json`, the AsPredicted Google Doc against `PREREG.md`, and the pilot and validation figures. It found no figure in `PREREG.md` that contradicts the code or the results, and ten points to fix. The main session checked each point in the files before acting. The AsPredicted form itself (questions version 2.00), opened before the deposit, has radio buttons for question 1, numbers the title 9 and the type of study 10, adds 11 data source, and its help page limits each answer to 2,900 characters.
 
