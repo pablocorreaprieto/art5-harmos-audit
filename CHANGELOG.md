@@ -9,6 +9,18 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Gate G2 and preparation for submission (1.11.2026, 18:58 to 21:00)
+
+**Decisions.** The author read the final manuscript and answered the open questions of `manuscript/verification_report.md` (section 6) in five rounds of multiple-choice questions, 18:58 to 19:52. Section 7 of that report lists each answer. In short: conflicts of interest as written; the Anthropic promotional credit is the API credit included in the author's paid Claude Max subscription (Anthropic e-mail of 17.10.2026); the AI use stays disclosed in full and the statement now also states the author's part (topic, protocol, infrastructure, design decisions); affiliation "Independent researcher, canton of Vaud, Switzerland"; the repository goes public at submission; no preprint; a separate check reading of these changes before submission.
+
+**Journal ladder.** BJET and JCAL were judged too selective for a first publication, L1-ESLL was set aside after its own page showed a 95% rejection rate in 2025, and the Swiss Journal of Educational Research is kept for another article. Three research sessions (claude-sonnet-5-5: hybrid journals, diamond open-access journals, other routes) and the main session's own checks gave a ladder of five journals, to be tried one at a time: Education and Information Technologies (Springer), Education in the Knowledge Society, Computers in the Schools, Reading Psychology, Research in Learning Technology. Acceptance rates are those the journals publish; where none is published, the estimate is marked as an inference.
+
+**Changes.** f303b58: statements (Competing interests, Funding, Limitations, Use of generative AI, CRediT with methodology and resources), title page and letter, `manuscript/process_facts.json` (sources of the credit origin and of the author's roles). f710101: format for Education and Information Technologies (practitioner notes removed, the AI use also documented in the Method as Springer asks, heading "Statements and Declarations", "Competing interests"; `render.py` counts to the new heading; the claim that only matched the practitioner notes removed from `checks/check_claims.py`; letter addressed to the journal). Then the letter addressed to the editor-in-chief.
+
+**Checks.** render.py, check_numbers, check_claims (with the planted error failing as required), check_citations, recompute_primary and history/check_history.sh PASS on f710101. Anonymised copy at f710101: 396 files, nothing identifying. GitHub Actions run-all 41342321846 and verify-refs 41342324280 on the branch `g2-submission`.
+
+**Literature.** Yan et al. (2024) is open access; its published version contains the recommendation the manuscript cites (Discussion, section Implications). Li et al. (2025) and Mesmer (2024) can be reached only through the author's UNIR login and stay uncited.
+
 ## Manuscript revision after the internal readings (P7, 1.11.2026, 12:32 to about 14:00)
 
 **Readings.** Three separate sessions read the rendered draft (R1 substance, claude-opus-5-5; R2 methods and statistics, claude-sonnet-5-5; R3 editor's reading for BJET, claude-fable-5-1), a fourth checked 44 sentence-citation pairs against the full texts (claude-sonnet-5-5), and two more tried to refute the findings (R1 by claude-fable-5-1; R2 and R3 by claude-opus-5-5). Briefs and full reports: `manuscript/records/p7/`. No confirmatory number changed.

@@ -3,9 +3,9 @@ title: "Cover letter"
 ---
 
 
-To the Editors of *Education and Information Technologies*
+To the Editor-in-Chief of *Education and Information Technologies*
 
-Dear Editors,
+Dear Dr Keane,
 
 Please find attached the manuscript "Swiss grade labels and the lexical demand of French reading texts written by large language models: A preregistered audit", which I submit for consideration as an original research article.
 

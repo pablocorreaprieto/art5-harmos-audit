@@ -156,3 +156,36 @@ output kept in the repository. The readings, their refutations and the correctio
     opened (Wiley blocked); the manuscript and the cover letter cite the published article. If you can open it,
     check that the recommendation cited (p. 16 of the preprint: report at least the exact models, prompts and
     temperature) is in the published version.
+
+## 7. Decisions taken at gate G2 (1.11.2026, 18:58 to 19:52)
+
+The author read the final manuscript and answered the items of section 6 in five rounds of multiple-choice
+questions. Item by item:
+
+1. Title and keywords kept.
+2. Conflicts of interest confirmed as written.
+3. Funding: the promotional credit is the API credit included in the author's paid Claude Max subscription
+   (Anthropic e-mail of 17.10.2026, "$200 USD in API credits was added"); Competing interests, Funding and
+   Limitations now say so, with the source in `manuscript/process_facts.json`.
+4. Use of generative AI: disclosed in full. The statement now also states the author's part, as he gave it
+   (topic, protocol, infrastructure, design decisions, deposit, final read), and how the assistant's work was
+   checked; every fact of the earlier statement is kept. CRediT: methodology and resources added, writing –
+   review and editing kept (critical read of the final manuscript).
+5. Title page: "Independent researcher, canton of Vaud, Switzerland"; pabcorpri@gmail.com.
+6. Repository: made public at submission by the main session, on the author's go given at G2.
+7. AsPredicted: made public by the author at submission; its link goes on the title page for the editor.
+8.–9. Li et al. (BJET 56(3), 2025) and Mesmer (2024): reachable only through the author's UNIR login; not cited.
+10. Word count: no longer binding, the target journal changed (below).
+11.–13. As listed (Lexique 3.83 fixed by the preregistration; post hoc analyses labelled; revoked keys left in
+    the history).
+14. Yan et al. (2024): the published version is open access; the recommendation cited ("at least report the exact
+    models, prompts, and model temperature") is in its Discussion, section Implications. Closed.
+
+Journal. BJET and JCAL were judged too selective for the author's goal (a first publication, fast). L1-ESLL was
+set aside after its own page showed a 95% rejection rate in 2025, and the Swiss Journal of Educational Research is
+kept for another article. Three separate research sessions (claude-sonnet-5-5) and the main session then built a
+ladder of five journals, submitted one at a time: Education and Information Technologies (Springer), Education in
+the Knowledge Society, Computers in the Schools, Reading Psychology, Research in Learning Technology (Drive
+document "📮 Échelle de revues ART 5"). The manuscript is formatted for the first (commit f710101): practitioner
+notes removed, the AI use also documented in the Methods, heading "Statements and Declarations", abstract 237 words
+(limit 150 to 250), six keywords (limit 4 to 6). No preprint. Submission planned on 2.11.2026.

@@ -6,9 +6,9 @@ title: "Cover letter"
 manuscript/build/cover_letter.md). Draft of the main session (claude-opus-5-5), revised after the internal
 readings (P7); the author reads, edits and signs it at gate G2. AUTHOR INPUT marks what only the author can fill in. -->
 
-To the Editors of *Education and Information Technologies*
+To the Editor-in-Chief of *Education and Information Technologies*
 
-Dear Editors,
+Dear Dr Keane,
 
 Please find attached the manuscript "{{ms_title}}", which I submit for consideration as an original research article.
 

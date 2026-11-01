@@ -23,8 +23,8 @@ title: "Title page"
 
 **Ethics.** No human participants and no personal data; no ethical approval was required.
 
-**Conflicts of interest and funding.** As in the manuscript (section Statements): no financial relationship with the providers, the Anthropic calls paid mostly with the API credits included in the author's paid Claude Max subscription, and no specific grant.
+**Competing interests and funding.** As in the manuscript (section Statements and Declarations): no financial relationship with the providers, the Anthropic calls paid mostly with the API credits included in the author's paid Claude Max subscription, and no specific grant.
 
-**Use of generative AI.** As in the manuscript (section Statements), with the protocol, the briefs and the full reports of the AI review sessions in the repository (manuscript/records/).
+**Use of generative AI.** As in the manuscript (section Statements and Declarations), with the protocol, the briefs and the full reports of the AI review sessions in the repository (manuscript/records/).
 
 **Acknowledgements.** None.
