@@ -9,12 +9,12 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
-## Deposit (1.11.2026, 08:50 to 08:58)
+## Deposit (1.11.2026, 08:50 to 08:55)
 
 - **AsPredicted #321415**, approved by its only author on 1.11.2026 at about 08:52 (Zurich time), private until made public. The deposited text is `PREREG.md` at tag `prereg` (commit 6a0a061, design v0.4.9), entered field by field; the SHA-256 of each of the ten text fields, read back from the form before the preview, matched the file.
 - Tag `prereg` was created by publishing a GitHub release on commit 6a0a061, at Pablo's request ("aprove"), because the session's own tag push was refused (HTTP 403).
 - A first click on APPROVE, on the preview opened at 07:31, returned an empty form and created nothing (the account listed no pre-registration). The preview had probably expired [inference]. The form was filled again with the same ten hashes, previewed and approved.
-- Main data collection: workflow step `generate`, run 41286684728 on commit 6a0a061, plan budget 50 USD, started at about 08:58. Provider credit before the run: Anthropic 206.87 USD (5.00 purchased, 201.87 promotional), OpenAI 19.45 USD, Mistral 10.00 USD.
+- Main data collection: workflow step `generate`, run 41286684728 on commit 6a0a061, plan budget 50 USD, started at about 08:54. Provider credit before the run: Anthropic 206.87 USD (5.00 purchased, 201.87 promotional), OpenAI 19.45 USD, Mistral 10.00 USD.
 
 ## v0.4.9 (1.11.2026, about 07:30 to 07:45)
 
