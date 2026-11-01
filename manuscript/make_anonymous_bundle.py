@@ -5,7 +5,8 @@ python manuscript/make_anonymous_bundle.py OUT.zip [--ref HEAD]
 Takes the committed files at --ref (git archive, so nothing untracked and no .git history), replaces the
 strings that identify the author (REPLACEMENTS), checks that none is left in any text file (it stops
 otherwise), adds ANONYMISATION.md listing what was changed and why the SHA-256 of the changed files differ
-from those recorded in history/hashes.txt, and writes a zip. The raw model outputs (data/raw) are kept.
+from those recorded in history/hashes.txt, and writes a zip. The raw model outputs (data/raw) are kept; the files
+listed in EXCLUDE_PREFIXES, which name the author by design, are left out.
 Written by the main session (claude-opus-5-5) on 1.11.2026.
 """
 import argparse
@@ -26,7 +27,12 @@ REPLACEMENTS = [
     (r"\bPablo's\b", "the author's"),
     (r"\bPablo\b", "the author"),
 ]
-FORBIDDEN = re.compile(r"pablo|correa|pabcorpri|edu-vd|\b321415\b|jouxtens", re.IGNORECASE)
+FORBIDDEN = re.compile(r"(?i:pablo|correa|pabcorpri|edu-vd|\b321415\b|jouxtens|0009-0009-1844-7453|"
+                       r"Universidad Internacional de La Rioja|gmail\.com|hotmail)|\bUNIR\b")  # UNIR in capitals only: "unir" is a French verb
+# files that name the author by design and are not part of what reviewers need (added after reading R3, 1.11.2026):
+# the submission letters and title page, the G2 exception list, and this script (its patterns name the author)
+EXCLUDE_PREFIXES = ("manuscript/submission/", "manuscript/verification_report.md", "manuscript/make_anonymous_bundle.py",
+                    "manuscript/records/")
 
 
 def main():
@@ -39,7 +45,7 @@ def main():
     changed, left = [], []
     with tarfile.open(fileobj=io.BytesIO(tar_bytes)) as tar, zipfile.ZipFile(a.out, "w", zipfile.ZIP_DEFLATED) as z:
         for m in tar.getmembers():
-            if not m.isfile():
+            if not m.isfile() or m.name.startswith(EXCLUDE_PREFIXES):
                 continue
             data = tar.extractfile(m).read()
             try:
@@ -59,7 +65,8 @@ def main():
                 subprocess.run(["git", "rev-parse", "--short", a.ref], cwd=REPO, capture_output=True, text=True).stdout.strip() +
                 ", without its git history. Strings that identify the author were replaced in these files, whose "
                 "SHA-256 therefore differ from the values in history/hashes.txt:\n\n" +
-                "\n".join(f"- {c}" for c in changed) + "\n\nNothing else was changed.\n")
+                "\n".join(f"- {c}" for c in changed) + "\n\nLeft out because they name the author by design: " +
+                ", ".join(EXCLUDE_PREFIXES) + ". Nothing else was changed.\n")
         z.writestr("art5-harmos-audit/ANONYMISATION.md", note)
     if left:
         os.remove(a.out)
