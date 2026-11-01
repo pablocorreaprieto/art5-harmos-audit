@@ -285,6 +285,24 @@ def main(out_path):
         put(f"ae_{lab}_shift_max", max(sh), num(max(sh), 2))
         put(f"ae_{lab}_track_min", min(tk), num(min(tk), 2))
         put(f"ae_{lab}_track_max", max(tk), num(max(tk), 2))
+    # offset in years at the youngest and oldest grade implied by shift and tracking on the linear ruler:
+    # offset(g) = shift + (tracking - 1) * (age midpoint of g - mean age midpoint), as defined in analyze.py
+    mids = [(v["age_from"] + v["age_to"]) / 2 for v in design["grades"].values()]
+    mean_mid = sum(mids) / len(mids)
+    for lab, v in n["age_equivalent"]["by_label"].items():
+        for m, w in v["by_model"].items():
+            for g in ("3H", "8H"):
+                gv = design["grades"][g]
+                off = w["shift_years"] + (w["tracking"] - 1) * ((gv["age_from"] + gv["age_to"]) / 2 - mean_mid)
+                put(f"ae_{lab}_{m}_offset_{g}", off, num(off, 1))
+                put(f"ae_{lab}_{m}_offset_{g}_abs", abs(off), num(abs(off), 1))
+    # models whose first probe answers were right for at least 95% of the H grades, and their H-label shifts
+    good = [m for m, v in n["probes"]["accuracy_by_model_notation"].items() if m.endswith("| H") and v["correct_first"] >= 0.95]
+    good = [g.split("|")[0].strip() for g in good]
+    sh = [n["age_equivalent"]["by_label"]["L1"]["by_model"][m]["shift_years"] for m in good]
+    put("probe_ok_n", len(good), str(len(good)))
+    put("ae_L1_probe_ok_shift_min", min(sh), num(min(sh), 2))
+    put("ae_L1_probe_ok_shift_max", max(sh), num(max(sh), 2))
     for lab in ("L1", "L1P"):
         tr = {m: v["tracking"] for m, v in n["age_equivalent"]["by_label"][lab]["by_model"].items()}
         good = [v for v in tr.values() if v >= 1]

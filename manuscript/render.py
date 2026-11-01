@@ -96,11 +96,9 @@ def table_models(nums, design):
         rows.append(f"| {T(nums, 'name_' + m)} | {T(nums, 'h1_slope_' + m)} | {T(nums, 'l0_age_' + m)} | "
                     f"{T(nums, f'probe_{m}_H')} | {T(nums, f'probe_{m}_P')} | {T(nums, f'perr_{m}_H')} | "
                     f"{T(nums, f'perr_{m}_P')} |")
-    cap = ("Table 3. Model by model: slope of the age-only ruler (H1), age at which each model writes without a "
-           f"level (L0, read on its ruler), and knowledge probes ({T(nums, 'probes_per_model_notation')} per notation "
-           "and model; correct when the midpoint of the first age range stated lies within the true range widened by "
-           "half a year; error = midpoint stated minus true midpoint, positive when too old). Exploratory except "
-           "the slopes.")
+    cap = ("Table 3. Model by model: slope of the age-only ruler (H1), age written for without a level (L0) and "
+           f"knowledge probes ({T(nums, 'probes_per_model_notation')} per notation; error = age stated minus true age, "
+           "positive when too old). Exploratory except the slopes.")
     return cap, "\n".join(rows)
 
 
