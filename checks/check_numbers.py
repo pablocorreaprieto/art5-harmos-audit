@@ -48,6 +48,7 @@ ALLOW = [
     (r"tracking is 1 plus|\(1 means that|\b0 that they ignore|\b1 = follows|\b0 = ignores|just below 1\b",
      "anchors of the definition of tracking (1 = follows the grade like the age, 0 = ignores it)"),
     (r"\b[3-6]e\b", "French lower-secondary grades (6e, 5e, 4e, 3e); wordings in quotes are checked against the prompts"),
+    (r"\bSHA-256\b", "name of the hash function"),
 ]
 CITATION_YEAR = re.compile(r"(?:\(|; |, |et al\.,? |& [A-Z][\w'-]+,? |[A-Z][\w'-]+,? )(?:19|20)\d{2}[a-z]?(?=[);,]| \()")
 
