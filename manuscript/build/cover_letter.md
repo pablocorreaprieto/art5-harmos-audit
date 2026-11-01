@@ -17,6 +17,6 @@ The study was carried out with an AI assistant under a written protocol, and the
 
 Yours sincerely,
 
-Pablo Correa Prieto
-AUTHOR INPUT: affiliation
+Pablo Correa Prieto\
+AUTHOR INPUT: affiliation\
 ORCID 0009-0009-1844-7453
