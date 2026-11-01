@@ -1,0 +1,11 @@
+h2_level_H.estimate: recomputed -0.0117057394941 vs numbers.json -0.0117491422719
+h2_level_H.se: recomputed 0.00315984947082 vs numbers.json 0.00315955826881
+h2_level_H.t: recomputed -3.70452440921 vs numbers.json -3.71860281479
+h2_level_H.p_two_sided: recomputed 0.00211935845554 vs numbers.json 0.00205913049256
+h2_level_H.p_holm: recomputed 0.00847743382217 vs numbers.json 0.00823652197024
+h3_gradient_H.estimate: recomputed 0.00266390241625 vs numbers.json 0.00268622384482
+h3_gradient_H.se: recomputed 0.00231501419517 vs numbers.json 0.00231678269127
+h3_gradient_H.t: recomputed 1.15070673079 vs numbers.json 1.15946301521
+h3_gradient_H.p_two_sided: recomputed 0.267867115191 vs numbers.json 0.264391991288
+h3_gradient_H.p_holm: recomputed 0.535734230383 vs numbers.json 0.528783982576
+FAIL recompute_primary
