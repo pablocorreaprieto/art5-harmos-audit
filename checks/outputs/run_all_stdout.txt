@@ -1,0 +1,16 @@
+previous run kept in /home/runner/work/art5-harmos-audit/art5-harmos-audit/checks/history/run_20261031T171451Z
+PASS selftest_compute
+PASS selftest_analyze
+PASS plan
+PASS mutate_compute
+PASS mutate_analyze
+PASS battery
+PASS clarifications
+PASS e2e_pilot
+PASS e2e_crash
+PASS e2e_malformed
+PASS e2e_secrets
+PASS history
+PASS recompute_primary
+PASS check_numbers
+ALL CHECKS PASSED
