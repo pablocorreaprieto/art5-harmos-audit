@@ -240,9 +240,10 @@
   "cite": "Javourey-Drevet et al., 2022",
   "title": "Simplification of literary and scientific texts to improve reading fluency and comprehension in beginning readers of French",
   "doi": "10.1017/S014271642100062X",
-  "apa": "Javourey-Drevet, L., Dufau, S., François, T., Gala, N., Ginestié, J., & Ziegler, J. C. (2022). Simplification of literary and scientific texts to improve reading fluency and comprehension in beginning readers of French. *Applied Psycholinguistics, 43*, 485–512. https://doi.org/10.1017/S014271642100062X",
+  "apa": "Javourey-Drevet, L., Dufau, S., François, T., Gala, N., Ginestié, J., & Ziegler, J. C. (2022). Simplification of literary and scientific texts to improve reading fluency and comprehension in beginning readers of French. *Applied Psycholinguistics, 43*(2), 485–512. https://doi.org/10.1017/S014271642100062X",
   "access": "read-directly (open-access PDF, PDF pages 1, 2, 5, 7-11, 18, 24, 25, 28 of 28, journal pp. 485-512)",
-  "litnote": "literature, javourey2022"
+  "litnote": "literature, javourey2022",
+  "note": "Issue number (2) added after the confirmation reading of 1.11.2026 (journal page read through alphaXiv)"
  },
  {
   "key": "sclar2024",
@@ -251,9 +252,10 @@
   "cite": "Sclar et al., 2024",
   "title": "Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting",
   "arxiv": "2310.11324",
-  "apa": "Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). *Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting* (arXiv:2310.11324v2). arXiv. https://doi.org/10.48550/arXiv.2310.11324",
+  "apa": "Sclar, M., Choi, Y., Tsvetkov, Y., & Suhr, A. (2024). *Quantifying language models' sensitivity to spurious features in prompt design or: How I learned to start worrying about prompt formatting* [Conference paper]. The Twelfth International Conference on Learning Representations (ICLR 2024). https://doi.org/10.48550/arXiv.2310.11324",
   "access": "read-directly (arXiv v2: Abstract, Sections 1, 4.1, 4.2, 6, Appendix C)",
-  "litnote": "literature, sclar2024"
+  "litnote": "literature, sclar2024",
+  "note": "Published as a conference paper at ICLR 2024 (header of arXiv v2, the version read); listed as a conference paper after the confirmation reading of 1.11.2026"
  },
  {
   "key": "yan2024",

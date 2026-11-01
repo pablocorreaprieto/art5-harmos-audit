@@ -4819,6 +4819,18 @@
   "value": 5.00665333846205e-07,
   "text": "< .001"
  },
+ "ph_het_n_sig": {
+  "value": 3,
+  "text": "3"
+ },
+ "ph_het_n_sig_word": {
+  "value": 3,
+  "text": "three"
+ },
+ "ph_het_n_sig_Word": {
+  "value": 3,
+  "text": "Three"
+ },
  "ph_rt_share_anthropic_balanced_L0": {
   "value": 0.375,
   "text": "38"
@@ -7490,6 +7502,14 @@
  "ph_L3mL1_level_openai_light": {
   "value": -0.0038145339922519093,
   "text": "−0.004"
+ },
+ "ph_L2mL1_level_others_min": {
+  "value": -0.04228088159164173,
+  "text": "−0.042"
+ },
+ "ph_L2mL1_level_others_max": {
+  "value": -0.01612307127291796,
+  "text": "−0.016"
  },
  "ph_disp_L1_shift": {
   "value": 1.0740835645369111,

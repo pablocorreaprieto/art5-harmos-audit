@@ -381,6 +381,8 @@ def main(out_path):
         put(f"ph_het_{k}_p", v["p"], p_apa(v["p"]))
     sig = [v["p"] for k, v in het.items() if k != "L1P_level"]
     put("ph_het_p_max_sig", max(sig), p_apa(max(sig)))
+    n_sig = sum(v["p"] < 0.05 for v in het.values())
+    put("ph_het_n_sig", int(n_sig), str(int(n_sig)))
     rt = ph["reasoning_tokens"]["share_positive"]
     for key, v in rt.items():
         m, lab = [x.strip() for x in key.split("|")]
@@ -446,6 +448,11 @@ def main(out_path):
         ci(f"ph_{s}_track_ci", v["tracking_diff_ci95"][0], v["tracking_diff_ci95"][1], 2)
         for m, x in v["level_by_model"].items():
             put(f"ph_{s}_level_{m}", x, num(x, 3))
+    # L2 - L1 by model: the four models whose texts the region moved, apart from the two near zero
+    # (Claude Haiku 5.5 and GPT-6.1 Sol; finding S7 of R2, added after the confirmation reading, 1.11.2026)
+    others = [x for m, x in lc["L2_minus_L1"]["level_by_model"].items() if m not in ("anthropic_light", "openai_balanced")]
+    put("ph_L2mL1_level_others_min", min(others), num(min(others), 3))
+    put("ph_L2mL1_level_others_max", max(others), num(max(others), 3))
     for lab, v in lc["dispersion_across_models"].items():
         put(f"ph_disp_{lab}_shift", v["sd_shift"], num(v["sd_shift"], 2))
         put(f"ph_disp_{lab}_track", v["sd_tracking"], num(v["sd_tracking"], 2))

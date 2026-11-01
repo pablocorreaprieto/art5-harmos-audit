@@ -76,10 +76,9 @@ CLAIMS = [
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
     (r"the bare H label left one model two years off",
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
-    (r"every model wrote within a year of its (?:own )?age-only texts",
-     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1, "per-model shifts with the label and the age (L3)"),
-    (r"no model departed from its own age-only texts by more than a year on average",
-     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1, "same"),
+    (r"every model's point estimate (?:fell|stayed) within a year of its (?:own )?age-only texts",
+     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
+     "per-model point estimates of the shift with the label and the age (L3); wording fixed after the confirmation reading"),
     (r"texts within a year of the age \(shifts from",
      lambda n: max(abs(v(n, "ae_L1_probe_ok_shift_min")), abs(v(n, "ae_L1_probe_ok_shift_max"))) < 1,
      "shifts of the models whose probe answers were right"),
@@ -95,8 +94,23 @@ CLAIMS = [
      lambda n: v(n, "probe_wrong_two_years_pct") > 0.5, "most wrong first answers were 1.5 to 2.5 years too old"),
     (r"a shift of about a third of a model-internal year",
      lambda n: 0.25 <= v(n, "ae_L1_shift") <= 0.42, "pooled shift with the bare H label"),
-    (r"about half a model-internal year harder than the bare label",
+    (r"harder than the bare label, by about half a model-internal year on average",
      lambda n: 0.4 <= v(n, "ph_L2mL1_shift") <= 0.6, "shift difference L2 - L1"),
+    # added after the confirmation reading of 1.11.2026
+    (r"for four models \(level differences from",
+     lambda n: v(n, "ph_L2mL1_level_others_max") <= -0.01
+     and max(abs(v(n, "ph_L2mL1_level_anthropic_light")), abs(v(n, "ph_L2mL1_level_openai_balanced"))) < 0.01,
+     "L2 - L1 level by model: four models at or below -0.01 Zipf, Claude Haiku 5.5 and GPT-6.1 Sol within 0.01 of zero"),
+    (r"Naming the region made the texts of four models harder",
+     lambda n: v(n, "ph_L2mL1_level_others_max") <= -0.01
+     and max(abs(v(n, "ph_L2mL1_level_anthropic_light")), abs(v(n, "ph_L2mL1_level_openai_balanced"))) < 0.01, "same"),
+    (r"as low as with the bare P label",
+     lambda n: abs(v(n, "ph_disp_L3_shift") - v(n, "ph_disp_L1P_shift")) < 0.02, "SD of the per-model shifts, L3 and L1P"),
+    (r"of the four primary contrasts, all but the level of the P label",
+     lambda n: v(n, "ph_het_n_sig") == 3 and v(n, "ph_het_L1P_level_p") >= 0.05, "repeated-measures tests between models"),
+    (r"The two whose texts followed the grade least",
+     lambda n: sorted(MODELS, key=lambda m: v(n, f"ae_L1_{m}_track"))[:2] == ["anthropic_light", "mistral_light"],
+     "the two lowest trackings with the bare H label"),
     (r"moved texts by more than five years", lambda n: v(n, "ae_L6_shift") > 5, "pooled shift of the collision control"),
 ]
 

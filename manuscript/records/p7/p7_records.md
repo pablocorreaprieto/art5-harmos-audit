@@ -174,7 +174,7 @@ As the file stands today I would not send it to reviewers: I would return it una
 - The Scite MCP connector answered "requires a paid scite plan or an active free trial" (1 November 2026); Wiley/BJET pages and the Lancaster eprint PDF refuse automated fetches; Crossref and the Lancaster eprint are blocked at the proxy for curl, OpenAlex works through WebFetch.
 - 2025 BJET editorial: Mavrikis, Lewin, Cukurova, Major, Outhwaite & Rubegni (2025), BJET 56(3), 1118–1121, doi 10.1111/bjet.13581 (Lancaster research portal).
 
-(Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Une première copie de 12:50 avait remplacé le numéro AsPredicted, le nom de famille de l'auteur et l'ORCID par des mentions génériques et omis « (Lancaster research portal) » à la dernière ligne ; elle a été remplacée par le texte exact vers 12:58, puisque ce dossier est exclu de la copie anonymisée.)
+(Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Une première copie de 12:50 avait remplacé le numéro AsPredicted, le nom de famille de l'auteur et l'ORCID par des mentions génériques et omis « (Lancaster research portal) » à la dernière ligne ; elle a été remplacée par le texte exact vers 12:58, puisque ce dossier est exclu de la copie anonymisée. Correction du 1.11.2026, après la lecture de confirmation : depuis la révision P7, ce dossier n'est plus exclu de la copie anonymisée ; manuscript/make_anonymous_bundle.py y remplace les chaînes qui identifient l'auteur et s'arrête s'il en reste.)
 
 ## R1, rapport complet (lancée à 12:32, reçu à 12:59, 75 appels d'outils, claude-opus-5-5), texte intégral
 
@@ -1067,3 +1067,91 @@ Minor findings (verdict and fix):
   - The names proposed for the checking sessions are an inference (see 3b).
 
 (Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Scripts et sorties gardés dans records/reader_scripts/refute_r2r3/.)
+
+## Lecture de confirmation des corrections (claude-fable-5-1), consigne
+
+(Consigne donnée telle quelle, lancée à 13:46 par la session principale, qui n'a pas pris part à la lecture.)
+
+You are a separate reader confirming corrections to a research manuscript. You did not make them and must not assume they work. Begin your report with exactly: "Internal reading by a separate AI session. Not peer review."
+
+Context. ART 5 is a preregistered audit: six language models (two each from Anthropic, OpenAI and Mistral AI) wrote 7,680 French reading texts for Swiss primary grades 3H to 8H, with the grade named in eight ways; the measure is the mean Zipf frequency of content lemmas; the four primary tests compare the bare HarmoS label (L1) and the bare P label (L1P) with the age-only label (L5). Target journal: British Journal of Educational Technology (double-anonymous; about 6,000 words excluding references). Three internal readings of the draft (R1 substance, R2 methods and statistics, R3 editor) and a check of 44 sentence-citation pairs produced findings; two refutation sessions tried to refute them. The main session then revised the manuscript. Your task is to confirm, finding by finding, that the corrections are real and correct, and to find any new error they introduced.
+
+Files (read only; do not edit, create or delete anything in the repository; write scripts and any temporary file only under /tmp/confirm_p7/):
+- Revised repository (a git worktree): /tmp/claude-0/-home-claude/0d0dd4bc-423f-5ede-b3ba-98197293b71f/scratchpad/p7/wt at commit 49e8ae4 (branch p7-revision). The draft that was reviewed is its parent commit dca44b4: `git -C <worktree> diff dca44b4 49e8ae4 -- manuscript/manuscript.md` shows the text changes.
+- Rendered revised manuscript: manuscript/build/manuscript.md and supplement.md (figures in results/figures/*.png); sources with placeholders: manuscript/manuscript.md, supplement.md; numbers: results/manuscript_numbers.json (built by manuscript_numbers.py), facts: manuscript/process_facts.json and source_facts.json; references: manuscript/references.json.
+- Post hoc analyses added in response to the readings: exploratory_p7.py, output results/exploratory_p7.json and results/exploratory_p7_mistral_sample.txt.
+- The full findings, refutations and verdicts are in manuscript/records/p7/p7_records.md (read the R1, R2 and R3 reports and the two refutations; the refutations say which findings stand and what fix suffices).
+- Checks: checks/check_numbers.py, checks/check_claims.py (new), checks/check_citations.py, checks/recompute_primary.py, history/check_history.sh; the anonymisation script manuscript/make_anonymous_bundle.py.
+- The official Lexique file is not on this machine; do not re-measure texts. You may run Python (python3 -B; pandas, numpy, scipy, statsmodels installed) on the repository's files from your own folder. Do not call any model provider API. You may use the web only to read the sources cited by the new sentences (see 3).
+
+What to do:
+1. For every finding that the refutations say stands at least in part (R1: M1 to M6, S1 to S9 and the minor ones; R2: M1, S1, S2, S4 to S8 and the minor ones; R3: reasons 1 to 7; the seven partial sentence-citation pairs C-n10, C-n18, C-n25, C-n30/31, C-n33, C-n40), say "confirmed", "partly" or "not fixed", with the location of the fix (section and sentence, table, file and line) and evidence. A finding may be answered by a stated limitation or a label rather than a new analysis when the refutation said that suffices.
+2. Check the meaning of every new or changed number in the revised text: that each placeholder names the quantity the sentence says it does (the digit checks cannot see this), recomputing a sample of the new post hoc numbers from the data (for example the leave-one-model-out estimate without Claude Haiku 5.5, L2 − L1 in years, the between-model spread of the age-only texts, the observed per-grade offsets, the Mistral Large 4 comparison with grade and genre held constant). Read exploratory_p7.py for errors.
+3. Check the sentences that cite sources added after the readings against the sources themselves: Javourey-Drevet et al. (2022, Applied Psycholinguistics, open access, doi 10.1017/S014271642100062X), Sclar et al. (2024, arXiv 2310.11324), Yan et al. (2024; read the arXiv version 2303.13379v2, pp. 12 and 16), État de Vaud (2012, the press release whose address is in references.json), and the ministry page on the école élémentaire (ages 6 to 11). Say for each whether the sentence is supported.
+4. Look for new errors: contradictions between sections, claims stronger than the results, post hoc or exploratory results without a label, statements about the author's own actions that are not yet true, anything that would identify the author in the manuscript or the supporting information, and wording that reads as written by a machine.
+5. Run the checks listed above and the anonymisation script on commit 49e8ae4 with an output file under /tmp/confirm_p7/ (python3 manuscript/make_anonymous_bundle.py /tmp/confirm_p7/bundle.zip --ref 49e8ae4, run from the worktree), and report the results.
+
+Report under 1,400 words: first the verdict list (one line per finding), then new errors ranked by severity with a concrete fix each, then the check results. Tag what you ran [run], what you read [read], and inferences [inference].
+
+## Lecture de confirmation, rapport complet (lancée à 13:46, reçu à 14:16, 73 appels d'outils, claude-fable-5-1), texte intégral
+
+Internal reading by a separate AI session. Not peer review.
+
+Scope: worktree at 49e8ae4, diff against dca44b4, rendered manuscript and SI, p7_records.md, exploratory_p7.py, checks. Scripts and outputs in /tmp/confirm_p7/ (recompute.py, recompute_out.txt, bundle_sim_confirm.py, checks/). Repository untouched (git status clean after all runs). No memory or project notes used.
+
+## 1. Verdicts
+
+R1
+- M1 confirmed [read]: Method §Prompts ("a departure ... does not by itself show a misreading"), Discussion §"Lexical equivalence is not understanding", trace analysis Table S12 (reproduced [run]); H2-P secondary divergence stated in Results.
+- M2 confirmed [read]: "both directions" (Abstract, Results §Behind the averages, RM-ANOVA F reproduced [run]); "no change ... was detected"; Sol/Luna over-tracking named; |tracking−1| in Table S11.
+- M3 confirmed [read]: teacher-education sentence and "and languages" dropped; absolute spread 0.053 vs 0.051 [run] beside SD of shifts; Implications restated with "read the text".
+- M4 partly [read]: "(all exploratory)" in Abstract, "post hoc equivalence reading" in Results; Conclusion and practitioner notes still carry per-model results unlabelled.
+- M5 confirmed [read]: COI/Funding (206.87/201.87 match CHANGELOG), three model ids named, records folder exists.
+- M6 partly: title, keywords, no "AUTHOR INPUT" in manuscript [run grep]; cover-letter note on the preregistration URL; but the anonymised bundle is broken (new error 1).
+- S1 confirmed [read/run]: Method sentence on adult corpora and Swiss usage; romand 220, canton 54 of 1,152 L2 texts, 0 in L5 (reproduced); lemma decomposition replaced by word counts.
+- S2 confirmed: "model-internal years" (Abstract); SESOI 0.8–1.6 years in Limitations (reproduced [run]).
+- S3 confirmed: Table S9 (reproduced [run]); tiers by price, undated aliases, default reasoning in Method; S1 row → Table S11.
+- S4 confirmed: 74/177, 49/542 (reproduced [run]); "consistent with"; Vaud numbering until 2013.
+- S5 confirmed: power .90 (grid T=16, slope −0.04, σ=0.15, smallest σ ≥ 0.122 [read sim_power_results.json]).
+- S6 confirmed: observed offsets with CI, Haiku 3H 4.3 [3.6, 5.1], Mistral Small 1.7 at 3H, −2.1 at 7H, negative from 5H on (reproduced [run]).
+- S7 confirmed: both length-adjusted estimates given, "no test decision changed".
+- S8 confirmed: Conclusion "with the prompt and settings tested"; Limitations list the conditions; Sclar cited.
+- S9 confirmed [read]: story continuation and Flesch–Kincaid scope; Rooein "some models"/"slightly"; priority sentence narrowed to Swiss labels.
+- Minor: m1, m2, m3, m4 (cantonal notations), m5, m6, m7, m9 (SHA in S1), m10, m12, m13 confirmed [read]; m8 partly (generic S1 note only); m11 done though refuted (Fig. 1 by age [read PNG]); m14 not done (optional per refutation); m15 see new error 3.
+
+R2
+- M1 confirmed: S1 "Departures", Statements, Table S5 rows "not in the registered list", Table S11.
+- S1 confirmed: "rests on one model", +0.0041 (p = .297); Table S10 all 24 values reproduced [run]; "Pooled over the six models", "models audited here".
+- S2 confirmed: post hoc equivalence reading, "not detected", H3 power; "powered for the pooled tests" removed [run grep].
+- S4 confirmed: sentence deleted; [0.81, 1.00] at 100,000 resamples (reproduced [0.815, 1.001], P(≥1) = .026 [run]); check_numbers exemption removed.
+- S5 partly: metric named, five SDs in Table S11, "most consistent" gone; the ties (L1P 0.28 shift, L2 0.22 tracking) visible in the table, not stated.
+- S6 confirmed: criterion "tracking intervals below 1 for both labels"; "model size is at most a hypothesis".
+- S7 partly: L2−L1 +0.57 [0.36, 0.84] (reproduced exactly [run]), Table S5 row, "half a model-internal year"; absence for Haiku/Sol not stated.
+- S8 confirmed.
+- m1 partly (assumptions in S1, realised SD not given); m2–m13 confirmed [read]; m14 confirmed (check_claims.py PASS, planted FAIL [run]).
+
+R3
+- 1 confirmed (AUTHOR INPUT only on title page/cover letter, by design). 2 confirmed. 3a–3e confirmed [read; grep: no "we"/"our"], but see error 2. 4 partly: Yan et al. cited and supported, Li dropped from the letter, educational paragraph added; general framing in Introduction only. 5a partly (depends on 5b). 5b NOT FIXED, regressed (error 1). 5c, 5d confirmed. 6 not addressed (error 3). 7 confirmed (251 words, SESOI phrase gone).
+
+Citation pairs: C-n10, C-n18 (Rooein p. 9 read: "unlikely to translate without adaptation"), C-n25, C-n30/31, C-n33 confirmed [read]; C-n40 confirmed (sentence removed, replaced by État de Vaud 2012).
+
+New sources [read]: Javourey-Drevet 2022 (165 grade-2 pupils in France, 10 narrative and 10 scientific texts, "substituting long and infrequent words by shorter and more frequent synonyms", fluency and comprehension better, poor readers benefited "to a greater extent"): supported. Yan 2024 arXiv v2 p. 16 ("should at least report the exact models, prompts, and model temperature ... as different models may differ"): supported; Crossref 55(1), 90–112 confirmed. Sclar 2024 v2 (formatting sensitivity up to 76 points, GPT-3.5 via API, open-ended generation in appendix): supported. État de Vaud 2012 (4 avril 2012: "en août 2013, la numérotation ... sera adaptée à HarmoS", "6e année actuelle déjà (8H)"): supported. Ministry page (6 à 11 ans, CP to CM2, no per-class age): supported, derivation stated. Cambridge page via alphaXiv; WebFetch blocked.
+
+## 2. New errors, by severity
+
+1. Must-fix, anonymity. make_anonymous_bundle.py on 49e8ae4 exits: "identifying strings left in manuscript/records/p7/reader_scripts/refute_r2r3/bundle_sim.py" [run] (that reader script holds the author's names in lowercase regexes; REPLACEMENTS are case-sensitive, FORBIDDEN is not). With the stop bypassed [run, in-memory simulation], the only remaining text hits are that file, but manuscript/build/title_page.docx and cover_letter.docx, new at this commit, are binary, skipped by the scan, and contain the author's name (2×), ORCID, AsPredicted number and affiliation [run: unzipped from git show]. The cover letter, title page, verification report §6.6 and the AI statement all assume this bundle. Fix: exclude manuscript/build/title_page.* and cover_letter.* (or render them under manuscript/submission/) and the bundle_sim.py file, make the name replacements case-insensitive, unzip and scan .docx (or refuse binaries outside data/ and results/figures/), rerun, record the run; correct p7_records.md line 177, which says the records folder is excluded from the anonymised copy.
+2. Should-fix, statements not yet true. AI statement: "read the final manuscript", "decided the questions left open at submission"; CRediT "writing – review and editing"; "the corrections made in response are archived in the repository" (records/README.md says the per-finding log is the author's journal, outside the repository). Fix: list all four on the G2 sheet (§6.4 covers CRediT only); add the per-finding table to manuscript/records/p7/ or write "the main corrections are listed in CHANGELOG.md".
+3. Should-fix, length [run]: all text except references 7,047 words (R3 counted 6,248); Introduction–Conclusion 6,050 with tables, 5,614 without, 5,133 by render.py's token rule. Over 6,000 if abstract, notes, tables or Statements (539 words) count. Fix: move the F statistics, the secondary-measure sentence and the trace numbers to the SI; shorten Statements.
+4. Minor, contradiction. "more than any label wording moved them" (Discussion) vs the next sentence: « de 5e » moved texts 0.22 Zipf (Table S5), as much as the between-model range 0.14–0.23. Fix: "more than any Swiss or French wording of the grade".
+5. Minor, labels (M4 residual): Conclusion "4.3 years at 3H", "two lighter models", practitioner notes. Fix: one "(exploratory)" in the Conclusion.
+6. Minor, unsupported: "the grade where a text that is too hard does most harm". Fix: "the grade of beginning readers".
+7. Minor: "The two that departed most" — Mistral Small's |shift| 0.49 is below Luna's 0.77 and Large's 0.79; it departs most on tracking. Fix: "the two whose texts followed the grade least".
+8. Minor, references: Sclar et al. is an ICLR 2024 paper (v2 header), listed as a preprint; Javourey-Drevet lacks issue "(2)"; cover letter "this journal's call" overstates one article's recommendation.
+9. Minor: "every model wrote within a year" rests on Mistral Small 4's point estimate −0.96 [−1.55, −0.38]; say "point estimates".
+No machine-sounding wording stood out; the nine "post hoc" tags in Results read as checklist-driven and could be consolidated.
+
+## 3. Check results [run]
+
+check_numbers PASS; check_claims PASS and --plant FAIL as required; check_citations PASS (24 cited, farajidizaji2023 uncited); recompute_primary PASS (20 values); check_history PASS (v0.2 to v0.4.10); make_anonymous_bundle FAIL (error 1). exploratory_p7.py rerun in a copy outside the worktree reproduces results/exploratory_p7.json and the Mistral sample byte for byte, assertions pass; code read, no error found (the English age pattern and the 4–16 plausibility window are documented; 25 sampled traces extract correctly [read]). My independent recomputation without importing it matches every quoted post hoc number: LOO table, spread 0.144–0.227 and 0.123–0.244 Zipf, L2−L1 and L3−L1 shifts with CIs (exact with seed 20261101), SD of levels and its CI, offsets, F 29.42/15.17/9.47/1.60, TOST, tracking precision, L0 CIs, probes 542/177/74/49/77%, reasoning shares, trace shares 51/42/38/40%, −0.0428 (SE 0.0201) and −0.0116 (SE 0.0234), 52% of −0.083, Swiss words. Anthropic thinking blocks carry no text (0 of 1,877), so "only model whose reasoning is returned as text" holds; pylexique lists VRAI/FAUX in capitals only; figure and manuscript/supplement docx metadata clean. Not verifiable here: tag data-v1 (absent from this worktree), the AsPredicted record [inference: as R2 noted].
+
+(Rapport copié tel quel depuis le message de remise de la session (SubagentHandback), sans retouche. Scripts et sorties gardés dans records/reader_scripts/confirm/ ; bundle_sim_confirm.py, qui contient les chaînes à chercher, est exclu de la copie anonymisée.)

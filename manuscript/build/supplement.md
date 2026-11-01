@@ -19,6 +19,8 @@ title: "Supporting Information"
 
 **Post hoc analyses.** After internal readings of a draft, the following analyses were added and are labelled post hoc in the text (computed by the script exploratory_p7.py): the distance between the models' age-only texts at the same grade; the equivalence reading of the two level differences; the tests of differences between models; the reasoning reported by each model (Table S9); the primary contrasts without each model (Table S10); the spread of the six models' readings of each label (Table S11); the contrasts of the region and age wordings with the bare label (Table S5); the observed age offsets per grade; the precision of the P label's tracking interval; intervals for the default reader age (Table 3); counts of two Swiss words; checks of the probe rule; and the ages stated in the reasoning of Mistral Large 4 (Table S12).
 
+**Post hoc results given here only.** The models differed in the level and gradient of the H label differences (repeated-measures analyses of variance over topics, *F*(5, 75) = 29.42 and 15.17) and in the gradient of the P label differences (*F* = 9.47; all three *p* < .001), but not detectably in the level of the P label differences (*F* = 1.60, *p* = .169). The preregistered probe rule is strict in one way and lenient in another: 74 of the 177 wrong first answers stated a correct range later, and 49 of the 542 correct ones were accepted only through the half-year tolerance.
+
 | Preregistered analysis | Where |
 |---|---|
 | H2-H, H2-P, H3-H, H3-P (primary) | Results, Table 2 |

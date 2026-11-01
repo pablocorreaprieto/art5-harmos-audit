@@ -22,5 +22,9 @@ the code or the manuscript. These sessions are internal readings by AI sessions,
   that were checked; `reader_scripts/` the scripts and text outputs the reading sessions wrote.
 
 Every finding of these readings is one row of the "Relectures IA" tab of the project journal, with its
-refutation, whether it was applied, and who confirmed the correction; the journal is kept by the author
-and is not part of the repository. The main session that ran the study is claude-opus-5-5.
+refutation, whether it was applied, and who confirmed the correction. The journal is kept by the author
+outside the repository; `findings_log.csv` is a copy of that tab (in French, 160 findings from the design
+readings of 25.10.2026 to the confirmation reading of 1.11.2026), exported by the main session on
+1.11.2026 after the confirmation reading noted that the manuscript's AI statement refers to it. The
+confirmation reading of the P7 corrections (claude-fable-5-1) is at the end of `p7/p7_records.md`, and its
+scripts in `p7/reader_scripts/confirm/`. The main session that ran the study is claude-opus-5-5.

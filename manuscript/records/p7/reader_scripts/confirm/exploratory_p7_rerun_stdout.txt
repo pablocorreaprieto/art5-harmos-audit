@@ -1,0 +1,176 @@
+{
+ "equivalence": {
+  "h2_level_H": {
+   "estimate": -0.01174914227187895,
+   "se": 0.003159558268805126,
+   "df": 15,
+   "bounds": [
+    -0.04,
+    0.04
+   ],
+   "p_tost": 1.066130586654887e-07,
+   "ci90": [
+    -0.017288007018839185,
+    -0.006210277524918717
+   ]
+  },
+  "h2_level_P": {
+   "estimate": -0.0007614987251832652,
+   "se": 0.004394593563530949,
+   "df": 15,
+   "bounds": [
+    -0.04,
+    0.04
+   ],
+   "p_tost": 1.0854675893496821e-07,
+   "ci90": [
+    -0.008465442534855483,
+    0.0069424450844889525
+   ]
+  }
+ },
+ "heterogeneity": {
+  "L1_level": {
+   "F": 29.42320848073584,
+   "df1": 5.0,
+   "df2": 75.0,
+   "p": 2.0749845691670562e-16
+  },
+  "L1_gradient": {
+   "F": 15.167011837732817,
+   "df1": 5.0,
+   "df2": 75.0,
+   "p": 2.8078942594541067e-10
+  },
+  "L1P_level": {
+   "F": 1.6044031592679064,
+   "df1": 5.0,
+   "df2": 75.0,
+   "p": 0.16929818985731426
+  },
+  "L1P_gradient": {
+   "F": 9.465092555815179,
+   "df1": 5.0,
+   "df2": 75.0,
+   "p": 5.00665333846205e-07
+  }
+ },
+ "probes_parse": {
+  "n_correct_first": 542,
+  "n_wrong_first": 177,
+  "n_wrong_first_with_a_correct_range_later": 74,
+  "n_correct_only_through_tolerance": 49,
+  "correct_only_through_tolerance_by_model": {
+   "mistral_light": 22,
+   "anthropic_balanced": 10,
+   "anthropic_light": 17
+  }
+ }
+}
+{
+ "model": "mistral_balanced",
+ "by_label": {
+  "L1": {
+   "n": 192,
+   "share_stating_an_age": 1.0,
+   "share_wrong_among_stated": 0.5052083333333334,
+   "mean_signed_error_years": 1.296875,
+   "share_two_years_too_old_among_stated": 0.3802083333333333
+  },
+  "L1P": {
+   "n": 192,
+   "share_stating_an_age": 1.0,
+   "share_wrong_among_stated": 0.421875,
+   "mean_signed_error_years": 0.9505208333333334,
+   "share_two_years_too_old_among_stated": 0.4010416666666667
+  },
+  "L2": {
+   "n": 192,
+   "share_stating_an_age": 1.0,
+   "share_wrong_among_stated": 0.20833333333333334,
+   "mean_signed_error_years": 0.5729166666666666,
+   "share_two_years_too_old_among_stated": 0.16666666666666666
+  },
+  "L3": {
+   "n": 192,
+   "share_stating_an_age": 1.0,
+   "share_wrong_among_stated": 0.0,
+   "mean_signed_error_years": 0.0,
+   "share_two_years_too_old_among_stated": 0.0
+  },
+  "L4": {
+   "n": 192,
+   "share_stating_an_age": 1.0,
+   "share_wrong_among_stated": 0.0,
+   "mean_signed_error_years": 0.0,
+   "share_two_years_too_old_among_stated": 0.0
+  },
+  "L5": {
+   "n": 192,
+   "share_stating_an_age": 1.0,
+   "share_wrong_among_stated": 0.0,
+   "mean_signed_error_years": 0.0,
+   "share_two_years_too_old_among_stated": 0.0
+  }
+ },
+ "paired_difference_by_stated_age": {
+  "L1": {
+   "n_correct": 95,
+   "n_two_years_old": 73,
+   "two_years_old_by_grade": {
+    "3H": 10,
+    "4H": 14,
+    "5H": 13,
+    "6H": 28,
+    "7H": 2,
+    "8H": 6
+   },
+   "difference": -0.04277665544818232,
+   "se": 0.020081066349325737,
+   "p": 0.03315523694346359,
+   "difference_without_grade_and_genre": -0.015949561496381257,
+   "se_without_grade_and_genre": 0.016933724161465716,
+   "slope_per_year_of_stated_error": -0.02919470488731178,
+   "slope_se": 0.006022879231000095,
+   "slope_p": 1.2515284856232391e-06,
+   "expected_on_own_ruler_for_two_years": -0.08286811893908222,
+   "share_of_expected": 0.5162015983448132
+  },
+  "L1P": {
+   "n_correct": 111,
+   "n_two_years_old": 77,
+   "two_years_old_by_grade": {
+    "3H": 23,
+    "4H": 15,
+    "5H": 14,
+    "6H": 25,
+    "7H": 0,
+    "8H": 0
+   },
+   "difference": -0.011576301908495262,
+   "se": 0.023405059039382895,
+   "p": 0.6208776845562278,
+   "difference_without_grade_and_genre": 0.0027832276535383494,
+   "se_without_grade_and_genre": 0.018935692582890032,
+   "slope_per_year_of_stated_error": -0.013629116102827916,
+   "slope_se": 0.013735367693103276,
+   "slope_p": 0.32106857454020943,
+   "expected_on_own_ruler_for_two_years": -0.08286811893908222,
+   "share_of_expected": 0.13969548309652355
+  }
+ },
+ "rule": "first age range in the visible reasoning (French or English patterns) whose midpoint lies between 4 and 16 years; wrong if its midpoint is outside the true range widened by half a year (the preregistered probe rule); two years too old if the midpoint is 1.5 to 2.5 years above the true midpoint",
+ "validation_sample": "results/exploratory_p7_mistral_sample.txt",
+ "plausible_window_years": [
+  4,
+  16
+ ],
+ "two_years_window": [
+  1.5,
+  2.5
+ ],
+ "validation_sample_n": 25
+}
+between-model range by grade {'3H': 0.166, '4H': 0.202, '5H': 0.227, '6H': 0.167, '7H': 0.17, '8H': 0.144}
+within-model change 3H-8H {'anthropic_balanced': np.float64(0.223), 'anthropic_light': np.float64(0.214), 'mistral_balanced': np.float64(0.207), 'mistral_light': np.float64(0.169), 'openai_balanced': np.float64(0.244), 'openai_light': np.float64(0.123)}
+between-model SD of level {'L1': 0.05138151996313217, 'L1P': 0.0564812620738987, 'L3': 0.05342918645072468, 'L5': 0.06111578688140711} [-0.0046849115585403875, 0.009125709290309755]
