@@ -1,13 +1,55 @@
 # Changelog
 
-Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4.4) and 31.10.2026 (v0.4.5 to v0.4.7), times in Zurich time (UTC+1). Nothing here is a result of the study; the pilot of 31.10.2026 is reported in v0.4.7 only for the values the design takes from it.
+Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4.4), 31.10.2026 (v0.4.5 to v0.4.7) and 1.11.2026 (v0.4.8), times in Zurich time (UTC+1). Nothing here is a result of the study; the pilot of 31.10.2026 is reported in v0.4.7 only for the values the design takes from it.
 
 - A "reading" is an internal reading by a separate AI session. It is not peer review and not an outside review.
-- Readings are numbered 1 to 8 as in the design dossier and the journal. The briefs and full reports of the eight readings, and of one research session on the journal ladder, are kept verbatim in the review record: `claude/art5/records/relectures_ia.md` in the Claude project, and the Drive document "RELECTURES IA" in folder 04.
+- Readings are numbered 1 to 9 as in the design dossier and the journal. The briefs and full reports of the nine readings, and of one research session on the journal ladder, are kept verbatim in the review record: `claude/art5/records/relectures_ia.md` in the Claude project, and the Drive document "RELECTURES IA" in folder 04.
 - Every finding is one row of the Relectures IA tab of the project journal, with its refutation, its fix and the confirmation of the fix. Every action is one row of the Historique tab.
 - Hashes are the first 16 hex digits of SHA-256. `history/hashes.txt` has the full values for every kept version.
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
+
+## v0.4.8 (1.11.2026, about 06:50 to 07:45)
+
+**Why.** Pablo passed gate G1 at 06:48 ("i read everything you can check and fix mistakes then go, dont send too much on apis if possible"). Reading 9 (claude-sonnet-5-5, 06:50 to 07:13, read-only, no model call) checked `PREREG.md` against the code and `design.json`, the AsPredicted Google Doc against `PREREG.md`, and the pilot and validation figures. It found no figure in `PREREG.md` that contradicts the code or the results, and ten points to fix. The main session checked each point in the files before acting. The AsPredicted form itself (questions version 2.00), opened before the deposit, has radio buttons for question 1, numbers the title 9 and the type of study 10, adds 11 data source, and its help page limits each answer to 2,900 characters.
+
+**Changes to `PREREG.md`.**
+
+- Layout. The questions follow the form: 1 data collection, 2 to 8 as before, 9 name (the former title), 10 type of study, 11 data source.
+- Q1. Option ticked: "It's complicated", with the explanation in question 8, as the form asks. The form does not accept "Yes", and "No" would contradict the pilot. The pilot paragraph moves to the start of Q8. It now says "No data for the confirmatory study have been collected" and adds why the pilot leaves the main hypotheses open: no text was requested with any label other than the age, so the pilot says nothing about H2 and H3, and its texts bear on H1 for three models.
+- Q3. The "Voici" preface rule names every form that `compute.VOICI_META_RE` removes (histoire, texte, récit, conte, lecture, poème, with an optional petite, courte, belle or nouvelle); the old text named two. The repository URL replaces `{REPO}`, and the lexicon is named with its source and hash.
+- Q4. The French prompt template is written out, and `design.json` and `make_prompts.py` at tag `prereg` are cited for the topics, label wordings and call plan. Reasoning stays at each provider's default and counts toward the 4,000-token limit. In the pilot raw records, thinking or reasoning tokens were present in 61 of 72 texts of Claude Sonnet 5.5 (mean 331 tokens in those texts), 68 of 72 of GPT-6.1 Sol (79) and 72 of 72 of Mistral Large 4.0 (1,104, 67% of its output tokens). Collection dates 1 to 15 November 2026.
+- Q6. "No exclusion uses the value of the dependent variable or of any other frequency measure". The old wording, "a lexical measure", read as if length and the share of words absent from Lexique were never used. New rule: if the spending cap stops collection, it resumes only after the author raises the cap, and calls without an answer by 15 November 2026 are missing.
+- Q8. The validity criterion includes the 25 usable pairs that `validate_measure.py` requires, and the result of 31.10.2026 (28 of 29).
+- Length. The longest answer is Q3, 2,379 characters, or 2,689 if every quotation mark and accented letter counted as an HTML entity.
+
+**Other changes.** `design.json`: version line, and "exact dated id" becomes "exact id ... in models.json", since no provider lists a dated id for these six models. `README.md`: version line and the same wording.
+
+**Checks.** `checks/plan.py`: PASS. `history/check_history.sh`: PASS, v0.4.8 down to v0.2. No code file changed since v0.4.6, so the full run of v0.4.6 (12 of 12) stands for the code, on the lexicon copy named below.
+
+**Verified, not changed.**
+
+- The counted pilot spend matches the provider consoles: Anthropic 1.42 USD and OpenAI 0.55 USD for 84 requests, against 1.4185 and 0.5513 counted from the raw records. Mistral's billing page could not be read from the browser (0.2857 counted).
+- With the lexicon copy of the `pylexique` package (fe2cb931f774d4c4), which the local checks use, 36 of the 216 pilot measures differ from those computed in GitHub Actions with the lexique.org file (637ba37a767a6667), by at most 0.064 Zipf (mean 0.022 among the 36). The study uses the lexique.org file. The pilot step runs `compute.py --self-test` on that file before any call and stops if it fails; it went on. The sandbox cannot reach lexique.org, so a full check run on that file is listed for P6, in GitHub Actions.
+- The docstring of `sim_power.py` gives the control bound as 0.0627; the code and `sim_power_results.json` use 0.0613, as the dossier says. Comment only, left unchanged.
+
+**Reading 9.** Its ten findings are rows of the Relectures IA tab; its brief and report are in the review record. Five concern the design dossier, not the repository: the journal ladder after G1, topics written as still open, steps written as future, a rule "H1 fails for at least four models of six" that neither `PREREG.md` nor the code has, and the budget assumptions. They are fixed in the dossier.
+
+**Hashes.**
+
+| File | Hash |
+|---|---|
+| PREREG.md | ca124e2132a25c53 |
+| README.md | 2e4d2203762ba9d3 |
+| design.json | 52ef93b9b4989f23 |
+| generate.py | 10085215000e27f6 (unchanged) |
+| compute.py | 8ad7a56512616c64 (unchanged) |
+| analyze.py | 62324d6d5c6293c2 (unchanged) |
+| pipeline.py | bc409da02b73fa9f (unchanged) |
+| make_prompts.py | 739ea744914f9237 (unchanged) |
+| run.yml | 497409fc94c1df59 (unchanged) |
+
+**Listed for G2.** Commit 9e03e53 still holds the OpenAI and Mistral keys in the history of the private repository; rotate them, or rewrite that commit, before the repository is made public. Rerun `checks/run_all.sh` on the lexique.org file (P6). Fix the `sim_power.py` docstring at the next code change.
 
 ## v0.4.7 (31.10.2026, about 19:30 to 19:40)
 

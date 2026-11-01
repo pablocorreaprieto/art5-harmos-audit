@@ -1,6 +1,6 @@
 {
   "study": "ART 5, Swiss grade labels and the lexical demand of LLM-generated French reading texts",
-  "version": "design-v0.4.7 (31.10.2026, PREREG.md fields filled from the pilot and the model listing of 31.10.2026: 16 topics, 7,680 texts, model ids; v0.4.6 of the same day checks each key secret before any request and removes key values from every output; v0.4.5 replaced Mistral Medium 3.5, deprecated by Mistral, by Mistral Large 4 as mistral_balanced; otherwise as v0.4.4 of 25.10.2026; after the pilot, before G1)",
+  "version": "design-v0.4.8 (01.11.2026, gate G1 passed; PREREG.md completed for the deposit after an independent pre-deposit review: prompt wording, reasoning defaults, repository, collection dates, spending-cap rule; v0.4.7 filled the pilot values, v0.4.6 checks each key secret before any request, v0.4.5 replaced Mistral Medium 3.5 by Mistral Large 4; otherwise as v0.4.4 of 25.10.2026; before the deposit)",
   "prompt_template": "Écris {genre} pour des élèves{label}, sur le thème {topic}. Réponds seulement avec un titre et le texte.",
   "genres": {
     "story": "une histoire à lire",
@@ -67,12 +67,12 @@
   "probe_notations": ["H", "P"],
   "probe_repetitions": 5,
   "models": {
-    "anthropic_balanced": "Claude Sonnet 5.5 (exact dated id read at pilot)",
-    "anthropic_light": "Claude Haiku 5.5 (exact dated id read at pilot)",
-    "openai_balanced": "GPT-6.1 Sol (exact dated id read at pilot)",
-    "openai_light": "GPT-6 Luna (exact dated id read at pilot)",
-    "mistral_balanced": "Mistral Large 4 (exact dated id read at pilot; replaces Mistral Medium 3.5, deprecated on 31.10.2026)",
-    "mistral_light": "Mistral Small 4 (exact dated id read at pilot)"
+    "anthropic_balanced": "Claude Sonnet 5.5 (exact id read at pilot, in models.json)",
+    "anthropic_light": "Claude Haiku 5.5 (exact id read at pilot, in models.json)",
+    "openai_balanced": "GPT-6.1 Sol (exact id read at pilot, in models.json)",
+    "openai_light": "GPT-6 Luna (exact id read at pilot, in models.json)",
+    "mistral_balanced": "Mistral Large 4 (exact id read at pilot, in models.json; replaces Mistral Medium 3.5, deprecated on 31.10.2026)",
+    "mistral_light": "Mistral Small 4 (exact id read at pilot, in models.json)"
   },
   "sampling": {"temperature": 1.0, "top_p": "provider default", "max_output_tokens": 4000, "fallback": "if a model rejects temperature, it is omitted for that model and recorded"},
   "texts_per_prompt": 1,
