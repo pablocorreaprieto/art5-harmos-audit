@@ -249,4 +249,4 @@ Update, 2.11.2026 about 08:50. The author wrote the advice to teachers that open
 the main session to make the AsPredicted record public: anonymous PDF https://aspredicted.org/zv58ce.pdf, on the title
 page for the editor, replaced in the anonymised copy. The use-of-AI statement, the Methods paragraph, CRediT and the
 cover letter now say that the author wrote that part. Checks after the change: render.py, check_numbers, check_claims
-(planted error fails), check_citations, recompute_primary and history PASS locally; GitHub Actions run-all RUNALL_AUTHOR.
+(planted error fails), check_citations, recompute_primary and history PASS locally; GitHub Actions run-all 41406440497 on 108bed2: ALL CHECKS PASSED (17 checks).
