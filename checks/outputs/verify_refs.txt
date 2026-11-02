@@ -27,4 +27,6 @@ OK   valentini2023 (arxiv): title, year and first author match, no notice
 URL   nl_basisschool: url, not checked here (opened by the session, see the Sources tab)
 URL   fwb_indicateurs2025: url, not checked here (opened by the session, see the Sources tab)
 URL   qc_frequentation: url, not checked here (opened by the session, see the Sources tab)
+OK   kuzu2025 (crossref): title, year and first author match, no notice [registry: Education and Information Technologies, vol. 30, issue 16, pp. 23041-23075, type journal-article]
+OK   myung2024 (arxiv): title, year and first author match, no notice
 PASS verify_refs
