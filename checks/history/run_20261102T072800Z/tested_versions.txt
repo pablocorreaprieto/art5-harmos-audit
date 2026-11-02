@@ -1,0 +1,27 @@
+date (UTC): 2026-11-02T07:28:00Z
+python: Python 3.12.15
+lexicon: /home/runner/work/art5-harmos-audit/art5-harmos-audit/data/lexicon/Lexique383.tsv 637ba37a767a6667
+code under test: /home/runner/work/art5-harmos-audit/art5-harmos-audit
+design.json              d0d2672284783290
+make_prompts.py          739ea744914f9237
+compute.py               8ad7a56512616c64
+analyze.py               62324d6d5c6293c2
+sim_power.py             dd9eb28c54889fde
+sim_power_results.json   11fb624153b742b4
+generate.py              10085215000e27f6
+pipeline.py              bc409da02b73fa9f
+validate_measure.py      7253e08b8dc1cd02
+PREREG.md                f94164b6faddb549
+README.md                75650296b6d57bb0
+requirements.txt         6a38e3ccee64d2a3
+manuscript_numbers.py    45ac4d26d38a00a9
+exploratory.py           dba5d02f86806fd5
+exploratory_p7.py        b978fef4412ab36b
+results/numbers.json     f37048d670c638ce
+results/exploratory.json cebbc9c4b5092845
+results/exploratory_p7.json 28ab367a1f3baf20
+exploratory_audit.py     66220cc781e5a9dd
+results/exploratory_audit.json a20d940e655e013d
+results/manuscript_numbers.json a324ea07856d29b1
+manuscript/manuscript.md 0e009264b3c94796
+manuscript/supplement.md cfec27a3684ea4d2
