@@ -1,0 +1,24 @@
+sign of the paired difference              caught: FAIL offset: H level found, 0.0448, p = 0.0047
+one-sided p reported as two-sided          caught: FAIL offset: H level found, -0.0448, p = 1
+Holm replaced by no correction             caught: FAIL Holm adjusted p and decisions {'a': 0.03, 'c': 0.06, 'b': 0.06} {'a': True, 'c': True, 'b': True}
+Holm adjusted p not monotone               caught: FAIL Holm adjusted p and decisions {'a': 0.03, 'c': 0.06, 'b': 0.04} {'a': True, 'c': False, 'b': False}
+SD with ddof 0                             caught: FAIL t-test arithmetic t = 4.472136, p = 0.020835
+gradient weights not scaled                caught: FAIL offset: L1 tracking -2.69 (planted 1)
+H1 tested in the wrong direction           caught: FAIL offset: H1 ruler found in 0 of 6 models
+eligibility threshold sign                 caught: FAIL flat rulers excluded from the age equivalent (6 eligible)
+shift sign in the pooled reading           caught: FAIL offset: L1 shift -1.15 years (planted 1), CI [-2.01 -0.48], isotonic 1.07
+excluded texts used                        caught: FAIL exclusions handled, 437 texts excluded
+completeness rule removed                  caught: FAIL a topic with most pairs missing is dropped (0 dropped)
+mean over the wrong axes                   caught: ValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?
+probe regex without et                     caught: FAIL probe parser on 'Les élèves de 5H ont entre 8 et 9 ans.': [(9, 9)]
+probe tolerance widened                    caught: FAIL probe parser on 'La 5e année, 10 ou 11 ans.': [(10, 11)]
+L0 placement sign                          caught: FAIL offset: L0 placed at 7.09 years (planted default age 10.5)
+gloss compared with the wrong label        caught: FAIL offset: the gloss moves the level back toward the age
+OLS gradient term not multiplied by age    caught: FAIL clustered OLS gives the same point estimates as the topic-level statistics (balanced data)
+P test reads the H label                   caught: FAIL digit as age: the P test does not borrow the H effect
+genres collapsed in the cube               caught: FAIL offset: H level found, -0.0515, p = 0.014
+L6 read over all grades                    caught: FAIL offset: L6 shift nan years over 3H to 5H (planted 6)
+tracking without the 1                     caught: FAIL offset: L1 tracking -0.21 (planted 1)
+level weights not equal                    caught: FAIL offset: H level found, -0.0400, p = 0.021
+22 of 22 caught
+PASS mutate_analyze
