@@ -250,3 +250,12 @@ the main session to make the AsPredicted record public: anonymous PDF https://as
 page for the editor, replaced in the anonymised copy. The use-of-AI statement, the Methods paragraph, CRediT and the
 cover letter now say that the author wrote that part. Checks after the change: render.py, check_numbers, check_claims
 (planted error fails), check_citations, recompute_primary and history PASS locally; GitHub Actions run-all 41406440497 on 108bed2: ALL CHECKS PASSED (17 checks).
+
+Update, 2.11.2026 about 09:30. At the author's request the statement on the use of generative AI was shortened from
+347 to 154 words without removing any fact (assistant's tasks, review sessions, the audited reviewer model, the
+author's part and responsibility, records in the repository), and the cover letter's paragraph on the protocol with it.
+Two sources suggested by referee 2 were read and cited: Kuzu et al. (2025, Education and Information Technologies) in
+the Introduction and Myung et al. (2024) in the Discussion. Checks: render.py, check_numbers, check_claims (planted
+error fails), check_citations (30 references cited) and recompute_primary PASS locally; verify-refs 41408937064 PASS
+(planted fault FAIL); run-all 41408946274 RUNALL_SHORT.
+
