@@ -9,6 +9,12 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Author's advice to teachers and AsPredicted link (2.11.2026, 08:20 to about 08:50)
+
+**AsPredicted.** At the author's request, the main session made the public PDF of registration #321415 in his browser session, in its anonymous form, which AsPredicted recommends while a paper is under review (author names appear once the author deanonymises it after acceptance): https://aspredicted.org/zv58ce.pdf. The link is on the title page for the editor (process fact `aspredicted_url`) and replaced in the anonymised copy, since the registered text gives the repository address.
+
+**Implications.** The author wrote the advice to teachers (four paragraphs) that now opens the Implications section, in place of the assistant's sentences on teachers. The main session checked it against the results (per-model shifts with the bare H label and with the label and the age, the post hoc comparison of models) and kept, after it, the sentences for developers and for research, with one sentence naming the analyses the advice rests on. The Methods paragraph on the assistant, the use-of-AI statement, CRediT (writing – original draft for that part) and the cover letter say so. `check_claims`: the two claims of the replaced sentences removed, two added for the author's wording.
+
 ## Pre-submission audit (2.11.2026, 06:30 to about 08:00)
 
 **Protocol.** The author asked for a protocol to audit an article before each submission. The main session wrote it (`manuscript/records/audit/protocole_audit_v1.0.md`, also in the author's Drive) and applied it to this manuscript for Education and Information Technologies.

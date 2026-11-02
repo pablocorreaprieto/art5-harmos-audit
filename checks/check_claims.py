@@ -72,8 +72,12 @@ CLAIMS = [
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "Claude Haiku 5.5, shift with the bare H label"),
     (r"one by about two years on average",
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
-    (r"the bare H label left one model two years off",
-     lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
+    # the author's advice to teachers in Implications (2.11.2026)
+    (r"whereas the bare H label produced larger departures in some models",
+     lambda n: max(abs(v(n, f"ae_L1_{m}_shift")) for m in MODELS) > max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS)
+     and sum(max(abs(v(n, f"ph_off_{m}_L1_{g}H")) for g in range(3, 9)) > 1 for m in MODELS) >= 2,
+     "largest per-model shift with the bare H label above that with the label and the age (L3), and at least two models "
+     "more than a year off at some grade with the bare H label"),
     (r"every model's point estimate (?:fell|stayed) within a year of its (?:own )?age-only texts",
      lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
      "per-model point estimates of the shift with the label and the age (L3); wording fixed after the confirmation reading"),
@@ -118,9 +122,9 @@ CLAIMS = [
     (r"every model stayed within a year, as with the bare P label",
      lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1 and max(abs(v(n, f"ae_L1P_{m}_shift")) for m in MODELS) < 1,
      "per-model shifts with the label and the age (L3) and with the bare P label (L1P) all under one year"),
-    (r"every model then stayed within a year of its own age-only texts, as all did with the bare P label",
-     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1 and max(abs(v(n, f"ae_L1P_{m}_shift")) for m in MODELS) < 1,
-     "same"),
+    (r"adding the age kept every model within one model-internal year of its age-only texts",
+     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
+     "per-model shifts with the label and the age (L3), the author's wording in Implications (2.11.2026)"),
     (r"kept every model within a year of its own age-only texts, as the bare P label did",
      lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1 and max(abs(v(n, f"ae_L1P_{m}_shift")) for m in MODELS) < 1,
      "same"),

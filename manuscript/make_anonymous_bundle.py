@@ -23,6 +23,8 @@ REPLACEMENTS = [
     (r"https://github\.com/pablocorreaprieto/art5-harmos-audit", "https://github.com/ANONYMISED/art5-harmos-audit"),
     (r"pablocorreaprieto", "ANONYMISED"),
     (r"AsPredicted #\d+", "AsPredicted #[anonymised]"),
+    # the public PDF of the registration (anonymous, but its text gives the repository address), 2.11.2026
+    (r"https://aspredicted\.org/\w+\.pdf", "[AsPredicted link removed for review]"),
     (r"\"321415\"", "\"[anonymised]\""),
     (r"\b321415\b", "[anonymised]"),
     # names in any case (made case-insensitive after the confirmation reading of 1.11.2026)
@@ -40,7 +42,7 @@ REPLACEMENTS = [
     (r"[\w.+-]+@(?:gmail\.com|hotmail\.\w+|edu-vd\.ch|eduvaud\.ch)", "[e-mail removed]"),
     (r"https://(?:docs|drive)\.google\.com/\S*?(?=[)\s\]>\"']|$)", "[link to a private document removed for review]"),
 ]
-FORBIDDEN = re.compile(r"(?i:pablo|correa|prieto|pabcorpri|edu-vd|\b321415\b|jouxtens|0009-0009-1844-7453|"
+FORBIDDEN = re.compile(r"(?i:pablo|correa|prieto|pabcorpri|edu-vd|\b321415\b|jouxtens|zv58ce|0009-0009-1844-7453|"
                        r"Universidad Internacional de La Rioja|gmail\.com|hotmail)|\bUNIR\b")  # UNIR in capitals only: "unir" is a French verb
 # files that name the author by design and are not part of what reviewers need (added after reading R3, 1.11.2026):
 # the submission letters and title page, the G2 exception list, and this script (its patterns name the author)

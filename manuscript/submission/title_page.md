@@ -20,7 +20,7 @@ Rendered by manuscript/render.py into manuscript/build/title_page.md. -->
 
 **Keywords.** generative AI, large language models, reading texts, lexical frequency, grade labels, primary education
 
-**Preregistration (for the editor only).** AsPredicted #{{proc_aspredicted_number}}, approved on {{proc_deposit_day}}. The deposited text contains the address of the study repository, which names the author; reviewers receive the preregistration text inside the anonymised copy of the repository. AUTHOR INPUT: link to the AsPredicted record (or its PDF), to be given to the editor.
+**Preregistration (for the editor only).** AsPredicted #{{proc_aspredicted_number}}, approved on {{proc_deposit_day}}: {{proc_aspredicted_url}} (anonymous version, without the author's name until acceptance). The deposited text contains the address of the study repository, which names the author; reviewers receive the preregistration text inside the anonymised copy of the repository.
 
 ## Declarations
 

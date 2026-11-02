@@ -244,3 +244,9 @@ K. Gate: no blocking finding left on Claude's side. Left to the author: read the
    AsPredicted link for the title page, submit (Claude in Chrome is not available, so the author submits with the
    portal sheet). Final checks on 0b0d80d: verify-refs 41401062224 PASS; run-all 41401065069 ALL CHECKS PASSED
    (17 checks, planted claim fails as it should; outputs 2d3fe66 and 898b04f).
+
+Update, 2.11.2026 about 08:50. The author wrote the advice to teachers that opens the Implications section, and asked
+the main session to make the AsPredicted record public: anonymous PDF https://aspredicted.org/zv58ce.pdf, on the title
+page for the editor, replaced in the anonymised copy. The use-of-AI statement, the Methods paragraph, CRediT and the
+cover letter now say that the author wrote that part. Checks after the change: render.py, check_numbers, check_claims
+(planted error fails), check_citations, recompute_primary and history PASS locally; GitHub Actions run-all RUNALL_AUTHOR.

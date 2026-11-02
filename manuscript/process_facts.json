@@ -12,6 +12,10 @@
   "text": "321415",
   "source": "CHANGELOG.md, section Deposit; AsPredicted confirmation of 1.11.2026"
  },
+ "aspredicted_url": {
+  "text": "https://aspredicted.org/zv58ce.pdf",
+  "source": "AsPredicted, anonymous PDF of #321415 created by the main session at the author's request on 2.11.2026 about 08:25 CET (CHANGELOG.md)"
+ },
  "deposit_day": {
   "text": "1 November 2026",
   "source": "CHANGELOG.md, section Deposit (about 08:52 CET)"
