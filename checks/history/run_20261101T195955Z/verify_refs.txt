@@ -1,0 +1,26 @@
+OK   brysbaert2018 (crossref): title, year and first author match, no notice [registry: Current Directions in Psychological Science, vol. 27, issue 1, pp. 45-50, type journal-article]
+OK   huang2024 (arxiv): title, year and first author match, no notice
+URL   imperial2023: url, not checked here (opened by the session, see the Sources tab)
+OK   manulex2004 (crossref): title, year and first author match, no notice [registry: Behavior Research Methods, Instruments, &amp; Computers, vol. 36, issue 1, pp. 156-166, type journal-article]
+OK   new2004 (crossref): title, year and first author match, no notice [registry: Behavior Research Methods, Instruments, &amp; Computers, vol. 36, issue 3, pp. 516-524, type journal-article]
+URL   newpallier_manual: url, not checked here (opened by the session, see the Sources tab)
+OK   oh2026 (crossref): title, year and first author match, no notice [registry: npj Artificial Intelligence, vol. 2, issue 1, pp. 28, type journal-article]
+OK   peereman2007 (crossref): title, year and first author match, no notice [registry: Behavior Research Methods, vol. 39, issue 3, pp. 579-589, type journal-article]
+OK   ripoll2025 (crossref): title, year and first author match, no notice [registry: Large-scale Assessments in Education, vol. 13, issue 1, pp. 20, type journal-article]
+OK   rooein2023 (arxiv): title, year and first author match, no notice
+URL   harmos2007: url, not checked here (opened by the session, see the Sources tab)
+URL   fr_cycle2: url, not checked here (opened by the session, see the Sources tab)
+URL   vd_deroulement: url, not checked here (opened by the session, see the Sources tab)
+URL   ge_primaire: url, not checked here (opened by the session, see the Sources tab)
+URL   men_elementaire: url, not checked here (opened by the session, see the Sources tab)
+URL   men_college: url, not checked here (opened by the session, see the Sources tab)
+URL   vikidia_about: url, not checked here (opened by the session, see the Sources tab)
+OK   trott2024 (arxiv): title, year and first author match, no notice
+OK   farajidizaji2023 (arxiv): title, year and first author match, no notice
+OK   primpied2022 (arxiv): title, year and first author match, no notice
+URL   avry2023: url, not checked here (opened by the session, see the Sources tab)
+OK   javourey2022 (crossref): title, year and first author match, no notice [registry: Applied Psycholinguistics, vol. 43, issue 2, pp. 485-512, type journal-article]
+OK   sclar2024 (arxiv): title, year and first author match, no notice
+OK   yan2024 (crossref): title, year and first author match, no notice [registry: British Journal of Educational Technology, vol. 55, issue 1, pp. 90-112, type journal-article]
+URL   vd_leo2012: url, not checked here (opened by the session, see the Sources tab)
+PASS verify_refs
