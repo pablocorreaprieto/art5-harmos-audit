@@ -257,5 +257,5 @@ author's part and responsibility, records in the repository), and the cover lett
 Two sources suggested by referee 2 were read and cited: Kuzu et al. (2025, Education and Information Technologies) in
 the Introduction and Myung et al. (2024) in the Discussion. Checks: render.py, check_numbers, check_claims (planted
 error fails), check_citations (30 references cited) and recompute_primary PASS locally; verify-refs 41408937064 PASS
-(planted fault FAIL); run-all 41408946274 RUNALL_SHORT.
+(planted fault FAIL); run-all 41408946274 on a48a3fb ALL CHECKS PASSED (17 checks).
 
