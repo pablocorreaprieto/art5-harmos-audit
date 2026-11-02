@@ -57,6 +57,10 @@ def crossref(doi):
     first = (m.get("author") or [{}])[0].get("family", "")
     notices = [u.get("type", "") for u in m.get("update-to", [])]
     notices += [k for k in (m.get("relation") or {}) if "retract" in k or "withdraw" in k]
+    # notices attached to the cited work itself (Crossref "updated-by", which carries Retraction Watch data);
+    # added by the pre-submission audit, 2.11.2026
+    notices += [u.get("type", "") for u in m.get("updated-by", [])
+                if any(w in u.get("type", "") for w in ("retract", "withdraw", "removal", "concern"))]
     return {"title": title, "year": year, "first_author": first, "notices": notices, "type": m.get("type"),
             "journal": (m.get("container-title") or [""])[0], "volume": m.get("volume"), "issue": m.get("issue"),
             "pages": m.get("page") or m.get("article-number")}
