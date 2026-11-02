@@ -33,6 +33,8 @@ REPLACEMENTS = [
     (r"(?i)\bPablo's\b", "the author's"),
     (r"(?i)\bPablo\b", "the author"),
     (r"0009-0009-1844-7453", "[ORCID removed]"),
+    # place of residence, given as the affiliation at the pre-submission audit (2.11.2026)
+    (r"(?i)Jouxtens-M[ée]zery", "[place of residence]"),
     (r"Universidad Internacional de La Rioja", "[university]"),
     (r"\bUNIR\b", "[university]"),
     (r"[\w.+-]+@(?:gmail\.com|hotmail\.\w+|edu-vd\.ch|eduvaud\.ch)", "[e-mail removed]"),

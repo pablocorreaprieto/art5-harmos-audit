@@ -203,3 +203,44 @@ gives at submission, and the credit, corrected as in item 3), five to fix and fi
 the AsPredicted link. Checks after the fixes: render.py, check_numbers, check_claims (plant FAIL),
 check_citations, recompute_primary and history/check_history.sh PASS; GitHub Actions run-all 41344501275 on 14a3165
 (outputs 31fe104): ALL CHECKS PASSED. Anonymised copy at a28fb5d: 416 files, nothing identifying.
+
+## 8. Pre-submission audit (2.11.2026, 06:30 to about 08:00)
+
+Protocol: `manuscript/records/audit/protocole_audit_v1.0.md` (written for the author, also in his Drive), steps A to K.
+Applied to the version of gate G2 (7f2e645) for Education and Information Technologies.
+
+A. Journal requirements, re-read in the author's Chrome on 2.11.2026 (link.springer.com, journal 10639, submission
+   guidelines): abstract 150 to 250 words (now 249), 4 to 6 keywords (6), "Statements and Declarations" in the
+   manuscript and the declarations again on a separate title page, LLM use documented in the Methods with human
+   accountability for the final text, city and country for unaffiliated authors, Word file with page numbers and
+   decimal headings, figures cited in order with bold "Fig. N" captions, APA 7 with DOI links. All met at 0b0d80d.
+   Springer's brand-level AI policy (link.springer.com/brands/springer/journal-policies, read 2.11.2026) sorts uses
+   into green, amber and red; red includes assigning authorship or accountability to AI and using an LLM for core
+   reasoning without disclosure. The CRediT statement therefore lists the author only.
+C. Anonymity: Word properties without creator or company, no author string in the manuscript or the Supporting
+   Information (Word and PDF), anonymised copy at 0b0d80d with 462 files and no identifying string; the audit records
+   (`manuscript/records/audit/`) are excluded like those of G2, and the place of residence is now replaced.
+D. Accuracy: render.py, check_numbers, check_claims (planted error fails), check_citations and recompute_primary
+   pass locally after every change. Post hoc `exploratory_audit.py` on the official lexicon (Actions run 41397357903):
+   the recomputed measure equals results/measures.csv for all 7,680 texts; without the 0.53% of content words absent
+   from Lexique, H2-H −0.0138 (p < .001, Holm .0001), H2-P −0.0030 (p = .433), H3-H 0.0031 (Holm .370),
+   H3-P 0.0043 (p = .041, Holm .124): no test decision changes.
+E. References: verify-refs 41396681921 on b9f19ef and 41401062224 on 0b0d80d PASS (planted fault FAIL), with Crossref
+   "updated-by" notices now read as well. Four sources added after a separate session read them in full
+   (valentini2023, arXiv v1; nl_basisschool, fwb_indicateurs2025, qc_frequentation, official pages): litnotes part A
+   and C, Sources tab rows 30 to 33.
+F. Declarations: the same facts in the manuscript, title page, cover letter and portal sheet. The read-back of the
+   portal sheet in Drive found its short Funding answer ("No funding was received") at odds with the manuscript,
+   which declares Anthropic's promotional credits; the sheet now points to the manuscript's Funding text (AU17).
+G. Independent reviews (three separate claude-opus-5-5 sessions, verbatim in `manuscript/records/audit/`): referee 1
+   (methods) major revision, 0.40; referee 2 (reading education) major revision, 0.25; editor forecast EAIT 0.17 and
+   0.37 for the whole ladder. Findings AU1 to AU16 in `manuscript/records/findings_log.csv`.
+J. Odds (inference, mean of the main session's estimate written before reading the forecast and the forecast, adjusted
+   after the corrections): EAIT 0.20, EKS 0.18, RLT 0.14 (after a cut to 6,000 words), Computers in the Schools 0.13,
+   Reading Psychology 0.10; at least one acceptance 0.56 if independent, 0.40 to 0.46 with a correlation of 0.3 to 0.5
+   (one-factor model, Monte Carlo), about 0.58 with JETOL as a sixth option. New order of the ladder: EAIT, EKS, RLT,
+   Computers in the Schools, Reading Psychology.
+K. Gate: no blocking finding left on Claude's side. Left to the author: read the changed passages, give the
+   AsPredicted link for the title page, submit (Claude in Chrome is not available, so the author submits with the
+   portal sheet). Final checks on 0b0d80d: verify-refs 41401062224 PASS; run-all 41401065069 ALL CHECKS PASSED
+   (17 checks, planted claim fails as it should; outputs 2d3fe66 and 898b04f).
