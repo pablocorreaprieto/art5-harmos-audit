@@ -54,6 +54,7 @@ ALLOW = [
     (r"\bGPT-4\b", "name of the model used in a cited study (Ripoll y Schmitz & Sonnleitner, 2025), not one of ours"),
     (r"\bexploratory_p7\.py\b", "file name of the post hoc script (added after the readings of the draft, P7)"),
     (r"\bexploratory_audit\.py\b", "file name of the post hoc script of the pre-submission audit (2.11.2026)"),
+    (r"\bP1 to P6\b", "names of the primary years in French-speaking Belgium (Fédération Wallonie-Bruxelles, 2025, p. 5)"),
     (r"tracking intervals lie below 1\b", "the tracking anchor 1 (texts follow the grade like the age-only texts)"),
 ]
 CITATION_YEAR = re.compile(r"(?:\(|; |, |et al\.,? |& [A-Z][\w'-]+,? |[A-Z][\w'-]+,? )(?:19|20)\d{2}[a-z]?(?=[);,]| \()")

@@ -111,6 +111,9 @@ CLAIMS = [
      lambda n: sorted(MODELS, key=lambda m: v(n, f"ae_L1_{m}_track"))[:2] == ["anthropic_light", "mistral_light"],
      "the two lowest trackings with the bare H label"),
     (r"moved texts by more than five years", lambda n: v(n, "ae_L6_shift") > 5, "pooled shift of the collision control"),
+    # added at the pre-submission audit (2.11.2026): other school systems (official sources, litnotes part C)
+    (r"holds pupils about a year and a half to two years older than « 5P » in Vaud", lambda n: True,
+     "cut-off dates: Vaud 4 years by 31 July, Belgium 6 in the calendar year of entry, Québec 6 before 1 October; 19 to 22 months"),
     # added at the pre-submission audit (2.11.2026): the age added to the label and the bare P label, model by model
     (r"every model stayed within a year, as with the bare P label",
      lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1 and max(abs(v(n, f"ae_L1P_{m}_shift")) for m in MODELS) < 1,
