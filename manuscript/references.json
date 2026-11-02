@@ -324,5 +324,27 @@
   "apa": "Gouvernement du Québec. (n.d.). *Obligation de fréquentation scolaire* [Leaflet]. https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/education/publications-adm/education/feuillet_frequentation-scolaire.pdf",
   "access": "read-directly (whole leaflet, WebFetch, 2.11.2026)",
   "litnote": "part_C1, qc_frequentation"
+ },
+ {
+  "key": "kuzu2025",
+  "first_author": "Kuzu",
+  "year": 2025,
+  "cite": "Kuzu et al., 2025",
+  "title": "AI-based task development in teacher education: an empirical study on using ChatGPT to create complex multilingual tasks in the context of primary education",
+  "doi": "10.1007/s10639-025-13673-8",
+  "apa": "Kuzu, T. E., Irion, T., & Bay, W. (2025). AI-based task development in teacher education: An empirical study on using ChatGPT to create complex multilingual tasks in the context of primary education. *Education and Information Technologies, 30*(16), 23041–23075. https://doi.org/10.1007/s10639-025-13673-8",
+  "access": "read-directly (open-access article page on link.springer.com, abstract, introduction and method; the cited finding is stated in the abstract), main session, 2.11.2026",
+  "litnote": "part_A1, kuzu2025"
+ },
+ {
+  "key": "myung2024",
+  "first_author": "Myung",
+  "year": 2024,
+  "cite": "Myung et al., 2024",
+  "title": "BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages",
+  "arxiv": "2406.09948",
+  "apa": "Myung, J., Lee, N., Zhou, Y., Jin, J., Putri, R. A., Antypas, D., Borkakoty, H., Kim, E., Perez-Almendros, C., Ayele, A. A., Gutiérrez-Basulto, V., Ibáñez-García, Y., Lee, H., Muhammad, S. H., Park, K., Rzayev, A. S., White, N., Yimam, S. M., Pilehvar, M. T., . . . Oh, A. (2024). BLEnD: A benchmark for LLMs on everyday knowledge in diverse cultures and languages. In *Advances in Neural Information Processing Systems 37* (Datasets and Benchmarks Track). https://proceedings.neurips.cc/paper_files/paper/2024/hash/8eb88844dafefa92a26aaec9f3acad93-Abstract.html",
+  "access": "read-directly (NeurIPS 2024 proceedings abstract page and arXiv abstract 2406.09948 v1; the cited finding is stated in the abstract), main session, 2.11.2026; suggested by referee 2 of the pre-submission audit",
+  "litnote": "part_A1, myung2024"
  }
 ]

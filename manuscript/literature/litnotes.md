@@ -225,6 +225,23 @@ Order: first the works I read in full text (including three I added because the 
   3. Design: text-davinci-003, gpt-3.5-turbo and Vicuna-7B, 50 stories per prompt; prompts named a preschooler, a 3-, 4- or 5-year-old, or a children's story. Mean age of acquisition 4.62 to 4.81 in all cells (Table 1), no trend from 3 to 5, no significance test.
 - Used for: Background, generating texts for a reading level ("naming the child's age made little difference to the age of acquisition of their words").
 
+### kuzu2025 — Kuzu, Irion & Bay (2025)
+- APA 7: Kuzu, T. E., Irion, T., & Bay, W. (2025). AI-based task development in teacher education: An empirical study on using ChatGPT to create complex multilingual tasks in the context of primary education. *Education and Information Technologies, 30*(16), 23041–23075. https://doi.org/10.1007/s10639-025-13673-8 (open access).
+- Access label: read-directly (article page on link.springer.com, abstract, introduction and method, read through WebFetch by the main session, 2.11.2026); results section not read in full. Suggested by the simulated referee 2 of the pre-submission audit.
+- Passages
+  1. Abstract: with teachers trained in subject matter and prompting, "highly viable tasks could be generated".
+  2. Abstract: "non-trained teachers mostly generated non- or less-viable tasks".
+  3. Design: qualitative, 17 prospective primary teachers in Germany, ChatGPT 3.5, interpretative interaction analysis; prompting training based on clear, specific prompts with context and constraints.
+- Used for: Introduction ("prospective primary teachers in Germany who had been trained both in the subject and in prompting obtained highly viable tasks from ChatGPT, whereas untrained ones mostly did not").
+
+### myung2024 — Myung et al. (2024), BLEnD
+- APA 7: Myung, J., Lee, N., Zhou, Y., Jin, J., Putri, R. A., Antypas, D., Borkakoty, H., Kim, E., Perez-Almendros, C., Ayele, A. A., Gutiérrez-Basulto, V., Ibáñez-García, Y., Lee, H., Muhammad, S. H., Park, K., Rzayev, A. S., White, N., Yimam, S. M., Pilehvar, M. T., . . . Oh, A. (2024). BLEnD: A benchmark for LLMs on everyday knowledge in diverse cultures and languages. In *Advances in Neural Information Processing Systems 37* (Datasets and Benchmarks Track). https://proceedings.neurips.cc/paper_files/paper/2024/hash/8eb88844dafefa92a26aaec9f3acad93-Abstract.html (arXiv:2406.09948).
+- Access label: read-directly (NeurIPS proceedings abstract page and arXiv abstract v1, main session, 2.11.2026); full text not read. Suggested by the simulated referee 2 of the pre-submission audit.
+- Passages
+  1. NeurIPS abstract: "LLMs perform better in cultures that are more present online" (arXiv v1: "highly represented online").
+  2. Design: about 52.6k question-answer pairs on everyday knowledge from 16 countries or regions in 13 languages, short-answer and multiple-choice formats.
+- Used for: Discussion, lexical equivalence is not understanding ("language models answer everyday questions less well for cultures that are less represented online").
+
 ## B. Measure and method sources (Lexique, subtitle frequencies, Zipf scale, French frequency and text difficulty)
 
 ### new2004_lexique2 — New, Pallier, Brysbaert & Ferrand (2004), "Lexique 2"
