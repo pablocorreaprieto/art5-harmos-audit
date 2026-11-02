@@ -59,5 +59,9 @@
  "author_roles": {
   "text": "chose the topic, set the main rules of the protocol (two gates, a log of every action, journals without fees, keys never in the chat), set up the infrastructure, took design decisions (three providers kept, Mistral Medium 3.5 replaced by Mistral Large 4 before the pilot, spending limits), approved design, preregistration and its deposit (G1), read the final manuscript and decided the open questions (G2)",
   "source": "the author's answers at gate G2 (1.11.2026, about 19:10, multiple-choice round 3: topic, protocol, infrastructure, design decisions all ticked); CHANGELOG.md (switch to Mistral Large 4 decided on 31.10.2026; G1 on 1.11.2026 at 06:48; deposit about 08:52)"
+ },
+ "reader_name_fable": {
+  "text": "Claude Fable 5.1",
+  "source": "published model name of claude-fable-5-1 (Anthropic), the model of one reading session; added at the pre-submission audit, 2.11.2026"
  }
 }

@@ -72,8 +72,8 @@ def table_labels(nums, design):
 
 
 def table_primary(nums, design):
-    rows = ["| Test | Contrast | Estimate [95% CI] | *t*(" + T(nums, "h2H_df") + ") | *p* | Holm *p* | In years [95% CI] |",
-            "|---|---|---|---|---|---|---|"]
+    rows = ["| Test | Contrast | Estimate [95% CI] | *t*(" + T(nums, "h2H_df") + ") | *d*~z~ | *p* | Holm *p* | In years [95% CI] |",
+            "|---|---|---|---|---|---|---|---|"]
     spec = [("H2-H", "Level, « de 5H » − age", "h2H", "ae_L1_shift", "shift"),
             ("H2-P", "Level, « de 5P » − age", "h2P", "ae_L1P_shift", "shift"),
             ("H3-H", "Gradient, « de 5H » − age", "h3H", "ae_L1_track", "tracking"),
@@ -81,20 +81,21 @@ def table_primary(nums, design):
     for test, contrast, s, ae, kind in spec:
         p = T(nums, s + "_p").replace("= ", "")
         ph = T(nums, s + "_pholm").replace("= ", "")
-        rows.append(f"| {test} | {contrast} | {T(nums, s + '_est')} {ci(nums, s + '_ci')} | {T(nums, s + '_t')} | "
+        rows.append(f"| {test} | {contrast} | {T(nums, s + '_est')} {ci(nums, s + '_ci')} | {T(nums, s + '_t')} | {T(nums, s + '_dz')} | "
                     f"{p} | {ph} | {kind} {T(nums, ae)} {ci(nums, ae + '_ci')} |")
     cap = ("Table 2. Primary tests. Levels in Zipf, gradients in Zipf per year of age; one-sample *t*-tests "
            f"over {T(nums, 'n_topics')} topics, Holm correction over the four tests. Shift: years older than the "
-           "age requested; tracking: 1 = follows the grade like the age-only texts, 0 = ignores it.")
+           "age requested; tracking: 1 = follows the grade like the age-only texts, 0 = ignores it. *d*~z~: mean difference over "
+           "topics divided by its standard deviation.")
     return cap, "\n".join(rows)
 
 
 def table_models(nums, design):
-    rows = ["| Model | Ruler slope (Zipf per year) | Default age, no level (years) [95% CI] | Probes correct, H (%) | "
+    rows = ["| Model | Ruler slope, Zipf per year (*t*; linearity *p*) | Default age, no level (years) [95% CI] | Probes correct, H (%) | "
             "Probes correct, P (%) | Mean probe error, H (years) | Mean probe error, P (years) |",
             "|---|---|---|---|---|---|---|"]
     for m in MODELS:
-        rows.append(f"| {T(nums, 'name_' + m)} | {T(nums, 'h1_slope_' + m)} | {T(nums, 'l0_age_' + m)} {ci(nums, f'ph_l0_{m}_ci')} | "
+        rows.append(f"| {T(nums, 'name_' + m)} | {T(nums, 'h1_slope_' + m)} ({T(nums, 'h1_t_' + m)}; {T(nums, 'h1_lin_p_' + m)}) | {T(nums, 'l0_age_' + m)} {ci(nums, f'ph_l0_{m}_ci')} | "
                     f"{T(nums, f'probe_{m}_H')} | {T(nums, f'probe_{m}_P')} | {T(nums, f'perr_{m}_H')} | "
                     f"{T(nums, f'perr_{m}_P')} |")
     cap = ("Table 3. Model by model: slope of the age-only ruler (H1), age written for without a level (L0, a "
@@ -115,7 +116,9 @@ def table_s1(nums, design):
                       ("without_flag_meta", "Texts addressing the user removed"),
                       ("length_residualised", "Length residualised within model")]:
         rows.append(f"| {name} | " + " | ".join(cell(f"sens_{key}_", s) for s in shorts) + " |")
-    cap = ("Table S1. Primary contrasts under the preregistered sensitivity analyses (levels in Zipf, gradients in "
+    # post hoc, pre-submission audit (2.11.2026): exploratory_audit.py on the official lexicon
+    rows.append("| Words absent from Lexique left out (post hoc) | " + " | ".join(cell("au_", s) for s in shorts) + " |")
+    cap = ("Table S1. Primary contrasts under the preregistered sensitivity analyses and one post hoc analysis (levels in Zipf, gradients in "
            "Zipf per year). No text was an exact duplicate, so the duplicate rule removed nothing. Age equivalents read "
            f"on an isotonic fit of each ruler, averaged over the six models: shift {T(nums, 'ae_L1_iso_shift')} "
            f"years and tracking {T(nums, 'ae_L1_iso_track')} for « de 5H », shift {T(nums, 'ae_L1P_iso_shift')} and "
@@ -283,18 +286,21 @@ TABLES = {"labels": table_labels, "primary": table_primary, "models": table_mode
           "s3": table_s3, "s4": table_s4, "s5": table_s5, "s6": table_s6, "s7": table_s7, "s8": table_s8,
           "s9": table_s9, "s10": table_s10, "s11": table_s11, "s12": table_s12}
 
+# figure numbers follow the order of first citation in the text (fig3_models is cited first, so it is Figure 2), and
+# captions follow the journal's style (bold "Fig. N", no punctuation after the number or at the end); pre-submission
+# audit, 2.11.2026
 FIGURES = {
-    "fig1": ("fig1_rulers.png", "Figure 1. Age-only rulers. Mean Zipf frequency of the content lemmas of the texts "
+    "fig1": ("fig1_rulers.png", "**Fig. 1** Age-only rulers. Mean Zipf frequency of the content lemmas of the texts "
              "requested with the age only, by age requested, for the mid-priced (circles) and lighter (squares) model of "
              "each provider. Bands are 95% confidence intervals of each mean over {n_topics} topics, so they include the "
              "differences between topics, whereas the slopes are estimated within topics. Higher values mean more "
-             "frequent words."),
-    "fig2": ("fig2_labels.png", "Figure 2. Age equivalents of the label wordings, pooled over the six models: shift "
+             "frequent words"),
+    "fig2": ("fig2_labels.png", "**Fig. 3** Age equivalents of the label wordings, pooled over the six models: shift "
              "(years older than the age requested) and tracking (1 = follows the grade like the age-only texts, 0 = "
              "ignores it), with 95% bootstrap intervals over topics. The collision control « de 5e » lies far outside "
-             "these axes and is reported in the text."),
-    "fig3": ("fig3_models.png", "Figure 3. Shift and tracking of the bare labels « de 5H » (circles) and « de 5P » "
-             "(squares), model by model, with 95% bootstrap intervals over topics (exploratory)."),
+             "these axes and is reported in the text"),
+    "fig3": ("fig3_models.png", "**Fig. 2** Shift and tracking of the bare labels « de 5H » (circles) and « de 5P » "
+             "(squares), model by model, with 95% bootstrap intervals over topics (exploratory)"),
 }
 
 
@@ -375,6 +381,9 @@ def main_text_words(md):
     return words(md)
 
 
+REFDOC = os.path.join(ROOT, "manuscript/reference.docx")
+
+
 def main():
     nums, design = load()
     os.makedirs(os.path.join(ROOT, "manuscript/build"), exist_ok=True)
@@ -386,7 +395,20 @@ def main():
         out = os.path.join(ROOT, f"manuscript/build/{stem}.md")
         open(out, "w").write(md)
         docx = out[:-3] + ".docx"
-        subprocess.run(["pandoc", out, "-o", docx, "--resource-path", os.path.dirname(out)], check=True)
+        # Word file in the journal's style (pre-submission audit, 2.11.2026): page numbers in the footer
+        # (manuscript/reference.docx) and, in the manuscript, decimal heading numbers except for the Abstract,
+        # the Statements and Declarations and the References; the build .md itself stays unchanged
+        pandoc_in = md
+        if stem == "manuscript":
+            pandoc_in = re.sub(r"^(# (?:Abstract|Statements and Declarations|References))\s*$", r"\1 {.unnumbered}",
+                               md, flags=re.M)
+        tmp = os.path.join(os.path.dirname(out), f".{stem}_pandoc.md")
+        open(tmp, "w").write(pandoc_in)
+        args = ["pandoc", tmp, "-o", docx, "--resource-path", os.path.dirname(out), "--reference-doc", REFDOC]
+        if stem == "manuscript":
+            args.append("--number-sections")
+        subprocess.run(args, check=True)
+        os.remove(tmp)
         print("wrote", out, "and", docx)
         if stem == "manuscript":
             wc = {"main": words(md), "main_tables": words(md, tables=True),
@@ -405,6 +427,12 @@ def main():
             nums["wc_abstract"] = {"value": len(ab_text.split()), "text": str(len(ab_text.split()))}
             m = re.search(r"^title:\s*\"(.*)\"\s*$", open(path).read(), flags=re.M)
             nums["ms_title"] = {"value": m.group(1) if m else "", "text": m.group(1) if m else ""}
+            # the declarations of the manuscript, repeated on the title page as the journal asks ("Please use the
+            # title page for providing the statements"), without the two that the title page gives unanonymised
+            st = re.search(r"^# Statements and Declarations\s*$(.*?)^# References", md, flags=re.S | re.M)
+            paras = [q.strip() for q in (st.group(1) if st else "").split("\n\n") if q.strip()]
+            keep = [q for q in paras if not q.startswith(("**Data availability.**", "**Preregistration.**"))]
+            nums["ms_statements_editor"] = {"value": "", "text": "\n\n".join(keep)}
     # submission documents (cover letter, title page): same placeholders, written to manuscript/build/
     for stem in ("cover_letter", "title_page"):
         path = os.path.join(ROOT, f"manuscript/submission/{stem}.md")
@@ -413,7 +441,7 @@ def main():
         md = render_text(open(path).read(), nums, design, "../../results/figures")
         out = os.path.join(ROOT, f"manuscript/build/{stem}.md")
         open(out, "w").write(md)
-        subprocess.run(["pandoc", out, "-o", out[:-3] + ".docx"], check=True)
+        subprocess.run(["pandoc", out, "-o", out[:-3] + ".docx", "--reference-doc", REFDOC], check=True)
         print("wrote", out)
 
 
