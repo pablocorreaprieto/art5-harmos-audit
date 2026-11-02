@@ -1,4 +1,4 @@
-date (UTC): 2026-11-02T06:38:49Z
+date (UTC): 2026-11-02T07:28:00Z
 python: Python 3.12.15
 lexicon: /home/runner/work/art5-harmos-audit/art5-harmos-audit/data/lexicon/Lexique383.tsv 637ba37a767a6667
 code under test: /home/runner/work/art5-harmos-audit/art5-harmos-audit
@@ -23,5 +23,5 @@ results/exploratory_p7.json 28ab367a1f3baf20
 exploratory_audit.py     66220cc781e5a9dd
 results/exploratory_audit.json a20d940e655e013d
 results/manuscript_numbers.json a324ea07856d29b1
-manuscript/manuscript.md 99371677a00f3597
+manuscript/manuscript.md 0e009264b3c94796
 manuscript/supplement.md cfec27a3684ea4d2
