@@ -1,0 +1,6 @@
+{"n_texts": 7680, "max_abs_diff_recomputed_vs_archived": 8.881784197001252e-16, "share_absent_among_content": 0.005277346684308664}
+h2_level_H -0.01383 p = 0.0 Holm p = 0.0001
+h2_level_P -0.00299 p = 0.4332 Holm p = 0.4332
+h3_gradient_H 0.0031 p = 0.1849 Holm p = 0.3699
+h3_gradient_P 0.00429 p = 0.0412 Holm p = 0.1237
+PASS exploratory_audit
