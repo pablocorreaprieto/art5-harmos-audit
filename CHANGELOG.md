@@ -9,6 +9,12 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Anonymised copy offered on request (10.11.2026, about 12:20)
+
+The journal's upload form has no item type for supplementary material, and the anonymised copy of the repository (19 MB) is too large to attach through the browser. At the author's choice, the Supporting Information is uploaded under the "Table" item type and the anonymised copy is not uploaded. The Data availability statement, the title page and the cover letter now say that the anonymised copy is available to the reviewers on request, and the letter says why the Supporting Information is filed as a table. Session claude-opus-5-5.
+
+**Checks.** Locally: render.py, check_numbers, check_claims, check_citations and recompute_primary.
+
 ## AI-use paragraph of the Method reworded and moved (10.11.2026, about 08:25)
 
 At the author's request (keep the disclosure, present it better), the same session (claude-fable-5-2) moved the paragraph on the use of an AI assistant from "Design and preregistration" to its own subsection at the end of the Method and reordered it: the author's part first, then the assistant's tasks, then what lets a reader check the assistant's work (preregistration, numbers filled in by script, archived prompts, outputs and code), with the note that the AI reviews are not an independent review. No fact was removed. The statement on the use of generative AI now names this session and what it reworded (`reader_id_fable52` in `manuscript/process_facts.json`). The cover letter has one added sentence on how the assistant's work can be checked.

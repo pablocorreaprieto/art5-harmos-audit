@@ -170,7 +170,7 @@ Swiss teachers who name a grade the way they do in class, « de 5H » or « de 5
 
 # Statements and Declarations
 
-**Data availability.** The prompts, call plans, raw model outputs with their SHA-256 hashes, analysis code, results, the records of the AI review sessions and the scripts that check every number of this article are available in the study repository (link anonymised for review; an anonymised copy of the repository is provided with this submission for the reviewers). It will be archived with a DOI on acceptance.
+**Data availability.** The prompts, call plans, raw model outputs with their SHA-256 hashes, analysis code, results, the records of the AI review sessions and the scripts that check every number of this article are available in the study repository (link anonymised for review; an anonymised copy of the repository is available to the reviewers on request through the editorial office). It will be archived with a DOI on acceptance.
 
 **Preregistration.** The study was preregistered on AsPredicted on {{proc_deposit_day}}, before the confirmatory data were collected (link anonymised for review; the deposited text is PREREG.md in the repository). Supporting Information S1 lists where each registered analysis is reported, the two departures from the registration and the analyses added after the data were seen.
 
