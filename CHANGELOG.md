@@ -9,6 +9,12 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## AI-use paragraph of the Method reworded and moved (10.11.2026, about 08:25)
+
+At the author's request (keep the disclosure, present it better), the same session (claude-fable-5-2) moved the paragraph on the use of an AI assistant from "Design and preregistration" to its own subsection at the end of the Method and reordered it: the author's part first, then the assistant's tasks, then what lets a reader check the assistant's work (preregistration, numbers filled in by script, archived prompts, outputs and code), with the note that the AI reviews are not an independent review. No fact was removed. The statement on the use of generative AI now names this session and what it reworded (`reader_id_fable52` in `manuscript/process_facts.json`). The cover letter has one added sentence on how the assistant's work can be checked.
+
+**Checks.** Locally: render.py, check_numbers, check_claims, check_citations and recompute_primary PASS. Not rerun: the GitHub Actions suite and the anonymised copy.
+
 ## Competing interests: paid Claude subscription disclosed (10.11.2026, about 08:15)
 
 A new session (claude-fable-5-2) read the rendered manuscript before submission, re-read the journal's submission guidelines (unchanged for the points checked on 2.11.2026) and recomputed the main figures by hand from the numbers in the text. At the author's decision, one sentence of the Competing interests statement now says that the author holds a personal paid subscription to Anthropic's Claude service. No other text changed. The title page carries the same sentence and its whole-manuscript word count moved from 7,660 to 7,671.

@@ -67,5 +67,9 @@
  "reader_name_fable": {
   "text": "Claude Fable 5.1",
   "source": "published model name of claude-fable-5-1 (Anthropic), the model of one reading session; added at the pre-submission audit, 2.11.2026"
+ },
+ "reader_id_fable52": {
+  "text": "claude-fable-5-2",
+  "source": "model of the session of 10.11.2026 (system information of the session); CHANGELOG.md, entries of 10.11.2026"
  }
 }
