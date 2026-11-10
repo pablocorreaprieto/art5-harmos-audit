@@ -9,6 +9,12 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Competing interests: paid Claude subscription disclosed (10.11.2026, about 08:15)
+
+A new session (claude-fable-5-2) read the rendered manuscript before submission, re-read the journal's submission guidelines (unchanged for the points checked on 2.11.2026) and recomputed the main figures by hand from the numbers in the text. At the author's decision, one sentence of the Competing interests statement now says that the author holds a personal paid subscription to Anthropic's Claude service. No other text changed. The title page carries the same sentence and its whole-manuscript word count moved from 7,660 to 7,671.
+
+**Checks.** Locally: render.py, check_numbers, check_claims, check_citations and recompute_primary PASS. The GitHub Actions suite has not been rerun on this commit.
+
 ## Shorter statement on the use of AI and two added sources (2.11.2026, 08:45 to about 09:30)
 
 **Statement.** At the author's request (08:43), the statement on the use of generative AI was shortened without removing any fact. It now has 154 words instead of 347: the assistant's tasks, the review sessions (one of whose models is also audited), the author's part and responsibility, and a pointer to the records in the repository. The Methods paragraph says the statement sums up who did what. The cover letter's paragraph on the protocol is shorter in the same way.
