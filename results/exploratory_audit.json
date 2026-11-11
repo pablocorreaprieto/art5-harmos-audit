@@ -1,0 +1,235 @@
+{
+ "note": "post hoc (pre-submission audit, 2.11.2026); preregistered measure unchanged, see the docstring",
+ "lexicon_sha256": "637ba37a767a66679c48371d673ece50cbf541b49a4e40e598963d4f3fbce52b",
+ "n_texts": 7680,
+ "max_abs_diff_recomputed_vs_archived": 8.881784197001252e-16,
+ "absent_content_tokens": 6920,
+ "content_tokens": 1311265,
+ "share_absent_among_content": 0.005277346684308664,
+ "share_absent_by_model_label": {
+  "anthropic_balanced | L0": 0.006539632427556658,
+  "anthropic_balanced | L1": 0.004891224996349832,
+  "anthropic_balanced | L1P": 0.005041504478731885,
+  "anthropic_balanced | L2": 0.0068857136949194596,
+  "anthropic_balanced | L3": 0.005082420671509209,
+  "anthropic_balanced | L4": 0.004687426390917228,
+  "anthropic_balanced | L5": 0.006306269770459891,
+  "anthropic_balanced | L6": 0.007550759535063468,
+  "anthropic_light | L0": 0.0021057064645188463,
+  "anthropic_light | L1": 0.0038395611930065136,
+  "anthropic_light | L1P": 0.002648142462388701,
+  "anthropic_light | L2": 0.004370575561711296,
+  "anthropic_light | L3": 0.003175414263814877,
+  "anthropic_light | L4": 0.003547619975829402,
+  "anthropic_light | L5": 0.0027795595467179817,
+  "anthropic_light | L6": 0.0042787682333873586,
+  "mistral_balanced | L0": 0.008018775669861138,
+  "mistral_balanced | L1": 0.00487977369165488,
+  "mistral_balanced | L1P": 0.00457847737248373,
+  "mistral_balanced | L2": 0.0066939260040889004,
+  "mistral_balanced | L3": 0.0046839232259200565,
+  "mistral_balanced | L4": 0.004672708962739174,
+  "mistral_balanced | L5": 0.005186099841241841,
+  "mistral_balanced | L6": 0.012573885008060183,
+  "mistral_light | L0": 0.011185278729929641,
+  "mistral_light | L1": 0.00840534171249018,
+  "mistral_light | L1P": 0.00829531314807134,
+  "mistral_light | L2": 0.009629062260641207,
+  "mistral_light | L3": 0.008309566564557586,
+  "mistral_light | L4": 0.008798609602433196,
+  "mistral_light | L5": 0.008579397320075184,
+  "mistral_light | L6": 0.015156201670275286,
+  "openai_balanced | L0": 0.004918032786885246,
+  "openai_balanced | L1": 0.002714681440443213,
+  "openai_balanced | L1P": 0.0032968517767869208,
+  "openai_balanced | L2": 0.00356683115211328,
+  "openai_balanced | L3": 0.0035497629076266923,
+  "openai_balanced | L4": 0.0034566897112647418,
+  "openai_balanced | L5": 0.003424934602626682,
+  "openai_balanced | L6": 0.004751139890417257,
+  "openai_light | L0": 0.0018205461638491547,
+  "openai_light | L1": 0.003214483650471088,
+  "openai_light | L1P": 0.003446542686867236,
+  "openai_light | L2": 0.003461205653302567,
+  "openai_light | L3": 0.0035591105892712996,
+  "openai_light | L4": 0.003037951018882034,
+  "openai_light | L5": 0.004584985990320585,
+  "openai_light | L6": 0.00414871549385671
+ },
+ "share_absent_by_model": {
+  "anthropic_balanced": 0.005780997664438339,
+  "anthropic_light": 0.003465590129152756,
+  "mistral_balanced": 0.00595306900936308,
+  "mistral_light": 0.009392585236676597,
+  "openai_balanced": 0.0035198116271516725,
+  "openai_light": 0.003593632876229111
+ },
+ "most_frequent_absent_forms": [
+  [
+   "tandis",
+   862
+  ],
+  [
+   "h",
+   320
+  ],
+  [
+   "volcanologues",
+   123
+  ],
+  [
+   "tchou",
+   117
+  ],
+  [
+   "pompière",
+   116
+  ],
+  [
+   "aèrent",
+   106
+  ],
+  [
+   "glou",
+   104
+  ],
+  [
+   "pollinisateurs",
+   85
+  ],
+  [
+   "bzzz",
+   79
+  ],
+  [
+   "expires",
+   77
+  ],
+  [
+   "épeiche",
+   76
+  ],
+  [
+   "plic",
+   67
+  ],
+  [
+   "façonnage",
+   65
+  ],
+  [
+   "kg",
+   56
+  ],
+  [
+   "varroa",
+   55
+  ],
+  [
+   "cheffe",
+   50
+  ],
+  [
+   "crouic",
+   50
+  ],
+  [
+   "lagopède",
+   47
+  ],
+  [
+   "tsunamis",
+   46
+  ],
+  [
+   "dioxygène",
+   44
+  ],
+  [
+   "pollinisent",
+   42
+  ],
+  [
+   "secourent",
+   41
+  ],
+  [
+   "semèrent",
+   40
+  ],
+  [
+   "paillage",
+   39
+  ],
+  [
+   "ptérosaures",
+   39
+  ]
+ ],
+ "primary_without_absent_tokens": {
+  "h2_level_H": {
+   "estimate": -0.013825580400837176,
+   "se": 0.002191262254143569,
+   "t": -6.309413843410886,
+   "df": 15,
+   "p_two_sided": 1.4002773152660572e-05,
+   "ci95": [
+    -0.018496145336633775,
+    -0.009155015465040576
+   ],
+   "n_topics": 16,
+   "contrast": "level of L1 - L5",
+   "topics_dropped": 0,
+   "p_holm": 5.601109261064229e-05,
+   "rejected_holm": true
+  },
+  "h2_level_P": {
+   "estimate": -0.0029915520837079015,
+   "se": 0.00371495737160612,
+   "t": -0.80527225065157,
+   "df": 15,
+   "p_two_sided": 0.4332426446337094,
+   "ci95": [
+    -0.010909796285191706,
+    0.0049266921177759035
+   ],
+   "n_topics": 16,
+   "contrast": "level of L1P - L5",
+   "topics_dropped": 0,
+   "p_holm": 0.4332426446337094,
+   "rejected_holm": false
+  },
+  "h3_gradient_H": {
+   "estimate": 0.003104569522503539,
+   "se": 0.0022341420027656004,
+   "t": 1.3896025940430168,
+   "df": 15,
+   "p_two_sided": 0.1849317186413773,
+   "ci95": [
+    -0.0016573914340072076,
+    0.007866530479014285
+   ],
+   "n_topics": 16,
+   "contrast": "gradient of L1 - L5",
+   "topics_dropped": 0,
+   "p_holm": 0.3698634372827546,
+   "rejected_holm": false
+  },
+  "h3_gradient_P": {
+   "estimate": 0.004286803645785493,
+   "se": 0.0019199718193068378,
+   "t": 2.232743003141133,
+   "df": 15,
+   "p_two_sided": 0.04123094157302159,
+   "ci95": [
+    0.00019448058403635782,
+    0.008379126707534629
+   ],
+   "n_topics": 16,
+   "contrast": "gradient of L1P - L5",
+   "topics_dropped": 0,
+   "p_holm": 0.12369282471906476,
+   "rejected_holm": false
+  }
+ }
+}

@@ -23,6 +23,8 @@ REPLACEMENTS = [
     (r"https://github\.com/pablocorreaprieto/art5-harmos-audit", "https://github.com/ANONYMISED/art5-harmos-audit"),
     (r"pablocorreaprieto", "ANONYMISED"),
     (r"AsPredicted #\d+", "AsPredicted #[anonymised]"),
+    # the public PDF of the registration (anonymous, but its text gives the repository address), 2.11.2026
+    (r"https://aspredicted\.org/\w+\.pdf", "[AsPredicted link removed for review]"),
     (r"\"321415\"", "\"[anonymised]\""),
     (r"\b321415\b", "[anonymised]"),
     # names in any case (made case-insensitive after the confirmation reading of 1.11.2026)
@@ -33,18 +35,24 @@ REPLACEMENTS = [
     (r"(?i)\bPablo's\b", "the author's"),
     (r"(?i)\bPablo\b", "the author"),
     (r"0009-0009-1844-7453", "[ORCID removed]"),
+    # place of residence, given as the affiliation at the pre-submission audit (2.11.2026)
+    (r"(?i)Jouxtens-M[ée]zery", "[place of residence]"),
     (r"Universidad Internacional de La Rioja", "[university]"),
     (r"\bUNIR\b", "[university]"),
     (r"[\w.+-]+@(?:gmail\.com|hotmail\.\w+|edu-vd\.ch|eduvaud\.ch)", "[e-mail removed]"),
     (r"https://(?:docs|drive)\.google\.com/\S*?(?=[)\s\]>\"']|$)", "[link to a private document removed for review]"),
 ]
-FORBIDDEN = re.compile(r"(?i:pablo|correa|prieto|pabcorpri|edu-vd|\b321415\b|jouxtens|0009-0009-1844-7453|"
+FORBIDDEN = re.compile(r"(?i:pablo|correa|prieto|pabcorpri|edu-vd|\b321415\b|jouxtens|zv58ce|0009-0009-1844-7453|"
                        r"Universidad Internacional de La Rioja|gmail\.com|hotmail)|\bUNIR\b")  # UNIR in capitals only: "unir" is a French verb
 # files that name the author by design and are not part of what reviewers need (added after reading R3, 1.11.2026):
 # the submission letters and title page, the G2 exception list, and this script (its patterns name the author)
 EXCLUDE_PREFIXES = ("manuscript/submission/", "manuscript/verification_report.md", "manuscript/make_anonymous_bundle.py",
                     # the rendered title page and cover letter (added after the confirmation reading, 1.11.2026)
-                    "manuscript/build/title_page.", "manuscript/build/cover_letter.")
+                    "manuscript/build/title_page.", "manuscript/build/cover_letter.",
+                    # the G2 research and check-reading records, whose briefs describe the author (1.11.2026, evening)
+                    "manuscript/records/g2/",
+                    # the pre-submission audit records (journal strategy, simulated reviews), 2.11.2026
+                    "manuscript/records/audit/")
 # scripts of the reading sessions that search for the author's identifying strings (their patterns name the author)
 EXCLUDE_PATTERNS = (re.compile(r"^manuscript/records/.*/(?:bundle_sim|scan_bundle)[^/]*\.py$"),)
 

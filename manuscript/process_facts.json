@@ -12,6 +12,10 @@
   "text": "321415",
   "source": "CHANGELOG.md, section Deposit; AsPredicted confirmation of 1.11.2026"
  },
+ "aspredicted_url": {
+  "text": "https://aspredicted.org/zv58ce.pdf",
+  "source": "AsPredicted, anonymous PDF of #321415 created by the main session at the author's request on 2.11.2026 about 08:25 CET (CHANGELOG.md)"
+ },
  "deposit_day": {
   "text": "1 November 2026",
   "source": "CHANGELOG.md, section Deposit (about 08:52 CET)"
@@ -51,5 +55,21 @@
  "prereg_commit": {
   "text": "6a0a061",
   "source": "CHANGELOG.md, section Deposit: tag prereg on commit 6a0a061"
+ },
+ "credit_anthropic_origin": {
+  "text": "promotional credits granted by Anthropic to the author's API account",
+  "source": "Anthropic console, Billing page, read on 1.11.2026 at about 21:00 Zurich time: purchased balance 5.00 USD; promotional grants of 100.00 USD (granted 28.10.2026, expires 1.12.2026, 73.14 USD left) and 103.29 USD (granted 29.10.2026, expires 2.12.2026, untouched); the 26.86 USD drawn from the first equals the pilot (1.42 USD) plus the main run (25.44 USD). The 200 USD grant of 17.10.2026 for the organisation linked to the author's Claude Max plan (Anthropic e-mail) expired on 31.10.2026 and is not among them. The console does not say where the two grants of 28 and 29.10.2026 come from. At G2 the author first answered that the credit came from the Max plan, to a question that quoted the e-mail of 17.10.2026 as the source; the console reading corrected it."
+ },
+ "author_roles": {
+  "text": "chose the topic, set the main rules of the protocol (two gates, a log of every action, journals without fees, keys never in the chat), set up the infrastructure, took design decisions (three providers kept, Mistral Medium 3.5 replaced by Mistral Large 4 before the pilot, spending limits), approved design, preregistration and its deposit (G1), read the final manuscript and decided the open questions (G2)",
+  "source": "the author's answers at gate G2 (1.11.2026, about 19:10, multiple-choice round 3: topic, protocol, infrastructure, design decisions all ticked); CHANGELOG.md (switch to Mistral Large 4 decided on 31.10.2026; G1 on 1.11.2026 at 06:48; deposit about 08:52)"
+ },
+ "reader_name_fable": {
+  "text": "Claude Fable 5.1",
+  "source": "published model name of claude-fable-5-1 (Anthropic), the model of one reading session; added at the pre-submission audit, 2.11.2026"
+ },
+ "reader_id_fable52": {
+  "text": "claude-fable-5-2",
+  "source": "model of the session of 10.11.2026 (system information of the session); CHANGELOG.md, entries of 10.11.2026"
  }
 }

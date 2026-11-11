@@ -30,7 +30,7 @@ run() {  # name, exact success line, command...
   (cd "$ART5_CODE" && for f in design.json make_prompts.py compute.py analyze.py sim_power.py sim_power_results.json \
      generate.py pipeline.py validate_measure.py PREREG.md README.md requirements.txt \
      manuscript_numbers.py exploratory.py exploratory_p7.py results/numbers.json results/exploratory.json \
-     results/exploratory_p7.json results/manuscript_numbers.json manuscript/manuscript.md manuscript/supplement.md; do
+     results/exploratory_p7.json exploratory_audit.py results/exploratory_audit.json results/manuscript_numbers.json manuscript/manuscript.md manuscript/supplement.md; do
      [ -f "$f" ] && printf "%-24s %s\n" "$f" "$(sha256sum "$f" | cut -c1-16)"; done)
 } > "$OUT/tested_versions.txt"
 run selftest_compute "OK" python3 -B "$ART5_CODE/compute.py" --self-test "$LEXIQUE"

@@ -1,0 +1,30 @@
+ok "Le ciel\nLéa regarda le ciel. « C'est bea" ['regarder', 'ciel', 'beau', 'dire', 'peur']
+ok 'Rose cueille une rose dans le jardin. Le' ['cueillir', 'rose', 'jardin', 'soir', 'montrer', 'fleur']
+ok 'Les volcans se forment lorsque le magma ' ['volcan', 'former', 'magma', 'remonter', 'observer', 'demander']
+ok 'Il est très content. Il a été au marché,' ['content', 'marché', 'rentrer']
+ok "Je m'appelle Tom et j'aime le pain qu'il" ['appeler', 'aimer', 'pain', 'faire', 'midi']
+ok 'Sa maman lui donne deux pommes. Cette fo' ['maman', 'donner', 'pomme', 'forêt', 'grand', 'arbre', 'feuille']
+ok 'Le robot-jardinier arrose les fleurs.' ['robot', 'jardinier', 'arroser', 'fleur']
+ok 'Léa dit : « Regarde ! Ma sœur arrive. » ' ['dire', 'regarder', 'soeur', 'arriver', 'répondre', 'content']
+ok 'Le chat dort.\nLe chien joue.\nLa lune bri' ['chat', 'dormir', 'chien', 'jouer', 'lune', 'briller']
+ok 'Titre : La ruche\nHistoire :\nTexte : Les ' ['abeille', 'vivre', 'ruche', 'coeur', 'battre']
+ok 'Voici une histoire pour des élèves de 8 ' ['hérisson', 'dormir', 'feuille']
+ok '**Texte**\nLe chat dort sur le tapis.\nIl ' ['chat', 'dormir', 'tapis', 'attendre', 'souris']
+ok 'Voici une histoire pour des élèves de 8 ' ['hérisson', 'dormir', 'feuille']
+ok 'Bien sûr ! Voici un texte sur le thème d' ['abeille', 'butiner', 'fleur']
+ok 'Tous les enfants jouent avec une autre b' ['enfant', 'jouer', 'balle']
+ok 'Le soir, Léa cria - Regarde la lune ! - ' ['soir', 'crier', 'regarder', 'lune', 'briller', 'répondre']
+ok 'Voici Léa, une élève de 5H.\nLéa aime les' ['élève', 'aimer', 'volcan']
+ok 'Voici une histoire pour des élèves de 8 ' ['hérisson', 'dormir', 'feuille']
+ok 'Voici une histoire sur les volcans.\nLe v' ['volcan', 'tousser', 'cracher', 'fumée']
+ok 'Les volcans\nUn volcan crache des cendres' ['volcan', 'cracher', 'cendre', 'note', 'magma', 'refroidir', 'devenir', 'roche']
+ok 'Le carnet\nLéo ouvre son carnet.\nNote bie' ['ouvrir', 'carnet', 'note', 'voir', 'dire', 'maman']
+ok numeric pins 1.4914 5.189 14
+ok names do not move the measure 5.199
+ok tense does not move the measure 5.002
+ok planted rare and frequent words move the mean 4.575 5.267 5.603
+ok exclusion rules under 20 words | not French | refusal | kept
+ok refusal rule, 20 refusals excluded, 14 texts with a phrase kept
+ok ligatures found in the lexicon, also when the file spells them
+ok meta lines removed and flagged, dialogue not flagged
+OK

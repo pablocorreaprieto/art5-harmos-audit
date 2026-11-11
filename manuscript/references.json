@@ -280,5 +280,71 @@
   "apa": "État de Vaud. (2012, April 4). *Mise en oeuvre de la loi du 7 juin 2011 sur l'enseignement obligatoire (LEO)* [Press release]. https://www.vd.ch/actualites/communiques-de-presse-de-letat-de-vaud/detail/communique/mise-en-oeuvre-de-la-loi-du-7-juin-2011-sur-lenseignement-obligatoire-leo-1333557608",
   "access": "read-directly (whole page, WebFetch with verbatim sentences, 1.11.2026)",
   "litnote": "main session, Recherches tab rows 40-41"
+ },
+ {
+  "key": "valentini2023",
+  "first_author": "Valentini",
+  "year": 2023,
+  "cite": "Valentini et al., 2023",
+  "title": "On the automatic generation and simplification of children's stories",
+  "arxiv": "2310.18502",
+  "apa": "Valentini, M., Weber, J., Salcido, J., Wright, T., Colunga, E., & von der Wense, K. (2023). *On the automatic generation and simplification of children's stories* (arXiv:2310.18502). arXiv. https://doi.org/10.48550/arXiv.2310.18502",
+  "access": "read-directly (arXiv v1, pp. 1-7 and 9-10, by a verification session of the pre-submission audit, 2.11.2026)",
+  "litnote": "part_A1, valentini2023"
+ },
+ {
+  "key": "nl_basisschool",
+  "first_author": "Rijksoverheid",
+  "year": "n.d.",
+  "cite": "Rijksoverheid, n.d.",
+  "title": "Wanneer mag mijn kind naar de basisschool?",
+  "url": "https://www.rijksoverheid.nl/vraag-en-antwoord/basisonderwijs/wanneer-mag-mijn-kind-naar-de-basisschool",
+  "apa": "Rijksoverheid. (n.d.). *Wanneer mag mijn kind naar de basisschool?* [Web page]. Retrieved November 2, 2026, from https://www.rijksoverheid.nl/vraag-en-antwoord/basisonderwijs/wanneer-mag-mijn-kind-naar-de-basisschool",
+  "access": "read-directly (whole page, WebFetch, 2.11.2026)",
+  "litnote": "part_C1, nl_basisschool"
+ },
+ {
+  "key": "fwb_indicateurs2025",
+  "first_author": "Fédération Wallonie-Bruxelles",
+  "year": 2025,
+  "cite": "Fédération Wallonie-Bruxelles, 2025",
+  "title": "Les indicateurs de l'enseignement 2025",
+  "url": "https://www.enseignement.be/fileadmin/portail_age/uploads/Systeme_educatif/Chiffres-cles/Indicateurs/indicateurs-enseignement_2025.pdf",
+  "apa": "Fédération Wallonie-Bruxelles. (2025). *Les indicateurs de l'enseignement 2025*. https://www.enseignement.be/fileadmin/portail_age/uploads/Systeme_educatif/Chiffres-cles/Indicateurs/indicateurs-enseignement_2025.pdf",
+  "access": "read-directly (pp. 5 and 8, WebFetch, 2.11.2026)",
+  "litnote": "part_C1, fwb_indicateurs2025"
+ },
+ {
+  "key": "qc_frequentation",
+  "first_author": "Gouvernement du Québec",
+  "year": "n.d.",
+  "cite": "Gouvernement du Québec, n.d.",
+  "title": "Obligation de fréquentation scolaire",
+  "url": "https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/education/publications-adm/education/feuillet_frequentation-scolaire.pdf",
+  "apa": "Gouvernement du Québec. (n.d.). *Obligation de fréquentation scolaire* [Leaflet]. https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/education/publications-adm/education/feuillet_frequentation-scolaire.pdf",
+  "access": "read-directly (whole leaflet, WebFetch, 2.11.2026)",
+  "litnote": "part_C1, qc_frequentation"
+ },
+ {
+  "key": "kuzu2025",
+  "first_author": "Kuzu",
+  "year": 2025,
+  "cite": "Kuzu et al., 2025",
+  "title": "AI-based task development in teacher education: an empirical study on using ChatGPT to create complex multilingual tasks in the context of primary education",
+  "doi": "10.1007/s10639-025-13673-8",
+  "apa": "Kuzu, T. E., Irion, T., & Bay, W. (2025). AI-based task development in teacher education: An empirical study on using ChatGPT to create complex multilingual tasks in the context of primary education. *Education and Information Technologies, 30*(16), 23041–23075. https://doi.org/10.1007/s10639-025-13673-8",
+  "access": "read-directly (open-access article page on link.springer.com, abstract, introduction and method; the cited finding is stated in the abstract), main session, 2.11.2026",
+  "litnote": "part_A1, kuzu2025"
+ },
+ {
+  "key": "myung2024",
+  "first_author": "Myung",
+  "year": 2024,
+  "cite": "Myung et al., 2024",
+  "title": "BLEnD: A Benchmark for LLMs on Everyday Knowledge in Diverse Cultures and Languages",
+  "arxiv": "2406.09948",
+  "apa": "Myung, J., Lee, N., Zhou, Y., Jin, J., Putri, R. A., Antypas, D., Borkakoty, H., Kim, E., Perez-Almendros, C., Ayele, A. A., Gutiérrez-Basulto, V., Ibáñez-García, Y., Lee, H., Muhammad, S. H., Park, K., Rzayev, A. S., White, N., Yimam, S. M., Pilehvar, M. T., . . . Oh, A. (2024). BLEnD: A benchmark for LLMs on everyday knowledge in diverse cultures and languages. In *Advances in Neural Information Processing Systems 37* (Datasets and Benchmarks Track). https://proceedings.neurips.cc/paper_files/paper/2024/hash/8eb88844dafefa92a26aaec9f3acad93-Abstract.html",
+  "access": "read-directly (NeurIPS 2024 proceedings abstract page and arXiv abstract 2406.09948 v1; the cited finding is stated in the abstract), main session, 2.11.2026; suggested by referee 2 of the pre-submission audit",
+  "litnote": "part_A1, myung2024"
  }
 ]

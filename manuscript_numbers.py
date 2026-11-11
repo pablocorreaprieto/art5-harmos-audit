@@ -225,6 +225,9 @@ def main(out_path):
         p_apa(min(v["linearity_p"] for v in n["h1"].values())))
     for m, v in n["h1"].items():
         put(f"h1_slope_{m}", v["slope"], num(v["slope"], 3))
+        # per-model t statistic and linearity test of the ruler (pre-submission audit, 2.11.2026)
+        put(f"h1_t_{m}", v["t"], num(v["t"], 2))
+        put(f"h1_lin_p_{m}", v["linearity_p"], p_apa(v["linearity_p"]).replace("= ", ""))
     # the smallest effect of interest in model-internal years: SESOI / |ruler slope| of each model
     sesoi = design["analysis"]["smallest_effect_of_interest_zipf"]
     yrs = [sesoi / abs(b) for b in slopes.values()]
@@ -493,6 +496,44 @@ def main(out_path):
     put("texts_per_model", n["n_texts"] // len(n["models"]), num(n["n_texts"] // len(n["models"]), 0))
     put("collection_start_zurich", min(r["utc_start"] for r in raw),
         (datetime.fromisoformat(min(r["utc_start"] for r in raw)).astimezone(timezone(timedelta(hours=1)))).strftime("%H:%M"))
+
+    # added at the pre-submission audit (2.11.2026), reporting only
+    # standardised mean difference over topics of the four primary tests (d_z = t / sqrt(n))
+    for key, short in SHORT.items():
+        v = n["primary"][key]
+        put(short + "_dz", v["t"] / v["n_topics"] ** 0.5, num(v["t"] / v["n_topics"] ** 0.5, 2))
+    # Mistral Large 4 reasoning: the comparison run first (no grade and genre effects), the slope on the stated
+    # error as a share of what the model's ruler implies, and the 95% interval of the adjusted difference with
+    # the topic-level t reference (df = topics - 1) instead of the normal one
+    from scipy import stats as st
+    tq = st.t.ppf(0.975, n["n_topics"] - 1)
+    for lab, v in mr["paired_difference_by_stated_age"].items():
+        put(f"ph_mr_diff_raw_{lab}", v["difference_without_grade_and_genre"], num(v["difference_without_grade_and_genre"], 3))
+        put(f"ph_mr_se_raw_{lab}", v["se_without_grade_and_genre"], num(v["se_without_grade_and_genre"], 3))
+        share = v["slope_per_year_of_stated_error"] / (v["expected_on_own_ruler_for_two_years"] / 2)
+        put(f"ph_mr_slope_share_{lab}", share, num(100 * share, 0))
+        ci(f"ph_mr_diff_{lab}_tci", v["difference"] - tq * v["se"], v["difference"] + tq * v["se"], 3)
+    # differences in Zipf as percentages of geometric mean frequency, for readers outside the field
+    put("sesoi_pct_less", 1 - 10 ** -OUT["sesoi_zipf"]["value"], num(100 * (1 - 10 ** -OUT["sesoi_zipf"]["value"]), 0))
+    put("h2H_pct_less", 1 - 10 ** n["primary"]["h2_level_H"]["estimate"],
+        num(100 * (1 - 10 ** n["primary"]["h2_level_H"]["estimate"]), 0))
+    # the topics of the main study, in the order of the list (Supporting Information S1)
+    if set(design["topics"][: n["n_topics"]]) != set(pd.read_csv("results/measures.csv")["topic"]):
+        raise SystemExit("the first topics of design.json are not the topics of the main study")
+    put("topics_list", n["n_topics"], "; ".join(design["topics"][: n["n_topics"]]))
+    # topics of the pilot that are also confirmatory topics
+    topics_main = set(pd.read_csv("results/measures.csv")["topic"])
+    pilot_topics = design["pilot"]["ruler"]["topics"]
+    put("n_pilot_topics", len(pilot_topics), str(len(pilot_topics)))
+    put("n_pilot_topics_in_main", len(set(pilot_topics) & topics_main), str(len(set(pilot_topics) & topics_main)))
+    # tokens absent from Lexique (exploratory_audit.py, run on the official lexicon in GitHub Actions)
+    au = json.load(open("results/exploratory_audit.json"))
+    put("au_absent_share", au["share_absent_among_content"], num(100 * au["share_absent_among_content"], 2))
+    for key, short in SHORT.items():
+        v = au["primary_without_absent_tokens"][key]
+        put(f"au_{short}_est", v["estimate"], num(v["estimate"], 4 if short.startswith("h3") else 3))
+        put(f"au_{short}_p", v["p_two_sided"], p_apa(v["p_two_sided"]))
+        put(f"au_{short}_pholm", v["p_holm"], p_apa(v["p_holm"]))
 
     json.dump(OUT, open(out_path, "w"), indent=1, ensure_ascii=False)
     print(f"wrote {out_path} with {len(OUT)} named numbers")

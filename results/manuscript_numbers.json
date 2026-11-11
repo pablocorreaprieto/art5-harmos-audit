@@ -1027,25 +1027,73 @@
   "value": -0.04459639641003231,
   "text": "−0.045"
  },
+ "h1_t_anthropic_balanced": {
+  "value": -11.64831563217872,
+  "text": "−11.65"
+ },
+ "h1_lin_p_anthropic_balanced": {
+  "value": 0.5910397859156407,
+  "text": ".591"
+ },
  "h1_slope_anthropic_light": {
   "value": -0.042860926132542485,
   "text": "−0.043"
+ },
+ "h1_t_anthropic_light": {
+  "value": -9.589847317888362,
+  "text": "−9.59"
+ },
+ "h1_lin_p_anthropic_light": {
+  "value": 0.7260638892685823,
+  "text": ".726"
  },
  "h1_slope_mistral_balanced": {
   "value": -0.04143405946954111,
   "text": "−0.041"
  },
+ "h1_t_mistral_balanced": {
+  "value": -6.274746386106185,
+  "text": "−6.27"
+ },
+ "h1_lin_p_mistral_balanced": {
+  "value": 0.6787503803400512,
+  "text": ".679"
+ },
  "h1_slope_mistral_light": {
   "value": -0.03388289489629778,
   "text": "−0.034"
+ },
+ "h1_t_mistral_light": {
+  "value": -8.046289989331427,
+  "text": "−8.05"
+ },
+ "h1_lin_p_mistral_light": {
+  "value": 0.4240155270040905,
+  "text": ".424"
  },
  "h1_slope_openai_balanced": {
   "value": -0.04886658996527371,
   "text": "−0.049"
  },
+ "h1_t_openai_balanced": {
+  "value": -8.605087937356643,
+  "text": "−8.61"
+ },
+ "h1_lin_p_openai_balanced": {
+  "value": 0.20512685108430775,
+  "text": ".205"
+ },
  "h1_slope_openai_light": {
   "value": -0.024562258088896033,
   "text": "−0.025"
+ },
+ "h1_t_openai_light": {
+  "value": -5.863341438468601,
+  "text": "−5.86"
+ },
+ "h1_lin_p_openai_light": {
+  "value": 0.6318049858087535,
+  "text": ".632"
  },
  "sesoi_years_min": {
   "value": 0.8185551729397403,
@@ -7758,5 +7806,149 @@
  "collection_start_zurich": {
   "value": "2026-11-01T07:55:47.534043+00:00",
   "text": "08:55"
+ },
+ "h2H_dz": {
+  "value": -0.9296507036980689,
+  "text": "−0.93"
+ },
+ "h2P_dz": {
+  "value": -0.04332020209460619,
+  "text": "−0.04"
+ },
+ "h3H_dz": {
+  "value": 0.28986575380358426,
+  "text": "0.29"
+ },
+ "h3P_dz": {
+  "value": 0.4922820131108019,
+  "text": "0.49"
+ },
+ "ph_mr_diff_raw_L1": {
+  "value": -0.015949561496381257,
+  "text": "−0.016"
+ },
+ "ph_mr_se_raw_L1": {
+  "value": 0.016933724161465716,
+  "text": "0.017"
+ },
+ "ph_mr_slope_share_L1": {
+  "value": 0.7046064339598034,
+  "text": "70"
+ },
+ "ph_mr_diff_L1_tci_lo": {
+  "value": -0.08557843519280837,
+  "text": "−0.086"
+ },
+ "ph_mr_diff_L1_tci_hi": {
+  "value": 2.512429644373204e-05,
+  "text": "0.000"
+ },
+ "ph_mr_diff_raw_L1P": {
+  "value": 0.0027832276535383494,
+  "text": "0.003"
+ },
+ "ph_mr_se_raw_L1P": {
+  "value": 0.018935692582890032,
+  "text": "0.019"
+ },
+ "ph_mr_slope_share_L1P": {
+  "value": 0.32893509053456166,
+  "text": "33"
+ },
+ "ph_mr_diff_L1P_tci_lo": {
+  "value": -0.06146300436178766,
+  "text": "−0.061"
+ },
+ "ph_mr_diff_L1P_tci_hi": {
+  "value": 0.03831040054479713,
+  "text": "0.038"
+ },
+ "sesoi_pct_less": {
+  "value": 0.08798916064409024,
+  "text": "9"
+ },
+ "h2H_pct_less": {
+  "value": 0.02669073443286607,
+  "text": "3"
+ },
+ "topics_list": {
+  "value": 16,
+  "text": "des animaux de la forêt; de l'eau; des saisons; de l'amitié à l'école; du corps humain; du métier de boulanger; des volcans; d'une fête de famille; des abeilles; d'un voyage en train; du jardin potager; des dinosaures; de la lune et des étoiles; des pompiers; de la neige en montagne; des oiseaux migrateurs"
+ },
+ "n_pilot_topics": {
+  "value": 6,
+  "text": "6"
+ },
+ "n_pilot_topics_word": {
+  "value": 6,
+  "text": "six"
+ },
+ "n_pilot_topics_Word": {
+  "value": 6,
+  "text": "Six"
+ },
+ "n_pilot_topics_in_main": {
+  "value": 6,
+  "text": "6"
+ },
+ "n_pilot_topics_in_main_word": {
+  "value": 6,
+  "text": "six"
+ },
+ "n_pilot_topics_in_main_Word": {
+  "value": 6,
+  "text": "Six"
+ },
+ "au_absent_share": {
+  "value": 0.005277346684308664,
+  "text": "0.53"
+ },
+ "au_h2H_est": {
+  "value": -0.013825580400837176,
+  "text": "−0.014"
+ },
+ "au_h2H_p": {
+  "value": 1.4002773152660572e-05,
+  "text": "< .001"
+ },
+ "au_h2H_pholm": {
+  "value": 5.601109261064229e-05,
+  "text": "< .001"
+ },
+ "au_h2P_est": {
+  "value": -0.0029915520837079015,
+  "text": "−0.003"
+ },
+ "au_h2P_p": {
+  "value": 0.4332426446337094,
+  "text": "= .433"
+ },
+ "au_h2P_pholm": {
+  "value": 0.4332426446337094,
+  "text": "= .433"
+ },
+ "au_h3H_est": {
+  "value": 0.003104569522503539,
+  "text": "0.0031"
+ },
+ "au_h3H_p": {
+  "value": 0.1849317186413773,
+  "text": "= .185"
+ },
+ "au_h3H_pholm": {
+  "value": 0.3698634372827546,
+  "text": "= .370"
+ },
+ "au_h3P_est": {
+  "value": 0.004286803645785493,
+  "text": "0.0043"
+ },
+ "au_h3P_p": {
+  "value": 0.04123094157302159,
+  "text": "= .041"
+ },
+ "au_h3P_pholm": {
+  "value": 0.12369282471906476,
+  "text": "= .124"
  }
 }

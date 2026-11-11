@@ -1,0 +1,9 @@
+== 1. pilot plan with a budget of 0.8 USD, connections dropped in the middle of two bodies
+exit 0
+records 20, reported cost 0.6474, possibly charged 0.0615, counted total 0.7089, run logs 1, logged 0.7089
+== 2. pilot plan with a budget of 0.8 USD, connections dropped in the middle of two bodies
+exit 0
+records 21, reported cost 0.7045, possibly charged 0.0615, counted total 0.7660, run logs 2, logged 0.7660
+== 3. the raw lines of a run killed before writing its log are counted, for their own plan only
+pilot spend before 0.7660, after the planted lines 0.8275 (+0.0615 expected), main plan 5.0000 (5.0 expected)
+PASS e2e_crash

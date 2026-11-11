@@ -1,0 +1,4 @@
+30 references cited: avry2023, brysbaert2018, fr_cycle2, fwb_indicateurs2025, ge_primaire, harmos2007, huang2024, imperial2023, javourey2022, kuzu2025, manulex2004, men_college, men_elementaire, myung2024, new2004, newpallier_manual, nl_basisschool, oh2026, peereman2007, primpied2022, qc_frequentation, ripoll2025, rooein2023, sclar2024, trott2024, valentini2023, vd_deroulement, vd_leo2012, vikidia_about, yan2024
+in references.json but not cited (not listed in the rendered references): farajidizaji2023
+no problem found
+PASS check_citations
