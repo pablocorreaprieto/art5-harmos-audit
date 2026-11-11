@@ -9,6 +9,10 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Submitted to Education and Information Technologies (11.11.2026, 07:12)
+
+Manuscript number EAIT-D-26-14286, acknowledged by the journal on 11.11.2026 at 07:12 (Zurich time). Files submitted from commit c56541d: title page, anonymised manuscript, Supporting Information (filed under the item type "Table" as Online Resource 1). The cover letter was pasted into the Comments field. Author entry and Editorial Manager profile: Independent researcher, Jouxtens-Mézery, Vaud, Switzerland. The session (claude-fable-5-2) read the text of the PDF built by the journal's system (32 pages) before approval: affiliation as above, no author name outside the cover page and the title page. The author asked the session to open the built PDF and approve the submission on his behalf. The repository is made public at submission, as the preregistration and the title page say.
+
 ## Anonymised copy offered on request (10.11.2026, about 12:20)
 
 The journal's upload form has no item type for supplementary material, and the anonymised copy of the repository (19 MB) is too large to attach through the browser. At the author's choice, the Supporting Information is uploaded under the "Table" item type and the anonymised copy is not uploaded. The Data availability statement, the title page and the cover letter now say that the anonymised copy is available to the reviewers on request, and the letter says why the Supporting Information is filed as a table. Session claude-opus-5-5.
