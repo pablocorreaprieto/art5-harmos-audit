@@ -9,6 +9,10 @@ Design versions of ART 5 before the preregistration, on 25.10.2026 (v0.1 to v0.4
 - `history/` holds a unified diff from each version to the next, so any kept version can be rebuilt from the current files.
 - The main session is claude-opus-5-5. Readers are claude-fable-5-1 or claude-sonnet-5-5, as named below.
 
+## Repository prepared for publication (11.11.2026, about 07:30)
+
+Two scripts written by AI reading sessions held the author's phone numbers, date of birth and street name as search patterns. Before the repository was made public they were edited in every commit that contained them (session claude-fable-5-2, at the author's request). The commits up to 34545cc and the tags `prereg` and `data-v1` are unchanged. Later commits have new identifiers; `history/commit_map_2026-11-11.md` maps the identifiers cited in the records to the present ones. The API keys of 31.10.2026 that remain in the history (commit 9e03e53) were revoked before the main run.
+
 ## Submitted to Education and Information Technologies (11.11.2026, 07:12)
 
 Manuscript number EAIT-D-26-14286, acknowledged by the journal on 11.11.2026 at 07:12 (Zurich time). Files submitted from commit c56541d: title page, anonymised manuscript, Supporting Information (filed under the item type "Table" as Online Resource 1). The cover letter was pasted into the Comments field. Author entry and Editorial Manager profile: Independent researcher, Jouxtens-Mézery, Vaud, Switzerland. The session (claude-fable-5-2) read the text of the PDF built by the journal's system (32 pages) before approval: affiliation as above, no author name outside the cover page and the title page. The author asked the session to open the built PDF and approve the submission on his behalf. The repository is made public at submission, as the preregistration and the title page say.
