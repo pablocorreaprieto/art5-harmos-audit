@@ -353,12 +353,13 @@ def render_text(src, nums, design, fig_dir, root=ROOT):
     return out
 
 
-def words(md, start="Introduction", end="Statements and Declarations", tables=False):
+def words(md, start="Introduction", end="References", tables=False):
     """Words as a word processor counts them (runs of non-space characters), from the heading `start` to the
     heading `end`, headings included without their # marks. Table rows, figure lines and table captions are
     left out unless tables=True, in which case the cells and captions count and the separator rows do not.
     One rule for the title page and the verification report (after the second confirmation reading, 1.11.2026,
-    which found three different counts)."""
+    which found three different counts). The heading after the Conclusion is the References since the declarations
+    moved to the title page (12.11.2026)."""
     m = re.search(rf"^# {start}\s*$(.*?)^# {end}\s*$", md, flags=re.S | re.M)
     body = (f"# {start}\n" + m.group(1)) if m else ""
     n = 0
@@ -396,11 +397,11 @@ def main():
         open(out, "w").write(md)
         docx = out[:-3] + ".docx"
         # Word file in the journal's style (pre-submission audit, 2.11.2026): page numbers in the footer
-        # (manuscript/reference.docx) and, in the manuscript, decimal heading numbers except for the Abstract,
-        # the Statements and Declarations and the References; the build .md itself stays unchanged
+        # (manuscript/reference.docx) and, in the manuscript, decimal heading numbers except for the Abstract
+        # and the References; the build .md itself stays unchanged
         pandoc_in = md
         if stem == "manuscript":
-            pandoc_in = re.sub(r"^(# (?:Abstract|Statements and Declarations|References))\s*$", r"\1 {.unnumbered}",
+            pandoc_in = re.sub(r"^(# (?:Abstract|References))\s*$", r"\1 {.unnumbered}",
                                md, flags=re.M)
         tmp = os.path.join(os.path.dirname(out), f".{stem}_pandoc.md")
         open(tmp, "w").write(pandoc_in)
@@ -415,7 +416,7 @@ def main():
                   "all": words(md, "Abstract", "References", tables=True)}
             print("main text words (Introduction to Conclusion, no tables or captions):", wc["main"])
             print("main text words with tables and captions:", wc["main_tables"])
-            print("words from the Abstract through the Statements and Declarations, tables included (all but the references):", wc["all"])
+            print("words from the Abstract through the Conclusion, tables included (all but the references):", wc["all"])
             ab = re.search(r"^# Abstract\s*$(.*?)^# ", md, flags=re.S | re.M)
             # the abstract paragraph only, without the Keywords line (third confirmation reading, 1.11.2026)
             ab_text = re.sub(r"^\*\*Keywords:\*\*.*$", "", ab.group(1), flags=re.M) if ab else ""
@@ -427,10 +428,15 @@ def main():
             nums["wc_abstract"] = {"value": len(ab_text.split()), "text": str(len(ab_text.split()))}
             m = re.search(r"^title:\s*\"(.*)\"\s*$", open(path).read(), flags=re.M)
             nums["ms_title"] = {"value": m.group(1) if m else "", "text": m.group(1) if m else ""}
-            # the declarations of the manuscript, repeated on the title page as the journal asks ("Please use the
-            # title page for providing the statements"), without the two that the title page gives unanonymised
-            st = re.search(r"^# Statements and Declarations\s*$(.*?)^# References", md, flags=re.S | re.M)
-            paras = [q.strip() for q in (st.group(1) if st else "").split("\n\n") if q.strip()]
+            # the declarations, on the title page only: the journal returned EAIT-D-26-14286 on 12.11.2026 asking
+            # that they be removed from the blinded manuscript and placed on the title page. They are written in
+            # manuscript/statements.md, without the two paragraphs that the title page gives unanonymised
+            stm = render_text(open(os.path.join(ROOT, "manuscript/statements.md")).read(), nums, design,
+                              "../../results/figures")
+            st = re.search(r"^# Statements and Declarations\s*$(.*)", stm, flags=re.S | re.M)
+            if not st:
+                raise SystemExit("manuscript/statements.md has no heading '# Statements and Declarations'")
+            paras = [q.strip() for q in st.group(1).split("\n\n") if q.strip()]
             keep = [q for q in paras if not q.startswith(("**Data availability.**", "**Preregistration.**"))]
             nums["ms_statements_editor"] = {"value": "", "text": "\n\n".join(keep)}
     # submission documents (cover letter, title page): same placeholders, written to manuscript/build/

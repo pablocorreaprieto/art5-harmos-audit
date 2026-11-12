@@ -4,7 +4,9 @@ title: "Title page"
 
 <!-- Separate title page for double-anonymous review (not sent to reviewers). Draft of the main session
 (claude-opus-5-5), revised after the internal readings (P7); AUTHOR INPUT marks what the author decides at gate G2.
-Rendered by manuscript/render.py into manuscript/build/title_page.md. -->
+Rendered by manuscript/render.py into manuscript/build/title_page.md. Since 12.11.2026 the declarations are on the
+title page only (from manuscript/statements.md), as the journal asked when it returned the
+submission. -->
 
 **Title.** {{ms_title}}
 

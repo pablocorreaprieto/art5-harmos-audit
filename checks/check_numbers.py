@@ -10,7 +10,8 @@ python checks/check_numbers.py --docx PATH     also compare the numbers of a .do
 
 Checks:
  1. stale     results/manuscript_numbers.json equals a fresh run of manuscript_numbers.py
- 2. source    manuscript/manuscript.md and supplement.md contain no digit outside {{placeholders}},
+ 2. source    manuscript/manuscript.md, supplement.md and statements.md (the declarations, on the title page
+              since 12.11.2026) contain no digit outside {{placeholders}},
               the References section, links, and the structural tokens of ALLOW (each with its reason)
  3. quotes    every French wording in « » that contains a digit occurs in one of the 8,652 prompts
               (calls.jsonl, calls_pilot.jsonl), so label examples cannot drift from design.json
@@ -105,6 +106,9 @@ def numbers_in(text):
     return re.findall(r"\d+(?:[.,]\d+)*", text)
 
 
+W = "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}"
+
+
 def docx_text(path):
     import docx
     d = docx.Document(path)
@@ -112,7 +116,13 @@ def docx_text(path):
     for el in d.element.body.iterchildren():
         tag = el.tag.split("}")[-1]
         if tag == "p":
-            parts.append("".join(t.text or "" for t in el.iter() if t.tag.endswith("}t")))
+            # heading numbers added by pandoc --number-sections (runs styled SectionNumber) are not numbers of the
+            # text (headings numbered since the pre-submission audit, 2.11.2026; skipped here since 12.11.2026,
+            # when --docx failed on them)
+            def section_number(t):
+                r = t.getparent()
+                return any(x.get(W + "val") == "SectionNumber" for x in r.iter() if x.tag.endswith("}rStyle"))
+            parts.append("".join(t.text or "" for t in el.iter() if t.tag.endswith("}t") and not section_number(t)))
         elif tag == "tbl":
             for t in el.iter():
                 if t.tag.endswith("}t"):
@@ -156,13 +166,18 @@ def run(root, docx_path=None):
                 bad.append(f"{os.path.basename(docx_path)}: numbers differ from the rendered manuscript at number "
                            f"{i + 1} ({got[i] if i < len(got) else 'end'} vs {want[i] if i < len(want) else 'end'}); "
                            f"{len(got)} vs {len(want)} numbers")
+    # the declarations, moved from the manuscript to the title page on 12.11.2026: same source rules
+    src = open(os.path.join(root, "manuscript/statements.md")).read()
+    bad += source_problems(src, "statements.md")
+    bad += quote_problems(src, "statements.md", all_prompts)
     return bad
 
 
 def planted_copy(kind, tmp, docx_path):
     for d in ("manuscript/build", "results"):
         os.makedirs(os.path.join(tmp, d), exist_ok=True)
-    for f in ("manuscript/manuscript.md", "manuscript/supplement.md", "manuscript/process_facts.json",
+    for f in ("manuscript/manuscript.md", "manuscript/supplement.md", "manuscript/statements.md",
+              "manuscript/process_facts.json",
               "manuscript/source_facts.json", "manuscript/references.json",
               "manuscript/build/manuscript.md", "manuscript/build/supplement.md", "results/manuscript_numbers.json",
               "design.json"):
