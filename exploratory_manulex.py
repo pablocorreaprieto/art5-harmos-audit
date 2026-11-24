@@ -16,7 +16,7 @@ CP to CM2 corpus. This script uses it in three ways.
 3. Coverage. The share of a text's content tokens attested in the readers of the level that matches the
    requested grade (3H with CP, 4H with CE1, 5H to 7H with CE2 to CM2; Manulex has no level for 8H).
 
-python exploratory_manulex.py --manulex data/manulex/Manulex-Lemmes.rds
+python exploratory_manulex.py --manulex data/lexicon/Manulex-Lemmes.rds
     [--lexicon data/lexicon/Lexique383.tsv] [--out results/exploratory_manulex.json]
 
 Needs the official Lexique 3.83 file (python pipeline.py --step lexicon) and the Manulex lemma table
@@ -152,7 +152,7 @@ def reader_benchmarks(mdf, pairs, lemmas):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--lexicon", default=os.environ.get("LEXIQUE", "data/lexicon/Lexique383.tsv"))
-    ap.add_argument("--manulex", default="data/manulex/Manulex-Lemmes.rds")
+    ap.add_argument("--manulex", default="data/lexicon/Manulex-Lemmes.rds")
     ap.add_argument("--out", default="results/exploratory_manulex.json")
     a = ap.parse_args()
     lex, sha = C.load_lexicon(a.lexicon)

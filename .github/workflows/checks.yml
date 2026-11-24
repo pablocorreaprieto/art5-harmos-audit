@@ -72,10 +72,10 @@ jobs:
         run: |
           python pipeline.py --step lexicon
           pip install pyreadr==0.5.9
-          mkdir -p data/manulex
-          curl -fsSL -o data/manulex/Manulex-Lemmes.rds https://raw.githubusercontent.com/chrplr/openlexicon/master/datasets-info/Lete_2004_Manulex/Manulex-Lemmes.rds
-          md5sum data/manulex/Manulex-Lemmes.rds
-          python -B exploratory_manulex.py --manulex data/manulex/Manulex-Lemmes.rds | tee checks/outputs/exploratory_manulex.txt
+          # data/lexicon/ is already ignored by git; .gitignore is one of the files the design history rebuilds
+          curl -fsSL -o data/lexicon/Manulex-Lemmes.rds https://raw.githubusercontent.com/chrplr/openlexicon/master/datasets-info/Lete_2004_Manulex/Manulex-Lemmes.rds
+          md5sum data/lexicon/Manulex-Lemmes.rds
+          python -B exploratory_manulex.py --manulex data/lexicon/Manulex-Lemmes.rds | tee checks/outputs/exploratory_manulex.txt
 
       - name: Save outputs to the repository
         if: always()
