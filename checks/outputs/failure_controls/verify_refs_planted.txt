@@ -29,5 +29,6 @@ URL   fwb_indicateurs2025: url, not checked here (opened by the session, see the
 URL   qc_frequentation: url, not checked here (opened by the session, see the Sources tab)
 OK   kuzu2025 (crossref): title, year and first author match, no notice [registry: Education and Information Technologies, vol. 30, issue 16, pp. 23041-23075, type journal-article]
 OK   myung2024 (arxiv): title, year and first author match, no notice
+OK   tao2024 (crossref): title, year and first author match, no notice [registry: PNAS Nexus, vol. 3, issue 9, pp. pgae346, type journal-article]
 BAD  planted (error): lookup failed: HTTPError: HTTP Error 404: Not Found
 FAIL verify_refs
