@@ -1,0 +1,5 @@
+{"file": "calls.jsonl", "counts": {"main": 7680, "probe": 720}, "expected": {"main": 7680, "probe": 720}, "total": 8400}
+{"file": "calls_pilot.jsonl", "counts": {"ruler": 216, "probe": 36}, "expected": {"ruler": 216, "probe": 36}, "total": 252}
+calls.jsonl: 149a34b0d3ebd578 = recorded
+calls_pilot.jsonl: 729522e52638b021 = recorded
+PASS plan

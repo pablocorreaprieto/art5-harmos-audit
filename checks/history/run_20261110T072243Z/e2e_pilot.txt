@@ -1,0 +1,13 @@
+== 1. pilot step with a plan budget of 0.2 USD
+exit 0
+runs 1, counted spend 0.0020 USD, cap 0.2
+== 2. same step again with the same budget: the total stays under 0.2
+exit 0
+runs 2, counted spend 0.0119 USD, cap 0.2
+== 3. same step with a budget of 5 USD: completes
+exit 0
+runs 5, counted spend 0.4267 USD, cap 5.0
+rows 216 kept 216 columns present True
+labels ['L5'] exclusions {}
+summary keys ['n_topics_rule', 'note', 'power_level_test_0_04_zipf', 'probes', 'ruler', 'stop_flat_ruler', 'texts'] n_topics_rule 16 stop_flat_ruler False
+PASS e2e_pilot

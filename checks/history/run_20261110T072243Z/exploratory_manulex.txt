@@ -1,0 +1,7 @@
+{"official_lexicon": true, "n_texts": 7680, "content_count_mismatches": 0, "max_abs_diff_recomputed_vs_archived": 8.881784197001252e-16}
+readers {'CP': 4.943, 'CE1': 4.975, 'CE2-CM2': 4.879, 'CP-CM2': 4.902}
+child norm h2_level_H -0.01327 p = 0.006 Holm p = 0.0239
+child norm h2_level_P 0.00343 p = 0.4698 Holm p = 0.4698
+child norm h3_gradient_H 0.00585 p = 0.0706 Holm p = 0.1413
+child norm h3_gradient_P 0.00603 p = 0.0231 Holm p = 0.0693
+PASS exploratory_manulex
