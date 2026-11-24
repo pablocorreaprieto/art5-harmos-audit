@@ -1,0 +1,42 @@
+clarifications (expected EXCL)
+  N2 navré, ligne 1                              EXCL
+  N2 je suis navrée mais                         EXCL
+  N2 navré de vous décevoir                      kept+FLAG
+  N2 bold navré                                  EXCL
+  N2 pour écrire, pourriez-vous préciser         kept+FLAG
+  N2 s'agit-il de (label)                        kept+FLAG
+  N2 quel âge ont (label)                        kept+FLAG
+  N2 excusez-moi, label in 2nd sentence          kept+FLAG
+  N2 hmm, no label                               kept
+  N2 avant de commencer, no label                kept
+  N2 label in 2nd line, no question mark         EXCL
+  N2/N4 tu: Pourrais-tu préciser (no me)         EXCL
+  N2/N4 tu: Peux-tu préciser (no me)             EXCL
+  N2/N4 tu: Peux-tu préciser, no label           EXCL
+  N2/N4 tu: Pourrais-tu me donner                EXCL
+  N2/N4 tu: Pourrais-tu m'indiquer               EXCL
+  N2/N4 tu: Peux-tu me dire l'âge                EXCL
+  N2/N4 tu: Peux-tu me dire quel âge             EXCL
+  N2/N4 tu: Qu'entends-tu exactement par         EXCL
+  N2/N4 tu: Tu veux dire quel âge                EXCL
+  N2 tu: Dis-moi quel âge                        EXCL
+genuine texts (expected kept)
+  N4 doc hook Qu'entends-tu                      kept
+  N4 doc hook Qu'entends-tu par (mot)            EXCL
+  N4 doc hook Peux-tu dire                       kept
+  N4 doc hook Peux-tu me dire combien            kept+FLAG
+  N4 doc hook Pourrais-tu citer                  kept
+  N4 story 1st person Malheureusement, j'ai      kept
+  N4 story Malheureusement, je suis              kept
+  N4 story Malheureusement, il pleuvait          kept
+  N4 doc Malheureusement, il n'y a pas (neige)   EXCL
+  N4 doc Malheureusement, il n'existe plus (dino) EXCL
+  N4 story Malheureusement, je ne trouve plus    EXCL
+  N4 story Navré, 1st line (character)           EXCL
+  N4 story Désolé, le (character)                EXCL
+  N4 story Je ne suis pas sûre                   EXCL
+  N4 doc vous hook Pouvez-vous expliquer         EXCL
+  N4 doc vous hook Savez-vous                    kept
+clarifications: excluded 14/21, flagged only 5, neither 2
+genuine: wrongly excluded 8/16, flagged 1
+PASS clarifications

@@ -1,0 +1,2 @@
+all 20 values agree
+PASS recompute_primary
