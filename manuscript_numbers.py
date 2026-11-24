@@ -4,7 +4,8 @@ Reads only archived outputs and the frozen design: results/numbers.json, results
 results/probes.csv, results/pilot_summary.json, results/validation_vikidia.json, logs/run_*.json,
 data/raw/calls_*.jsonl (main study: dates and cost by provider), design.json, the exploratory outputs
 results/exploratory.json and results/exploratory_p7.json (post hoc, prefix ph_) and
-sim_power_results.json (prefix pow_).
+sim_power_results.json (prefix pow_) and results/exploratory_manulex.json (post hoc, child-based norms,
+prefix mx_, revision of 24.11.2026).
 Writes results/manuscript_numbers.json: {name: {"value": raw value, "text": text as printed}}.
 The manuscript source (manuscript/manuscript.md) refers to these names as {{name}};
 manuscript/render.py replaces them and fails on an unknown name, and checks/check_numbers.py
@@ -534,6 +535,64 @@ def main(out_path):
         put(f"au_{short}_est", v["estimate"], num(v["estimate"], 4 if short.startswith("h3") else 3))
         put(f"au_{short}_p", v["p_two_sided"], p_apa(v["p_two_sided"]))
         put(f"au_{short}_pholm", v["p_holm"], p_apa(v["p_holm"]))
+
+    # child-based norms (exploratory_manulex.py, post hoc, run on the official lexicon in GitHub Actions)
+    mx = json.load(open("results/exploratory_manulex.json"))
+    if not mx["official_lexicon"]:
+        raise SystemExit("results/exploratory_manulex.json was not computed on the registered lexicon")
+    put("mx_match_exact_pct", mx["manulex_match"]["exact"]["share"], num(100 * mx["manulex_match"]["exact"]["share"], 1))
+    put("mx_absent_pct", mx["manulex_match"]["absent"]["share"], num(100 * mx["manulex_match"]["absent"]["share"], 1))
+    r = mx["correlation_child_norm_vs_preregistered"]
+    put("mx_corr", r, num(r, 2).lstrip("0") if r >= 0 else num(r, 2))
+    slopes = {m: v["slope"] for m, v in mx["child_norm_h1"].items()}
+    put("mx_h1_flattest", max(slopes.values()), num(max(slopes.values()), 3))
+    put("mx_h1_steepest", min(slopes.values()), num(min(slopes.values()), 3))
+    pmax = max(v["p_one_sided"] for v in mx["child_norm_h1"].values())
+    put("mx_h1_p_max", pmax, p_apa(pmax))
+    for key, short in SHORT.items():
+        v = mx["child_norm_primary"][key]
+        put(f"mx_{short}_est", v["estimate"], num(v["estimate"], 4 if short.startswith("h3") else 3))
+        put(f"mx_{short}_p", v["p_two_sided"], p_apa(v["p_two_sided"]))
+        put(f"mx_{short}_pholm", v["p_holm"], p_apa(v["p_holm"]))
+        f = mx["child_norm_primary_found_only"][key]
+        put(f"mx_found_{short}_pholm", f["p_holm"], p_apa(f["p_holm"]))
+    ae = mx["child_norm_age_equivalents"]["by_label"]
+    for lab in ("L1", "L1P", "L2", "L3", "L4"):
+        v = ae[lab]
+        put(f"mx_{lab}_shift", v["shift_years"], num(v["shift_years"], 2))
+        ci(f"mx_{lab}_shift_ci", v["shift_ci95"][0], v["shift_ci95"][1], 2)
+        put(f"mx_{lab}_track", v["tracking"], num(v["tracking"], 2))
+        ci(f"mx_{lab}_track_ci", v["tracking_ci95"][0], v["tracking_ci95"][1], 2)
+        for m in MODELS:
+            bm = v["by_model"][m]
+            put(f"mx_{lab}_shift_{m}", bm["shift_years"], num(bm["shift_years"], 2))
+            put(f"mx_{lab}_track_{m}", bm["tracking"], num(bm["tracking"], 2))
+    l3 = [ae["L3"]["by_model"][m]["shift_years"] for m in MODELS]
+    put("mx_L3_shift_model_min", min(l3), num(min(l3), 2))
+    put("mx_L3_shift_model_max", max(l3), num(max(l3), 2))
+    bench = mx["reader_benchmarks_lexique_scale"]
+    level_short = {"CP": "CP", "CE1": "CE1", "CE2-CM2": "C3"}
+    for lev, s in level_short.items():
+        put(f"mx_read_{s}", bench[lev]["mean_zipf_lexique"], num(bench[lev]["mean_zipf_lexique"], 2))
+        put(f"mx_read_{s}_tokens", bench[lev]["content_tokens"], num(bench[lev]["content_tokens"], 0))
+    above = []
+    for lev, s in level_short.items():
+        for lab, v in mx["texts_vs_readers"][lev].items():
+            n_above = len(v["by_model_minus_readers"]) - v["models_below_readers"]
+            put(f"mx_tv_{s}_{lab}_mean", v["mean_zipf_texts"], num(v["mean_zipf_texts"], 2))
+            put(f"mx_tv_{s}_{lab}_diff", v["minus_readers"], num(v["minus_readers"], 3))
+            put(f"mx_tv_{s}_{lab}_above", n_above, str(n_above))
+            if lab in ("L1", "L1P", "L5"):
+                above.append(n_above)
+            put(f"mx_tv_{s}_{lab}_mistral_light", v["by_model_minus_readers"]["mistral_light"],
+                num(v["by_model_minus_readers"]["mistral_light"], 3))
+    put("mx_models_above_min", min(above), str(min(above)))
+    cov = mx["coverage_matching_level"]["3H"]
+    for lab in ("L1", "L1P", "L3", "L5"):
+        put(f"mx_cov_3H_{lab}", cov["by_label"][lab], num(100 * cov["by_label"][lab], 1))
+        for m in MODELS:
+            put(f"mx_cov_3H_{lab}_{m}", cov["by_model_label"][f"{m} | {lab}"],
+                num(100 * cov["by_model_label"][f"{m} | {lab}"], 1))
 
     json.dump(OUT, open(out_path, "w"), indent=1, ensure_ascii=False)
     print(f"wrote {out_path} with {len(OUT)} named numbers")

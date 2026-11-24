@@ -20,7 +20,7 @@ submission. -->
 
 **Word count.** Main text (Introduction to Conclusion): {{wc_main}} words without tables and figure captions, {{wc_main_tables}} with them; abstract: {{wc_abstract}} words; whole manuscript without the references: {{wc_all}} words.
 
-**Keywords.** generative AI, large language models, reading texts, lexical frequency, grade labels, primary education
+**Keywords.** generative AI, large language models, localization, grade labels, reading texts, primary education
 
 **Preregistration (for the editor only).** AsPredicted #{{proc_aspredicted_number}}, approved on {{proc_deposit_day}}: {{proc_aspredicted_url}} (anonymous version, without the author's name until acceptance). The deposited text contains the address of the study repository, which names the author; an anonymised copy of the repository, which includes the preregistration text, can be sent to the reviewers on request.
 

@@ -346,5 +346,17 @@
   "apa": "Myung, J., Lee, N., Zhou, Y., Jin, J., Putri, R. A., Antypas, D., Borkakoty, H., Kim, E., Perez-Almendros, C., Ayele, A. A., Gutiérrez-Basulto, V., Ibáñez-García, Y., Lee, H., Muhammad, S. H., Park, K., Rzayev, A. S., White, N., Yimam, S. M., Pilehvar, M. T., . . . Oh, A. (2024). BLEnD: A benchmark for LLMs on everyday knowledge in diverse cultures and languages. In *Advances in Neural Information Processing Systems 37* (Datasets and Benchmarks Track). https://proceedings.neurips.cc/paper_files/paper/2024/hash/8eb88844dafefa92a26aaec9f3acad93-Abstract.html",
   "access": "read-directly (NeurIPS 2024 proceedings abstract page and arXiv abstract 2406.09948 v1; the cited finding is stated in the abstract), main session, 2.11.2026; suggested by referee 2 of the pre-submission audit",
   "litnote": "part_A1, myung2024"
+ },
+ {
+  "key": "tao2024",
+  "first_author": "Tao",
+  "year": 2024,
+  "cite": "Tao et al., 2024",
+  "title": "Cultural bias and cultural alignment of large language models",
+  "doi": "10.1093/pnasnexus/pgae346",
+  "arxiv": "2311.14096",
+  "apa": "Tao, Y., Viberg, O., Baker, R. S., & Kizilcec, R. F. (2024). Cultural bias and cultural alignment of large language models. *PNAS Nexus, 3*(9), Article pgae346. https://doi.org/10.1093/pnasnexus/pgae346",
+  "access": "read-directly (arXiv v2 of 26 June 2024, the version published in PNAS Nexus: abstract, pp. 1-5)",
+  "litnote": "revision 24.11.2026: five GPT versions answer the Integrated Values Survey like English-speaking and Protestant European countries (abstract, p. 2); cultural prompting improves alignment for 71-81% of countries (abstract, p. 4) but with GPT-4o widens the distance for Finland, Luxembourg, Andorra, Switzerland and Taiwan (p. 4)"
  }
 ]

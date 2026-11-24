@@ -13,9 +13,9 @@ title: "Title page"
 
 **Corresponding author.** Pablo Correa Prieto, pabcorpri@gmail.com
 
-**Word count.** Main text (Introduction to Conclusion): 6,344 words without tables and figure captions, 6,958 with them; abstract: 249 words; whole manuscript without the references: 7,222 words.
+**Word count.** Main text (Introduction to Conclusion): 6,259 words without tables and figure captions, 7,011 with them; abstract: 228 words; whole manuscript without the references: 7,432 words.
 
-**Keywords.** generative AI, large language models, reading texts, lexical frequency, grade labels, primary education
+**Keywords.** generative AI, large language models, localization, grade labels, reading texts, primary education
 
 **Preregistration (for the editor only).** AsPredicted #321415, approved on 1 November 2026: https://aspredicted.org/zv58ce.pdf (anonymous version, without the author's name until acceptance). The deposited text contains the address of the study repository, which names the author; an anonymised copy of the repository, which includes the preregistration text, can be sent to the reviewers on request.
 

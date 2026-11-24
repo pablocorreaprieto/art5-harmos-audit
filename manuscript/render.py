@@ -282,7 +282,22 @@ def table_s12(nums, design):
     return cap, "\n".join(rows)
 
 
-TABLES = {"labels": table_labels, "primary": table_primary, "models": table_models, "s1": table_s1, "s2": table_s2,
+def table_readers(nums, design):
+    """Post hoc comparison with the Manulex readers (exploratory_manulex.py, revision of 24.11.2026)."""
+    rows = ["| Readers (texts compared) | Readers | Age only (L5) | Bare H label (L1) | Bare P label (L1P) | H label and age (L3) |",
+            "|---|---|---|---|---|---|"]
+    for s, name in (("CP", "CP (texts for 3H)"), ("CE1", "CE1 (texts for 4H)"), ("C3", "CE2 to CM2 (texts for 5H to 7H)")):
+        cells = [f"{T(nums, f'mx_tv_{s}_{lab}_diff')} ({T(nums, f'mx_tv_{s}_{lab}_above')})" for lab in ("L5", "L1", "L1P", "L3")]
+        rows.append(f"| {name} | {T(nums, f'mx_read_{s}')} | " + " | ".join(cells) + " |")
+    cap = ("Table 4. Texts and school readers on the same scale (post hoc). Readers: token-weighted mean Zipf frequency, "
+           "in Lexique, of the content lemmas of the Manulex readers of the level. Other columns: mean over the texts of the "
+           f"matching grades ({T(nums, 'n_models_word')} models pooled) minus the readers' value, positive when the texts use "
+           "more frequent words, and in brackets the number of models whose own mean lies above the readers'. Manulex has "
+           "no level for 8H.")
+    return cap, "\n".join(rows)
+
+
+TABLES = {"labels": table_labels, "primary": table_primary, "models": table_models, "readers": table_readers, "s1": table_s1, "s2": table_s2,
           "s3": table_s3, "s4": table_s4, "s5": table_s5, "s6": table_s6, "s7": table_s7, "s8": table_s8,
           "s9": table_s9, "s10": table_s10, "s11": table_s11, "s12": table_s12}
 

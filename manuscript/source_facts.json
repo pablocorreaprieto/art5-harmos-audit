@@ -84,5 +84,20 @@
   "text": "0.36",
   "ref": "trott2024",
   "where": "section 3.4 Results: 'explained approximately 36% of the variance in human readability judgments (R2 = 0.36)'"
+ },
+ "manulex_words": {
+  "text": "1.9 million",
+  "ref": "manulex2004",
+  "where": "p. 156, abstract (the 1.9 million words taken from 54 French elementary school readers)"
+ },
+ "manulex_readers": {
+  "text": "54",
+  "ref": "manulex2004",
+  "where": "p. 156, abstract; p. 159, Corpus Sampling (13 readers for G1, 13 for G2 and 28 for G3 to G5)"
+ },
+ "manulex_sales_year": {
+  "text": "1996",
+  "ref": "manulex2004",
+  "where": "p. 159, Corpus Sampling (readers selected on the basis of sales for the year 1996)"
  }
 }

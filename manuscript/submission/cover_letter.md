@@ -3,20 +3,24 @@ title: "Cover letter"
 ---
 
 <!-- Source of the cover letter (placeholders as in the manuscript, rendered by manuscript/render.py into
-manuscript/build/cover_letter.md). Draft of the main session (claude-opus-5-5), revised after the internal
-readings (P7); the author reads, edits and signs it at gate G2. AUTHOR INPUT marks what only the author can fill in. -->
+manuscript/build/cover_letter.md). Version for Educational Technology Research and Development, Cultural and Regional
+Perspectives section (revision of 24.11.2026); the author reads, edits and signs it. AUTHOR INPUT marks what only the author can fill in. -->
 
-To the Editor-in-Chief of *Education and Information Technologies*
+To the Editor of the Cultural and Regional Perspectives section, *Educational Technology Research and Development*
 
-Dear Dr Keane,
+Dear Dr Cheng,
 
-Please find attached the manuscript "{{ms_title}}", which I submit for consideration as an original research article.
+Please find attached the manuscript "{{ms_title}}", which I submit for consideration in the Cultural and Regional Perspectives section. It reaches the journal through the Springer Nature Transfer Desk: *Education and Information Technologies* declined an earlier version without review, judging that it did not go deep enough for that journal, and the Transfer Desk suggested this journal. I have revised it since.
 
-Teachers are advised to name their pupils' grade when they ask a language model for a reading text, but grade labels are local: the labels of French-speaking Switzerland (« 5H », « 5P ») name pupils two years younger than the fifth year of primary school in France. In a preregistered audit of {{n_texts}} French reading texts written by {{n_models_word}} large language models, the bare labels gave texts close, on average, to the lexical demand that the same model gives the matching age. Exploratory analyses showed that the models departed from their own age-only texts in both directions, one lighter model by about two years, and that at the same requested age the models' texts differed about as much as one model's texts across the primary cycle. The article shows teachers and tool developers that adding the age to a grade label is a cheap precaution but no substitute for reading the text, and why evaluations of AI tools for teachers should report results model by model. Its method, comparing each label with the same model's texts for the matching age, applies to any school system whose grade labels may be read in another system's terms. I am a primary teacher in the canton of Vaud, where the question arose.
+Teachers in French-speaking Switzerland are advised to name their pupils' grade when they ask a language model for a reading text, but their grade labels (« 5H », « 5P ») count school years from the first year of kindergarten and name pupils two years younger than the fifth year of primary school in France, the much larger neighbour in whose language they prompt. The study asks whether the tools read these labels in local terms. In a preregistered audit of {{n_texts}} French reading texts written by {{n_models_word}} large language models of three providers, each label was compared with the same model's texts for the matching age. The bare labels gave texts close, on average, to the lexical demand of the matching age, while individual models departed in both directions, one lighter model by about two years. The revision places the texts against French primary-school readers, rescoring them with child-based word frequencies, and frames the question in the research on the cultural defaults of language models.
 
-The study follows the recommendation of a review of language models in education (Yan et al., 2024), that studies report the exact models, prompts and temperature they used: every prompt, parameter and raw output is archived, and the results are reported for each model as well as pooled. It involved no human participants, and its data are texts generated through the providers' APIs. The hypotheses, measure, exclusion rules, sample size and analyses were preregistered before data collection. Because the deposited preregistration contains the address of the study repository, which names me, I give its link on the title page for the editor only. The Editorial Manager form offers no item type for supplementary material, so I uploaded the Supporting Information as a table file. An anonymised copy of the repository, which includes the preregistration text, is ready for the reviewers and I can send it on request.
+[AUTHOR: one or two sentences on why this belongs in a section on cultural and regional perspectives, and what the results mean for teachers and tool developers in the region.]
 
-I chose the topic, set the rules of the protocol under which the study was carried out with an AI assistant, and wrote the advice to teachers. As the journal's guidelines ask, the manuscript declares in the Methods, and the title page in its declarations, what the assistant did, how its work was checked and how the Anthropic API calls were paid, with promotional credits that Anthropic granted to my API account. Anthropic also made two of the audited models and the assistant. So that the assistant's work can be checked, every number in the manuscript is filled in by script from the archived results, and the scripts that check them are in the repository. I take full responsibility for the work. The manuscript is not under consideration elsewhere and has not been published.
+The study involved no human participants, and its data are texts generated through the providers' APIs. The hypotheses, measure, exclusion rules, sample size and analyses were preregistered before data collection. Because the deposited preregistration contains the address of the study repository, which names me, I give its link on the title page for the editor only, and an anonymised copy of the repository, which includes the preregistration text, is ready for the reviewers.
+
+[AUTHOR: your paragraph on the use of the AI assistant and on how the Anthropic API calls were paid.]
+
+I take full responsibility for the work. The manuscript is not under consideration elsewhere and has not been published. I am a primary teacher in the canton of Vaud, where the question arose.
 
 Yours sincerely,
 

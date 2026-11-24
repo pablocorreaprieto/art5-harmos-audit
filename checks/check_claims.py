@@ -51,7 +51,6 @@ CLAIMS = [
      "5e, second year of collège after CM2 (ages 12-13) against 5H (8-9)"),
     (r"counted its school years from two years later than HarmoS",
      lambda n: True, "État de Vaud (2012): the 'sixième année actuelle' became 8H (8 - 6 = 2)"),
-    (r"counting the school years two years later than HarmoS", lambda n: True, "same source"),
     (r"once they are four years old", lambda n: True, "HarmoS agreement, Art. 5 al. 1 (4 years completed)"),
     (r"primary degree lasts eight years", lambda n: True, "HarmoS agreement, Art. 6 al. 1"),
     (r"second of the four years of lower-secondary school", lambda n: True,
@@ -70,8 +69,6 @@ CLAIMS = [
     # results
     (r"one lighter model by about two years",
      lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "Claude Haiku 5.5, shift with the bare H label"),
-    (r"one by about two years on average",
-     lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
     # the author's advice to teachers in Implications (2.11.2026)
     (r"whereas the bare H label produced larger departures in some models",
      lambda n: max(abs(v(n, f"ae_L1_{m}_shift")) for m in MODELS) > max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS)
@@ -81,14 +78,51 @@ CLAIMS = [
     (r"every model's point estimate (?:fell|stayed) within a year of its (?:own )?age-only texts",
      lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
      "per-model point estimates of the shift with the label and the age (L3); wording fixed after the confirmation reading"),
-    (r"texts within a year of the age \(shifts from",
-     lambda n: max(abs(v(n, "ae_L1_probe_ok_shift_min")), abs(v(n, "ae_L1_probe_ok_shift_max"))) < 1,
-     "shifts of the models whose probe answers were right"),
     (r"most often two years too old",
      lambda n: v(n, "ph_mr_two_L1") > v(n, "ph_mr_wrong_L1") / 2 and v(n, "ph_mr_two_L1P") > v(n, "ph_mr_wrong_L1P") / 2,
      "among the wrong stated ages of Mistral Large 4, those 1.5 to 2.5 years too old are the majority"),
     (r"stated an age two years too old were", lambda n: True, "definition of the group (1.5 to 2.5 years)"),
     (r"for two years on the model's own ruler", lambda n: True, "expected difference for a two-year error: twice the ruler slope"),
+    # added after the confirmation reading of 1.11.2026
+    (r"Zipf for four models and was near zero for",
+     lambda n: v(n, "ph_L2mL1_level_others_max") <= -0.01
+     and max(abs(v(n, "ph_L2mL1_level_anthropic_light")), abs(v(n, "ph_L2mL1_level_openai_balanced"))) < 0.01,
+     "L2 - L1 level by model: four models at or below -0.01 Zipf, Claude Haiku 5.5 and GPT-6.1 Sol within 0.01 of zero"),
+    (r"as low as with the bare P label",
+     lambda n: abs(v(n, "ph_disp_L3_shift") - v(n, "ph_disp_L1P_shift")) < 0.02, "SD of the per-model shifts, L3 and L1P"),
+    (r"of the four primary contrasts, all but the level of the P label",
+     lambda n: v(n, "ph_het_n_sig") == 3 and v(n, "ph_het_L1P_level_p") >= 0.05, "repeated-measures tests between models"),
+    # added at the pre-submission audit (2.11.2026): other school systems (official sources, litnotes part C)
+    (r"holds pupils about a year and a half to two years older than « 5P » in Vaud", lambda n: True,
+     "cut-off dates: Vaud 4 years by 31 July, Belgium 6 in the calendar year of entry, Québec 6 before 1 October; 19 to 22 months"),
+    # added at the pre-submission audit (2.11.2026): the age added to the label and the bare P label, model by model
+    (r"adding the age kept every model within one model-internal year of its age-only texts",
+     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
+     "per-model shifts with the label and the age (L3), the author's wording in Implications (2.11.2026)"),
+    # revision for ETR&D (24.11.2026): three claims of the former abstract and Discussion removed with their text;
+    # claims for the author's new Discussion and Conclusion are to be added when that text is in
+    # revision for ETR&D (24.11.2026): the Conclusion is left to the author, the abstract and synopsis reworded,
+    # and the post hoc rescoring with Manulex (exploratory_manulex.py) reported in Results
+    (r"with the age added to the label every model stayed within a year",
+     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
+     "per-model shifts with the label and the age (L3) all under one year (abstract)"),
+    (r"adding the age kept every model within a year of its age-only texts",
+     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
+     "same, in the manuscript synopsis"),
+    (r"with the age added every model's shift stayed within a year \(",
+     lambda n: max(abs(v(n, f"mx_L3_shift_{m}")) for m in MODELS) < 1,
+     "per-model shifts with the label and the age (L3) on the Manulex rulers all under one year"),
+]
+
+# Claims of the former Discussion and Conclusion (EAIT version), retired at the revision of 24.11.2026 with their
+# text. A session that brings in the author's new Discussion can move back any whose wording returns.
+RETIRED_CLAIMS = [
+    (r"counting the school years two years later than HarmoS", lambda n: True, "same source"),
+    (r"one by about two years on average",
+     lambda n: 1.75 <= v(n, "ae_L1_anthropic_light_shift") <= 2.25, "same"),
+    (r"texts within a year of the age \(shifts from",
+     lambda n: max(abs(v(n, "ae_L1_probe_ok_shift_min")), abs(v(n, "ae_L1_probe_ok_shift_max"))) < 1,
+     "shifts of the models whose probe answers were right"),
     (r"stated an age two years too old for the bare labels", lambda n: True, "same group"),
     (r"in every specification its H texts moved less than that age implies",
      lambda n: v(n, "ph_mr_share_L1") < 1 and v(n, "ph_mr_slope_share_L1") < 1
@@ -102,32 +136,6 @@ CLAIMS = [
      lambda n: 0.4 <= v(n, "ph_L2mL1_shift") <= 0.6
      and max(abs(v(n, "ph_L2mL1_level_anthropic_light")), abs(v(n, "ph_L2mL1_level_openai_balanced"))) < 0.01,
      "pooled shift difference L2 - L1 over the six models; near zero for two (second confirmation reading)"),
-    # added after the confirmation reading of 1.11.2026
-    (r"Zipf for four models and was near zero for",
-     lambda n: v(n, "ph_L2mL1_level_others_max") <= -0.01
-     and max(abs(v(n, "ph_L2mL1_level_anthropic_light")), abs(v(n, "ph_L2mL1_level_openai_balanced"))) < 0.01,
-     "L2 - L1 level by model: four models at or below -0.01 Zipf, Claude Haiku 5.5 and GPT-6.1 Sol within 0.01 of zero"),
-    (r"as low as with the bare P label",
-     lambda n: abs(v(n, "ph_disp_L3_shift") - v(n, "ph_disp_L1P_shift")) < 0.02, "SD of the per-model shifts, L3 and L1P"),
-    (r"of the four primary contrasts, all but the level of the P label",
-     lambda n: v(n, "ph_het_n_sig") == 3 and v(n, "ph_het_L1P_level_p") >= 0.05, "repeated-measures tests between models"),
-    (r"The two whose texts followed the grade least",
-     lambda n: sorted(MODELS, key=lambda m: v(n, f"ae_L1_{m}_track"))[:2] == ["anthropic_light", "mistral_light"],
-     "the two lowest trackings with the bare H label"),
-    (r"moved texts by more than five years", lambda n: v(n, "ae_L6_shift") > 5, "pooled shift of the collision control"),
-    # added at the pre-submission audit (2.11.2026): other school systems (official sources, litnotes part C)
-    (r"holds pupils about a year and a half to two years older than « 5P » in Vaud", lambda n: True,
-     "cut-off dates: Vaud 4 years by 31 July, Belgium 6 in the calendar year of entry, Québec 6 before 1 October; 19 to 22 months"),
-    # added at the pre-submission audit (2.11.2026): the age added to the label and the bare P label, model by model
-    (r"every model stayed within a year, as with the bare P label",
-     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1 and max(abs(v(n, f"ae_L1P_{m}_shift")) for m in MODELS) < 1,
-     "per-model shifts with the label and the age (L3) and with the bare P label (L1P) all under one year"),
-    (r"adding the age kept every model within one model-internal year of its age-only texts",
-     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1,
-     "per-model shifts with the label and the age (L3), the author's wording in Implications (2.11.2026)"),
-    (r"kept every model within a year of its own age-only texts, as the bare P label did",
-     lambda n: max(abs(v(n, f"ae_L3_{m}_shift")) for m in MODELS) < 1 and max(abs(v(n, f"ae_L1P_{m}_shift")) for m in MODELS) < 1,
-     "same"),
 ]
 
 
