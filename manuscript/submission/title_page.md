@@ -16,7 +16,9 @@ submission. -->
 
 **ORCID.** 0009-0009-1844-7453
 
-**Corresponding author.** Pablo Correa Prieto, pabcorpri@gmail.com
+**Corresponding author.** Pablo Correa Prieto, pabcorpri@gmail.com, telephone [AUTHOR: telephone number, which the journal asks for on the title page]
+
+**Biography.** [AUTHOR: one or two sentences with your institutional affiliation, as the journal asks.]
 
 **Word count.** Main text (Introduction to Conclusion): {{wc_main}} words without tables and figure captions, {{wc_main_tables}} with them; abstract: {{wc_abstract}} words; whole manuscript without the references: {{wc_all}} words.
 

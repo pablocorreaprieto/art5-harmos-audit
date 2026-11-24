@@ -11,9 +11,11 @@ title: "Title page"
 
 **ORCID.** 0009-0009-1844-7453
 
-**Corresponding author.** Pablo Correa Prieto, pabcorpri@gmail.com
+**Corresponding author.** Pablo Correa Prieto, pabcorpri@gmail.com, telephone [AUTHOR: telephone number, which the journal asks for on the title page]
 
-**Word count.** Main text (Introduction to Conclusion): 6,259 words without tables and figure captions, 7,011 with them; abstract: 228 words; whole manuscript without the references: 7,432 words.
+**Biography.** [AUTHOR: one or two sentences with your institutional affiliation, as the journal asks.]
+
+**Word count.** Main text (Introduction to Conclusion): 6,259 words without tables and figure captions, 7,011 with them; abstract: 228 words; whole manuscript without the references: 7,651 words.
 
 **Keywords.** generative AI, large language models, localization, grade labels, reading texts, primary education
 
