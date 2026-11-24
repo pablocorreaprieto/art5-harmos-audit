@@ -1,4 +1,4 @@
-previous run kept in /home/runner/work/art5-harmos-audit/art5-harmos-audit/checks/history/run_20261110T072243Z
+previous run kept in /home/runner/work/art5-harmos-audit/art5-harmos-audit/checks/history/run_20261124T063654Z
 PASS selftest_compute
 PASS selftest_analyze
 PASS plan
@@ -10,10 +10,10 @@ PASS e2e_pilot
 PASS e2e_crash
 PASS e2e_malformed
 PASS e2e_secrets
-FAIL history (exit 1)
+PASS history
 PASS recompute_primary
 PASS check_numbers
 PASS check_claims
 PASS check_claims_planted
 PASS check_citations
-SOME CHECKS FAILED
+ALL CHECKS PASSED
